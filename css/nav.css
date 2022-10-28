@@ -1,0 +1,15 @@
+body { font-family: "M PLUS Rounded 1c"; }
+.wf-nicomoji { font-family: "Nico Moji"; }
+.search {
+  background: transparent;
+  border-radius: 1.5rem;
+  border: none;
+  border-bottom: 1px solid brown;
+  outline:none;
+  box-shadow:none;
+}
+.navbar-bg {
+  background-color: blanchedalmond;
+  height:50px;
+}
+i{color: #000000;}

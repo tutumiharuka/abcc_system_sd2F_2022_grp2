@@ -12,25 +12,7 @@
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nicomoji.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c">
-
-    <style>
-      body { font-family: "M PLUS Rounded 1c"; }
-      .wf-nicomoji { font-family: "Nico Moji"; }
-      .search {
-        background: transparent;
-        border-radius: 1.5rem;
-        border: none;
-        border-bottom: 1px solid brown;
-        outline:none;
-        box-shadow:none;
-      }
-      .navbar-bg {
-        background-color: blanchedalmond;
-        height:50px;
-      }
-      i{color: #000000;}
-
-    </style>
+    <link rel="stylesheet" href="css/nav.css">
 </head>
   <body>
     <nav class="navbar navbar-light navbar-expand-md py-3 navbar-bg">
