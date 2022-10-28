@@ -1,5 +1,10 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/typicons/2.1.2/typicons.min.css");
+@import url("https://fonts.googleapis.com/earlyaccess/nicomoji.css");
+@import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c");
+
 body { font-family: "M PLUS Rounded 1c"; }
 .wf-nicomoji { font-family: "Nico Moji"; }
+
 .search {
   background: transparent;
   border-radius: 1.5rem;
@@ -8,8 +13,12 @@ body { font-family: "M PLUS Rounded 1c"; }
   outline:none;
   box-shadow:none;
 }
+
+/*  */
+
 .navbar-bg {
   background-color: blanchedalmond;
   height:50px;
 }
+/* icon */
 i{color: #000000;}
