@@ -2,8 +2,20 @@
 /* .carousel_div{
   margin: 2px;
 } */
-.carousel_img{
+.carousel-card{
+  height: auto;
+}
+
+.carousel-img{
   height: 380px;
+}
+.card{
+  width: 18rem;
+  height: auto; 
+}
+
+.all-game{
+  height: 30px;
 }
 
 .carousel{
@@ -13,3 +25,4 @@
 .carousel.slick-initialized{
   visibility: visible;
 }
+
