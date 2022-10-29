@@ -1,0 +1,15 @@
+
+/* .carousel_div{
+  margin: 2px;
+} */
+.carousel_img{
+  height: 380px;
+}
+
+.carousel{
+  visibility: hidden;
+}
+
+.carousel.slick-initialized{
+  visibility: visible;
+}

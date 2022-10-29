@@ -17,8 +17,11 @@ body { font-family: "M PLUS Rounded 1c"; }
 /*  */
 
 .navbar-bg {
-  background-color: blanchedalmond;
+  /* background-color: blanchedalmond; */
   height:50px;
 }
 /* icon */
-i{color: #000000;}
+i{
+  font-size: large;
+  color: #000000;
+}

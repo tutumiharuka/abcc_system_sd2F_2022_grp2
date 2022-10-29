@@ -1,5 +1,3 @@
-<?php include_once 'GameHeader.php'; ?>
-
 <nav class="navbar navbar-light navbar-expand-md py-3 navbar-bg">
       <div class="container">
         <!-- 三みたいなメニューボタン -->

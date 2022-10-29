@@ -1,73 +1,23 @@
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
-
-<link rel="stylesheet" href="css/carousel.css">
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-<!-- <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script> -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<link rel="stylesheet" href="css/top.css">
 
 
-<div class="container">
-  <!-- <h1>Use Bootstrap 3's carousel to show multiple items per slide.</h1> -->
-  <div class="row">
-    <div class="col-md-12">
-      <div class="carousel slide multi-item-carousel" id="theCarousel">
-        <div class="carousel-inner">
-          <div class="item active">
-            <div class="col-xs-4"><a href="#1"><img src="https://source.unsplash.com/300x300/?perth,australia" class="img-responsive"></a></div>
-          </div>
-          <div class="item">
-            <div class="col-xs-4"><a href="#1"><img src="https://source.unsplash.com/300x300/?fremantle,australia" class="img-responsive"></a></div>
-          </div>
-          <div class="item">
-            <div class="col-xs-4"><a href="#1"><img src="https://source.unsplash.com/300x300/?west-australia" class="img-responsive"></a></div>
-          </div>
-          <div class="item">
-            <div class="col-xs-4"><a href="#1"><img src="https://source.unsplash.com/300x300/?perth" class="img-responsive"></a></div>
-          </div>
-          <div class="item">
-            <div class="col-xs-4"><a href="#1"><img src="https://source.unsplash.com/300x300/?quokka,perth" class="img-responsive"></a></div>
-          </div>
-          <div class="item">
-            <div class="col-xs-4"><a href="#1"><img src="https://source.unsplash.com/300x300/?margaretriver,australia" class="img-responsive"></a></div>
-          </div>
-          <!-- add  more items here -->
-          <!-- Example item start:  -->
-          
-          <div class="item">
-            <div class="col-xs-4"><a href="#1"><img src="https://source.unsplash.com/300x300/?perth,australia&r=7" class="img-responsive"></a></div>
-          </div>
-          
-          <!--  Example item end -->
-        </div>
-        <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-        <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-      </div>
-    </div>
-  </div>
+<div class="carousel mt-3">
+  <div class="px-1"><img src="img/SPO/SPO_b01.jpg" alt="" class="carousel_img rounded"></div>
+  <div class="px-1"><img src="img/SPO/SPO_b02.jpg" alt="" class="carousel_img rounded"></div>
+  <div class="px-1"><img src="img/SPO/SPO_b03.jpg" alt="" class="carousel_img rounded"></div>
+  <div class="px-1"><img src="img/SPO/SPO_b04.jpg" alt="" class="carousel_img rounded"></div>
+  <div class="px-1"><img src="img/FIG/FIG_b01.jpg" alt="" class="carousel_img rounded"></div>
+  <div class="px-1"><img src="img/FIG/FIG_b02.jpg" alt="" class="carousel_img rounded"></div>
+  <div class="px-1"><img src="img/FIG/FIG_b03.jpg" alt="" class="carousel_img rounded"></div>
 </div>
 
-<script>
-// Instantiate the Bootstrap carousel
-$('.multi-item-carousel').carousel({
-  interval: false
-});
 
-// for every slide in carousel, copy the next slide's item in the slide.
-// Do the same for the next, next item.
-$('.multi-item-carousel .item').each(function(){
-  var next = $(this).next();
-  if (!next.length) {
-    next = $(this).siblings(':first');
-  }
-  next.children(':first-child').clone().appendTo($(this));
-  
-  if (next.next().length>0) {
-    next.next().children(':first-child').clone().appendTo($(this));
-  } else {
-  	$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
-  }
-});
-</script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript" src="js/carousel.js"></script>
 <?php include_once 'GameFooter.php'; ?>
