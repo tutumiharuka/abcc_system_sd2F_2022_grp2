@@ -1,4 +1,7 @@
-<nav class="navbar navbar-light navbar-expand-md py-3 navbar-bg">
+<link rel="stylesheet" href="css/nav.css">
+<!-- NavBar -->
+
+<nav class="navbar navbar-light navbar-expand-md py-3">
       <div class="container">
         <!-- 三みたいなメニューボタン -->
         <span class=" d-flex justify-content-center align-items-center me-3 bs-icon">
