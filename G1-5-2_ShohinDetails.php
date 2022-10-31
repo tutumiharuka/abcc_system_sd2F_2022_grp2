@@ -1,6 +1,11 @@
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
 
+<style>
+    h1 {
+        font-family: "メイリオ";
+    }
+</style>
 
 <!-- ここで　PHP　と　BootStarp　を直接書きます -->
 <!-- 画像 -->
@@ -12,9 +17,19 @@
 
 <!-- 商品名 -->
     <div class="row">
-        <div class="ms-5 mt-3">
-        <h2>スプラトューン３</h2>
-    </div
+        <div class="col-md-6 mt-3">
+            <h1>スプラトューン3</h1>
+        </div>
+        <div class="col-md-2 mt-2">
+            <p>価格</p>
+        </div>
+        <div class="col-md-1 mt-2">
+            <p>♡</p>
+        </div>
+        <div class="col-md-3 mt-2">
+            <p>カートに入れる</p>
+        </div>
+    </div>
 
 
 
