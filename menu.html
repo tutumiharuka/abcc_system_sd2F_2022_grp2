@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>mmenu.js playground</title>
+    <meta charset="utf-8" />
+    <link href="layout.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/9.2.0/mmenu.min.css">
+    <!-- Include mmenu files -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/6.1.3/jquery.mmenu.all.css"> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.1.min.js"   integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/6.1.5/jquery.mmenu.all.js"></script> -->
+    
+    
+</head>
+
+<body class="mm-wrapper">
+    <div id="page" class="mm-page mm-slideout">
+            <div id="header">
+    <a href="#menu" class="fa fa-bars"></a>
+    <a href="#page" class="fa fa-close"></a>
+    <span>demo</span>
+    </div>						
+        <div id="content">
+        <h1>This is a demo.</h1>
+        <p>Click the menu icon to open a custom styled menu.</p>
+        </div>		
+    </div>
+
+        
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/9.2.0/mmenu.min.js"></script>
+    
+        
+<script>
+    document.addEventListener( "click", ( evnt ) => {
+        if (evnt.target?.closest?.('a[href^="#/"]')) {
+            evnt.preventDefault();
+            alert( "Thank you for clicking, but that's a demo link." );
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        new Mmenu("#menu", {		theme 		: "white",
+navbars		: {
+    content : [ "prev", "title" ]
+},
+
+setSelected	: {
+    hover: true
+}}, {});
+        
+                    });
+</script>
+
+            
+
+
+<nav id="menu" class="mm-menu mm-menu--offcanvas mm-menu--position-left mm-menu--theme-white mm-menu--selected-hover" aria-label="Menu" aria-modal="true" role="dialog" inert="true">
+                
+            <div class="mm-navbars mm-navbars--top"><div class="mm-navbar"><a class="mm-btn mm-btn--prev mm-navbar__btn" href="#panel-menu" aria-label="Close submenu"></a><a class="mm-navbar__title" tabindex="-1" aria-hidden="true" href="#panel-menu"><span class="">About us</span></a></div></div><div class="mm-panels"><div class="mm-panel mm-panel--parent" id="panel-menu" inert="true"><div class="mm-navbar mm-hidden"><a class="mm-navbar__title" tabindex="-1" aria-hidden="true"><span class="">Menu</span></a></div><ul class="mm-listview">
+                    <li class="mm-listitem"><a href="#/" class="mm-listitem__text">Home</a></li>
+                    <li class="mm-listitem"><a href="#/work" class="mm-listitem__text">Our work</a></li>
+                    <li class="mm-listitem" id="mm-1" data-mm-child="mm-2">
+                        <a class="mm-btn mm-btn--next mm-listitem__btn mm-listitem__text" aria-label="Open submenu" href="#mm-2">About us</a>
+                    </li>
+                    <li class="mm-listitem" id="mm-5" data-mm-child="mm-6">
+                        <a class="mm-btn mm-btn--next mm-listitem__btn mm-listitem__text" aria-label="Open submenu" href="#mm-6">Services</a>
+                    </li>
+                    <li class="mm-listitem"><a href="#/contact" class="mm-listitem__text">Contact</a></li>
+                </ul></div><div class="mm-panel mm-panel--opened" id="mm-2" data-mm-parent="mm-1"><div class="mm-navbar mm-hidden"><a class="mm-btn mm-btn--prev mm-navbar__btn" href="#panel-menu" aria-label="Close submenu"></a><a class="mm-navbar__title" tabindex="-1" aria-hidden="true" href="#panel-menu"><span class="">About us</span></a></div><ul class="mm-listview">
+                            <li class="mm-listitem"><a href="#/about/history" class="mm-listitem__text">History</a></li>
+                            <li class="mm-listitem" id="mm-3" data-mm-child="mm-4">
+                                <a class="mm-btn mm-btn--next mm-listitem__btn mm-listitem__text" aria-label="Open submenu" href="#mm-4">The team</a>
+                            </li>
+                        </ul></div><div class="mm-panel mm-panel--highest" id="mm-4" data-mm-parent="mm-3" inert="true"><div class="mm-navbar mm-hidden"><a class="mm-btn mm-btn--prev mm-navbar__btn" href="#mm-2" aria-label="Close submenu"></a><a class="mm-navbar__title" tabindex="-1" aria-hidden="true" href="#mm-2"><span class="">The team</span></a></div><ul class="mm-listview">
+                                    <li class="mm-listitem"><a href="#/about/team/management" class="mm-listitem__text">Management</a></li>
+                                    <li class="mm-listitem"><a href="#/about/team/sales" class="mm-listitem__text">Sales</a></li>
+                                    <li class="mm-listitem"><a href="#/about/team/development" class="mm-listitem__text">Development</a></li>
+                                </ul></div><div class="mm-panel" id="mm-6" data-mm-parent="mm-5" inert="true"><div class="mm-navbar mm-hidden"><a class="mm-btn mm-btn--prev mm-navbar__btn" href="#panel-menu" aria-label="Close submenu"></a><a class="mm-navbar__title" tabindex="-1" aria-hidden="true" href="#panel-menu"><span class="">Services</span></a></div><ul class="mm-listview">
+                            <li class="mm-listitem"><a href="#/services/design" class="mm-listitem__text">Design</a></li>
+                            <li class="mm-listitem"><a href="#/services/development" class="mm-listitem__text">Development</a></li>
+                            <li class="mm-listitem"><a href="#/services/marketing" class="mm-listitem__text">Marketing</a></li>
+                        </ul></div></div></nav><a class="mm-wrapper__blocker mm-blocker mm-slideout" id="mm-0" aria-label="Close menu" href="#page" inert="true"></a></body>
+</body>
+</html>

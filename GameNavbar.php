@@ -13,9 +13,6 @@ body { font-family: "M PLUS Rounded 1c"; }
   background: white;
   border-radius: 1rem;
   border: none;
-  /* border-bottom: 1px solid black; */
-  /* outline:none;
-  box-shadow:none; */
 }
 
 /* Navbar背景の設定 */

@@ -1,0 +1,131 @@
+:root {
+    --color-primary: #5888aa;
+    --color-callout: #fad188;
+    --color-text: #fff;
+    --color-dark-bg: #2a6787;
+    --color-dark-border: #2a6787;
+    --color-light-bg: rgb(255 255 255 / 15%);
+    --color-light-border: rgb(255 255 255 / 60%);
+    --color-gold: #ffda71;
+    --color-silver: #ced0ca;
+    --color-bronze: #bba6a2;
+    --section-padding: clamp(85px, 15vw, 150px);
+    --container-padding: clamp(15px, 4vw, 30px);
+  }
+  
+  .high-contrast {
+    --color-primary: #265d79;
+    --color-callout: #fff;
+    --color-dark-bg: #22526c;
+    --color-dark-border: #22526c;
+    --color-light-bg: #fff;
+    --color-light-border: #fff;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  
+  html,
+  body,
+  [id] {
+    scroll-margin-top: 50px;
+  }
+  
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    color: #666;
+    background-color: #fff;
+    -webkit-text-size-adjust: none;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 130%;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+  
+  body {
+    --mm-min-size: 190px;
+  }
+  
+  #menu:not(.mm-menu):not(.mm) {
+    display: none;
+  }
+  
+  #header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    background: var(--header-color, #bba6a2);
+  }
+  #header a {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+  }
+  #header a[href="#menu"] {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .mm-wrapper--opened #header a[href="#menu"] {
+    display: none;
+  }
+  #header a[href="#page"] {
+    display: none;
+  }
+  .mm-wrapper--opened #header a[href="#page"] {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  
+  #content {
+    position: relative;
+    padding: 125px 50px 50px 50px;
+    text-align: center;
+  }
