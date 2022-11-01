@@ -39,16 +39,23 @@ a,button{
     cursor: pointer;
 }
 /* sidenavのポジション */
+
+.member-list{
+    /* position: absolute; */
+    /* top: 180px; */
+    left: 50px;
+    /* width: 250px; */
+}
 .side-list{
-    position: absolute;
-    top: 180px;
+    /* position: absolute; */
+    /* top: 400px; */
     left: 50px;
     width: 250px;
 }
 
 .sub-list{
-    position: absolute;
-    top: 40px;
+    /* position: absolute; */
+    /* top: 40px; */
     left: 50px;
     width: 250px;
 }
@@ -103,10 +110,17 @@ a,button{
     <div class="row">
       <div class="col-12"><i class="bi bi-x h1 position-absolute  end-0 me-3 mt-2" onclick="showMenu()"></i></div>
     </div>  
+    
+    
     <div class="row mt-5 ms-5">
-      <div class="col-12">
-        <button type="button" class="btn btn-lg login-btn">ログイン・新規登録</button>
-      </div>
+      <nav class="member-list">
+          <ul>
+            <li><a href="#"> 購入履歴</a></li>
+            <li><a href="#"> お気に入り</a></li>
+            <li><a href="#"> カート</a></li>
+            <li><a href="#"> 会員情報</a></li>
+          </ul>
+      </nav>
     </div>
 
     <div class="side-list-title text-center mt-3">ゲームを探す</div>
@@ -117,7 +131,7 @@ a,button{
           <li><a href="#"> 人気ソフト</a></li>
           <li><a href="#"> 無料ソフト</a></li>
           <li><a href="#"> おすすめソフト</a></li>
-          <li class="sub-btn" onclick="showSubMenu()"><a>カテゴリ一覧</a></li>
+          <li class="sub-btn" onclick="showSubMenu()"><a>カテゴリ一覧 →</a></li>
         </ul>
     </nav>
   </div>
