@@ -52,7 +52,7 @@
     <div  class="text-center">
 		<button class="mb-4 G1-6-3_BuyEnd.php rounded bg-primary"><h3>　注文を確定する　</h3></button><br>
         <button class="mb-4 G1-6-1_Cart.php rounded bg-secondary"><h3>　　キャンセル　　</h3></button>
-                       <!-- ↑ここ、キャンセルで戻るところが分からなかったため一応カート画面に設定 -->
+                       <!-- ↑ここ、キャンセルで戻るところが分からなかったので一応カート画面に設定 -->
     </div>
 </div>
 <!-- カート -->
