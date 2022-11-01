@@ -2,9 +2,10 @@
 <?php include_once 'GameNavbar.php'; ?>
 
 <style>
-    .sibori-btn{
+    .sibori-btn,.form-select{
         width: 180px;
     }
+
 </style>
 
 
@@ -22,10 +23,14 @@
     </nav>
 
  
-
+    
     <!-- 絞り込み機能 -->
-    <div class="row">
-        
+    <div class="row ms-1 me-3 mt-2 mb-3">
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                絞り込み機能内容
+            </div>
+        </div>
     </div>
     
 
@@ -37,24 +42,27 @@
         <div class="col-md-2 offset-md-5">
             
             <select class="form-select" aria-label="Default select example">
-                <option selected>ソート</option>
+                <option selected>並び替え</option>
                 <option value="1">人気順</option>
                 <option value="2">新しい順</option>
                 <option value="3">古い順</option>
-                <option value="3">古い順</option>
-                <option value="3">古い順</option>
-                <option value="3">古い順</option>
+                <option value="4">安い順</option>
+                <option value="5">高い順</option>
             </select>
             
         </div>
         <!-- 絞り込むボタン -->
-        <button type="button" class="col-md-2 btn btn-outline-dark sibori-btn">Dark</button>
+        <a type="button" class="col-md-2 btn btn-outline-dark sibori-btn" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            絞り込み
+        </a>
+        
         <!-- <div class="col-md-3">
             
         </div> -->
        
     </div>
-  
+
+    
 
     <!-- ゲームリストx 20 --> 
     <div class="container-fluid">
