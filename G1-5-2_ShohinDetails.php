@@ -33,22 +33,19 @@
             <p>1,000円</p>
         </div>
 <!-- ♡マーク わからない！ -->
-        <a class="col-md-1 mt-4 " href="#"><i class="typcn typcn-heart-outline"></i></a>
+        <a class="col-md-1 mt-4 mb-2 font" href="#"><i class="typcn typcn-heart-outline"></i></a>
 <!-- 購入ボタン -->
         <div class="col-md-3 mt-4 font">
             <input type="submit" class="btn-light rounded-pill" value="カートに入れる">
         </div>
 <!-- 商品説明 -->
-        <div class="fontD">
-            <p>ヒトの姿に変身する不思議なイカたちによる、アクションシューティングがパワーアップして登場<br>
-               4対4のチームに分かれて、地面を塗った面積で勝敗を決める基本的なルールはそのままに、<br>新たなブキやスペシャルウェポン、バトルアクションが追加。<br>
-               オンラインでフレンドや見知らぬ人と対戦できることはもちろん、本体を持ち寄って仲間と顔を合わせての対戦も可能。<br>
-               よりダイナミックになったナワバリバトルで、存分にインクを塗りたくれ!</p>
+        <div class="fontD mb-4">
+            <p >ヒトの姿に変身する不思議なイカたちによる、アクションシューティングがパワーアップして登場!4対4のチームに分かれて、地面を塗った面積で勝敗を決める基本的なルールはそのままに、新たなブキやスペシャルウェポン、バトルアクションが追加。オンラインでフレンドや見知らぬ人と対戦できることはもちろん、本体を持ち寄って仲間と顔を合わせての対戦も可能。よりダイナミックになったナワバリバトルで、存分にインクを塗りたくれ!</p>
         </div>
     </div>
 <!-- 下の項目たち -->
     <div class="row">
-        <div class="col-md-3 m-7 fontD">
+        <div class="col-md-2 m-7 fontD">
             <p>必要な容量:</p>
         </div>
         <div class="col-md-3 font">
@@ -56,7 +53,7 @@
         </div>
     </div>  
     <div class="row">
-        <div class="col-md-3 fontD">
+        <div class="col-md-2 fontD">
             <p>対応ハード:</p>
         </div>
         <div class="col-md-3 font">
@@ -64,7 +61,7 @@
         </div>
     </div> 
     <div class="row">
-        <div class="col-md-3 fontD">
+        <div class="col-md-2 fontD">
             <p>メーカー:</p>
         </div>
         <div class="col-md-3 font">
@@ -72,7 +69,7 @@
         </div>
     </div> 
     <div class="row">
-        <div class="col-md-3 fontD">
+        <div class="col-md-2 fontD">
             <p>配信日:</p>
         </div>
         <div class="col-md-3 font">
@@ -80,14 +77,15 @@
         </div>
     </div>  
 
-    <!-- ナビバーの設定かな -->
-    <nav class="mt-3 ms-3" aria-label="breadcrumb">
+    <!-- ナビバーの設定 -->
+    <nav class="mt-3 ms-3 " aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item h5"><a href="#">Top</a></li>
             <li class="breadcrumb-item h5"><a href="#">アクション</a></li>
             <li class="breadcrumb-item h5 active" aria-current="page">スプラトゥーン3</li>
         </ol>
     </nav>
+</div>
 
 
 
