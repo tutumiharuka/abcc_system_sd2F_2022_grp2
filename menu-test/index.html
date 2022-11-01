@@ -1,0 +1,122 @@
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ゲームECサイト</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <style>
+        /* *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        } */
+        a,button{
+            cursor: pointer;
+        }
+        /* sidenavのポジション */
+        nav{
+            position: absolute;
+            top: 100px;
+            left: 50px;
+            width: 250px;
+        }
+
+        .navigation{
+            position: fixed;
+            right: -500px;
+            width: 350px;
+            height: 100%;
+            background-color: #000;
+            transition: .5s;
+        }
+
+        .navigation ul li{
+            color: #fff;
+            text-align: right;
+            text-transform: uppercase;
+            list-style-type: none;
+            font-size: 1.5em;
+            padding: 20px 30px;
+            border-bottom: 1pt solid #252525;
+        }
+
+        .hamburger, .bar{
+            position: fixed;
+        }
+
+        .hamburger{
+            display: block;
+            top: 5%;
+            left: 95%;
+            width: 30px;
+            height: 30px;
+            transform: translateY(-50%);
+            border: 0;
+            background: 0 0;
+        }
+
+        .bar{
+            top: 3px;
+            background: #000;
+            width: 100%;
+            height: 4px;
+            transition: all .3s ease-in;
+        }
+
+        #bar2{
+            top: 11px;
+        }
+
+        #bar3{
+            top: 19px;
+        }
+
+        .navigation.active{
+            right: 0;
+        }
+
+        /* ハンバーグのicon変化 */
+        .hamburger.open #bar1{
+            background-color: #fff;
+            transform: rotate(45deg) translate(6px, 5px);
+        }
+
+        .hamburger.open #bar2{
+            background-color: transparent;
+        }
+
+        .hamburger.open #bar3{
+            background-color: #fff;
+            transform: rotate(-45deg) translate(6px, -5px);
+        }
+
+    </style>
+    <title>Slide-Out Navigation</title>
+</head>
+<body>
+    <div class="navigation">
+        <button class="hamburger" onclick="show()">
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </button>
+
+        <nav>
+            <ul>
+                <li><a>Home</a></li>
+                <li><a>About</a></li>
+                <li><a>Blog</a></li>
+                <li><a>Contact</a></li>
+            </ul>
+        </nav>
+
+    </div>
+    <script>
+        function show(){
+            document.querySelector('.hamburger').classList.toggle('open')
+            document.querySelector('.navigation').classList.toggle('active')
+        }
+    </script>
+</body>
+</html>
