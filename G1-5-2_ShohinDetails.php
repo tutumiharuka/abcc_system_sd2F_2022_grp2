@@ -3,7 +3,12 @@
 
 <style>
     h1 {
-        font-family: "メイリオ";
+        font-family: "MS ゴシック";
+        font-size:
+    }
+
+    .font {
+        font-size: 30px;
     }
 </style>
 
@@ -20,14 +25,15 @@
         <div class="col-md-6 mt-3">
             <h1>スプラトューン3</h1>
         </div>
-        <div class="col-md-2 mt-2">
-            <p>価格</p>
+<!-- 価格 -->
+        <div class="col-md-2 mt-4 font">
+            <p>1,000円</p>
         </div>
-        <div class="col-md-1 mt-2">
-            <p>♡</p>
-        </div>
-        <div class="col-md-3 mt-2">
-            <p>カートに入れる</p>
+<!-- ♡マーク わからない！ -->
+        <a class="col-md-1 mt-4 " href="#"><i class="typcn typcn-heart-outline"></i></a>
+<!-- 購入ボタン -->
+        <div class="col-md-3 mt-4 font">
+            <input type="submit" class="btn-light rounded-pill" value="カートに入れる">
         </div>
     </div>
 
