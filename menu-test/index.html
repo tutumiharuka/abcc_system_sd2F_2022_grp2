@@ -15,31 +15,33 @@
             cursor: pointer;
         }
         /* sidenavのポジション */
-        nav{
+        .side-list{
             position: absolute;
             top: 100px;
             left: 50px;
             width: 250px;
         }
 
-        .navigation{
+        .side-nav{
             position: fixed;
-            right: -500px;
+            left: -500px;
             width: 350px;
             height: 100%;
-            background-color: #000;
+            background-color: #ccc;
             transition: .5s;
         }
 
-        .navigation ul li{
-            color: #fff;
-            text-align: right;
+        .side-nav ul li{
+            color: #000;
+            text-align: left;
             text-transform: uppercase;
             list-style-type: none;
             font-size: 1.5em;
             padding: 20px 30px;
             border-bottom: 1pt solid #252525;
         }
+
+
 
         .hamburger, .bar{
             position: fixed;
@@ -48,7 +50,7 @@
         .hamburger{
             display: block;
             top: 5%;
-            left: 95%;
+            right: 95%;
             width: 30px;
             height: 30px;
             transform: translateY(-50%);
@@ -58,7 +60,7 @@
 
         .bar{
             top: 3px;
-            background: #000;
+            background: #ccc;
             width: 100%;
             height: 4px;
             transition: all .3s ease-in;
@@ -72,8 +74,8 @@
             top: 19px;
         }
 
-        .navigation.active{
-            right: 0;
+        .side-nav.active{
+            left: 0;
         }
 
         /* ハンバーグのicon変化 */
@@ -92,17 +94,17 @@
         }
 
     </style>
-    <title>Slide-Out Navigation</title>
+    <title>Slide-Out side-nav</title>
 </head>
 <body>
-    <div class="navigation">
+    <div class="side-nav">
         <button class="hamburger" onclick="show()">
             <div id="bar1" class="bar"></div>
             <div id="bar2" class="bar"></div>
             <div id="bar3" class="bar"></div>
         </button>
 
-        <nav>
+        <nav class="side-list">
             <ul>
                 <li><a>Home</a></li>
                 <li><a>About</a></li>
@@ -115,7 +117,7 @@
     <script>
         function show(){
             document.querySelector('.hamburger').classList.toggle('open')
-            document.querySelector('.navigation').classList.toggle('active')
+            document.querySelector('.side-nav').classList.toggle('active')
         }
     </script>
 </body>

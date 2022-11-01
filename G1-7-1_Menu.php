@@ -50,14 +50,14 @@
         display: none;
     }
 
-    .header,
+    /* .header,
     .content,
     .footer
     {
         text-align: center;
     }
     
-    /* .header,
+    .header,
     .footer
     {
         background: #4E8393;
@@ -103,12 +103,14 @@
         padding: 150px 50px 50px 50px;
     } */
 </style>
+
 <div class="page">
+    
     <div class="header">
 	    <a href="#menu" data-icon="grid"></a>
             <nav id="menu">
                 <ul>
-                    <li><button type="button" class="btn btn-light">Light</button></li>
+                    <li><button type="button" class="btn btn">Light</button></li>
                     <li><a href="#"> 最新作ソフト</a></li>
                     <li><a href="#"> 人気ソフト</a></li>
                     <li><a href="#"> 無料ソフト</a></li>
@@ -128,19 +130,12 @@
                             <li><a href="#">テーブルゲーム</a></li>
                         </ul>
                     </li>
-                    <li><a href="#contact">C</a></li>
+                    
                 </ul>
             </nav>
     </div>
     <img src="img/ACT/ACT_s01.jpg" alt="" srcset="">
-    <img src="img/ACT/ACT_s01.jpg" alt="" srcset="">
-    <img src="img/ACT/ACT_s01.jpg" alt="" srcset="">
-    <img src="img/ACT/ACT_s01.jpg" alt="" srcset="">
-    <img src="img/ACT/ACT_s01.jpg" alt="" srcset="">
-    <img src="img/ACT/ACT_s01.jpg" alt="" srcset="">
-    <img src="img/ACT/ACT_s01.jpg" alt="" srcset="">
-    <img src="img/ACT/ACT_s01.jpg" alt="" srcset="">
-    <img src="img/ACT/ACT_s01.jpg" alt="" srcset="">
+    
 </div>
 
 
