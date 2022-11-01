@@ -4,7 +4,6 @@
 <style>
     h1 {
         font-family: "MS ゴシック";
-        font-size:
     }
 
     .font {
@@ -27,7 +26,7 @@
 <!-- 商品名 -->
     <div class="row">
         <div class="col-md-6 mt-3">
-            <h1>スプラトューン3</h1>
+            <h1><strong>スプラトューン3</strong></h1>
         </div>
 <!-- 価格 -->
         <div class="col-md-2 mt-4 font">
@@ -42,11 +41,12 @@
 <!-- 商品説明 -->
         <div class="fontD">
             <p>ヒトの姿に変身する不思議なイカたちによる、アクションシューティングがパワーアップして登場<br>
-               4対4のチームに分かれて、地面を塗った面積で勝敗を決める基本的なルールはそのままに、新たなブキやスペシャルウェポン、バトルアクションが追加。<br>
-               オンラインでフレンドや見知らぬ人と対戦できることはもちろん、本体を持ち寄って仲間と顔を合わせての対戦も可能。よりダイナミックになったナワバリバトルで、存分にインクを塗りたくれ!</p>
+               4対4のチームに分かれて、地面を塗った面積で勝敗を決める基本的なルールはそのままに、<br>新たなブキやスペシャルウェポン、バトルアクションが追加。<br>
+               オンラインでフレンドや見知らぬ人と対戦できることはもちろん、本体を持ち寄って仲間と顔を合わせての対戦も可能。<br>
+               よりダイナミックになったナワバリバトルで、存分にインクを塗りたくれ!</p>
         </div>
     </div>
-
+<!-- 下の項目たち -->
     <div class="row">
         <div class="col-md-3 m-7 fontD">
             <p>必要な容量:</p>
@@ -56,7 +56,7 @@
         </div>
     </div>  
     <div class="row">
-        <div class="col-md-3 m-7 fontD">
+        <div class="col-md-3 fontD">
             <p>対応ハード:</p>
         </div>
         <div class="col-md-3 font">
@@ -64,7 +64,7 @@
         </div>
     </div> 
     <div class="row">
-        <div class="col-md-3 m-7 fontD">
+        <div class="col-md-3 fontD">
             <p>メーカー:</p>
         </div>
         <div class="col-md-3 font">
@@ -72,7 +72,7 @@
         </div>
     </div> 
     <div class="row">
-        <div class="col-md-3 m-7 fontD">
+        <div class="col-md-3 fontD">
             <p>配信日:</p>
         </div>
         <div class="col-md-3 font">
