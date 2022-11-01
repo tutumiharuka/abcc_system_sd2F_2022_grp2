@@ -13,10 +13,10 @@
 
     <div class="mt-3 me-3"><!-- 会員登録 -->
         <form class="form-inline" action="G1-3-2_NewMemberCheck.php" method="post">
-            <input type="textbox" class="form-control rounded-pill" placeholder="10文字以内">
-            <input type="textbox" class="form-control rounded-pill" placeholder="10文字以内">
-            <input type="textbox" class="form-control rounded-pill" placeholder="10文字以内">
-            <input type="textbox" class="form-control rounded-pill" placeholder="10文字以内">
+            <input type="text" class="form-control rounded-pill" placeholder="10文字以内">
+            <input type="text" class="form-control rounded-pill" placeholder="10文字以内">
+            <input type="text" class="form-control rounded-pill" placeholder="10文字以内">
+            <input type="text" class="form-control rounded-pill" placeholder="10文字以内">
         </form>
     </div>
 

@@ -5,6 +5,9 @@
     .sibori-btn,.form-select{
         width: 180px;
     }
+    .siboru-btn{
+        width: 75px;
+    }
 
 </style>
 
@@ -15,10 +18,10 @@
 
     
     <!-- breadcrumb リンク機能  -->
-    <nav class="mt-3 ms-3" aria-label="breadcrumb">
+    <nav class="mt-5 ms-3 mb-4" aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item h5"><a href="#">Top</a></li>
-            <li class="breadcrumb-item h5 active" aria-current="page">アクション</li>
+            <li class="breadcrumb-item h3 fw-bold"><a href="#">トップ</a></li>
+            <li class="breadcrumb-item h3 fw-bold active" aria-current="page">アクション</li>
         </ol>
     </nav>
 
@@ -28,7 +31,55 @@
     <div class="row ms-1 me-3 mt-2 mb-3">
         <div class="collapse" id="collapseExample">
             <div class="card card-body">
-                絞り込み機能内容
+        
+                <form>
+
+                    <div class="row ms-2">
+                        <label for="game-genre" class="col-auto col-form-label">ジャンル</label>
+                        <div class="col-lg-2">
+                            <select class="form-select" id="game-genre">
+                                <option selected>指定なし</option>
+                                <option value="ACT">アクション</option>
+                                <option value="ADV">アドベンチャー</option>
+                                <option value="FIG">格闘</option>
+                                <option value="FPS">シューティング</option>
+                                <option value="MUS">音楽ゲーム</option>
+                                <option value="PAR">パーティ</option>
+                                <option value="PZL">パズル</option>
+                                <option value="RCG">レース</option>
+                                <option value="RPG">ロールプレイング</option>
+                                <option value="SPO">スポーツ</option>
+                                <option value="TBL">テーブルゲーム</option>
+                            </select>
+                        </div>
+
+                        <label for="game-genre" class="col-auto col-form-label">タイプ</label>
+                        <div class="col-lg-2">
+                            <select class="form-select" id="game-genre">
+                                <option selected>指定なし</option>
+                                <option value="1">最新作</option>
+                                <option value="2">無料</option>
+                                <option value="3">ランキング</option>
+                                <option value="4">セール</option>
+                            </select>
+                        </div>
+                        
+                        <label for="low-price" class="col-auto col-form-label">価格</label>
+                        <div class="col">
+                            <input type="text" class="form-control" name="" id="low-price">
+                        </div>
+                        <label for="high-price" class="col-auto col-form-label">~</label>
+                        <div class="col">
+                            <input type="text" class="form-control" name="" id="high-price">
+                        </div>
+                        
+                        <div class="col-lg-2">
+                            <button type="button" class="btn btn-outline-primary siboru-btn">クリア</button>
+                            <button type="submit" class="btn btn-primary ms-3 siboru-btn">絞る</button>
+                        </div>
+
+                    </div>
+                </form>    
             </div>
         </div>
     </div>
@@ -52,14 +103,10 @@
             
         </div>
         <!-- 絞り込むボタン -->
-        <a type="button" class="col-md-2 btn btn-outline-dark sibori-btn" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <a type="button" class="col-md-2 btn btn-outline-dark sibori-btn" data-bs-toggle="collapse" 
+            href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
             絞り込み
         </a>
-        
-        <!-- <div class="col-md-3">
-            
-        </div> -->
-       
     </div>
 
     
