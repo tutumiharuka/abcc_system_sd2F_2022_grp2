@@ -13,6 +13,12 @@
     .fontD {
         font-size: 20px
     }
+    .navbg{
+        background-color:#ccc;
+    }
+    /* .heart{
+
+    } */
 </style>
 
 <!-- ここで　PHP　と　BootStarp　を直接書きます -->
@@ -29,13 +35,13 @@
             <h1><strong>スプラトューン3</strong></h1>
         </div>
 <!-- 価格 -->
-        <div class="col-md-2 mt-4 font">
+        <div class="col-md-2 mt-4 h2">
             <p>1,000円</p>
         </div>
 <!-- ♡マーク わからない！ -->
-        <a class="col-md-1 mt-4 mb-2 font" href="#"><i class="typcn typcn-heart-outline"></i></a>
+        <a class="col-md-1 mt-4 mb-2 font d-flex align-items-center" href="#"><i class="typcn typcn-heart-outline"></i></a>
 <!-- 購入ボタン -->
-        <div class="col-md-3 mt-4 font">
+        <div class="col-md-3 mt-4 h3">
             <input type="submit" class="btn-light rounded-pill" value="カートに入れる">
         </div>
 <!-- 商品説明 -->
@@ -77,16 +83,16 @@
         </div>
     </div>  
 
+
+</div>
+
     <!-- ナビバーの設定 -->
-    <nav class="mt-3 ms-3 " aria-label="breadcrumb">
+    <nav class="mt-3 ms-3 navbg" aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item h5"><a href="#">Top</a></li>
             <li class="breadcrumb-item h5"><a href="#">アクション</a></li>
             <li class="breadcrumb-item h5 active" aria-current="page">スプラトゥーン3</li>
         </ol>
     </nav>
-</div>
-
-
 
 <?php include_once 'GameFooter.php'; ?>
