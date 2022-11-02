@@ -6,36 +6,32 @@
 <div>
   <div>
     <div>
-      会員情報
+      会員情報<br>
+      プロフィール
     </div>
     <form>
       <div>
         <div>
-          <label>名前</label>
-          <input type="text">
-        </div>
-        <div>
-          <label>ふりがな</label>
+          <label>おなまえ</label>
           <input type="text">
         </div>
         <div>
           <label>生年月日</label>
-          <input type="date" value="2017-10-04">
+          <input type="text" value="2022年12月31日">
         </div>
         <div>
-          <label>性別</label>
-          <div>
-            <label>
-              <input type="radio" name="optionsRadios">
-              男
-            </label>
-            <label>
-              <input type="radio" name="optionsRadios">
-              女
-            </label>
-          </div>
+          <label>メールアドレス</label>
+          <input type="text">
         </div>
-        <button type="submit">Sign In</button>
+        <div>
+          <label>パスワード</label>
+          <input type="text">
+        </div>
+        <div>
+          <label>電話番号</label>
+          <input type="text">
+        </div>
+        <button type="submit">変更する</button>
       </div>
     </form>
   </div>
