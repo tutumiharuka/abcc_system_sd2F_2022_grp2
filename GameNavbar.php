@@ -172,22 +172,23 @@ a,button{
         
         <div id="navcol-2" class="collapse navbar-collapse">
           <ul class="navbar-nav ms-auto"> <!-- ms-auto右寄せ -->
-            
-            <li class="nav-item mt-3 me-3"><!-- 検索 -->
-              <form class="form-inline" role="search" action="/Search/SearchList" method="get" target="_blank">
-                <div class="input-group">
-                  <input type="search" class="form-control search" placeholder="ゲームを探す">
-                  <span class="input-group-text search"><i class="icon ion-search"></i></span>
-                </div<li class="nav-item d-flex justify-content-center align-items-center"><!-- ハートマークicon -->
-                <a class="nav-link mt-2" href="#"><i class="typcn typcn-heart-outline h2"></i></a>
-            </li>
+              
+              <li class="nav-item mt-3 me-3"><!-- 検索 -->
+                <form class="form-inline" role="search" action="/Search/SearchList" method="get" target="_blank">
+                  <div class="input-group">
+                    <input type="search" class="form-control search" placeholder="ゲームを探す">
+                    <span class="input-group-text search"><i class="icon ion-search"></i></span>
+                  </div>
+              </form>
+              </li>
+              <li class="nav-item d-flex justify-content-center align-items-center"><!-- ハートマークicon -->
+                  <a class="nav-link mt-1" href="#"><i class="typcn typcn-heart-outline h2"></i></a>
+              </li>
 
-            <li class="nav-item  d-flex justify-content-center align-items-center"><!-- カートicon -->
-              <a class="nav-link mt-2" href="#"><i class="typcn typcn-shopping-cart h2"></i></a>
-            </li>>
-             </form>
-            </li>
-          </ul>
+              <li class="nav-item  d-flex justify-content-center align-items-center"><!-- カートicon -->
+                <a class="nav-link mt-1" href="#"><i class="typcn typcn-shopping-cart h2"></i></a>
+              </li>
+            </ul>
         </div>
       </div>
     </nav>
