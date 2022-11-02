@@ -79,7 +79,7 @@
 </div>
 
     <!-- ナビバーの設定 -->
-    <nav class="mt-3 ms-3 navbg" aria-label="breadcrumb">
+    <nav class="mt-3 navbg" aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item h5"><a href="#">Top</a></li>
             <li class="breadcrumb-item h5"><a href="#">アクション</a></li>
