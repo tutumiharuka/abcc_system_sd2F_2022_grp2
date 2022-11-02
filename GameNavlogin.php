@@ -27,7 +27,6 @@ body { font-family: "M PLUS Rounded 1c"; }
 /* icon（文字）の色 */
 i{color: #222;}
 
-
 /* リンクの線を消す */
 a, a:link, a:active, a:visited, a:hover{
     color: inherit;
@@ -38,19 +37,26 @@ a, a:link, a:active, a:visited, a:hover{
 a,button{
     cursor: pointer;
 }
+
 /* sidenavのポジション */
+.member-list{
+    /* position: absolute; */
+    /* top: 180px; */
+    /* left: 50px; */
+    /* width: 250px; */
+}
 .side-list{
-    position: absolute;
-    top: 180px;
-    left: 30px;
-    width: 250px;
+    /* position: absolute; */
+    /* top: 400px; */
+    /* left: 50px; */
+    /* width: 250px; */
 }
 
 .sub-list{
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    width: 250px;
+    /* position: absolute; */
+    /* top: 40px; */
+    /* left: 50px; */
+    /* width: 250px; */
 }
 
 /* 隠れられるサイトメニューの設定 */
@@ -67,6 +73,7 @@ a,button{
 .side-nav.active,.sub-nav.active{
     left: 0;
 } 
+
 
 /* メニューの中身の見た目設定 */
 .menu ul li{
@@ -96,53 +103,62 @@ a,button{
 .game-logo{
   color:#156e96;
 }
-
-
 </style>
 
-
-<!-- 左のサイドバー -->
+<!-- 左側のサイドメニュー -->
 <div class="menu">
   <div class="side-nav">
     <div class="row">
+      <!-- サイトメニューを閉じるボタン -->
       <div class="col-12"><i class="bi bi-x h1 position-absolute end-0 me-3 mt-2" onclick="showMenu()"></i></div>
     </div>  
-    <div class="row mt-5 ms-5">
-      <div class="col-12">
-        <button type="button" class="btn btn-lg login-btn">ログイン・新規登録</button>
-      </div>
+    <!-- 会員名を表示 -->
+    <div class="row">
+
+    </div>
+    
+    <div class="row mt-5">
+      <nav class="member-list">
+          <ul>
+            <li class="fw-bold"><a href="#"> 購入履歴</a></li>
+            <li class="fw-bold"><a href="#"> お気に入り</a></li>
+            <li class="fw-bold"><a href="#"> カート</a></li>
+            <li class="fw-bold"><a href="#"> 会員情報</a></li>
+          </ul>
+      </nav>
     </div>
 
-    <div class="side-list-title text-center mt-3">ゲームを探す</div>
+    <div class="side-list-title text-center fw-bold mt-3">ゲームを探す</div>
 
-    <nav>
-        <ul>
+    <nav class="side-list">
+        <ul class="">
           <li class="fw-bold"><a href="#"> 最新作ソフト</a></li>
           <li class="fw-bold"><a href="#"> 人気ソフト</a></li>
           <li class="fw-bold"><a href="#"> 無料ソフト</a></li>
           <li class="fw-bold"><a href="#"> おすすめソフト</a></li>
-          <li class="fw-bold sub-btn" onclick="showSubMenu()"><a>カテゴリ一覧</a></li>
+          <li class="fw-bold sub-btn" onclick="showSubMenu()"><a>カテゴリ一覧 →</a></li>
         </ul>
     </nav>
   </div>
 
   <div class="sub-nav">
     <div class="row">
+      <!-- 戻すボタン -->
       <i class="bi bi-arrow-left h2 ms-3 mt-2" onclick="showSubMenu()"></i>
     </div>  
     <nav class="sub-list">
         <ul>
-          <li><a href="#">アクション</a></li>
-          <li><a href="#">アドベンチャー</a></li>
-          <li><a href="#">格闘</a></li>
-          <li><a href="#">シューティング</a></li>
-          <li><a href="#">音楽ゲーム</a></li>
-          <li><a href="#">パーティ</a></li>
-          <li><a href="#">パズル</a></li>
-          <li><a href="#">レース</a></li>
-          <li><a href="#">ロールプレイング</a></li>
-          <li><a href="#">スポーツ</a></li>
-          <li><a href="#">テーブルゲーム</a></li>
+          <li class="fw-bold"><a href="#">アクション</a></li>
+          <li class="fw-bold"><a href="#">アドベンチャー</a></li>
+          <li class="fw-bold"><a href="#">格闘</a></li>
+          <li class="fw-bold"><a href="#">シューティング</a></li>
+          <li class="fw-bold"><a href="#">音楽ゲーム</a></li>
+          <li class="fw-bold"><a href="#">パーティ</a></li>
+          <li class="fw-bold"><a href="#">パズル</a></li>
+          <li class="fw-bold"><a href="#">レース</a></li>
+          <li class="fw-bold"><a href="#">ロールプレイング</a></li>
+          <li class="fw-bold"><a href="#">スポーツ</a></li>
+          <li class="fw-bold"><a href="#">テーブルゲーム</a></li>
         </ul>
     </nav>
   </div>
