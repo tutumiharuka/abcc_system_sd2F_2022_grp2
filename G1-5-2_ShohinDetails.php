@@ -5,11 +5,11 @@
     h1 {
         font-family: "MS ゴシック";
     }
-
+/* 商品名などの部分 */
     .font {
         font-size: 30px;
     }
-
+/* 商品の説明の文のサイズ */
     .fontD {
         font-size: 20px
     }
