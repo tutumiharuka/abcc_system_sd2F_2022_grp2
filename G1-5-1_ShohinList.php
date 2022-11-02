@@ -1,6 +1,6 @@
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
-
+<?php echo $_GET['genre_id']?>
 <style>
     .sibori-btn,.form-select{
         width: 180px;
@@ -8,15 +8,8 @@
     .siboru-btn{
         width: 75px;
     }
-
 </style>
-
-
-
 <div class="container">
-
-
-    
     <!-- breadcrumb リンク機能  -->
     <nav class="mt-5 ms-3 mb-4" aria-label="breadcrumb">
         <ol class="breadcrumb">
