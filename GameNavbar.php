@@ -25,7 +25,9 @@ body { font-family: "M PLUS Rounded 1c"; }
 }
 
 /* icon（文字）の色 */
-i{color: #222;}
+i{
+  color: #222;
+}
 
 
 /* リンクの線を消す */
@@ -140,7 +142,7 @@ a,button{
     </div>  
     <nav class="sub-list">
         <ul>
-          <li  class="fw-bold"><a href="#">アクション</a></li>
+          <li  class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=ACT">アクション</a></li>
           <li  class="fw-bold"><a href="#">アドベンチャー</a></li>
           <li  class="fw-bold"><a href="#">格闘</a></li>
           <li  class="fw-bold"><a href="#">シューティング</a></li>
@@ -164,8 +166,8 @@ a,button{
             <div class="hamburger btn" onclick="showMenu()"><h4><i class="typcn typcn-th-menu"></i></h4></div>
           </span>
         <!-- LOGO文字 -->
-        <a class="navbar-brand d-flex align-items-center mt-1" href="#">
-          <h3 class="wf-nicomoji"><span class="game-logo">ゲーム</span>ECサイト</h3>
+        <a class="navbar-brand d-flex align-items-center mt-2" href="#">
+          <h2 class="wf-nicomoji"><span class="game-logo">ゲーム</span>ECサイト</h2>
         </a>
         
         <div id="navcol-2" class="collapse navbar-collapse">
@@ -176,15 +178,14 @@ a,button{
                 <div class="input-group">
                   <input type="search" class="form-control search" placeholder="ゲームを探す">
                   <span class="input-group-text search"><i class="icon ion-search"></i></span>
-                </div>
-             </form>
-            </li>
-            <li class="nav-item d-flex justify-content-center align-items-center"><!-- ハートマークicon -->
-                <a class="nav-link mt-2" href="#"><h5><i class="typcn typcn-heart-outline"></i></h5></a>
+                </div<li class="nav-item d-flex justify-content-center align-items-center"><!-- ハートマークicon -->
+                <a class="nav-link mt-2" href="#"><i class="typcn typcn-heart-outline h2"></i></a>
             </li>
 
             <li class="nav-item  d-flex justify-content-center align-items-center"><!-- カートicon -->
-              <a class="nav-link mt-2" href="#"><h5><i class="typcn typcn-shopping-cart"></i><h5></a>
+              <a class="nav-link mt-2" href="#"><i class="typcn typcn-shopping-cart h2"></i></a>
+            </li>>
+             </form>
             </li>
           </ul>
         </div>
