@@ -7,10 +7,11 @@
   <div class="container">
     <div class="row text-center">
       <h2>会員情報<h2>
-      <div>
-      プロフィール
       </div>
-    </div>
+      <div class="">
+      <h2>プロフィール<h2>
+      </div>
+   
 
     <form>
       <div>
