@@ -14,44 +14,48 @@
         <h2>プロフィール<h2>
       </div>
 <!-- カードの内容 -->
-      <div class="card-body">
-        <div>
-          <label>おなまえ</label>
-          <input type="text">
-        </div>
+      <div class="card-body bg-light">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
 
-        <div>
-          <label>生年月日</label>
-          <input type="text" >
-        </div>
+            <div class="text-center">
+              <label>おなまえ</label>
+              <input type="text">
+            </div>
+          </li>
 
-        <div>
-          <label>メールアドレス</label>
-          <input type="text">
-        </div>
+          <li class="list-group-item">
+            <div>
+              <label>生年月日</label>
+              <input type="text" >
+            </div>
+          </li>
 
-        <div>
-          <label>パスワード</label>
-          <input type="text">
-        </div>
+          <li class="list-group-item">
+            <div>
+              <label>メールアドレス</label>
+              <input type="text">
+            </div>
+          </li>
 
-        <div>
+          <li class="list-group-item">
+            <div>
+              <label>パスワード</label>
+              <input type="text">
+            </div>
+          </li>
+          
+          <li class="list-group-item"><div>
           <label>電話番号</label>
           <input type="text">
-        </div>
-        
-        <div>
-          <button type="submit">変更する</button>
-        </div>
-      </div>
-      </div>
+        </div></li>
+      </ul>
+      <button type="submit">変更する</button>
+    </div>
   </div>
    
 
-    <form>
-      
-
-    </form>
-  </div>
+    
+</div>
 
 <?php include_once 'GameFooter.php'; ?>
