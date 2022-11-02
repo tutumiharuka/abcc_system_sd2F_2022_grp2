@@ -6,9 +6,11 @@
 @import url("https://fonts.googleapis.com/earlyaccess/nicomoji.css");
 @import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c");
 
+/* フォント設定 */
 body { font-family: "M PLUS Rounded 1c"; }
 .wf-nicomoji { font-family: "Nico Moji"; }
 
+/* 検索テキストボックス */
 .search {
   height: 30px;
   background: white;
@@ -17,24 +19,22 @@ body { font-family: "M PLUS Rounded 1c"; }
 }
 
 /* Navbar背景の設定 */
-
 .navbar-bg {
   background-color: #98C3D6;
   height:50px;
 }
-/* icon */
-i{
-  color: #222;
-}
+
+/* icon（文字）の色 */
+i{color: #222;}
 
 
-/* side-navbar */
-a, a:link, a:active, a:visited, a:hover
-{
+/* リンクの線を消す */
+a, a:link, a:active, a:visited, a:hover{
     color: inherit;
     text-decoration: none;
 }
 
+/* ボタンやリンクに小さい手がでる */
 a,button{
     cursor: pointer;
 }
@@ -42,18 +42,18 @@ a,button{
 .side-list{
     position: absolute;
     top: 180px;
-    left: 50px;
+    left: 30px;
     width: 250px;
 }
 
 .sub-list{
     position: absolute;
     top: 40px;
-    left: 50px;
+    left: 40px;
     width: 250px;
 }
 
-/* 整個nav區塊 */
+/* 隠れられるサイトメニューの設定 */
 .side-nav,.sub-nav{
     position: fixed;
     z-index: 10;
@@ -63,32 +63,36 @@ a,button{
     background-color: #ccc;
     transition: .5s;
 }
-/* 菜單裡面的項目文字 */
+/* ボタン押す瞬間に、↑の-500から0に戻す */
+.side-nav.active,.sub-nav.active{
+    left: 0;
+} 
+
+/* メニューの中身の見た目設定 */
 .menu ul li{
     color: #000;
-    text-align: left;
+    text-align: center;
     text-transform: uppercase;
     list-style-type: none;
     font-size: 1.2em;
     padding: 10px 10px;
 }
 
+/* ゲームを探すのDIV設定 */
 .side-list-title{
   color:white;
   background-color: #70A7C5;
   font-size: 1.2em;
 }
 
-.side-nav.active,.sub-nav.active{
-    left: 0;
-} 
-
+/* ログインしてない状況で出すボタン */
 .login-btn{
   height: 70px;
   color:white;
   background-color:#156E96;
 }
 
+/* サイトLOGOを色付ける */
 .game-logo{
   color:#156e96;
 }
@@ -101,7 +105,7 @@ a,button{
 <div class="menu">
   <div class="side-nav">
     <div class="row">
-      <div class="col-12"><i class="bi bi-x h1 position-absolute  end-0 me-3 mt-2" onclick="showMenu()"></i></div>
+      <div class="col-12"><i class="bi bi-x h1 position-absolute end-0 me-3 mt-2" onclick="showMenu()"></i></div>
     </div>  
     <div class="row mt-5 ms-5">
       <div class="col-12">
@@ -111,13 +115,13 @@ a,button{
 
     <div class="side-list-title text-center mt-3">ゲームを探す</div>
 
-    <nav class="side-list">
+    <nav>
         <ul>
-          <li><a href="#"> 最新作ソフト</a></li>
-          <li><a href="#"> 人気ソフト</a></li>
-          <li><a href="#"> 無料ソフト</a></li>
-          <li><a href="#"> おすすめソフト</a></li>
-          <li class="sub-btn" onclick="showSubMenu()"><a>カテゴリ一覧</a></li>
+          <li class="fw-bold"><a href="#"> 最新作ソフト</a></li>
+          <li class="fw-bold"><a href="#"> 人気ソフト</a></li>
+          <li class="fw-bold"><a href="#"> 無料ソフト</a></li>
+          <li class="fw-bold"><a href="#"> おすすめソフト</a></li>
+          <li class="fw-bold sub-btn" onclick="showSubMenu()"><a>カテゴリ一覧</a></li>
         </ul>
     </nav>
   </div>
