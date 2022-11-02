@@ -5,6 +5,16 @@
 <!-- ここで　PHP　と　BootStarp　を直接書きます -->
 
   <div class="container">
+    <div class="card">
+      <div class="card-header">
+        <h2>会員情報<h2>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">プロフィール</h5>
+        <p class="card-text">以下のテキストを追加のコンテンツへの自然な導入としてサポート。</p>
+        <a href="#" class="btn btn-primary">変更する</a>
+      </div>
+    </div>
     <div class="row text-center">
       <h2>会員情報<h2>
       </div>
