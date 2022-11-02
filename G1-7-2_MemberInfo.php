@@ -3,38 +3,48 @@
 
 
 <!-- ここで　PHP　と　BootStarp　を直接書きます -->
-<div>
-  <div>
-    <div>
-      会員情報<br>
+
+  <div class="container">
+    <div class="row text-center">
+      <h2>会員情報<h2>
+      <div>
       プロフィール
+      </div>
     </div>
+
     <form>
       <div>
         <div>
           <label>おなまえ</label>
           <input type="text">
         </div>
+
         <div>
           <label>生年月日</label>
-          <input type="text" value="2022年12月31日">
+          <input type="text" >
         </div>
+
         <div>
           <label>メールアドレス</label>
           <input type="text">
         </div>
+
         <div>
           <label>パスワード</label>
           <input type="text">
         </div>
+
         <div>
           <label>電話番号</label>
           <input type="text">
         </div>
-        <button type="submit">変更する</button>
+        
+        <div>
+          <button type="submit">変更する</button>
+        </div>
       </div>
+
     </form>
   </div>
-</div>
 
 <?php include_once 'GameFooter.php'; ?>
