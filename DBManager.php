@@ -2,13 +2,16 @@
 class DBManager{
     //DBに接続
     private function dbConnect(){
-        $pdo = new PDO('mysql:host=localhost;dbname=gamedb;charset=utf8','webuser','abccsd2');
+        // 本番
+        // $pdo = new PDO('mysql:host=localhost;dbname=gamedb;charset=utf8','webuser','abccsd2');
+        // テスト用(1~4game)
+        $pdo = new PDO('mysql:host=localhost;dbname=gametest;charset=utf8','webuser','abccsd2');
         return $pdo;
     }
     // G1-5-1_ShohinList.phpにゲームリストを入れます
     public function getGameListByGenre($genre_id){
         $pdo = $this->dbConnect();
-        $sql = "SELECT shohin_name FROM shohins WHERE genre_id = ?";
+        $sql = "SELECT shohin_id,shohin_name,price,image_small FROM shohins WHERE genre_id = ?";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1,$genre_id,PDO::PARAM_STR);
         $ps->execute();
