@@ -4,5 +4,3 @@
 
 <!-- ここで　PHP　と　BootStarp　を直接書きます -->
 
-
-<?php include_once 'GameFooter.php'; ?>
