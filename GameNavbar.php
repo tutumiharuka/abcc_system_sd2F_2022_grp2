@@ -83,10 +83,15 @@ a,button{
   color:white;
   background-color: #70A7C5;
   font-size: 1.2em;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ログインしてない状況で出すボタン */
 .login-btn{
+  margin-left:9px;
   height: 70px;
   color:white;
   background-color:#156E96;
@@ -97,6 +102,9 @@ a,button{
   color:#156e96;
 }
 
+.side-list-ul{
+  padding-left: 0px;
+}
 
 </style>
 
@@ -109,14 +117,14 @@ a,button{
     </div>  
     <div class="row mt-5 ms-5">
       <div class="col-12">
-        <button type="button" class="btn btn-lg login-btn">ログイン・新規登録</button>
+        <button type="button" class="btn btn-lg login-btn fw-bold">ログイン・新規登録</button>
       </div>
     </div>
 
-    <div class="side-list-title text-center mt-3">ゲームを探す</div>
+    <div class="side-list-title mt-3 fw-bold">ゲームを探す</div>
 
     <nav>
-        <ul>
+        <ul class="side-list-ul">
           <li class="fw-bold"><a href="#"> 最新作ソフト</a></li>
           <li class="fw-bold"><a href="#"> 人気ソフト</a></li>
           <li class="fw-bold"><a href="#"> 無料ソフト</a></li>
@@ -132,17 +140,17 @@ a,button{
     </div>  
     <nav class="sub-list">
         <ul>
-          <li><a href="#">アクション</a></li>
-          <li><a href="#">アドベンチャー</a></li>
-          <li><a href="#">格闘</a></li>
-          <li><a href="#">シューティング</a></li>
-          <li><a href="#">音楽ゲーム</a></li>
-          <li><a href="#">パーティ</a></li>
-          <li><a href="#">パズル</a></li>
-          <li><a href="#">レース</a></li>
-          <li><a href="#">ロールプレイング</a></li>
-          <li><a href="#">スポーツ</a></li>
-          <li><a href="#">テーブルゲーム</a></li>
+          <li  class="fw-bold"><a href="#">アクション</a></li>
+          <li  class="fw-bold"><a href="#">アドベンチャー</a></li>
+          <li  class="fw-bold"><a href="#">格闘</a></li>
+          <li  class="fw-bold"><a href="#">シューティング</a></li>
+          <li  class="fw-bold"><a href="#">音楽ゲーム</a></li>
+          <li  class="fw-bold"><a href="#">パーティ</a></li>
+          <li  class="fw-bold"><a href="#">パズル</a></li>
+          <li  class="fw-bold"><a href="#">レース</a></li>
+          <li  class="fw-bold"><a href="#">ロールプレイング</a></li>
+          <li  class="fw-bold"><a href="#">スポーツ</a></li>
+          <li  class="fw-bold"><a href="#">テーブルゲーム</a></li>
         </ul>
     </nav>
   </div>

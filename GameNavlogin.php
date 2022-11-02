@@ -90,7 +90,12 @@ a,button{
   color:white;
   background-color: #70A7C5;
   font-size: 1.2em;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 /* ログインしてない状況で出すボタン */
 .login-btn{
@@ -128,7 +133,7 @@ a,button{
       </nav>
     </div>
 
-    <div class="side-list-title text-center fw-bold mt-3">ゲームを探す</div>
+    <div class="side-list-title mt-3 fw-bold">ゲームを探す</div>
 
     <nav class="side-list">
         <ul class="">
@@ -136,7 +141,7 @@ a,button{
           <li class="fw-bold"><a href="#"> 人気ソフト</a></li>
           <li class="fw-bold"><a href="#"> 無料ソフト</a></li>
           <li class="fw-bold"><a href="#"> おすすめソフト</a></li>
-          <li class="fw-bold sub-btn" onclick="showSubMenu()"><a>カテゴリ一覧 →</a></li>
+          <li class="fw-bold sub-btn" onclick="showSubMenu()"><a>カテゴリ一覧</a></li>
         </ul>
     </nav>
   </div>
