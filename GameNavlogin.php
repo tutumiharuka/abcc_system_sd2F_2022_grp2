@@ -176,9 +176,9 @@ a,button{
           <span class="d-flex justify-content-center align-items-center me-3 mt-2">
             <div class="hamburger btn" onclick="showMenu()"><h4><i class="typcn typcn-th-menu"></i></h4></div>
           </span>
-        <!-- LOGO文字 -->
-        <a class="navbar-brand d-flex align-items-center mt-1" href="#">
-          <h3 class="wf-nicomoji"><span class="game-logo">ゲーム</span>ECサイト</h3>
+       <!-- LOGO文字 -->
+       <a class="navbar-brand d-flex align-items-center mt-2" href="#">
+          <h2 class="wf-nicomoji"><span class="game-logo">ゲーム</span>ECサイト</h2>
         </a>
         
         <div id="navcol-2" class="collapse navbar-collapse">
@@ -193,11 +193,11 @@ a,button{
              </form>
             </li>
             <li class="nav-item d-flex justify-content-center align-items-center"><!-- ハートマークicon -->
-                <a class="nav-link mt-2" href="#"><h5><i class="typcn typcn-heart-outline"></i></h5></a>
+                <a class="nav-link mt-1" href="#"><i class="typcn typcn-heart-outline h2"></i></a>
             </li>
 
             <li class="nav-item  d-flex justify-content-center align-items-center"><!-- カートicon -->
-              <a class="nav-link mt-2" href="#"><h5><i class="typcn typcn-shopping-cart"></i><h5></a>
+              <a class="nav-link mt-1" href="#"><i class="typcn typcn-shopping-cart h2"></i></a>
             </li>
           </ul>
         </div>
