@@ -143,16 +143,16 @@ a,button{
     <nav class="sub-list">
         <ul>
           <li  class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=ACT">アクション</a></li>
-          <li  class="fw-bold"><a href="#">アドベンチャー</a></li>
-          <li  class="fw-bold"><a href="#">格闘</a></li>
-          <li  class="fw-bold"><a href="#">シューティング</a></li>
-          <li  class="fw-bold"><a href="#">音楽ゲーム</a></li>
-          <li  class="fw-bold"><a href="#">パーティ</a></li>
-          <li  class="fw-bold"><a href="#">パズル</a></li>
-          <li  class="fw-bold"><a href="#">レース</a></li>
-          <li  class="fw-bold"><a href="#">ロールプレイング</a></li>
-          <li  class="fw-bold"><a href="#">スポーツ</a></li>
-          <li  class="fw-bold"><a href="#">テーブルゲーム</a></li>
+          <li  class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=ADV">アドベンチャー</a></li>
+          <li  class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=FIG">格闘</a></li>
+          <li  class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=FPS">シューティング</a></li>
+          <li  class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=MUS">音楽ゲーム</a></li>
+          <li  class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=PAR">パーティ</a></li>
+          <li  class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=PZL">パズル</a></li>
+          <li  class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=RCG">レース</a></li>
+          <li  class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=RPG">ロールプレイング</a></li>
+          <li  class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=SPO">スポーツ</a></li>
+          <li  class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=TBL">テーブルゲーム</a></li>
         </ul>
     </nav>
   </div>

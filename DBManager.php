@@ -20,6 +20,31 @@ class DBManager{
     }
 
 
+    public function getGameById($shohin_id){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT * FROM shohins WHERE shohin_id = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$shohin_id,PDO::PARAM_STR);
+        $ps->execute();
+        $results = $ps->fetchAll();
+        return $results;
+    }
+
+    public function getJpnGenreName($genre_id){
+        $genreList = array(
+            "ACT"=>"アクション",
+            "ADV"=>"アドベンチャー",
+            "FIG"=>"格闘",
+            "FPS"=>"シューティング",
+            "MUS"=>"音楽ゲーム",
+            "PAR"=>"パーティ",
+            "PZL"=>"パズル",
+            "RCG"=>"レース",
+            "RPG"=>"ロールプレイング",
+            "SPO"=>"スポーツ",
+            "TBL"=>"テーブルゲーム");
+        return $genreList[$genre_id];
+    }
     // //ログイン
     // public function getUserPassByMail($mail){
     //     $pdo = $this->dbConnect();
