@@ -47,6 +47,7 @@ class DBManager{
             "TBL"=>"テーブルゲーム");
         return $genreList[$genre_id];
     }
+
     // //ログイン
     // public function getUserPassByMail($mail){
     //     $pdo = $this->dbConnect();

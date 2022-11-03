@@ -1,115 +1,113 @@
 <?php include_once 'GameHeader.php'; ?>
 <style>
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.0/css/ionicons.min.css");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/typicons/2.1.2/typicons.min.css");
-@import url("https://fonts.googleapis.com/earlyaccess/nicomoji.css");
-@import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c");
+  @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+  @import url("https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.0/css/ionicons.min.css");
+  @import url("https://cdnjs.cloudflare.com/ajax/libs/typicons/2.1.2/typicons.min.css");
+  @import url("https://fonts.googleapis.com/earlyaccess/nicomoji.css");
+  @import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c");
+  /* フォント設定 */
+  body { font-family: "M PLUS Rounded 1c"; }
+  .wf-nicomoji { font-family: "Nico Moji"; }
 
-/* フォント設定 */
-body { font-family: "M PLUS Rounded 1c"; }
-.wf-nicomoji { font-family: "Nico Moji"; }
+  /* 検索テキストボックス */
+  .search {
+    height: 30px;
+    background: white;
+    border-radius: 1rem;
+    border: none;
+  }
 
-/* 検索テキストボックス */
-.search {
-  height: 30px;
-  background: white;
-  border-radius: 1rem;
-  border: none;
-}
+  /* Navbar背景の設定 */
+  .navbar-bg {
+    background-color: #98C3D6;
+    height:50px;
+  }
 
-/* Navbar背景の設定 */
-.navbar-bg {
-  background-color: #98C3D6;
-  height:50px;
-}
+  /* icon（文字）の色 */
+  i{
+    color: #222;
+  }
 
-/* icon（文字）の色 */
-i{
-  color: #222;
-}
+  /* リンクの線を消す */
+  a, a:link, a:active, a:visited, a:hover{
+      color: inherit;
+      text-decoration: none;
+  }
 
+  /* ボタンやリンクに小さい手がでる */
+  a,button{
+      cursor: pointer;
+  }
 
-/* リンクの線を消す */
-a, a:link, a:active, a:visited, a:hover{
-    color: inherit;
-    text-decoration: none;
-}
+  /* sidenavのポジション */
+  .side-list{
+      /* position: absolute;
+      top: 180px;
+      left: 30px;
+      width: 250px; */
+  }
 
-/* ボタンやリンクに小さい手がでる */
-a,button{
-    cursor: pointer;
-}
-/* sidenavのポジション */
-.side-list{
-    position: absolute;
-    top: 180px;
-    left: 30px;
-    width: 250px;
-}
+  .sub-list{
+      /* position: absolute;
+      top: 40px;
+      left: 40px;
+      width: 250px; */
+  }
 
-.sub-list{
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    width: 250px;
-}
+  /* 隠れられるサイトメニューの設定 */
+  .side-nav,.sub-nav{
+      position: fixed;
+      z-index: 10;
+      left: -500px;
+      width: 350px;
+      height: 100%;
+      background-color: #ccc;
+      transition: .5s;
+  }
+  /* ボタン押す瞬間に、↑の-500から0に戻す */
+  .side-nav.active,.sub-nav.active{
+      left: 0;
+  } 
 
-/* 隠れられるサイトメニューの設定 */
-.side-nav,.sub-nav{
-    position: fixed;
-    z-index: 10;
-    left: -500px;
-    width: 350px;
-    height: 100%;
-    background-color: #ccc;
-    transition: .5s;
-}
-/* ボタン押す瞬間に、↑の-500から0に戻す */
-.side-nav.active,.sub-nav.active{
-    left: 0;
-} 
+  /* メニューの中身の見た目設定 */
+  .menu ul li{
+      color: #000;
+      text-align: center;
+      text-transform: uppercase;
+      list-style-type: none;
+      font-size: 1.2em;
+      padding: 10px 10px;
+  }
 
-/* メニューの中身の見た目設定 */
-.menu ul li{
-    color: #000;
-    text-align: center;
-    text-transform: uppercase;
-    list-style-type: none;
+  /* ゲームを探すのDIV設定 */
+  .side-list-title{
+    color:white;
+    background-color: #70A7C5;
     font-size: 1.2em;
-    padding: 10px 10px;
-}
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-/* ゲームを探すのDIV設定 */
-.side-list-title{
-  color:white;
-  background-color: #70A7C5;
-  font-size: 1.2em;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  /* ログインしてない状況で出すボタン */
+  .login-btn{
+    margin-left:9px;
+    height: 70px;
+    color:white;
+    background-color:#156E96;
+  }
 
-/* ログインしてない状況で出すボタン */
-.login-btn{
-  margin-left:9px;
-  height: 70px;
-  color:white;
-  background-color:#156E96;
-}
+  /* サイトLOGOを色付ける */
+  .game-logo{
+    color:#156e96;
+  }
 
-/* サイトLOGOを色付ける */
-.game-logo{
-  color:#156e96;
-}
-
-.side-list-ul{
-  padding-left: 0px;
-}
+  .side-list-ul{
+    padding-left: 0px;
+  }
 
 </style>
-
 
 <!-- 左のサイドバー -->
 <div class="menu">
@@ -119,7 +117,9 @@ a,button{
     </div>  
     <div class="row mt-5 ms-5">
       <div class="col-12">
-        <button type="button" class="btn btn-lg login-btn fw-bold">ログイン・新規登録</button>
+        <a href="G1-2-1_Login.php">
+          <button type="button" class="btn btn-lg login-btn fw-bold">ログイン・新規登録</button>
+        </a>
       </div>
     </div>
 
@@ -166,7 +166,7 @@ a,button{
             <div class="hamburger btn" onclick="showMenu()"><h4><i class="typcn typcn-th-menu"></i></h4></div>
           </span>
         <!-- LOGO文字 -->
-        <a class="navbar-brand d-flex align-items-center mt-2" href="#">
+        <a class="navbar-brand d-flex align-items-center mt-2" href="G1-1_Top.php">
           <h2 class="wf-nicomoji"><span class="game-logo">ゲーム</span>ECサイト</h2>
         </a>
         

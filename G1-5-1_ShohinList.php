@@ -143,6 +143,7 @@
             <div class="col-md-3"><img class="img-thumbnail" src="img/ACT/ACT_s03.jpg"><div class="card-text">ゲーム名</div><h5 class="card-title">1000円</h5></div>
             <div class="col-md-3"><img class="img-thumbnail" src="img/ACT/ACT_s04.jpg"><div class="card-text">ゲーム名</div><h5 class="card-title">1000円</h5></div>
             <div class="col-md-3"><img class="img-thumbnail" src="img/ACT/ACT_s01.jpg"><div class="card-text">ゲーム名</div><h5 class="card-title">1000円</h5></div>  -->
+            <!-- <div class="col-md-3"><img class="img-thumbnail" src="img/ADV/ADV_s01.jpg"><div class="card-text">ゲーム名</div><h5 class="card-title">1000円</h5></div> -->
 
         </div>
     </div
