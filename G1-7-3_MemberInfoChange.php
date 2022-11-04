@@ -17,40 +17,39 @@
       <div class="card-body bg-light">
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
-
+<!-- 名前 -->
             <div class="text-center">
               <label>おなまえ</label>
               <input type="text">
             </div>
           </li>
-
-          <li class="list-group-item">
-            <div class="text-center">
-              <label>生年月日</label>
-              <input type="month" name="example" value="2022-05">
-            </div>
-          </li>
-
+<!-- 生年月日 -->
+          <div class="RegisterForm_signup_label">
+            <label class="c-formLabel">生年月日</label>
+          </div>
+          
+<!-- メールアドレス -->
           <li class="list-group-item">
             <div class="text-center">
               <label>メールアドレス</label>
               <input type="text">
             </div>
           </li>
-
+<!-- パスワード -->
           <li class="list-group-item">
             <div class="text-center">
               <label>パスワード</label>
               <input type="text">
             </div>
           </li>
-          
+<!-- 電話番号 -->
           <li class="list-group-item"><div>
           <div class="text-center">
           <label>電話番号</label>
           <input type="text">
         </div></li>
       </ul>
+<!-- 変更する -->
       <div class="text-center">
       <button type="submit">変更する</button>
     </div>
