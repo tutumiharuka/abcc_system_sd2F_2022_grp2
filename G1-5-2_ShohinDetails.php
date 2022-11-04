@@ -94,11 +94,7 @@
             <p><strong><?php echo $haishin_date?></strong></p>
         </div>
     </div>  
-    <div class="row">
-        <div class="col-md-2 h2">
-            
-        </div>
-    </div>
+    
 
 
 </div>
