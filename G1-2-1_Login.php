@@ -15,7 +15,7 @@
         <h1>ログイン</h1>
     </div>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center"> 
         <div class="col-6">
             <form>
         <!-- メールアドレス -->
@@ -26,7 +26,7 @@
                 <div class="mb-5">
                     <input type="password" class="form-control" id="password" placeholder="パスワード">
                 </div>
-        <!-- ボタン -->
+        <!-- ボタンです -->
                 <div class="right-aligned">
                     <button type="submit" class="btn btn-light btn-lg rounded-pill">ログイン</button>
                 </div>
