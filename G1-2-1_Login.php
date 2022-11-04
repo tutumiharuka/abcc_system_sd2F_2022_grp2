@@ -34,26 +34,6 @@
         </div>
     </div>
 </div>
-<<<<<<< HEAD
-<div class="row m-1 mt-4">
-                                <div class="col-md-6">
-                          <label  for="lastname"></label>
-                              <input  type="text"  class="form-control"  id="lastname" placeholder="メールアドレス">
-			     
-</div>
-</div>
-<div class="row m-1 mt-4">
-<div class="col-md-6">
-                       <label  for="lastname"></label>
-                                    <input  type="text"  class="form-control"  id="lastname" placeholder="パスワード">			
-                            
-                                      </div>
-</div>
-<div class="d-grid gap-2">
-                                                    <button class="btn btn-info" type="button"><div class="container text-black">ログイン</div></button>
-                                                  </div>
-</div>
-=======
 
 <div class="ms-3 me-3">
     <hr>
@@ -61,7 +41,6 @@
 <div class="text-center">
     <p class="mb-3">アカウントをお持ちでない方<p>
     <button type="submit" class="btn btn-light btn-lg rounded-pill">新規登録</button>
->>>>>>> e3139aedf1d36590976ebc38ece5a5fd0867183a
 </div>
 
 <?php include_once 'GameFooter.php'; ?>
