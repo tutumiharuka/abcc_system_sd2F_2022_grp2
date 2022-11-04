@@ -33,9 +33,15 @@
                 <select class="form-select row">
                     <div class="col-md-6">
                         <option selected>西暦</option>
-                        <option value="1">その1</option>
+                        <!-- php -->
+                        <?php
+                            for ($i = 1950; $i <= 2022; $i++) {
+                                echo '<option value="'.$i.'">'.$i.'</option>';
+                            }
+                        ?>
+                        <!-- <option value="1">その1</option>
                         <option value="2">その2</option>
-                        <option value="3">その3</option>
+                        <option value="3">その3</option> -->
                     </div>
                 </select>
 <!-- 月 -->
