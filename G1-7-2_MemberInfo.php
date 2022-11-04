@@ -3,42 +3,61 @@
 
 
 <!-- ここで　PHP　と　BootStarp　を直接書きます -->
-<div>
-  <div>
-    <div>
-      会員情報
+
+  <div class="container">
+    <div class="row text-center">
+      <h2>会員情報<h2>
     </div>
-    <form>
-      <div>
-        <div>
-          <label>名前</label>
-          <input type="text">
-        </div>
-        <div>
-          <label>ふりがな</label>
-          <input type="text">
-        </div>
-        <div>
-          <label>生年月日</label>
-          <input type="date" value="2017-10-04">
-        </div>
-        <div>
-          <label>性別</label>
-          <div>
-            <label>
-              <input type="radio" name="optionsRadios">
-              男
-            </label>
-            <label>
-              <input type="radio" name="optionsRadios">
-              女
-            </label>
-          </div>
-        </div>
-        <button type="submit">Sign In</button>
+    <!-- カード -->
+    <div class="card">
+      <div class="card-header">
+        <div class="container-fluid alert-danger">
+        <h2>プロフィール<h2>
       </div>
-    </form>
+<!-- カードの内容 -->
+      <div class="card-body bg-light">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+
+            <div class="text-center">
+              <label>おなまえ</label>
+              <input type="text">
+            </div>
+          </li>
+
+          <li class="list-group-item">
+            <div class="text-center">
+              <label>生年月日</label>
+              <input type="text" >
+            </div>
+          </li>
+
+          <li class="list-group-item">
+            <div class="text-center">
+              <label>メールアドレス</label>
+              <input type="text">
+            </div>
+          </li>
+
+          <li class="list-group-item">
+            <div class="text-center">
+              <label>パスワード</label>
+              <input type="text">
+            </div>
+          </li>
+          
+          <li class="list-group-item"><div>
+          <div class="text-center">
+          <label>電話番号</label>
+          <input type="text">
+        </div></li>
+      </ul>
+      <div class="text-center">
+      <button type="submit">変更する</button>
+    </div>
   </div>
+</div>
+</div>
 </div>
 
 <?php include_once 'GameFooter.php'; ?>
