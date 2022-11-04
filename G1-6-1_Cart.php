@@ -37,7 +37,7 @@
         <!-- ｓ -->
         <div class="row mt-5 ms-5">
             <div class="col mt-5 "><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></div>
-            <div class="col"><img src="img/FPS/FPS_s01.jpg"></div>
+            <div class="col"><img class="" src="img/FPS/FPS_s01.jpg"></div>
             <div class="col"><u>
                     <h4>ゲーム名</h4>
                 </u><br>

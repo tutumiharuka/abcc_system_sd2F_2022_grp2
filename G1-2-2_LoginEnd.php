@@ -23,8 +23,5 @@
         </div>
     </div>
 </div>
-<!-- <div class="text-center mt-5">
-   <br><br><br><br>
-    
-</div> -->
+
 <?php include_once 'GameFooter.php'; ?>
