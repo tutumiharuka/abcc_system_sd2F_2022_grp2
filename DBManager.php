@@ -6,7 +6,7 @@ class DBManager{
         $pdo = new PDO('mysql:host=localhost;dbname=gamedb;charset=utf8','webuser','abccsd2');
         // テスト用(1~4game)
         // $pdo = new PDO('mysql:host=localhost;dbname=gametest;charset=utf8','webuser','abccsd2');
-        // LolipopのDBを使う
+        // LolipopのDBを使うabccsd2
         // $pdo = new PDO('mysql:host=mysql209.phy.lolipop.lan;dbname=LAA1418471-gamedb;charset=utf8','LAA1418471','password');
         return $pdo;
     }

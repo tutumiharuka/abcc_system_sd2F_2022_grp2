@@ -10,6 +10,10 @@
         display: flex;
         align-items: center;
     }
+    .celo{
+        height: 70px ;
+        width: 80px;
+    }
 </style>
 <?php 
     $shohin_id =  $_GET['shohin_id'];
@@ -95,7 +99,9 @@
         </div>
     </div>  
     
-
+    <div class="row">
+        <img class="rounded mt-3 mb-3 celo" src="img/CELO.jpg">
+    </div>
 
 </div>
 
