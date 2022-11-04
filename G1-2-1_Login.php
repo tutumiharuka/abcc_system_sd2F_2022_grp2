@@ -26,7 +26,7 @@
                 <div class="mb-5">
                     <input type="password" class="form-control" id="password" placeholder="パスワード">
                 </div>
-        <!-- ボタン -->
+                <!-- ボタン -->
                 <div class="right-aligned">
                     <button type="submit" class="btn btn-light btn-lg rounded-pill">ログイン</button>
                 </div>
@@ -34,7 +34,6 @@
         </div>
     </div>
 </div>
-
 <div class="ms-3 me-3">
     <hr>
 </div>
@@ -42,5 +41,4 @@
     <p class="mb-3">アカウントをお持ちでない方<p>
     <button type="submit" class="btn btn-light btn-lg rounded-pill">新規登録</button>
 </div>
-
 <?php include_once 'GameFooter.php'; ?>
