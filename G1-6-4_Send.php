@@ -13,6 +13,6 @@
     </div>
 	<h2 class="m-4 text-center">スプラトゥーン３</h2>
 	<!-- ↑ここで商品画像を表示 -->
-	<a class="btn btn-primary mb-4 rounded text-dark" href="G1-1_Top.php"><h3>　　TOPに戻る　　</h3></a>
+	<a class="btn btn-primary mb-4 rounded text-dark rounded-pill" href="G1-1_Top.php"><h3>　　TOPに戻る　　</h3></a>
 </div>
 <?php include_once 'GameFooter.php'; ?>

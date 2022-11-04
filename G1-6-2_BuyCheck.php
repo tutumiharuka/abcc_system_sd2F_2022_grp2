@@ -61,8 +61,8 @@
         <p class="border-bottom border-dark"></p>
     </div>
     <div  class="text-center">
-		<a class="btn btn-primary mb-4 rounded " href="G1-6-3_BuyEnd.php"><h3>　注文を確定する　</h3></a><br>
-        <a class="btn btn-secondary mb-4 rounded " href="javascript:history.back()"><h3>　　キャンセル　　</h3></a>
+		<a class="btn btn-primary mb-4 rounded rounded-pill" href="G1-6-3_BuyEnd.php"><h3>　注文を確定する　</h3></a><br>
+        <a class="btn btn-secondary mb-4 rounded rounded-pill" href="javascript:history.back()"><h3>　　キャンセル　　</h3></a>
                        <!-- ↑ここ、キャンセルで戻るところが分からなかったので一応カート画面に設定 -->
     </div>
 </div>
