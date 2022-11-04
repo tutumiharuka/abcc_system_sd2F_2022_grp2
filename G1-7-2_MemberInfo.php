@@ -21,35 +21,35 @@
 
             <div class="text-center">
               <label>おなまえ</label>
-              <input type="text">
+              <p>ゲームオタク　太郎</p>
             </div>
           </li>
 
           <li class="list-group-item">
             <div class="text-center">
               <label>生年月日</label>
-              <input type="text" >
+              <p>2022年12月31日</p>
             </div>
           </li>
 
           <li class="list-group-item">
             <div class="text-center">
               <label>メールアドレス</label>
-              <input type="text">
+              <p>taro@gameotaku.com</p>
             </div>
           </li>
 
           <li class="list-group-item">
             <div class="text-center">
               <label>パスワード</label>
-              <input type="text">
+              <p>●●●●●●●●●●</p>
             </div>
           </li>
           
           <li class="list-group-item"><div>
           <div class="text-center">
           <label>電話番号</label>
-          <input type="text">
+          <p>070 - 0000 - 0000</p>
         </div></li>
       </ul>
       <div class="text-center">
