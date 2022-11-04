@@ -7,7 +7,7 @@
   .kuhaku{
     height:80px;
   }
-  
+
 </style>
 <div class="container mt-5">
     <div class="row kuhaku">
@@ -74,10 +74,6 @@
               <div class="col-md-6">070 - 0000 - 0000</div>
             </div>
           </li>
-
-          <!-- <li class="list-group-item text-center">
-            
-          </li> -->
         </ul>
       </div><!-- .card -->
       
