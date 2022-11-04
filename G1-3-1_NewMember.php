@@ -29,53 +29,47 @@
             </div>
 <!-- 生年月日 -->
             <div>
-                <div class="col-auto"><label for="name" class="col-form-label">◆生年月日</label></div>
-                <select class="form-select row">
-                    <div class="col-md-6">
-                        <option selected>西暦</option>
-                        <!-- php -->
-                        <?php
-                            for ($i = 1950; $i <= 2022; $i++) {
-                                echo '<option value="'.$i.'">'.$i.'</option>';
-                            }
-                        ?>
-                        <!-- <option value="1">その1</option>
-                        <option value="2">その2</option>
-                        <option value="3">その3</option> -->
-                    </div>
-                </select>
-<!-- 月 -->
-                <select class="form-select">
-                    <div class="col-md-3">
-                        <option selected>月</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
+                <div class="row"><label for="name" class="col-form-label">◆生年月日</label></div>
+                    <div class="">
+                        <select class="form-select">
+                            <div class="col-md-3">
+                                <option selected>西暦</option>
+                                <!-- php -->
+                                <?php
+                                    for ($i = 1950; $i <= 2022; $i++) {
+                                        echo '<option value="'.$i.'">'.$i.'</option>';
+                                    }
+                                ?>
+                            </div>
+                        </select>
+                        <!-- 月 -->
+                        <select class="form-select">
+                            <div class="col-md-3">
+                                <option selected>月</option>
+                                <!-- php -->
+                                <?php
+                                    for ($i = 1; $i <= 12; $i++) {
+                                        echo '<option value="'.$i.'">'.$i.'</option>';
+                                    }
+                                ?>
 
+                            </div>
+                        </select>
+                        <!-- 日 -->
+                        <select class="form-select">
+                            <div class="col-md-3">
+                                <option selected>日</option>
+                                <!-- php -->
+                                <?php
+                                    for ($i = 1; $i <= 31; $i++) {
+                                        echo '<option value="'.$i.'">'.$i.'</option>';
+                                    }
+                                ?>
+                            </div>
+                        </select>
                     </div>
-                </select>
-<!-- 日 -->
-                <select class="form-select">
-                    <div class="col-md-3">
-                        <option selected>日</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-
-
-                    </div>
-                </select>
+                </div>
             </div>
-</div>
 
 
 <!-- パスワード -->
