@@ -1,6 +1,17 @@
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
 
+<style>
+.celo{
+    height: 70px ;
+}
+
+.gameimg{
+    height: 280px ;
+}
+
+</style>
+
 
 <!-- ここで　PHP　と　BootStarp　を直接書きます -->
 <div class="container">
@@ -14,18 +25,18 @@
             <p>〇点</p>
             <!-- ↑ここで　何点かを表示（必要がない場合は消しても良い、どっちか分からなかったから一応作ってる） -->
             <div class="row border-top border-dark">
-                <div class="col-md-5 mt-5">
-                    <img class="rounded" src="img/ACT/ACT_s01.jpg">
+                <div class="col-md-4 mt-5">
+                    <img class="rounded gameimg" src="img/ACT/ACT_s01.jpg">
                     <!-- ↑ここで　商品の画像を表示 -->
                 </div>
-                <div class="col-md-7 mt-5">
+                <div class="col-md-8 mt-5">
                     <h3>スプラトゥーン３</h3>
                     <!-- ↑ここで　商品名を表示 -->
                     <h3>〇〇〇〇〇円</h3>
                     <!-- ↑ここで　金額を表示 -->
                 </div>
             </div>
-            <img class="rounded mt-3 mb-3" src="img/CELO.jpg">
+            <img class="rounded mt-3 mb-3 celo" src="img/CELO.jpg">
             <p>本製品をプレイするには、ゲーム内に表示されるサービス利用規約に同意する必要があります。<br>
                 詳しくはhttps://nanimoiminaiyo.co.jp/cs/aso/eula/をご確認ください。</p>
         </div>
@@ -50,8 +61,8 @@
         <p class="border-bottom border-dark"></p>
     </div>
     <div  class="text-center">
-		<button class="mb-4 G1-6-3_BuyEnd.php rounded bg-primary"><h3>　注文を確定する　</h3></button><br>
-        <button class="mb-4 G1-6-1_Cart.php rounded bg-secondary"><h3>　　キャンセル　　</h3></button>
+		<a class="btn btn-primary mb-4 rounded " href="G1-6-3_BuyEnd.php"><h3>　注文を確定する　</h3></a><br>
+        <a class="btn btn-secondary mb-4 rounded " href="javascript:history.back()"><h3>　　キャンセル　　</h3></a>
                        <!-- ↑ここ、キャンセルで戻るところが分からなかったので一応カート画面に設定 -->
     </div>
 </div>
