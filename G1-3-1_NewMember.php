@@ -101,7 +101,7 @@
 <script>
     // 入力したパスワードが半角英数混合8文字以上かという確認
     function check(str){
-        var reg = new RegExp(/^(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d]{8,}$/); //上記の正規表現を引数に渡す
+        var reg = new RegExp(/^(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d]{8,}$/);
         var response = reg.test(str);
         return response;
     }

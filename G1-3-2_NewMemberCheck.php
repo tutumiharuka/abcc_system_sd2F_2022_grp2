@@ -60,7 +60,11 @@
     <!-- パスワード -->
                 <div class="row mt-5">
                     <div class="col-md-2 offset-md-2">◆パスワード</div>
-                    <div class="col-md-7"><?php echo $pass?></div>
+                    <div class="col-md-3" id="nopass">●●●●●●●●●●</div>
+                    <div class="col-md-3 d-none" id="seepass"><?php echo $pass ?></div>
+                    <div class="col-md-1 justify-content-start">
+                        <a id="eyebtn"><i class="bi bi-eye-fill"></i></a>
+                    </div>
                     <input type="hidden" name="pass" value="<?php echo $pass ?>">
                 </div>
 
@@ -79,6 +83,15 @@
     </div><!-- card -->
 </div>
 
+<script>
+    let nopass = document.getElementById("nopass");
+    let seepass = document.getElementById("seepass");
+    let eyebtn =  document.getElementById("eyebtn");
+    eyebtn.addEventListener('click', function(){
+        nopass.classList.toggle('d-none');
+        seepass.classList.toggle('d-none');
+    });
+</script>
 
 
 
