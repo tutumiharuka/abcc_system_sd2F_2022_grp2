@@ -17,14 +17,14 @@
 
     <div class="row justify-content-center">
         <div class="col-6">
-            <form>
+            <form action="G1-2-2_LoginEnd.php" method="post">
         <!-- メールアドレス -->
-                <div class="mb-5 ">
-                    <input type="email" class="form-control" id="mail1adress" placeholder="メールアドレス">
+                <div class="mb-5">
+                    <input type="email" class="form-control" name="mail" placeholder="メールアドレス">
                 </div>
         <!-- パスワード -->
                 <div class="mb-5">
-                    <input type="password" class="form-control" id="password" placeholder="パスワード">
+                    <input type="password" class="form-control" name="pass" placeholder="パスワード">
                 </div>
                 <!-- ボタン -->
                 <div class="right-aligned">

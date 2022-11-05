@@ -10,6 +10,34 @@ class DBManager{
         // $pdo = new PDO('mysql:host=mysql209.phy.lolipop.lan;dbname=LAA1418471-gamedb;charset=utf8','LAA1418471','password');
         return $pdo;
     }
+
+ /*　新規登録 */
+    public function insertNewMember($name,$mail,$phone,$birth,$password){
+        $pdo = $this->dbConnect();
+        $sql = "INSERT INTO members(name,mail,phone_number,date_of_birth,password) VALUES (?,?,?,?,?)";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $name,  PDO::PARAM_STR);
+        $ps->bindValue(2, $mail,  PDO::PARAM_STR);
+        $ps->bindValue(3, $phone, PDO::PARAM_STR);
+        $ps->bindValue(4, $birth, PDO::PARAM_STR);
+        $ps->bindValue(5, password_hash($password,PASSWORD_DEFAULT), PDO::PARAM_STR);
+        $ps->execute();
+    }
+
+
+ /*　ログイン */
+    public function getUserPassByMail($mail){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT * FROM members WHERE mail = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$mail,PDO::PARAM_STR);
+        $ps->execute();
+        $results = $ps->fetchAll();
+        return $results;
+    }
+
+
+/*商品リストやゲーム情報を取得する */
     // G1-5-1_ShohinList.phpにゲームリストを入れます
     public function getGameListByGenre($genre_id){
         $pdo = $this->dbConnect();

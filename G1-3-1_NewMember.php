@@ -25,11 +25,10 @@
     <!-- メールアドレス -->
                 <div class="row mt-3">
                     <div class="col-md-2 offset-md-2">◆メールアドレス</div>
-                    <div class="col-md-7"><input type="text" name="mail" class="form-control rounded-pill" aria-describedby="Newname" placeholder="xxxxxxx@xxx.xx.xx"></div>
+                    <div class="col-md-7"><input type="text" name="mail" class="form-control rounded-pill" aria-describedby="Newname" placeholder="メールを入力してください"></div>
                 </div>
                 <div class="row">
                     <div class="col-md-2 offset-md-2"></div>
-                    <div class="col-md-7">・パソコンやWEBメールアドレスをおすすめします</div>
                 </div>
     <!-- 電話番号 -->
                 <div class="row mt-3">
@@ -41,29 +40,29 @@
     
                 <div class="row mt-3">
                     <div class="col-md-2 offset-md-2">◆生年月日</div>
-        <!-- 年 -->
+        <!-- 年 $y -->
                     <div class="col-md-2">
                         <select class="form-select rounded-pill text-center" name="year">
-                        <option selected>選択する</option>
-                        <?php for ($i = 1950; $i <= 2022; $i++) echo '<option value="'.$i.'">'.$i.'</option>';?></select>
+                        <!-- <option selected>選択する</option> -->
+                        <?php for ($y = 1950; $y <= date("Y"); $y++) echo '<option value="'.$y.'">'.$y.'</option>';?></select>
                     </div>
                     <div class="col-md-1 d-flex justify-content-start align-items-center">
                         年
                     </div>
-        <!-- 月 -->
+        <!-- 月 $m -->
                     <div class="col-md-1">
                         <select class="form-select rounded-pill text-center" name="month">
-                        <option selected>選択する</option>
-                        <?php for ($i = 1; $i <= 12; $i++) echo '<option value="'.$i.'">'.$i.'</option>';?></select>
+                        <!-- <option selected>選択する</option> -->
+                        <?php for ($m = 1; $m <= 12; $m++) echo '<option value="'.$m.'">'.$m.'</option>';?></select>
                     </div>
                     <div class="col-md-1 d-flex justify-content-start align-items-center">
                         月
                     </div>
-        <!-- 日 -->
+        <!-- 日 $d -->
                     <div class="col-md-1">
                         <select class="form-select rounded-pill text-center" name="day">
-                        <option selected>選択する</option>
-                        <?php for ($i = 1; $i <= 31; $i++) echo '<option value="'.$i.'">'.$i.'</option>';?></select>
+                        <!-- <option selected>選択する</option> -->
+                        <?php for ($d = 1; $d <= 31; $d++) echo '<option value="'.$d.'">'.$d.'</option>';?></select>
                     </div>
                     <div class="col-md-1 d-flex justify-content-start align-items-center">
                         日
@@ -73,12 +72,12 @@
     <!-- パスワード -->
                 <div class="row mt-3">
                     <div class="col-md-2 offset-md-2">◆パスワード</div>
-                    <div class="col-md-7"><input type="text" class="form-control rounded-pill" aria-describedby="Newname" placeholder="半角英数混合8文字以上"></div>
+                    <div class="col-md-7"><input type="password" class="form-control rounded-pill" aria-describedby="Newname" placeholder="半角英数混合8文字以上"></div>
                 </div>
     <!-- パスワード再入力 -->
                 <div class="row mt-3">
                     <div class="col-md-2 offset-md-2">◆パスワード再入力</div>
-                    <div class="col-md-7"><input type="text" name="pass" class="form-control rounded-pill" aria-describedby="Newname" placeholder="半角英数混合8文字以上"></div>
+                    <div class="col-md-7"><input type="password" name="pass" class="form-control rounded-pill" aria-describedby="Newname" placeholder="半角英数混合8文字以上"></div>
                 </div>
 
                 <div class="row mt-3">
