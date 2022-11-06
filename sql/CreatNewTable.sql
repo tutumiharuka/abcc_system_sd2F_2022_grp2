@@ -17,7 +17,7 @@ CREATE TABLE `shohins` (
   `haishin_date`        DATE           NOT NULL                   COMMENT '配信日',
   `image_small`         VARCHAR(191)   NOT NULL                   COMMENT '画像小',
   `image_big`           VARCHAR(191)   NOT NULL                   COMMENT '画像大',
-  `shohin_explanation`  VARCHAR(1000)  NOT NULL                   COMMENT '商品説明',
+  `shohin_explanation`  VARCHAR(4000)  NOT NULL                   COMMENT '商品説明',
   PRIMARY KEY (`shohin_id`)
 );
 
@@ -65,9 +65,3 @@ CREATE TABLE `ranking` (
   PRIMARY KEY (`shohin_id`),
   FOREIGN KEY (`shohin_id`) REFERENCES shohins(`shohin_id`)
 );
-
-
-
-		
-		
-		
