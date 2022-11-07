@@ -67,7 +67,7 @@
                 <li class="list-inline-item"><h3>2,000</h3></li>
                 <li class="list-inline-item"><h6>円</h6></li></p>
             </div>
-            <div class="col-md-2"><button type="button" class="btn btn-primary btn-lg">レジに進む</button></div>
+            <div class="col-md-2"><a href="G1-6-2_BuyCheck.php"><button type="button" class="btn btn-primary btn-lg">レジに進む</button></a></div>
         </div>
 
     </div>
