@@ -8,7 +8,12 @@
 	</div>
 </div>
 <div  class="text-center">
-    <div class="img-center mt-5 rounded">
+	
+	<div class="progress">
+		<div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%"></div>
+	</div>
+
+	<div class="img-center mt-5 rounded">
 	    <img class="rounded" src="img/ACT/ACT_s01.jpg">
     </div>
 	<h2 class="m-4 text-center">スプラトゥーン３</h2>

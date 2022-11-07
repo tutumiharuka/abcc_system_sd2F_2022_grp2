@@ -28,7 +28,7 @@
                 </div>
                 <!-- ボタン -->
                 <div class="right-aligned">
-                    <button type="submit" class="btn btn-light btn-lg rounded-pill">ログイン</button>
+                    <button type="submit" class="btn btn-outline-primary btn-lg rounded-pill">ログイン</button>
                 </div>
             </form>
         </div>
@@ -37,8 +37,10 @@
 <div class="ms-3 me-3">
     <hr>
 </div>
+
 <div class="text-center">
-    <p class="mb-3">アカウントをお持ちでない方<p>
-    <a type="submit" class="btn btn-light btn-lg rounded-pill" href="G1-3-1_NewMember.php">新規登録</a>
+    <br>
+    <p class="mb-3 h4">アカウントをお持ちでない方<p>
+    <a type="submit" class="btn btn-outline-primary btn-lg rounded-pill" href="G1-3-1_NewMember.php">新規登録</a>
 </div>
 <?php include_once 'GameFooter.php'; ?>

@@ -2,6 +2,14 @@
 <?php include_once 'GameNavbar.php'; ?>
 
 <style>
+      /* @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+    @import url("https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.0/css/ionicons.min.css");
+    @import url("https://cdnjs.cloudflare.com/ajax/libs/typicons/2.1.2/typicons.min.css"); */
+    @import url("https://fonts.googleapis.com/earlyaccess/nicomoji.css");
+    @import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c");
+    /* フォント設定 */
+    body { font-family: "M PLUS Rounded 1c"; }
+    .wf-nicomoji { font-family: "Nico Moji"; }
     .kuhaku{
         height: 100px;
     }
@@ -17,7 +25,7 @@
 
 <div class="container">
     <div class="row kuhaku"></div>
-    <div class="row text-center moji"><h1>情報変更完了しました</h1></div>
+    <!-- <div class="row text-center moji"><h1>情報変更完了しました</h1></div> -->
     <div class="row text-center moji"><h1>続けて手続きを行います</h1></div>
     <div class="row text-center moji"><h3>お買い上げ内容が書かれたメールを、アソウアカウントのメールアドレスにお送りします。<br>子どもアカウントの場合は保護者（ファミリーの管理者）のメールアドレスにお送りします。</h3></div>
     <div class="row ">

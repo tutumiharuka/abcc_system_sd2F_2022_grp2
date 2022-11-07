@@ -2,62 +2,53 @@
 <?php include_once 'GameNavbar.php'; ?>
 
 
-    <!-- 購入履歴 -->
+<style>
 
-<div class="container">
-    <div class="row h1 ms-5 mt-5">購入履歴</div>
-
-        <!-- ｓ -->
-
-        <div class="row mt-5 ms-5">
-            <div class="col"><img src="img/FPS/FPS_s01.jpg" class="rounded float-start" alt="FPS_s01"></div>
-            <div class="col"><u>
-                    <h4>ゲーム名</h4>
-                </u><br>
-                <p class="text-sm-start">購入日:2022年11月1日</p><br>
-                <i class="bi bi-box-arrow-in-right h1"></i>
-            </div>
-            <div class="col"><img src="img/FPS/FPS_s02.jpg" class="rounded float-start" alt="FPS_s02"></div>
-            <div class="col"><u>
-                    <h4>ゲーム名</h4>
-                </u><br>
-                <p class="text-sm-start">購入日:2022年10月15日</p><br>
-                <i class="bi bi-box-arrow-in-right h1"></i>
-            </div>
+</style>
+<div class="container mt-5">
+    <!-- タイトル -->
+    <div class="row h3">購入履歴</div>
+    <!-- リストの一行 -->
+    <div class="row mt-5">
+        <!-- 一つゲーム -->
+        <div class="col-md-3"><img class="img-fluid" src="img/FPS/FPS_s02.jpg"></div>
+        <div class="col-md-3">
+            <div class="row h4 mt-5 ms-3 text-start ">ゲームのタイトルです！！！！</div>
+            <div class="row h5 ms-5 mt-5">購入日:2022年11月1日</div>
+            <div class="row text-center mt-5"><i class="bi bi-box-arrow-in-right h2"></i></div>
         </div>
         
-        <div class="row mt-5 ms-5">
-            <div class="col"><img src="img/FPS/FPS_s01.jpg" class="rounded float-start" alt="FPS_s01"></div>
-            <div class="col"><u>
-                    <h4>ゲーム名</h4>
-                </u><br>
-                <p class="text-sm-start">購入日:2022年11月1日</p><br>
-                <i class="bi bi-box-arrow-in-right h1"></i>
-            </div>
-            <div class="col"><img src="img/FPS/FPS_s02.jpg" class="rounded float-start" alt="FPS_s02"></div>
-            <div class="col"><u>
-                    <h4>ゲーム名</h4>
-                </u><br>
-                <p class="text-sm-start">購入日:2022年10月15日</p><br>
-                <i class="bi bi-box-arrow-in-right h1"></i>
-            </div>
+        <div class="col-md-3"><img class="img-fluid" src="img/FPS/FPS_s02.jpg"></div>
+        <div class="col-md-3">
+            <div class="row h4 mt-5 ms-3 text-start ">ゲームのタイトルです！！！！</div>
+            <div class="row h5 ms-5 mt-5">購入日:2022年11月1日</div>
+            <div class="row text-center mt-5"><i class="bi bi-box-arrow-in-right h2"></i></div>
+        </div>
+    </div>
+
+    <!-- リストの2行 -->
+    <div class="row mt-5">
+        <!-- 一つゲーム -->
+        <div class="col-md-3"><img class="img-fluid" src="img/FPS/FPS_s02.jpg"></div>
+        <div class="col-md-3">
+            <div class="row h4 mt-5 ms-3 text-start ">ゲームのタイトルです！！！！</div>
+            <div class="row h5 ms-5 mt-5">購入日:2022年11月1日</div>
+            <div class="row text-center mt-5"><i class="bi bi-box-arrow-in-right h2"></i></div>
         </div>
         
-        <div class="row mt-5 ms-5">
-            <div class="col"><img src="img/FPS/FPS_s01.jpg" class="rounded float-start" alt="FPS_s01"></div>
-            <div class="col"><u>
-                    <h4>ゲーム名</h4>
-                </u><br>
-                <p class="text-sm-start">購入日:2022年11月1日</p><br>
-                <i class="bi bi-box-arrow-in-right h1"></i>
-            </div>
-            <div class="col"><img src="img/FPS/FPS_s02.jpg" class="rounded float-start" alt="FPS_s02"></div>
-            <div class="col"><u>
-                    <h4>ゲーム名</h4>
-                </u><br>
-                <p class="text-sm-start">購入日:2022年10月15日</p><br>
-                <i class="bi bi-box-arrow-in-right h1"></i>
-            </div>
+        <div class="col-md-3"><img class="img-fluid" src="img/FPS/FPS_s02.jpg"></div>
+        <div class="col-md-3">
+            <div class="row h4 mt-5 ms-3 text-start ">ゲームのタイトルです！！！！</div>
+            <div class="row h5 ms-5 mt-5">購入日:2022年11月1日</div>
+            <div class="row text-center mt-5"><i class="bi bi-box-arrow-in-right h2"></i></div>
         </div>
+    </div>
 
+    
+</div>
+
+<br>
+<br>
+<br>
+<br>
 <?php include_once 'GameFooter.php'; ?>
