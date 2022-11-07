@@ -1,13 +1,12 @@
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
 
-
-
 <style>
 input[type="checkbox"]{
   transform: scale(1.5);
 }
 .btm-nav{
+   z-index: 3;
    height: 80px;
    background-color: #DEF2FF;
 }
@@ -23,19 +22,42 @@ input[type="checkbox"]{
         </ul>
     </div>
 
+    <!-- 商品リスト -->
+
     <div class="row mt-5 ms-5">
         <div class="col-md-2 offset-md-1 d-flex justify-content-center align-items-center">
             <input class="form-check-input" type="checkbox">
         </div>
-        <div class="col-auto"><img class="" src="img/FPS/FPS_s01.jpg"></div>
+        <div class="col-md-3"><img class="img-fluid" src="img/FPS/FPS_s01.jpg"></div>
         <div class="col-md-2">
-            <br><br><br><br>
-            <h4>ゲーム名</h4>
-            <p class="text-sm-start mt-3 h5">税込:1,000円</p>
+            <div class="row mt-5 h4">ゲーム名</div>
+            <div class="row text-sm-start mt-4 h5">税込:1,000円</div>
         </div>
         <div class="col me-5"><i class="bi bi-x-square-fill h4"></i></div>
     </div>
 
+
+    <div class="row mt-5 ms-5">
+        <div class="col-md-2 offset-md-1 d-flex justify-content-center align-items-center">
+            <input class="form-check-input" type="checkbox">
+        </div>
+        <div class="col-md-3"><img class="img-fluid" src="img/FPS/FPS_s01.jpg"></div>
+        <div class="col-md-2">
+            <div class="row mt-5 h4">ゲーム名</div>
+            <div class="row text-sm-start mt-4 h5">税込:1,000円</div>
+        </div>
+        <div class="col me-5"><i class="bi bi-x-square-fill h4"></i></div>
+    </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</div>
+
+<!-- 下のナビゲーションバー -->
 <nav class="navbar fixed-bottom btm-nav">
     <div class="container-fluid">
         <span class="navbar-text"></span>
