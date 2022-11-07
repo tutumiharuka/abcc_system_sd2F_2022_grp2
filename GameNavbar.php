@@ -19,7 +19,7 @@
 
   /* Navbar背景の設定 */
   .navbar-bg {
-    background-color: #98C3D6;
+    background-color: #DEF2FF;
     height:50px;
   }
 
