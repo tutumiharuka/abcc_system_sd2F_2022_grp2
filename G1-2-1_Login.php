@@ -39,6 +39,6 @@
 </div>
 <div class="text-center">
     <p class="mb-3">アカウントをお持ちでない方<p>
-    <button type="submit" class="btn btn-light btn-lg rounded-pill">新規登録</button>
+    <a type="submit" class="btn btn-light btn-lg rounded-pill" href="G1-3-1_NewMember.php">新規登録</a>
 </div>
 <?php include_once 'GameFooter.php'; ?>
