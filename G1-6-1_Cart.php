@@ -8,7 +8,8 @@ input[type="checkbox"]{
   transform: scale(1.5);
 }
 .btm-nav{
-   height: 85px;
+   height: 80px;
+   background-color: #DEF2FF;
 }
 
 </style>
@@ -35,8 +36,9 @@ input[type="checkbox"]{
         <div class="col me-5"><i class="bi bi-x-square-fill h4"></i></div>
     </div>
 
-<nav class="navbar bg-light fixed-bottom btm-nav">
+<nav class="navbar fixed-bottom btm-nav">
     <div class="container-fluid">
+        <span class="navbar-text"></span>
         <span class="navbar-text"></span>
         <span class="navbar-text">
             <ul class="list-inline d-flex justify-content-center align-items-center">
@@ -58,6 +60,7 @@ input[type="checkbox"]{
                 <button type="button" class="btn btn-primary btn-lg rounded-pill">レジに進む</button>
             </a>
         </span>
+        <span class="navbar-text"></span>
         <span class="navbar-text"></span>
     </div>
   
