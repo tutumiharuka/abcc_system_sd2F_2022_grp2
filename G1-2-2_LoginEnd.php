@@ -3,7 +3,7 @@
 
 <style>
     .kuhaku{
-        height: 280px;
+        height: 20%;
     }
     .moji{
         height: 150px;
@@ -19,7 +19,7 @@
     <div class="row text-center moji"><h1>ログインしました</h1></div>
     <div class="row ">
         <div class="col d-flex justify-content-center">
-            <a class="btn btn-primary botan" href="G1-1_Top.php"><h2>TOPへ</h2></a>
+            <a class="btn btn-outline-primary btn-lg rounded-pill" href="G1-1_Top.php">TOPへ</a>
         </div>
     </div>
 </div>
