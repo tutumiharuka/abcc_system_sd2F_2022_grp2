@@ -29,7 +29,7 @@
         </div>
 
         <!-- ｓ -->
-        <div class="row mt-20 ms-10">
+        <div class="row mt-5 ms-5">
             <div class="col"><img src="img/FPS/FPS_s01.jpg" class="rounded mx-auto d-block" alt="FPS_s01"></div>
             <div class="col"><u><h4>ゲーム名</h4></u><br>
                 <p class="text-sm-start">税込:1,000円</p>
@@ -40,7 +40,7 @@
         </div>
 
 
-        <div class="row mt-20 ms-10">
+        <div class="row mt-5 ms-5">
             <div class="col"><img src="img/FPS/FPS_s02.jpg" class="rounded mx-auto d-block" alt="FPS_s02"></div>
             <div class="col"><u>
                     <h4>ゲーム名</h4>
@@ -53,7 +53,7 @@
             </div>
         </div>
 
-        <div class="row mt-20 ms-10">
+        <div class="row mt-5 ms-5">
             <div class="col"><img src="img/FPS/FPS_s03.jpg" class="rounded mx-auto d-block" alt="FPS_s03"></div>
             <div class="col"><u>
                     <h4>ゲーム名</h4>
