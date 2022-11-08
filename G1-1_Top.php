@@ -30,19 +30,19 @@
 </style>
 
 <div class="carousel mt-3">
-  <div class="px-1 carousel-card"><img src="img/SPO/SPO_b01.jpg" alt="" class="carousel-img rounded"></div>
-  <div class="px-1 carousel-card"><img src="img/SPO/SPO_b02.jpg" alt="" class="carousel-img rounded"></div>
-  <div class="px-1 carousel-card"><img src="img/SPO/SPO_b03.jpg" alt="" class="carousel-img rounded"></div>
-  <div class="px-1 carousel-card"><img src="img/SPO/SPO_b04.jpg" alt="" class="carousel-img rounded"></div>
-  <div class="px-1 carousel-card"><img src="img/FIG/FIG_b01.jpg" alt="" class="carousel-img rounded"></div>
-  <div class="px-1 carousel-card"><img src="img/FIG/FIG_b02.jpg" alt="" class="carousel-img rounded"></div>
-  <div class="px-1 carousel-card"><img src="img/FIG/FIG_b03.jpg" alt="" class="carousel-img rounded"></div>
+  <div class="px-1 carousel-card"><img src="img/SPO/SPO_b01.jpg" alt="" class="carousel-img rounded "></div>
+  <div class="px-1 carousel-card"><img src="img/SPO/SPO_b02.jpg" alt="" class="carousel-img rounded "></div>
+  <div class="px-1 carousel-card"><img src="img/SPO/SPO_b03.jpg" alt="" class="carousel-img rounded "></div>
+  <div class="px-1 carousel-card"><img src="img/SPO/SPO_b04.jpg" alt="" class="carousel-img rounded "></div>
+  <div class="px-1 carousel-card"><img src="img/FIG/FIG_b01.jpg" alt="" class="carousel-img rounded "></div>
+  <div class="px-1 carousel-card"><img src="img/FIG/FIG_b02.jpg" alt="" class="carousel-img rounded "></div>
+  <div class="px-1 carousel-card"><img src="img/FIG/FIG_b03.jpg" alt="" class="carousel-img rounded "></div>
 </div>
 
 <!-- 右のすべて -->
-<img class="position-absolute me-3 end-0 all-game" src="img/all_game.png" alt="すべて">
+<img class="position-absolute me-4 mt-2 end-0 all-game" src="img/all_game.png" alt="すべて">
 
-<div class="ms-5 mt-4">    
+<div class="ms-5 mt-5">    
   <h4>最新作</h4>
   <div class="game_list ml-4">
     <div class="card border-0 px-1">
