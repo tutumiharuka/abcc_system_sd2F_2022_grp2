@@ -78,9 +78,7 @@ input[type="checkbox"]{
             </ul>
         </span>
         <span class="navbar-text mb-3">
-            <a href="G1-6-2_BuyCheck.php">
-                <button type="button" class="btn btn-primary btn-lg rounded-pill">レジに進む</button>
-            </a>
+                <a class="btn btn-outline-primary btn-lg rounded-pill" href="G1-6-2_BuyCheck.php">レジに進む</a>
         </span>
         <span class="navbar-text"></span>
         <span class="navbar-text"></span>
