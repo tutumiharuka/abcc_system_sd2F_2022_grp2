@@ -2,7 +2,7 @@
 <?php include_once 'GameNavbar.php'; ?>
 
 <style>
-    .kuhaku{
+    .kuhaku-end{
         height: 20%;
     }
     .moji{
@@ -15,7 +15,7 @@
 </style>
 <!-- ここで　PHP　と　BootStarp　を直接書きます -->
 <div class="container">
-    <div class="row kuhaku"></div>
+    <div class="row kuhaku-end"></div>
     <div class="row text-center moji"><h1>ログインしました</h1></div>
     <div class="row ">
         <div class="col d-flex justify-content-center">

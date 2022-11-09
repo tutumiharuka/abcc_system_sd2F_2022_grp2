@@ -3,15 +3,15 @@
 
 
 <style> 
-  .kuhaku{
-    height:80px;
+  .kuhaku-form{
+    height:15%;
   }
 
 </style>
 
-<div class="container mt-5">
+<div class="container">
 
-    <div class="row kuhaku">
+    <div class="row kuhaku-form">
         
     </div>
     <div class="row text-center">

@@ -8,7 +8,7 @@
     body { font-family: "M PLUS Rounded 1c"; }
     .wf-nicomoji { font-family: "Nico Moji"; }
     .kuhaku{
-        height: 100px;
+        height: 20%;
     }
     .moji{
         height: 150px;

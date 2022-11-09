@@ -1,12 +1,6 @@
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
 
-
-<style>
-    /* .title{
-        width: ;
-    } */
-</style>
 <div class="container mt-5">
     <!-- タイトル -->
     <div class="row h3">購入履歴</div>

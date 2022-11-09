@@ -2,15 +2,15 @@
 <?php include_once 'GameNavbar.php'; ?>
 
 <style>
-    .kuhaku{
-        height: 80px;
+    .kuhaku-from{
+        height: 15%;
     }
 </style>
 
 
 
 <div class="container">
-    <div class="row kuhaku"></div>
+    <div class="row kuhaku-from"></div>
     <div class="row text-center mt-3">
         <h2>アカウントの作成</h2>
     </div>

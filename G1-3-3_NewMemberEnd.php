@@ -15,8 +15,8 @@
 
 
 <style>
-    .kuhaku{
-        height: 20%;
+    .kuhaku-form{
+        height: 15%;
     }
     .moji{
         height: 150px;
@@ -24,7 +24,7 @@
 </style>
 <!-- ここで　PHP　と　BootStarp　を直接書きます -->
 <div class="container">
-    <div class="row kuhaku"></div>
+    <div class="row kuhaku-form"></div>
     <div class="row text-center moji"><h1>会員登録成功しました</h1></div>
     <div class="row text-center moji"><h3>ようこそ、ゲームECサイトへ</h3></div>
     <div class="row ">

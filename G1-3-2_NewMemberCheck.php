@@ -16,14 +16,14 @@
 ?>
 
 <style>
-    .kuhaku{
-        height: 80px;
+    .kuhaku-form{
+        height: 15%;
     }
 </style>
 
 <div class="container">
 
-    <div class="row kuhaku"></div>
+    <div class="row kuhaku-form"></div>
     <div class="row text-center mt-3">
         <h2>アカウントの作成</h2>
     </div>
