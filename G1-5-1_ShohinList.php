@@ -10,24 +10,29 @@
 </style>
 
 <?php 
+require_once "DBManager.php";
+$dbmng = new DBManager();
+// new
+// free
+// recommend
+if(isset($_GET['genre_id'])){
+    
+    if($_GET['genre_id']=="free"){
+        $results=$dbmng->getFreeList();
+        $title = "無料ゲーム";
+    }else if($_GET['genre_id']=="new"){
+        $results=$dbmng->getNewList();
+        $title = "最新作";
+    }else if($_GET['genre_id']=="ranking"){
+        $results=$dbmng->getRankingList();
+        $title = "ランキング";
+    }else{// ジャンルで
+        $genre_id = $_GET['genre_id'];
+        $results=$dbmng->getGameListByGenre($genre_id);
+        $title = $dbmng->getJpnGenreName($genre_id);
+    }
+}
 
-    $genre_id =  $_GET['genre_id'];
-    require_once "DBManager.php";
-    $dbmng = new DBManager();
-    $results=$dbmng->getGameListByGenre($genre_id);
-    $genreList = array(
-        "ACT"=>"アクション",
-        "ADV"=>"アドベンチャー",
-        "FIG"=>"格闘",
-        "FPS"=>"シューティング",
-        "MUS"=>"音楽ゲーム",
-        "PAR"=>"パーティ",
-        "PZL"=>"パズル",
-        "RCG"=>"レース",
-        "RPG"=>"ロールプレイング",
-        "SPO"=>"スポーツ",
-        "TBL"=>"テーブルゲーム");
-    // echo $results;
 ?>
 
 
@@ -36,7 +41,7 @@
     <nav class="mt-5 ms-3 mb-4" aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item h3 fw-bold"><a href="G1-1_Top.php">トップ</a></li>
-            <li class="breadcrumb-item h3 fw-bold active" aria-current="page"><?php echo $dbmng->getJpnGenreName($genre_id)?></li>
+            <li class="breadcrumb-item h3 fw-bold active" aria-current="page"><?php echo $title ?></li>
         </ol>
     </nav>
 
@@ -128,22 +133,23 @@
     </div>
 
     
-
-
     <!-- ゲームリストx 20 --> 
     <div class="container-fluid">
         <div class="row">
             <?php
                 foreach($results as $row){
-                    echo '<div class="col-md-3"><a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'"><img class="img-thumbnail" src="'.$row['image_small'].'"><div class="card-text">'.$row['shohin_name'].'</div><h5 class="card-title">'.$row['price'].'円</h5></a></div>';
+                    // 無料の時
+                    if( $row['price'] == 0){$price = '無料';}else{$price=$row['price'].'円';}
+                    echo '<div class="col-md-3">
+                            <a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'">
+                                <img class="img-thumbnail" src="'.$row['image_small'].'">
+                                <div class="card-text">'.$row['shohin_name'].'</div>
+                                <h5 class="card-title">'.$price.'</h5>
+                            </a>
+                          </div>';
                 }
             ?>
-            
-            <!-- <div class="col-md-3"><img class="img-thumbnail" src="img/ACT/ACT_s02.jpg"><div class="card-text">ゲーム名</div><h5 class="card-title">1000円</h5></div>
-            <div class="col-md-3"><img class="img-thumbnail" src="img/ACT/ACT_s03.jpg"><div class="card-text">ゲーム名</div><h5 class="card-title">1000円</h5></div>
-            <div class="col-md-3"><img class="img-thumbnail" src="img/ACT/ACT_s04.jpg"><div class="card-text">ゲーム名</div><h5 class="card-title">1000円</h5></div>
-            <div class="col-md-3"><img class="img-thumbnail" src="img/ACT/ACT_s01.jpg"><div class="card-text">ゲーム名</div><h5 class="card-title">1000円</h5></div>  -->
-            <!-- <div class="col-md-3"><img class="img-thumbnail" src="img/ADV/ADV_s01.jpg"><div class="card-text">ゲーム名</div><h5 class="card-title">1000円</h5></div> -->
+        
 
         </div>
     </div

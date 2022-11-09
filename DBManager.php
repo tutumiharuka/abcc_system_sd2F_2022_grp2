@@ -38,7 +38,18 @@ class DBManager{
 
 
 /*商品リストやゲーム情報を取得する */
-    // G1-5-1_ShohinList.phpにゲームリストを入れます
+// TOPページのcarouselゲームを表示（固定）
+    public function getBigImgById($shohin_id){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT image_big FROM shohins WHERE shohin_id = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$shohin_id,PDO::PARAM_STR);
+        $ps->execute();
+        $results = $ps->fetchAll();
+        return $results;
+    }
+
+// ジャンル
     public function getGameListByGenre($genre_id){
         $pdo = $this->dbConnect();
         $sql = "SELECT shohin_id,shohin_name,price,image_small FROM shohins WHERE genre_id = ?";
@@ -48,17 +59,28 @@ class DBManager{
         $results = $ps->fetchAll();
         return $results;
     }
-
+// ランキング
     public function getRankingList(){
         $pdo = $this->dbConnect();
-        $sql = "SELECT ranking_id,shohin_id,shohin_name,price,image_small FROM ranking r INNER JOIN ";
-        $ps = $pdo->prepare($sql);
-        $ps->bindValue(1,$shohin_id,PDO::PARAM_STR);
-        $ps->execute();
-        $results = $ps->fetchAll();
+        $sql = "SELECT r.ranking_id,r.shohin_id,s.shohin_name,s.price,s.image_small FROM ranking r INNER JOIN shohins s ON r.shohin_id = s.shohin_id";
+        $results = $pdo->query($sql);
         return $results;
     }
-
+// 最新作
+    public function getNewList(){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT shohin_id,shohin_name,price,image_small FROM shohins ORDER BY haishin_date DESC LIMIT 20";
+        $results = $pdo->query($sql);
+        return $results;
+    }
+// 無料
+    public function getFreeList(){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT shohin_id,shohin_name,price,image_small FROM shohins WHERE price=0";
+        $results = $pdo->query($sql);
+        return $results;
+    }
+// 詳細ページ必要情報を得る
     public function getGameById($shohin_id){
         $pdo = $this->dbConnect();
         $sql = "SELECT * FROM shohins WHERE shohin_id = ?";
@@ -69,19 +91,7 @@ class DBManager{
         return $results;
     }
 
-
-    
-
-//  SELECT
-//   a.列名,
-//   b.列名 
-// FROM 
-//   テーブルa
-// INNER JOIN
-//   テーブルb
-// ON 
-//   a.列名 = b.列名 -- 結合条件
-
+// ジャンルの翻訳
     public function getJpnGenreName($genre_id){
         $genreList = array(
             "ACT"=>"アクション",

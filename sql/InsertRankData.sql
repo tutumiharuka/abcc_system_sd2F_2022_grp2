@@ -1,40 +1,20 @@
-INSERT INTO ranking VALUES (1,1);
-INSERT INTO ranking VALUES (41,2);
-INSERT INTO ranking VALUES (16,3);
-INSERT INTO ranking VALUES (101,4);
-INSERT INTO ranking VALUES (81,5);
-INSERT INTO ranking VALUES (166,6);
-INSERT INTO ranking VALUES (187,7);
-INSERT INTO ranking VALUES (121,8);
-INSERT INTO ranking VALUES (24,9);
-INSERT INTO ranking VALUES (5,10);
-INSERT INTO ranking VALUES (21,11);
-INSERT INTO ranking VALUES (54,12);
-INSERT INTO ranking VALUES (163,13);
-INSERT INTO ranking VALUES (96,14);
-INSERT INTO ranking VALUES (37,15);
-INSERT INTO ranking VALUES (40,16);
-INSERT INTO ranking VALUES (141,17);
-INSERT INTO ranking VALUES (185,18);
-INSERT INTO ranking VALUES (146,19);
-INSERT INTO ranking VALUES (122,20);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (1,1);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (41,2);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (16,3);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (101,4);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (81,5);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (166,6);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (187,7);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (121,8);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (24,9);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (5,10);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (21,11);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (54,12);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (163,13);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (96,14);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (37,15);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (40,16);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (141,17);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (185,18);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (146,19);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (122,20);

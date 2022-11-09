@@ -128,10 +128,10 @@
 
     <nav>
         <ul class="side-list-ul">
-          <li class="fw-bold"><a href="#"> 最新作ソフト</a></li>
-          <li class="fw-bold"><a href="#"> ランキング</a></li>
-          <li class="fw-bold"><a href="#"> 無料ソフト</a></li>
-          <li class="fw-bold"><a href="#"> おすすめソフト</a></li>
+          <li class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=new"> 最新作ソフト</a></li>
+          <li class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=ranking"> ランキング</a></li>
+          <li class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=free"> 無料ソフト</a></li>
+          <!-- <li class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=recommend"> おすすめソフト</a></li> -->
           <li class="fw-bold sub-btn" onclick="showSubMenu()"><a>カテゴリ一覧</a></li>
         </ul>
     </nav>
