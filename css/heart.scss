@@ -1,0 +1,122 @@
+$size: 18vh;
+
+body {
+  // background: #08F7E9;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.card {
+  width: 75vw;
+  height: 80vh;
+  background: #F4F4F4;
+  border-bottom-left-radius: 8vh;
+  position: absolute;
+  right: 0;
+  .bar {
+    background: #FFF;
+    height: 25vh;
+    width: 100%;
+    border-bottom-left-radius: 8vh;
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+.action {
+  height: $size;
+  width: $size;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.love { left: 15vw; }
+
+.send {
+  background: url('https://cbwconline.com/IMG/Codepen/Send-Grey.svg') center/contain no-repeat;
+  left: 40vw;
+}
+
+.more {
+  background: url('https://cbwconline.com/IMG/Codepen/More-Grey.svg') center/contain no-repeat;
+  left: 65vw;
+}
+
+.line {
+  @for $i from 1 through 8 {
+    &:nth-of-type(#{$i}) {
+      transform: rotate(#{360/8 * ($i - 1)}deg);
+    }
+  }
+  margin: $size/2;
+  &.active:before {
+    content: '';
+    height: $size/2;
+    width: $size/45;
+    background: red;
+    position: absolute;
+    top: -$size/4;
+    left: -$size/50/2;
+    will-change: top, height;
+    animation: line1 .3s ease-out 1;
+  }
+}
+
+// CSS Heart
+
+$width: $size/2;
+.heart{
+  background-color: #D5D4D4;
+  width: $width;
+  height: $width;
+  margin: auto;
+  position: absolute;
+  top: $width/4; bottom: 0;
+  left: 0; right: 0;
+  transform: rotate(-45deg);
+  &:before, &:after {
+    content: '';
+    width: $width;
+    height: $width;
+    border-radius: 50%;
+    background-color: #D5D4D4;
+    position: absolute;
+  }
+  &:before {
+    top: -$width / 2;
+    left: 0;
+  }
+  &:after {
+    top: 0;
+    left: $width / 2;
+  } 
+  &.love {
+    background: #F80808;
+    &:before,
+    &:after {
+      background: #F80808;
+    }
+  }
+  &.active {
+    animation: grow-shrink .3s ease 1;
+  }
+}
+
+@keyframes line1 {
+  0% { opacity: 1;}
+  25% { top: -$size/4; }
+  65% { height: $size/2; }
+  100% {
+    height: $size/50;
+    top: -$size;
+  }
+}
+
+@keyframes grow-shrink {
+  40% { transform: scale(1.1) rotate(-45deg); }
+  75% { transform: scale(.9) rotate(-45deg); }
+  100% { transform: scale(1) rotate(-45deg); }
+}

@@ -49,6 +49,15 @@ class DBManager{
         return $results;
     }
 
+    public function getRankingList(){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT ranking_id,shohin_id,shohin_name,price,image_small FROM ranking r INNER JOIN ";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$shohin_id,PDO::PARAM_STR);
+        $ps->execute();
+        $results = $ps->fetchAll();
+        return $results;
+    }
 
     public function getGameById($shohin_id){
         $pdo = $this->dbConnect();
@@ -59,6 +68,19 @@ class DBManager{
         $results = $ps->fetchAll();
         return $results;
     }
+
+
+    
+
+//  SELECT
+//   a.列名,
+//   b.列名 
+// FROM 
+//   テーブルa
+// INNER JOIN
+//   テーブルb
+// ON 
+//   a.列名 = b.列名 -- 結合条件
 
     public function getJpnGenreName($genre_id){
         $genreList = array(

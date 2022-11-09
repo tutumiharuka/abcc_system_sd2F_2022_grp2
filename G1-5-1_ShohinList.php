@@ -35,7 +35,7 @@
     <!-- breadcrumb リンク機能  -->
     <nav class="mt-5 ms-3 mb-4" aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item h3 fw-bold"><a href="#">トップ</a></li>
+            <li class="breadcrumb-item h3 fw-bold"><a href="G1-1_Top.php">トップ</a></li>
             <li class="breadcrumb-item h3 fw-bold active" aria-current="page"><?php echo $dbmng->getJpnGenreName($genre_id)?></li>
         </ol>
     </nav>
