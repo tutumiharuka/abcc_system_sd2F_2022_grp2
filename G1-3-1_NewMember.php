@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
 
@@ -6,9 +7,6 @@
         height: 15%;
     }
 </style>
-
-
-
 <div class="container">
     <div class="row kuhaku-from"></div>
     <div class="row text-center">
@@ -30,6 +28,14 @@
                 </div>
                 <div class="row">
                     <div class="col-md-2 offset-md-2"></div>
+                    <div class="col-md-8">
+                        <?php // 次のページから戻る、重複アカウントEmailある場合
+                            if(isset($_SESSION['err'])){
+                                echo $_SESSION['err'];
+                                unset($_SESSION['err']);
+                            }
+                        ?>
+                    </div>
                 </div>
     <!-- 電話番号 -->
                 <div class="row mt-3">

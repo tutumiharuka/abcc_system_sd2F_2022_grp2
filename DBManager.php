@@ -4,14 +4,29 @@ class DBManager{
     private function dbConnect(){
         // 本番
         $pdo = new PDO('mysql:host=localhost;dbname=gamedb;charset=utf8','webuser','abccsd2');
-        // テスト用(1~4game)
-        // $pdo = new PDO('mysql:host=localhost;dbname=gametest;charset=utf8','webuser','abccsd2');
         // LolipopのDBを使うabccsd2
         // $pdo = new PDO('mysql:host=mysql209.phy.lolipop.lan;dbname=LAA1418471-gamedb;charset=utf8','LAA1418471','password');
         return $pdo;
     }
 
+
  /*　新規登録 */
+//  重複メールの確認
+    public function isSameEmail($mail){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT mail FROM members WHERE mail = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $mail,  PDO::PARAM_STR);
+        $ps->execute();
+        $results = $ps->fetchAll();
+        if(count($results)!=0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+//  新会員のデータを入れる
     public function insertNewMember($name,$mail,$phone,$birth,$password){
         $pdo = $this->dbConnect();
         $sql = "INSERT INTO members(name,mail,phone_number,date_of_birth,password) VALUES (?,?,?,?,?)";
