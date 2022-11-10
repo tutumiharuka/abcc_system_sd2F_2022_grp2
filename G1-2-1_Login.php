@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
 
@@ -17,7 +19,7 @@
 
     <div class="row justify-content-center">
         <div class="col-6">
-            <form action="G1-2-2_LoginEnd.php" method="post">
+            <form action="LoginCheck.php" method="post">
         <!-- メールアドレス -->
                 <div class="mb-5">
                     <input type="email" class="form-control" name="mail" placeholder="メールアドレス">
@@ -26,6 +28,8 @@
                 <div class="mb-5">
                     <input type="password" class="form-control" name="pass" placeholder="パスワード">
                 </div>
+                 <!-- 次のページから戻る、アカウント存在しないやパスワードが違う場合 -->
+                 <?php if(isset($_SESSION['err'])){echo $_SESSION['err'];unset($_SESSION['err']);}?>
                 <!-- ボタン -->
                 <div class="right-aligned">
                     <button type="submit" class="btn btn-outline-primary btn-lg rounded-pill">ログイン</button>

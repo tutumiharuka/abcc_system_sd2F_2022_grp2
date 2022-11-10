@@ -50,6 +50,7 @@ class DBManager{
         $results = $ps->fetchAll();
         return $results;
     }
+    
 
 
 /*商品リストやゲーム情報を取得する */
@@ -122,29 +123,6 @@ class DBManager{
             "TBL"=>"テーブルゲーム");
         return $genreList[$genre_id];
     }
-
-    // //ログイン
-    // public function getUserPassByMail($mail){
-    //     $pdo = $this->dbConnect();
-    //     $sql = "SELECT * FROM user_mst WHERE user_mail = ?";
-    //     $ps = $pdo->prepare($sql);
-    //     $ps->bindValue(1,$mail,PDO::PARAM_STR);
-    //     $ps->execute();
-    //     $results = $ps->fetchAll();
-    //     return $results;
-    // }
-
-        // //5-1ex 新規登録
-    // public function insertNewUser($mail,$name,$password,$address){
-    //     $pdo = $this->dbConnect();
-    //     $sql = "INSERT INTO user_mst ( user_mail, user_name, user_password, user_address) VALUES (?,?,?,?)";
-    //     $ps = $pdo->prepare($sql);
-    //     $ps->bindValue(1, $mail, PDO::PARAM_STR);
-    //     $ps->bindValue(2, $name, PDO::PARAM_STR);
-    //     $ps->bindValue(3, password_hash($password,PASSWORD_DEFAULT), PDO::PARAM_STR);
-    //     $ps->bindValue(4, $address, PDO::PARAM_STR);
-    //     $ps->execute();
-    // }
     
 }
 ?>
