@@ -11,11 +11,11 @@
 
 <div class="container">
     <div class="row kuhaku-from"></div>
-    <div class="row text-center mt-3">
+    <div class="row text-center">
         <h2>アカウントの作成</h2>
     </div>
 <!-- 新規登録のフォーム -->
-    <div class="card bg-light mt-3">
+    <div class="card bg-light mt-3 mb-3">
         <div class="card-body">
             <form id="form" action="#" onsubmit="return on_submit()">
     <!-- 名前 -->
