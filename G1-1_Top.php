@@ -29,130 +29,82 @@
         }
 </style>
 
+<?php
+require_once "DBManager.php";
+$dbmng = new DBManager(); 
+?>
+
 <div class="carousel mt-3">
-  <div class="px-1 carousel-card"><img src="img/SPO/SPO_b01.jpg" alt="" class="carousel-img rounded "></div>
-  <div class="px-1 carousel-card"><img src="img/SPO/SPO_b02.jpg" alt="" class="carousel-img rounded "></div>
-  <div class="px-1 carousel-card"><img src="img/SPO/SPO_b03.jpg" alt="" class="carousel-img rounded "></div>
-  <div class="px-1 carousel-card"><img src="img/SPO/SPO_b04.jpg" alt="" class="carousel-img rounded "></div>
-  <div class="px-1 carousel-card"><img src="img/FIG/FIG_b01.jpg" alt="" class="carousel-img rounded "></div>
-  <div class="px-1 carousel-card"><img src="img/FIG/FIG_b02.jpg" alt="" class="carousel-img rounded "></div>
-  <div class="px-1 carousel-card"><img src="img/FIG/FIG_b03.jpg" alt="" class="carousel-img rounded "></div>
+<?php
+// carouselに表示させる商品番号
+$carousels =[1,3,17,101,201,41,81];
+foreach($carousels as $id){
+        $results = $dbmng->getBigImgById($id);
+        foreach($results as $row){
+                echo '<div class="px-1 carousel-card">
+                <a href="G1-5-2_ShohinDetails.php?shohin_id='.$id.'">
+                <img src="'.$row['image_big'].'"class="carousel-img rounded">
+                </a>
+                </div>';
+        }
+}
+?>
 </div>
 
 <!-- 右のすべて -->
-<img class="position-absolute me-4 mt-2 end-0 all-game" src="img/all_game.png" alt="すべて">
+<!-- <img class="position-absolute me-4 mt-2 end-0 all-game" src="img/all_game.png" alt="すべて"> -->
 
-<div class="ms-5 mt-5">    
-  <h4>最新作</h4>
-  <div class="game_list ml-4">
-    <div class="card border-0 px-1">
-            <img src="img/ACT/ACT_s01.jpg" class="card-img-top rounded">
-            <div class="card-text">ゲーム名</div>
-            <h5 class="card-title">1000円</h5>
-    </div>
-    <div class="card border-0 px-1">
-            <img src="img/ACT/ACT_s02.jpg" class="card-img-top rounded">
-            <div class="card-text">ゲーム名</div>
-            <h5 class="card-title">1000円</h5>
-    </div>
-    <div class="card border-0 px-1">
-            <img src="img/ACT/ACT_s03.jpg" class="card-img-top rounded">
-            <div class="card-text">ゲーム名</div>
-            <h5 class="card-title">1000円</h5>
-    </div>
-    <div class="card border-0 px-1">
-            <img src="img/ACT/ACT_s04.jpg" class="card-img-top rounded">
-            <div class="card-text">ゲーム名</div>
-            <h5 class="card-title">1000円</h5>
-    </div>
-    <div class="card border-0 px-1">
-            <img src="img/ACT/ACT_s01.jpg" class="card-img-top rounded">
-            <div class="card-text">ゲーム名</div>
-            <h5 class="card-title">1000円</h5>
-    </div>
-    <div class="card border-0 px-1">
-            <img src="img/ACT/ACT_s01.jpg" class="card-img-top rounded">
-            <div class="card-text">ゲーム名</div>
-            <h5 class="card-title">1000円</h5>
-    </div>
-    <div class="card border-0 px-1">
-            <img src="img/ACT/ACT_s01.jpg" class="card-img-top rounded">
-            <div class="card-text">ゲーム名</div>
-            <h5 class="card-title">1000円</h5>
-    </div>
-    <div class="card border-0 px-1">
-            <img src="img/ACT/ACT_s01.jpg" class="card-img-top rounded">
-            <div class="card-text">ゲーム名</div>
-            <h5 class="card-title">1000円</h5>
-    </div>
-    <div class="card border-0 px-1">
-            <img src="img/ACT/ACT_s01.jpg" class="card-img-top rounded">
-            <div class="card-text">ゲーム名</div>
-            <h5 class="card-title">1000円</h5>
-    </div>
-    <div class="card border-0 px-1">
-            <img src="img/ACT/ACT_s01.jpg" class="card-img-top rounded">
-            <div class="card-text">ゲーム名</div>
-            <h5 class="card-title">1000円</h5>
-    </div>
-    <div class="card border-0 px-1">
-            <img src="img/ACT/ACT_s01.jpg" class="card-img-top rounded">
-            <div class="card-text">ゲーム名</div>
-            <h5 class="card-title">1000円</h5>
-    </div>
-    <div class="card border-0 px-1">
-            <img src="img/ACT/ACT_s01.jpg" class="card-img-top rounded">
-            <div class="card-text">ゲーム名</div>
-            <h5 class="card-title">1000円</h5>
-    </div>
-    <div class="card border-0 px-1">
-            <img src="img/ACT/ACT_s01.jpg" class="card-img-top rounded">
-            <div class="card-text">ゲーム名</div>
-            <h5 class="card-title">1000円</h5>
-    </div>
-    <div class="card border-0 px-1">
-            <img src="img/ACT/ACT_s01.jpg" class="card-img-top rounded">
-            <div class="card-text">ゲーム名</div>
-            <h5 class="card-title">1000円</h5>
-    </div>
-    <div class="card border-0 px-1">
-            <img src="img/ACT/ACT_s01.jpg" class="card-img-top rounded">
-            <div class="card-text">ゲーム名</div>
-            <h5 class="card-title">1000円</h5>
-    </div>
-    <div class="card border-0 px-1">
-            <img src="img/ACT/ACT_s01.jpg" class="card-img-top rounded">
-            <div class="card-text">ゲーム名</div>
-            <h5 class="card-title">1000円</h5>
-    </div>
-    <div class="card border-0 px-1">
-            <img src="img/ACT/ACT_s01.jpg" class="card-img-top rounded">
-            <div class="card-text">ゲーム名</div>
-            <h5 class="card-title">1000円</h5>
-    </div>
-    <div class="card border-0 px-1">
-            <img src="img/ACT/ACT_s01.jpg" class="card-img-top rounded">
-            <div class="card-text">ゲーム名</div>
-            <h5 class="card-title">1000円</h5>
-    </div>
-    <div class="card border-0 px-1">
-            <img src="img/ACT/ACT_s01.jpg" class="card-img-top rounded">
-            <div class="card-text">ゲーム名</div>
-            <h5 class="card-title">1000円</h5>
-    </div>
-    <div class="card border-0 px-1">
-            <img src="img/ACT/ACT_s01.jpg" class="card-img-top rounded">
-            <div class="card-text">ゲーム名</div>
-            <h5 class="card-title">1000円</h5>
-    </div>
-    <div class="card border-0 px-1">
-            <img src="img/ACT/ACT_s01.jpg" class="card-img-top rounded">
-            <div class="card-text">ゲーム名</div>
-            <h5 class="card-title">1000円</h5>
-    </div>
-  </div>
+
+
+<div class="container-fluid">
+        <div class="row ms-5">
+                <div class="col-md-2 h4"><a href="G1-5-1_ShohinList.php?genre_id=new">最新作</a></div>
+                <div class="col-md-2 offset-md-8 text-end"><a href="G1-5-1_ShohinList.php?genre_id=new"><img src="img/all_game.png" alt="すべて"></a></div>
+        </div>
+        <div class="row ms-5 mt-2 game_list">
+                <?php
+                $results=$dbmng->getNewList();
+                foreach($results as $row){
+                        if( $row['price'] == 0){$price = '無料';}else{$price=$row['price'].'円';}
+                        echo '<div class="card border-0 px-1"><a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'"><img src="'.$row['image_small'].'" class="card-img-top rounded"><div class="card-text">'.$row['shohin_name'].'</div><h5 class="card-title">'.$price.'</h5></a></div>';
+                }
+                ?>
+        </div>
+
+        <div class="row ms-5">
+                <div class="col-md-2 h4">
+                        <a href="G1-5-1_ShohinList.php?genre_id=ranking">ランキング</a></div>
+                <div class="col-md-2 offset-md-8 text-end">
+                        <a href="G1-5-1_ShohinList.php?genre_id=ranking"><img src="img/all_game.png" alt="すべて"></a></div>
+        </div>
+        <div class="row ms-5 mt-2 game_list">
+                <?php
+                $results=$dbmng->getRankingList();
+                foreach($results as $row){
+                        if( $row['price'] == 0){$price = '無料';}else{$price=$row['price'].'円';}
+                        echo '<div class="card border-0 px-1"><a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'"><img src="'.$row['image_small'].'" class="card-img-top rounded"><div class="card-text">'.$row['shohin_name'].'</div><h5 class="card-title">'.$price.'</h5></a></div>';
+                }
+                ?>
+        </div>
+
+        <div class="row ms-5">
+                <div class="col-md-2 h4">
+                        <a href="G1-5-1_ShohinList.php?genre_id=free">無料</a></div>
+                <div class="col-md-2 offset-md-8 text-end">
+                        <a href="G1-5-1_ShohinList.php?genre_id=free"><img src="img/all_game.png" alt="すべて"></a></div>
+        </div>
+        <div class="row ms-5 mt-2 game_list">
+                <?php
+                $results=$dbmng->getFreeList();
+                foreach($results as $row){
+                         if( $row['price'] == 0){$price = '無料';}else{$price=$row['price'].'円';}
+                        echo '<div class="card border-0 px-1"><a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'"><img src="'.$row['image_small'].'" class="card-img-top rounded"><div class="card-text">'.$row['shohin_name'].'</div><h5 class="card-title">'.$price.'</h5></a></div>';
+                }
+                ?>
+        </div>
+
+
 </div>
-
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

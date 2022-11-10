@@ -1,5 +1,6 @@
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
+
 <style>
     h1 {
         font-family: "MS ゴシック";
@@ -53,7 +54,9 @@
             </p>
         </div>
 <!-- ♡マーク -->
-        <a class="col-lg-1 mb-2 d-flex align-items-center h2" href="#"><i class="typcn typcn-heart-outline"></i></a>
+        <a class="col-lg-1 mb-2 d-flex align-items-center h2" href="#">
+            <i class="typcn typcn-heart-outline"></i>
+        </a>
 <!-- 購入ボタン -->
         <div class="col-lg-3 h3">
             <input type="submit" class="btn btn-outline-primary btn-lg rounded-pill" value="カートに入れる">
@@ -116,5 +119,4 @@
             <li class="breadcrumb-item h4 fw-bold active" aria-current="page"><?php echo $shohin_name?></li>
         </ol>
     </nav>
-
 <?php include_once 'GameFooter.php'; ?>
