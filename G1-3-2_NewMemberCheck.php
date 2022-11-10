@@ -10,9 +10,8 @@
 
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
-
-<?php
-// 前ページの値を取得する
+<?php  
+    // 前ページの値を取得する
     $name = $_POST['name'];
     $mail = $_POST['mail'];
     $phone = $_POST['phone'];

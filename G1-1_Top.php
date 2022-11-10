@@ -2,7 +2,6 @@
 <?php include_once 'GameNavbar.php'; ?>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-<!-- <link rel="stylesheet" href="css/top.css"> -->
 <style>
         .carousel-card{
         height: auto;
@@ -50,11 +49,6 @@ foreach($carousels as $id){
 }
 ?>
 </div>
-
-<!-- 右のすべて -->
-<!-- <img class="position-absolute me-4 mt-2 end-0 all-game" src="img/all_game.png" alt="すべて"> -->
-
-
 
 <div class="container-fluid">
         <div class="row ms-5">
