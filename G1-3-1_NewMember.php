@@ -28,13 +28,10 @@
                 </div>
                 <div class="row">
                     <div class="col-md-2 offset-md-2"></div>
-                    <div class="col-md-8">
-                        <?php // 次のページから戻る、重複アカウントEmailある場合
-                            if(isset($_SESSION['err'])){
-                                echo $_SESSION['err'];
-                                unset($_SESSION['err']);
-                            }
-                        ?>
+                    <div class="col-md-8"><span class="text-danger">
+                        <!-- 次のページから戻る、重複アカウントEmailある場合 -->
+                        <?php if(isset($_SESSION['err'])){echo $_SESSION['err'];unset($_SESSION['err']);}?>
+                        </span>
                     </div>
                 </div>
     <!-- 電話番号 -->
