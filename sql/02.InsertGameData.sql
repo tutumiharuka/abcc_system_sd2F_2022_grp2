@@ -218,3 +218,27 @@ INSERT INTO shohins VALUES (217,'PAR','Overcooked!® - オーバークック 王
 INSERT INTO shohins VALUES (218,'PAR','オバケイドロ！',1980,'806.0MB','2019-08-01','img/PAR/PAR_s18.jpg','img/PAR/PAR_b18.jpg','ハラハラドキドキのおいかけっこバトル！制限時間は3分！ニンゲンは仲間と協力してオバケから逃げきれ！オバケはスキルを駆使してニンゲンを捕まえろ！ローカルでもオンラインでも、最大4人で楽しめます。みんなで一緒に『オバケイドロ！』しよう！');
 INSERT INTO shohins VALUES (219,'PAR','太鼓の達人 Nintendo Switchば～じょん！',6710,'5.7GB','2018-07-19','img/PAR/PAR_s19.jpg','img/PAR/PAR_b19.jpg','好きな演奏スタイルで遊ぼう！TVモード、テーブルモード、携帯モードに対応！いつでもどこでも演奏ゲームを楽しめる♪ソフト1本で2人まで同時に演奏ゲームを楽しめます。さらに、「Nintendo Switch」を持ち寄れば、最大4台までローカル通信で近くの人と演奏ゲームがプレイ可能♪');
 INSERT INTO shohins VALUES (220,'PAR','マリオテニス エース',6578,'2.4GB','2018-06-22','img/PAR/PAR_s20.jpg','img/PAR/PAR_b20.jpg','「マリオテニス」最新作では、テニスシステムが一新！ねらいを定めてピンポイントに球を打ち込む新ショット「ねらいうち」や、遠くを狙われた球に追いつく「加速」、究極の一撃「スペシャルショット」など、様々な新要素が加わったことにより、より奥深い駆け引きが生まれるようになりました。');
+
+
+
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (1,1);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (41,2);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (16,3);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (101,4);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (81,5);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (166,6);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (187,7);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (121,8);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (24,9);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (5,10);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (21,11);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (54,12);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (163,13);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (96,14);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (37,15);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (40,16);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (141,17);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (185,18);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (146,19);
+INSERT INTO ranking(shohin_id,ranking_id) VALUES (122,20);
+

@@ -14,7 +14,6 @@ CREATE TABLE `genres` (
   PRIMARY KEY (`genre_id`)
 );
 
-
 CREATE TABLE `shohins` (
   `shohin_id`           INT(8)         NOT NULL AUTO_INCREMENT    COMMENT '商品ID',
   `genre_id`            CHAR(3)        NOT NULL                   COMMENT 'ジャンルID',
@@ -25,7 +24,8 @@ CREATE TABLE `shohins` (
   `image_small`         VARCHAR(191)   NOT NULL                   COMMENT '画像小',
   `image_big`           VARCHAR(191)   NOT NULL                   COMMENT '画像大',
   `shohin_explanation`  VARCHAR(4000)  NOT NULL                   COMMENT '商品説明',
-  PRIMARY KEY (`shohin_id`)
+  PRIMARY KEY (`shohin_id`),
+  FOREIGN KEY (`genre_id`) REFERENCES genres(`genre_id`)
 );
 
 CREATE TABLE `ranking` (
@@ -37,23 +37,21 @@ CREATE TABLE `ranking` (
 
 
 CREATE TABLE `carts` (
-  `member_id`          INT(8)            NOT NULL AUTO_INCREMENT COMMENT '会員ID',
-  `shohin_id`         INT(8)         NOT NULL                   COMMENT '商品ID',
+  `member_id`         INT(8)        NOT NULL                  COMMENT '会員ID',
+  `shohin_id`         INT(8)         NOT NULL                 COMMENT '商品ID',
   `is_purchased`      CHAR(1)        NOT NULL DEFAULT 0       COMMENT '購入済',
   PRIMARY KEY (`member_id`),
-  FOREIGN KEY (`shohin_id`) REFERENCES shohins(`shohin_id`),
-  FOREIGN KEY (`member_id`) REFERENCES members(`member_id`)
+  FOREIGN KEY (`member_id`) REFERENCES members(`member_id`),
+  FOREIGN KEY (`shohin_id`) REFERENCES shohins(`shohin_id`)
 );
 
 CREATE TABLE `favorites` (
-  `member_id`            INT(8)         NOT NULL AUTO_INCREMENT    COMMENT '会員ID',
-  `shohin_id`             INT(8)         NOT NULL                   COMMENT '商品ID',
+  `member_id`             INT(8)          NOT NULL         COMMENT '会員ID',
+  `shohin_id`             INT(8)          NOT NULL         COMMENT '商品ID',
   PRIMARY KEY (`member_id`),
-  FOREIGN KEY (`shohin_id`) REFERENCES shohins(`shohin_id`),
-  FOREIGN KEY (`member_id`) REFERENCES members(`member_id`)
+  FOREIGN KEY (`member_id`) REFERENCES members(`member_id`),
+  FOREIGN KEY (`shohin_id`) REFERENCES shohins(`shohin_id`)
 );
-
-
 
 CREATE TABLE `histories` (
   `history_id`  INT(8)      NOT NULL AUTO_INCREMENT    COMMENT '履歴ID',
@@ -61,7 +59,18 @@ CREATE TABLE `histories` (
   `shohin_id`   INT(8)      NOT NULL                   COMMENT '商品ID',
   `buying_date` DATE        NOT NULL                   COMMENT '購入日',
   PRIMARY KEY (`history_id`),
-  FOREIGN KEY (`shohin_id`) REFERENCES shohins(`shohin_id`),
-  FOREIGN KEY (`member_id`) REFERENCES members(`member_id`)
+  FOREIGN KEY (`member_id`) REFERENCES members(`member_id`),
+  FOREIGN KEY (`shohin_id`) REFERENCES shohins(`shohin_id`)
 );
 
+INSERT INTO genres(genre_id,genre_name) VALUES ('ACT','アクション');
+INSERT INTO genres(genre_id,genre_name) VALUES ('ADV','アドベンチャー');
+INSERT INTO genres(genre_id,genre_name) VALUES ('FIG','格闘');
+INSERT INTO genres(genre_id,genre_name) VALUES ('FPS','シューティング');
+INSERT INTO genres(genre_id,genre_name) VALUES ('MUS','音楽ゲーム');
+INSERT INTO genres(genre_id,genre_name) VALUES ('PAR','パーティ');
+INSERT INTO genres(genre_id,genre_name) VALUES ('PZL','パズル');
+INSERT INTO genres(genre_id,genre_name) VALUES ('RCG','レース');
+INSERT INTO genres(genre_id,genre_name) VALUES ('RPG','ロールプレイング');
+INSERT INTO genres(genre_id,genre_name) VALUES ('SPO','スポーツ');
+INSERT INTO genres(genre_id,genre_name) VALUES ('TBL','テーブルゲーム');
