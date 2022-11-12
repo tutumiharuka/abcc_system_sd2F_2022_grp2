@@ -1,4 +1,9 @@
 <?php session_start(); ?>
+<?php 
+    require_once 'LoginManager.php';
+    $loginMng = new LoginManager(); 
+    $loginMng->isLogin();
+?>
 <?php include_once 'GameHeader.php'; ?>
 <div class="row">
 	<div class="col-md-12 bg-info text-dark text-left">

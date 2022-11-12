@@ -1,4 +1,10 @@
 <?php session_start(); ?>
+<?php 
+    require_once 'LoginManager.php';
+    $loginMng = new LoginManager(); 
+    $loginMng->isLogin();
+?>
+
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
 

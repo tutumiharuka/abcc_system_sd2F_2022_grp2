@@ -39,11 +39,6 @@ class DBManager{
         $ps->execute();
     }
 
-
-
-    
-
-
 /*商品リストやゲーム情報を取得する */
 // TOPページのcarouselゲームを表示（固定）
     public function getBigImgById($shohin_id){

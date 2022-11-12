@@ -122,7 +122,7 @@
         echo '<div class="row mt-5">';
         echo '    <nav class="member-list">';
         echo '        <ul>';
-        echo '            <li class="fw-bold"><h3>ゲーム太郎</h3></li>';
+        echo '            <li class="fw-bold"><h3>'.$_SESSION['member']['name'].'</h3></li>';
         echo '            <li class="fw-bold"><a href="#"> 購入履歴</a></li>';
         echo '            <li class="fw-bold"><a href="#"> お気に入り</a></li>';
         echo '            <li class="fw-bold"><a href="#"> カート</a></li>';
@@ -141,19 +141,6 @@
         echo '</div>';
     }
     ?>
-
-
-
-    <!-- <div class="row mt-5 ms-5">
-      <div class="col-12">
-        <a href="G1-2-1_Login.php">
-          <button type="button" class="btn btn-lg login-btn fw-bold">ログイン・新規登録</button>
-        </a>
-      </div>
-    </div> -->
-
-
-
     <div class="side-list-title mt-3 fw-bold">ゲームを探す</div>
 
     <nav>
@@ -203,19 +190,19 @@
           <ul class="navbar-nav ms-auto"> <!-- ms-auto右寄せ -->
               
               <li class="nav-item mt-3 me-3"><!-- 検索 -->
-                <form class="form-inline" role="search" action="/Search/SearchList" method="get" target="_blank">
+                <form class="form-inline" role="search" action="G1-5-1_ShohinList.php" method="get" target="_blank">
                   <div class="input-group">
                     <input type="search" class="form-control search" placeholder="ゲームを探す">
-                    <span class="input-group-text search"><i class="icon ion-search"></i></span>
+                      <button class="input-group-text search" type="submit"><i class="icon ion-search"></i></button>
                   </div>
               </form>
               </li>
               <li class="nav-item d-flex justify-content-center align-items-center"><!-- ハートマークicon -->
-                  <a class="nav-link mt-1" href="#"><i class="typcn typcn-heart-outline h2"></i></a>
+                  <a class="nav-link mt-1" href="G1-4_Favorite.php"><i class="typcn typcn-heart-outline h2"></i></a>
               </li>
 
               <li class="nav-item  d-flex justify-content-center align-items-center"><!-- カートicon -->
-                <a class="nav-link mt-1" href="#"><i class="typcn typcn-shopping-cart h2"></i></a>
+                <a class="nav-link mt-1" href="G1-6-1_Cart.php"><i class="typcn typcn-shopping-cart h2"></i></a>
               </li>
             </ul>
         </div>
