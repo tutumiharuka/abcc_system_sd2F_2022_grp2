@@ -1,5 +1,4 @@
-<?php 
-session_start(); 
+<?php session_start(); 
 // echo $_SESSION['member']['member_id'].'<br>';
 // echo $_SESSION['member']['name'].'<br>';
 // echo $_SESSION['member']['mail'].'<br>';

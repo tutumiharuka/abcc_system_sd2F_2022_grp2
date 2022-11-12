@@ -8,7 +8,6 @@
   /* フォント設定 */
   body { font-family: "M PLUS Rounded 1c"; }
   .wf-nicomoji { font-family: "Nico Moji"; }
-
   /* 検索テキストボックス */
   .search {
     height: 30px;
@@ -116,13 +115,44 @@
     <div class="row">
       <div class="col-12"><i class="bi bi-x h1 position-absolute end-0 me-3 mt-2" onclick="showMenu()"></i></div>
     </div>  
-    <div class="row mt-5 ms-5">
+    
+    <!-- 会員の表示 -->
+    <?php 
+    if(isset($_SESSION['member'])){
+        echo '<div class="row mt-5">';
+        echo '    <nav class="member-list">';
+        // echo '        <div class="h3">ゲーム太郎</div>';
+        echo '        <ul>';
+        echo '            <li class="fw-bold"><h3>ゲーム太郎</h3></li>';
+        echo '            <li class="fw-bold"><a href="#"> 購入履歴</a></li>';
+        echo '            <li class="fw-bold"><a href="#"> お気に入り</a></li>';
+        echo '            <li class="fw-bold"><a href="#"> カート</a></li>';
+        echo '            <li class="fw-bold"><a href="#"> 会員情報</a></li>';
+        echo '        </ul>';
+        echo '    </nav>';
+        echo '</div>';
+    }else{
+        echo '<div class="row mt-5 ms-5">';
+        echo '  <div class="col-12">';
+        echo '    <a href="G1-2-1_Login.php">';
+        echo '      <button type="button" class="btn btn-lg login-btn fw-bold">ログイン・新規登録</button>';
+        echo '    </a>';
+        echo '  </div>';
+        echo '</div>';
+    }
+    ?>
+
+
+
+    <!-- <div class="row mt-5 ms-5">
       <div class="col-12">
         <a href="G1-2-1_Login.php">
           <button type="button" class="btn btn-lg login-btn fw-bold">ログイン・新規登録</button>
         </a>
       </div>
-    </div>
+    </div> -->
+
+
 
     <div class="side-list-title mt-3 fw-bold">ゲームを探す</div>
 
@@ -143,17 +173,15 @@
     </div>  
     <nav class="sub-list">
         <ul>
-          <li class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=ACT">アクション</a></li>
-          <li class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=ADV">アドベンチャー</a></li>
-          <li class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=FIG">格闘</a></li>
-          <li class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=FPS">シューティング</a></li>
-          <li class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=MUS">音楽ゲーム</a></li>
-          <li class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=PAR">パーティ</a></li>
-          <li class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=PZL">パズル</a></li>
-          <li class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=RCG">レース</a></li>
-          <li class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=RPG">ロールプレイング</a></li>
-          <li class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=SPO">スポーツ</a></li>
-          <li class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=TBL">テーブルゲーム</a></li>
+          <!-- ジャンルリストを全部取り出す -->
+          <?php
+            require_once "DBManager.php";
+            $dbmng = new DBManager(); 
+            $list = $dbmng->getGenreList();
+            foreach($list as $row){
+              echo '<li class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id='.$row['genre_id'].'">'.$row['genre_name'].'</a></li>';
+            }
+          ?>
         </ul>
     </nav>
   </div>

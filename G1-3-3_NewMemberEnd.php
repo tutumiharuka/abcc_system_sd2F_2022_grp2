@@ -1,5 +1,23 @@
+<?php session_start();?>
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
+<?php 
+$name = $_POST['name'];
+$mail = $_POST['mail'];
+$phone = $_POST['phone'];
+$birth = $_POST['birth'];
+$pass = $_POST['pass'];
+
+require_once "DBManager.php";
+$dbmng = new DBManager();
+$results = $dbmng->insertNewMember($name,$mail,$phone,$birth,$pass);
+
+//自動的にログインする
+require_once 'LoginManager.php';
+$loginmng = new LoginManager();
+$loginmng->login($mail);
+
+?>
 
 <style>
     .kuhaku-form{

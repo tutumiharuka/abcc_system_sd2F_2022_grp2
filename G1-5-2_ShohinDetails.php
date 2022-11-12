@@ -1,5 +1,21 @@
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
+<?php 
+    $shohin_id =  $_GET['shohin_id'];
+    require_once "DBManager.php";
+    $dbmng = new DBManager();
+    $results = $dbmng->getGameById($shohin_id);
+    foreach($results as $row){
+        $genre_id = $row['genre_id'];
+        $shohin_name = $row['shohin_name'];
+        $price = $row['price'];
+        $capacity = $row['capacity'];
+        $haishin_date = $row['haishin_date'];
+        $image_big = $row['image_big'];
+        $shohin_explanation = $row['shohin_explanation'];
+    }
+?>
+
 
 <style>
     h1 {
@@ -16,23 +32,7 @@
         width: 80px;
     }
 </style>
-<?php 
-    $shohin_id =  $_GET['shohin_id'];
-    require_once "DBManager.php";
-    $dbmng = new DBManager();
-    $results = $dbmng->getGameById($shohin_id);
-    foreach($results as $row){
-        $genre_id = $row['genre_id'];
-        $shohin_name = $row['shohin_name'];
-        $price = $row['price'];
-        $capacity = $row['capacity'];
-        $haishin_date = $row['haishin_date'];
-        $image_big = $row['image_big'];
-        $shohin_explanation = $row['shohin_explanation'];
-    }
-    
-    // echo $result;
-?>
+
 <!-- 画像 -->
 <div class="container">
     <div class="row">

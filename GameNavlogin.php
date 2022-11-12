@@ -118,8 +118,8 @@ a,button{
       <div class="col-12"><i class="bi bi-x h1 position-absolute end-0 me-3 mt-2" onclick="showMenu()"></i></div>
     </div>  
     <!-- 会員名を表示 -->
-    <div class="row">
-
+    <div class="row h3">
+        ゲーム太郎
     </div>
     
     <div class="row mt-5">

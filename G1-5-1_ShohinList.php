@@ -12,23 +12,19 @@
 <?php 
 require_once "DBManager.php";
 $dbmng = new DBManager();
-// new
-// free
-// recommend
 if(isset($_GET['genre_id'])){
-    
     if($_GET['genre_id']=="free"){
-        $results=$dbmng->getFreeList();
+        $list = $dbmng->getFreeList();
         $title = "無料ゲーム";
     }else if($_GET['genre_id']=="new"){
-        $results=$dbmng->getNewList();
+        $list = $dbmng->getNewList();
         $title = "最新作";
     }else if($_GET['genre_id']=="ranking"){
-        $results=$dbmng->getRankingList();
+        $list = $dbmng->getRankingList();
         $title = "ランキング";
     }else{// ジャンルで
         $genre_id = $_GET['genre_id'];
-        $results=$dbmng->getGameListByGenre($genre_id);
+        $list = $dbmng->getGameListByGenre($genre_id);
         $title = $dbmng->getJpnGenreName($genre_id);
     }
 }
@@ -137,7 +133,7 @@ if(isset($_GET['genre_id'])){
     <div class="container-fluid">
         <div class="row">
             <?php
-                foreach($results as $row){
+                foreach($list as $row){
                     // 無料の時
                     if( $row['price'] == 0){$price = '無料';}else{$price=$row['price'].'円';}
                     echo '<div class="col-md-3">

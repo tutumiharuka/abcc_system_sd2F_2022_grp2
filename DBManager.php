@@ -40,16 +40,7 @@ class DBManager{
     }
 
 
- /*　ログイン */
-    public function getUserPassByMail($mail){
-        $pdo = $this->dbConnect();
-        $sql = "SELECT * FROM members WHERE mail = ?";
-        $ps = $pdo->prepare($sql);
-        $ps->bindValue(1,$mail,PDO::PARAM_STR);
-        $ps->execute();
-        $results = $ps->fetchAll();
-        return $results;
-    }
+
     
 
 
@@ -107,7 +98,14 @@ class DBManager{
         return $results;
     }
 
-// ジャンルの翻訳
+// ジャンル
+    public function getGenreList(){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT * FROM genres";
+        $list = $pdo->query($sql);
+        return $list;
+    }
+
     public function getJpnGenreName($genre_id){
         $genreList = array(
             "ACT"=>"アクション",

@@ -21,7 +21,6 @@
     //birthは3つのstringの組み合わせ
     $birth = $year.'-'.$month.'-'.$day;
     $pass = $_POST['pass'];
-
 ?>
 
 <style>
@@ -43,31 +42,34 @@
     <!-- 名前 -->
                 <div class="row mt-5">
                     <div class="col-md-2 offset-md-2">◆名前</div>
-                    <div class="col-md-6">ゲームオタク　太郎</div>
-                   
+                    <div class="col-md-6"><?php echo $name?></div>
+                    <input type="hidden" name="name" value="<?php echo $name ?>">
                 </div>
     <!-- メールアドレス -->
                 <div class="row mt-5">
                     <div class="col-md-2 offset-md-2">◆メールアドレス</div>
-                    <div class="col-md-6">taro@gameotaku.com</div>
+                    <div class="col-md-6"><?php echo $mail?></div>
+                    <input type="hidden" name="mail" value="<?php echo $mail ?>">
                 </div>
     <!-- 電話番号 -->
                 <div class="row mt-5">
                     <div class="col-md-2 offset-md-2">◆電話番号</div>
-                    <div class="col-md-6">070 - 0000 - 0000</div>
+                    <div class="col-md-6"><?php echo $phone?></div>
+                    <input type="hidden" name="phone" value="<?php echo $phone ?>">
                 </div>
     <!-- 生年月日 -->
     
                 <div class="row mt-5">
                     <div class="col-md-2 offset-md-2">◆生年月日</div>
-                    <div class="col-md-6">2022年12月31日</div>
+                    <div class="col-md-6"><?php echo $birth?></div>
+                    <input type="hidden" name="birth" value="<?php echo $birth ?>">
                 </div>
 
     <!-- パスワード -->
                 <div class="row mt-5">
                     <div class="col-md-2 offset-md-2">◆パスワード</div>
                     <div class="col-md-3" id="nopass">●●●●●●●●●●</div>
-                    <div class="col-md-3 d-none" id="seepass">0123456789</div>
+                    <div class="col-md-3 d-none" id="seepass"><?php echo $pass?></div>
                     <div class="col-md-1 justify-content-start">
                         <a id="eyebtn"><i class="bi bi-eye-fill"></i></a>
                     </div>
