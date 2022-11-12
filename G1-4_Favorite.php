@@ -4,7 +4,6 @@
 
 <div class="container">
     <div class="row h1 ms-5 mt-5">お気に入り</div>
-
     <!-- 商品リスト -->
     <div class="row d-flex justify-content-center mt-5">
         <div class="col-md-3"><img class="img-fluid" src="img/FPS/FPS_s01.jpg"></div>

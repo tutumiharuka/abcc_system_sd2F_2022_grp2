@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php include_once 'GameHeader.php'; ?>
 <div class="row">
 	<div class="col-md-12 bg-info text-dark text-left">

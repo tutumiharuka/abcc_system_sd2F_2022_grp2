@@ -1,10 +1,4 @@
-<?php session_start(); 
-// echo $_SESSION['member']['member_id'].'<br>';
-// echo $_SESSION['member']['name'].'<br>';
-// echo $_SESSION['member']['mail'].'<br>';
-// echo $_SESSION['member']['phone_number'].'<br>';
-// echo $_SESSION['member']['date_of_birth'].'<br>';
-?>
+<?php session_start(); ?>
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
 

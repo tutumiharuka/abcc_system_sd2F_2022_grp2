@@ -121,13 +121,13 @@
     if(isset($_SESSION['member'])){
         echo '<div class="row mt-5">';
         echo '    <nav class="member-list">';
-        // echo '        <div class="h3">ゲーム太郎</div>';
         echo '        <ul>';
         echo '            <li class="fw-bold"><h3>ゲーム太郎</h3></li>';
         echo '            <li class="fw-bold"><a href="#"> 購入履歴</a></li>';
         echo '            <li class="fw-bold"><a href="#"> お気に入り</a></li>';
         echo '            <li class="fw-bold"><a href="#"> カート</a></li>';
         echo '            <li class="fw-bold"><a href="#"> 会員情報</a></li>';
+        echo '            <li class="fw-bold"><a href="Logout.php"> ログアウト</a></li>';
         echo '        </ul>';
         echo '    </nav>';
         echo '</div>';

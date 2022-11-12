@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
 
