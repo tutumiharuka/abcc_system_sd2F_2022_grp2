@@ -36,7 +36,7 @@
           <li class="list-group-item">
             <div class="row h5">
               <div class="col-md-3 offset-md-3 text-start">
-                <i class="bi bi-diamond-fill h6 me-3"></i>おなまえ</div>
+                <i class="bi bi-diamond-fill h6 me-3"></i>名前</div>
               <div class="col-md-5">
                 <input type="text" class="form-control rounded-pill" id="password" placeholder="ゲームオタク　太郎">
                 </div>
