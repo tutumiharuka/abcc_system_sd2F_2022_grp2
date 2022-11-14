@@ -125,7 +125,7 @@
         echo '            <li class="fw-bold"><h3>'.$_SESSION['member']['name'].'</h3></li>';
         echo '            <li class="fw-bold"><a href="#"> 購入履歴</a></li>';
         echo '            <li class="fw-bold"><a href="#"> お気に入り</a></li>';
-        echo '            <li class="fw-bold"><a href="#"> カート</a></li>';
+        echo '            <li class="fw-bold"><a href="G1-6-1_Cart.php"> カート</a></li>';
         echo '            <li class="fw-bold"><a href="#"> 会員情報</a></li>';
         echo '            <li class="fw-bold"><a href="Logout.php"> ログアウト</a></li>';
         echo '        </ul>';
