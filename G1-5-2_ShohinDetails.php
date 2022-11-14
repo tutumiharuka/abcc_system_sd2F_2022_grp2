@@ -4,6 +4,7 @@
 <?php 
     if(isset($_GET['shohin_id'])) $shohin_id  =  $_GET['shohin_id'];
     if(isset($_POST['shohin_id'])) $shohin_id =  $_POST['shohin_id'];
+    $member_id = $_SESSION['member']['member_id'];//会員ID
 
     require_once "DBManager.php";
     $dbmng = new DBManager();
@@ -17,9 +18,7 @@
         $image_big = $row['image_big'];
         $shohin_explanation = $row['shohin_explanation'];
     }
-
-    $member_id = $_SESSION['member']['member_id'];//会員ID
-    // $shohin_id = $_POST['shohin_id'];//商品ID    
+   
 
     if(isset($_POST['cart'])){
         if($_POST['cart']=="addcart"){
@@ -76,24 +75,50 @@
         </a>
 <!-- カートボタン -->
         <div class="col-lg-3 h3">
-            <div class="row" class="" id="addCartDiv">
+            <form action="G1-5-2_ShohinDetails.php" method="post">
+                <input type="hidden" name="shohin_id" value="<?php echo $shohin_id?>">
+                <?php
+                    if(isInCart($member_id,$shohin_id)==true){
+                        echo "入れた";
+                    }else{
+                        echo "入れてない";
+                    }
+                
+                ?>
+
+                <?php if(isInCart($member_id,$shohin_id)==true): ?>
+                    <input type="hidden" name="cart" value="addcart">
+                    <input type="submit" class="btn btn-outline-primary btn-lg rounded-pill" id="addCartBtn" value="カートに入れる">
+                <?php else: ?>
+                    <input type="hidden" name="cart" value="delcart">
+                    <input type="submit" class="btn btn-outline-primary btn-lg rounded-pill" id="delCartBtn" value="追加済み">
+                <?php endif; ?>
+            </form>
+
+
+
+            <!-- <div class="row" class="" id="addCartDiv">
                 <form action="G1-5-2_ShohinDetails.php" method="post">
                     <input type="hidden" name="cart" value="addcart">
-                    <input type="hidden" name="shohin_id" value="<?php echo $shohin_id?>">
+                    <input type="hidden" name="shohin_id" value="<?php 
+                    // echo $shohin_id
+                    ?>">
                     <input type="submit" class="btn btn-outline-primary btn-lg rounded-pill" 
                            id="addCartBtn" value="カートに入れる">
                 </form>
             </div>
 
-            
+
             <div class="row" class="d-none" id="delCartDiv">
                 <form action="G1-5-2_ShohinDetails.php" method="post">
                     <input type="hidden" name="cart" value="delcart">
-                    <input type="hidden" name="shohin_id" value="<?php echo $shohin_id?>">
+                    <input type="hidden" name="shohin_id" value="<?php 
+                    // echo $shohin_id
+                    ?>">
                     <input type="submit" class="btn btn-outline-primary btn-lg rounded-pill" 
                            id="delCartBtn" value="カートに入れた">
                 </form>
-            </div>
+            </div> -->
             
         </div>
 <!-- 商品説明 -->

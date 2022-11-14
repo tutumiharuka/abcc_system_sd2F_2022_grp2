@@ -120,6 +120,22 @@ class DBManager{
 
 
 
+// カートにかかわる機能
+//カートに入れている？
+    public function isInCart($member_id,$shohin_id){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT member_id,shohin_id FROM carts WHERE member_id = ? AND shohin_id = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
+        $ps->bindValue(2,$shohin_id,PDO::PARAM_STR);
+        $ps->execute();
+        $results = $ps->fetchAll();
+        if(count($results)!=0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 //カートにゲームを入れる
     public function insertNewCart($member_id,$shohin_id){
         $pdo = $this->dbConnect();
