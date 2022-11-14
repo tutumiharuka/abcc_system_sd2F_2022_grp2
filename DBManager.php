@@ -93,13 +93,32 @@ class DBManager{
         return $results;
     }
 
-// ジャンル
+// ジャンルリスト
     public function getGenreList(){
         $pdo = $this->dbConnect();
         $sql = "SELECT * FROM genres";
         $list = $pdo->query($sql);
         return $list;
     }
+
+//ジャンル日本語タイトル
+    public function getJpnGenreName($genre_id){
+        $genreList = array(
+            "ACT"=>"アクション",
+            "ADV"=>"アドベンチャー",
+            "FIG"=>"格闘",
+            "FPS"=>"シューティング",
+            "MUS"=>"音楽ゲーム",
+            "PAR"=>"パーティ",
+            "PZL"=>"パズル",
+            "RCG"=>"レース",
+            "RPG"=>"ロールプレイング",
+            "SPO"=>"スポーツ",
+            "TBL"=>"テーブルゲーム");
+        return $genreList[$genre_id];
+    }
+
+
 
 //カートにゲームを入れる
     public function insertNewCart($member_id,$shohin_id){

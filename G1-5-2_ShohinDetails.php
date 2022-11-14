@@ -2,7 +2,7 @@
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
 <?php 
-    if(isset($_GET['shohin_id'])) $shohin_id =  $_GET['shohin_id'];
+    if(isset($_GET['shohin_id'])) $shohin_id  =  $_GET['shohin_id'];
     if(isset($_POST['shohin_id'])) $shohin_id =  $_POST['shohin_id'];
 
     require_once "DBManager.php";
@@ -76,16 +76,24 @@
         </a>
 <!-- カートボタン -->
         <div class="col-lg-3 h3">
-            <form action="G1-5-2_ShohinDetails.php" method="post">
-                <input type="hidden" name="cart" value="addcart">
-                <input type="hidden" name="shohin_id" value="<?php echo $shohin_id?>">
-                <input type="submit" class="btn btn-outline-primary btn-lg rounded-pill" value="カートに入れる">
-            </form>
-            <form action="G1-5-2_ShohinDetails.php" method="post">
-                <input type="hidden" name="cart" value="delcart">
-                <input type="hidden" name="shohin_id" value="<?php echo $shohin_id?>">
-                <input type="submit" class="btn btn-outline-primary btn-lg rounded-pill" value="カートに入れる">
-            </form>
+            <div class="row" class="" id="addCartDiv">
+                <form action="G1-5-2_ShohinDetails.php" method="post">
+                    <input type="hidden" name="cart" value="addcart">
+                    <input type="hidden" name="shohin_id" value="<?php echo $shohin_id?>">
+                    <input type="submit" class="btn btn-outline-primary btn-lg rounded-pill" 
+                           id="addCartBtn" value="カートに入れる">
+                </form>
+            </div>
+
+            
+            <div class="row" class="d-none" id="delCartDiv">
+                <form action="G1-5-2_ShohinDetails.php" method="post">
+                    <input type="hidden" name="cart" value="delcart">
+                    <input type="hidden" name="shohin_id" value="<?php echo $shohin_id?>">
+                    <input type="submit" class="btn btn-outline-primary btn-lg rounded-pill" 
+                           id="delCartBtn" value="カートに入れた">
+                </form>
+            </div>
             
         </div>
 <!-- 商品説明 -->
@@ -136,14 +144,30 @@
 
 </div>
 
-    <!-- ナビバーの設定 -->
-    <nav class="mt-3 navbg" aria-label="breadcrumb">
-        <ol class="breadcrumb ms-5 mt-4">
-            <li class="breadcrumb-item h4 fw-bold"><a href="G1-1_Top.php">Top</a></li>
-            <!-- <li class="breadcrumb-item h4 fw-bold"><a href="#">アクション</a></li> -->
-            <li class="breadcrumb-item h4 fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=<?php echo $genre_id?>"><?php echo $dbmng->getJpnGenreName($genre_id);?></a></li>
-            <!-- <li class="breadcrumb-item h4 fw-bold active" aria-current="page">スプラトゥーン3</li> -->
-            <li class="breadcrumb-item h4 fw-bold active" aria-current="page"><?php echo $shohin_name?></li>
-        </ol>
-    </nav>
+<!-- ナビバーの設定 -->
+<nav class="mt-3 navbg" aria-label="breadcrumb">
+    <ol class="breadcrumb ms-5 mt-4">
+        <li class="breadcrumb-item h4 fw-bold"><a href="G1-1_Top.php">Top</a></li>
+        <!-- <li class="breadcrumb-item h4 fw-bold"><a href="#">アクション</a></li> -->
+        <li class="breadcrumb-item h4 fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=<?php echo $genre_id?>"><?php echo $dbmng->getJpnGenreName($genre_id);?></a></li>
+        <!-- <li class="breadcrumb-item h4 fw-bold active" aria-current="page">スプラトゥーン3</li> -->
+        <li class="breadcrumb-item h4 fw-bold active" aria-current="page"><?php echo $shohin_name?></li>
+    </ol>
+</nav>
+
+<script>
+    let addCartDiv = document.getElementById("addCartDiv");
+    let delCartDiv = document.getElementById("delCartDiv");
+    let addCartBtn = document.getElementById("addCartBtn");
+    let delCartBtn = document.getElementById("delCartBtn");
+    addCartBtn.addEventListener('click', function(){
+        addCartDiv.classList.toggle('d-none');
+        delCartDiv.classList.toggle('d-none');
+    });
+    delCartBtn.addEventListener('click', function(){
+        addCartDiv.classList.toggle('d-none');
+        delCartDiv.classList.toggle('d-none');
+    });
+</script>
+
 <?php include_once 'GameFooter.php'; ?>
