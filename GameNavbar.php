@@ -192,7 +192,7 @@
               <li class="nav-item mt-3 me-3"><!-- 検索 -->
                 <form class="form-inline" role="search" action="G1-5-1_ShohinList.php" method="get" target="_blank">
                   <div class="input-group">
-                    <input type="search" class="form-control search" placeholder="ゲームを探す">
+                    <input type="search" class="form-control search" name="keyword" placeholder="ゲームを探す">
                       <button class="input-group-text search" type="submit"><i class="icon ion-search"></i></button>
                   </div>
               </form>

@@ -1,5 +1,6 @@
 <?php session_start(); ?>
-<?php require_once "DBManager.php";
+<?php 
+require_once "DBManager.php";
  $dbmng = new DBManager();
  // 重複データある場合-> 前ページへ、エラーメッセージを送ります。
  if($dbmng->isSameEmail($_POST['mail'])){

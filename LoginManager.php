@@ -6,7 +6,7 @@ class LoginManager{
         return $pdo;
     }
 
-    /*　ログイン */
+    /*　ログイン画面でログインする */
     public function login($mail){
         $pdo = $this->dbConnect();
         $sql = "SELECT * FROM members WHERE mail = ?";
@@ -14,6 +14,7 @@ class LoginManager{
         $ps->bindValue(1,$mail,PDO::PARAM_STR);
         $ps->execute();
         $results = $ps->fetchAll();
+        
         foreach($results as $row){
             //パスワード認証できたら、member情報をセッションに入れる
             if(password_verify($_POST['pass'],$row['password']) == true){
@@ -34,6 +35,30 @@ class LoginManager{
                 //認証失敗
                 $_SESSION['err'] = "IDが存在しないやパスワードが違うのか、ご確認ください";
                 header('Location: G1-2-1_Login.php');
+            }
+        }
+    }
+
+       /*　新規登録画面の直後ログインする */
+       public function loginAfterNewMember($mail){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT * FROM members WHERE mail = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$mail,PDO::PARAM_STR);
+        $ps->execute();
+        $results = $ps->fetchAll();
+        foreach($results as $row){
+            //パスワード認証できたら、member情報をセッションに入れる
+            if(password_verify($_POST['pass'],$row['password']) == true){
+                $_SESSION['member']=[
+                   'member_id'=>$row['member_id'],
+                   'name'=>$row['name'],
+                   'mail'=>$row['mail'],
+                   'phone_number'=>$row['phone_number'],
+                   'date_of_birth'=>$row['date_of_birth'],
+                   'password'=>$_POST['pass'] 
+                   //ここで、パスワードがstringで保存される、修正必要かも
+                ];
             }
         }
     }

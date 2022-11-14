@@ -1,6 +1,4 @@
-<?php session_start();?>
-<?php include_once 'GameHeader.php'; ?>
-<?php include_once 'GameNavbar.php'; ?>
+<?php session_start(); ?>
 <?php 
 $name = $_POST['name'];
 $mail = $_POST['mail'];
@@ -16,8 +14,11 @@ $results = $dbmng->insertNewMember($name,$mail,$phone,$birth,$pass);
 require_once 'LoginManager.php';
 $loginmng = new LoginManager();
 $loginmng->login($mail);
-
 ?>
+
+<?php include_once 'GameHeader.php'; ?>
+<?php include_once 'GameNavbar.php'; ?>
+
 
 <style>
     .kuhaku-form{
