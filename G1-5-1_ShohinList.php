@@ -13,19 +13,32 @@
 <?php 
 require_once "DBManager.php";
 $dbmng = new DBManager();
+// new
+// free
+// recommend
+if(isset($_GET['keyword'])){
+    echo $_GET['keyword'];
+//DBからゲームリストを取り出す
+//表示する
+// $results= データベースから受け取ったリストを入れる
+
+}
+
+
 if(isset($_GET['genre_id'])){
+    
     if($_GET['genre_id']=="free"){
-        $list = $dbmng->getFreeList();
+        $results=$dbmng->getFreeList();
         $title = "無料ゲーム";
     }else if($_GET['genre_id']=="new"){
-        $list = $dbmng->getNewList();
+        $results=$dbmng->getNewList();
         $title = "最新作";
     }else if($_GET['genre_id']=="ranking"){
-        $list = $dbmng->getRankingList();
+        $results=$dbmng->getRankingList();
         $title = "ランキング";
     }else{// ジャンルで
         $genre_id = $_GET['genre_id'];
-        $list = $dbmng->getGameListByGenre($genre_id);
+        $results=$dbmng->getGameListByGenre($genre_id);
         $title = $dbmng->getJpnGenreName($genre_id);
     }
 }
@@ -134,7 +147,7 @@ if(isset($_GET['genre_id'])){
     <div class="container-fluid">
         <div class="row">
             <?php
-                foreach($list as $row){
+                foreach($results as $row){
                     // 無料の時
                     if( $row['price'] == 0){$price = '無料';}else{$price=$row['price'].'円';}
                     echo '<div class="col-md-3">
