@@ -34,16 +34,8 @@
           <li class="list-group-item">
             <div class="row h5">
               <div class="col-md-3 offset-md-3 text-start">
-                <i class="bi bi-diamond-fill h6 me-3"></i>おなまえ</div>
+                <i class="bi bi-diamond-fill h6 me-3"></i>名前</div>
               <div class="col-md-6">ゲームオタク　太郎</div>
-            </div>
-          </li>
-
-          <li class="list-group-item">
-            <div class="row h5">
-              <div class="col-md-3 offset-md-3 text-start">
-                <i class="bi bi-diamond-fill h6 me-3"></i>生年月日</div>
-              <div class="col-md-6">2022年12月31日</div>
             </div>
           </li>
 
@@ -58,8 +50,16 @@
           <li class="list-group-item">
             <div class="row h5">
               <div class="col-md-3 offset-md-3 text-start">
-                <i class="bi bi-diamond-fill h6 me-3"></i>おなまえ</div>
-              <div class="col-md-6">ゲームオタク　太郎</div>
+                <i class="bi bi-diamond-fill h6 me-3"></i>電話番号</div>
+              <div class="col-md-6">070 - 0000 - 0000</div>
+            </div>
+          </li>
+
+          <li class="list-group-item">
+            <div class="row h5">
+              <div class="col-md-3 offset-md-3 text-start">
+                <i class="bi bi-diamond-fill h6 me-3"></i>生年月日</div>
+              <div class="col-md-6">2022年12月31日</div>
             </div>
           </li>
 
@@ -71,21 +71,14 @@
             </div>
           </li>
 
-          <li class="list-group-item">
-            <div class="row h5">
-              <div class="col-md-3 offset-md-3 text-start">
-                <i class="bi bi-diamond-fill h6 me-3"></i>電話番号</div>
-              <div class="col-md-6">070 - 0000 - 0000</div>
-            </div>
-          </li>
         </ul>
       </div><!-- .card -->
       
     </div>
     <div class="row mt-4">
       <div class="col d-flex justify-content-center ">
-        <a class="btn btn-outline-primary btn-lg mt-2 me-5" href="G1-7-3_MemberInfoChange.php">修正する</a>
-        <button type="submit" class="btn btn-outline-primary btn-lg mt-2 ms-5">保存する</button>
+        <a class="btn btn-outline-primary btn-lg mt-2 me-5 mb-3" href="G1-7-3_MemberInfoChange.php">修正する</a>
+        <button type="submit" class="btn btn-outline-primary btn-lg mt-2 ms-5 mb-3">保存する</button>
       </div>
     </div>
 

@@ -46,39 +46,9 @@
           <li class="list-group-item">
             <div class="row h5">
               <div class="col-md-3 offset-md-3 text-start">
-                <i class="bi bi-diamond-fill h6 me-3"></i>生年月日</div>
-              <div class="col-md-5">
-                <input type="text" class="form-control rounded-pill" id="password" placeholder="2022年12月31日">
-                </div>
-            </div>
-          </li>
-
-          <li class="list-group-item">
-            <div class="row h5">
-              <div class="col-md-3 offset-md-3 text-start">
                 <i class="bi bi-diamond-fill h6 me-3"></i>メールアドレス</div>
               <div class="col-md-5">
                 <input type="text" class="form-control rounded-pill" id="password" placeholder="taro@gameotaku.com">
-                </div>
-            </div>
-          </li>
-
-          <li class="list-group-item">
-            <div class="row h5">
-              <div class="col-md-3 offset-md-3 text-start">
-                <i class="bi bi-diamond-fill h6 me-3"></i>おなまえ</div>
-              <div class="col-md-5">
-                <input type="text" class="form-control rounded-pill" id="password" placeholder="ゲームオタク　太郎">
-                </div>
-            </div>
-          </li>
-
-          <li class="list-group-item">
-            <div class="row h5">
-              <div class="col-md-3 offset-md-3 text-start">
-                <i class="bi bi-diamond-fill h6 me-3"></i>パスワード</div>
-              <div class="col-md-5">
-                <input type="text" class="form-control rounded-pill" id="password" placeholder="●●●●●●●●●●">
                 </div>
             </div>
           </li>
@@ -93,13 +63,33 @@
             </div>
           </li>
 
+          <li class="list-group-item">
+            <div class="row h5">
+              <div class="col-md-3 offset-md-3 text-start">
+                <i class="bi bi-diamond-fill h6 me-3"></i>生年月日</div>
+              <div class="col-md-5">
+                <input type="text" class="form-control rounded-pill" id="password" placeholder="2022年12月31日">
+                </div>
+            </div>
+          </li>
+
+          <li class="list-group-item">
+            <div class="row h5">
+              <div class="col-md-3 offset-md-3 text-start">
+                <i class="bi bi-diamond-fill h6 me-3"></i>パスワード</div>
+              <div class="col-md-5">
+                <input type="text" class="form-control rounded-pill" id="password" placeholder="●●●●●●●●●●">
+                </div>
+            </div>
+          </li>
+
         </ul>
       </div>
       
     </div>
     <div class="row mt-4">
       <div class="col d-flex justify-content-center">
-        <a class="btn btn-outline-primary btn-lg" href="G1-7-4_MemberInfoChangeCheck.php">変更する</a>
+        <a class="btn btn-outline-primary btn-lg mb-3" href="G1-7-4_MemberInfoChangeCheck.php">変更する</a>
       </div>
     </div>
 </div>
