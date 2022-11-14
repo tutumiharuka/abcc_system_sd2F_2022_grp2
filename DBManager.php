@@ -51,7 +51,7 @@ class DBManager{
         return $results;
     }
 
-// ジャンル
+// ジャンルリストゲット
     public function getGameListByGenre($genre_id){
         $pdo = $this->dbConnect();
         $sql = "SELECT shohin_id,shohin_name,price,image_small FROM shohins WHERE genre_id = ?";
@@ -116,6 +116,15 @@ class DBManager{
             "TBL"=>"テーブルゲーム");
         return $genreList[$genre_id];
     }
+    
+    // public function isFavorite($shohin_id,){
+    //     $pdo = $this->dbConnect();
+    // }
+
+    // public function isCart(){
+
+    // }
+    
     
 }
 ?>

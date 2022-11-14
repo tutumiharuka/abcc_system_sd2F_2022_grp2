@@ -58,9 +58,11 @@
         <a class="col-lg-1 mb-2 d-flex align-items-center h2" href="#">
             <i class="typcn typcn-heart-outline"></i>
         </a>
-<!-- 購入ボタン -->
+<!-- カートボタン -->
         <div class="col-lg-3 h3">
-            <input type="submit" class="btn btn-outline-primary btn-lg rounded-pill" value="カートに入れる">
+            <form action="NewToCart.php" method="post">
+                <input type="submit" class="btn btn-outline-primary btn-lg rounded-pill" value="カートに入れる">
+            </form>
         </div>
 <!-- 商品説明 -->
         <div class="mb-4 fs-4">

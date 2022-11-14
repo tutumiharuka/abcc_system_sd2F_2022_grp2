@@ -1,11 +1,16 @@
 <?php session_start(); ?>
-<?php 
-    require_once 'LoginManager.php';
-    $loginMng = new LoginManager(); 
-    $loginMng->isLogin();
-?>
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
+<?php
+ $pdo = new PDO('mysql:host=localhost;dbname=gamedb;charset=utf8','webuser','abccsd2');
+ $sql = "SELECT s FROM 
+ carts c INNER JOIN shohins s ON c.shohin_id = s.shohin_id";
+//  $sql = "SELECT r.ranking_id,r.shohin_id,s.shohin_name,s.price,s.image_small FROM ranking r 
+        // INNER JOIN shohins s ON r.shohin_id = s.shohin_id";
+ $results = $pdo->query($sql);
+
+?>
+
 
 <style>
 input[type="checkbox"]{
