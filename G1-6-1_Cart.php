@@ -3,12 +3,21 @@
 <?php include_once 'GameNavbar.php'; ?>
 <?php
  $pdo = new PDO('mysql:host=localhost;dbname=gamedb;charset=utf8','webuser','abccsd2');
- $sql = "SELECT s FROM 
- carts c INNER JOIN shohins s ON c.shohin_id = s.shohin_id";
+ $sql = "SELECT s FROM carts c INNER JOIN shohins s ON c.shohin_id = s.shohin_id";
 //  $sql = "SELECT r.ranking_id,r.shohin_id,s.shohin_name,s.price,s.image_small FROM ranking r 
         // INNER JOIN shohins s ON r.shohin_id = s.shohin_id";
  $results = $pdo->query($sql);
 
+?>
+<?php
+ $shohin_id =  $_GET['shohin_id'];
+ require_once "DBManager.php";
+ $dbmng = new DBManager();
+ $results = $dbmng->getGameById($shohin_id);
+ foreach($results as $row){
+     $shohin_name = $row['shohin_name'];
+     $price = $row['price'];
+ }
 ?>
 
 
@@ -41,7 +50,7 @@ input[type="checkbox"]{
         </div>
         <div class="col-md-3"><img class="img-fluid" src="img/FPS/FPS_s01.jpg"></div>
         <div class="col-md-2">
-            <div class="row mt-5 h4">ゲーム名</div>
+            <div class="row mt-5 h4"><?PHP echo $shohin_name ?></div>
             <div class="row text-sm-start mt-4 h5">税込:1,000円</div>
         </div>
         <div class="col me-5"><i class="bi bi-x-square-fill h4"></i></div>
