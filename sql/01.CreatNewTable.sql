@@ -37,15 +37,17 @@ CREATE TABLE `ranking` (
 
 
 CREATE TABLE `carts` (
-  `member_id`         INT(8)        NOT NULL                  COMMENT '会員ID',
-  `shohin_id`         INT(8)         NOT NULL                 COMMENT '商品ID',
-  `is_purchased`      CHAR(1)        NOT NULL DEFAULT 0       COMMENT '購入済',
-  PRIMARY KEY (`member_id`),
+  `cart_id`           INT(8)         NOT NULL   AUTO_INCREMENT      COMMENT 'カートID',
+  `member_id`         INT(8)         NOT NULL                       COMMENT '会員ID',
+  `shohin_id`         INT(8)         NOT NULL                       COMMENT '商品ID',
+  `is_purchased`      CHAR(1)        NOT NULL DEFAULT 0             COMMENT '購入済',
+  PRIMARY KEY (`cart_id`),
   FOREIGN KEY (`member_id`) REFERENCES members(`member_id`),
   FOREIGN KEY (`shohin_id`) REFERENCES shohins(`shohin_id`)
 );
 
 CREATE TABLE `favorites` (
+  `favorite_id`           INT(8)         NOT NULL   AUTO_INCREMENT      COMMENT 'お気に入りID',
   `member_id`             INT(8)          NOT NULL         COMMENT '会員ID',
   `shohin_id`             INT(8)          NOT NULL         COMMENT '商品ID',
   PRIMARY KEY (`member_id`),

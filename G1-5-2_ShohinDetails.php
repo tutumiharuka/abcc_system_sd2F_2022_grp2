@@ -2,7 +2,9 @@
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
 <?php 
-    $shohin_id =  $_GET['shohin_id'];
+    if(isset($_GET['shohin_id'])) $shohin_id =  $_GET['shohin_id'];
+    if(isset($_POST['shohin_id'])) $shohin_id =  $_POST['shohin_id'];
+
     require_once "DBManager.php";
     $dbmng = new DBManager();
     $results = $dbmng->getGameById($shohin_id);
@@ -15,6 +17,20 @@
         $image_big = $row['image_big'];
         $shohin_explanation = $row['shohin_explanation'];
     }
+
+    $member_id = $_SESSION['member']['member_id'];//会員ID
+    // $shohin_id = $_POST['shohin_id'];//商品ID    
+
+    if(isset($_POST['cart'])){
+        if($_POST['cart']=="addcart"){
+            $dbmng->insertNewCart($member_id,$shohin_id);
+        }
+    
+        if($_POST['cart']=="delcart"){
+            $dbmng->deleteFromCart($member_id,$shohin_id);
+        }
+    }
+
 ?>
 
 
@@ -60,9 +76,17 @@
         </a>
 <!-- カートボタン -->
         <div class="col-lg-3 h3">
-            <form action="NewToCart.php" method="post">
+            <form action="G1-5-2_ShohinDetails.php" method="post">
+                <input type="hidden" name="cart" value="addcart">
+                <input type="hidden" name="shohin_id" value="<?php echo $shohin_id?>">
                 <input type="submit" class="btn btn-outline-primary btn-lg rounded-pill" value="カートに入れる">
             </form>
+            <form action="G1-5-2_ShohinDetails.php" method="post">
+                <input type="hidden" name="cart" value="delcart">
+                <input type="hidden" name="shohin_id" value="<?php echo $shohin_id?>">
+                <input type="submit" class="btn btn-outline-primary btn-lg rounded-pill" value="カートに入れる">
+            </form>
+            
         </div>
 <!-- 商品説明 -->
         <div class="mb-4 fs-4">

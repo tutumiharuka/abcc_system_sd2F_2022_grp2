@@ -101,30 +101,27 @@ class DBManager{
         return $list;
     }
 
-    public function getJpnGenreName($genre_id){
-        $genreList = array(
-            "ACT"=>"アクション",
-            "ADV"=>"アドベンチャー",
-            "FIG"=>"格闘",
-            "FPS"=>"シューティング",
-            "MUS"=>"音楽ゲーム",
-            "PAR"=>"パーティ",
-            "PZL"=>"パズル",
-            "RCG"=>"レース",
-            "RPG"=>"ロールプレイング",
-            "SPO"=>"スポーツ",
-            "TBL"=>"テーブルゲーム");
-        return $genreList[$genre_id];
-    }
-    
-    // public function isFavorite($shohin_id,){
-    //     $pdo = $this->dbConnect();
-    // }
+//カートにゲームを入れる
+    public function insertNewCart($member_id,$shohin_id){
+        $pdo = $this->dbConnect();
+        $sql = "INSERT INTO carts(member_id,shohin_id,is_purchased) VALUES (?,?,'0')";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
+        $ps->bindValue(2,$shohin_id,PDO::PARAM_STR);
+        $ps->execute();
+    }  
 
-    // public function isCart(){
+//カートにゲームを入れる
+    public function deleteFromCart($member_id,$shohin_id){
+        $pdo = $this->dbConnect();
+        $sql = "DELETE FROM carts WHERE member_id = ? AND shohin_id = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
+        $ps->bindValue(2,$shohin_id,PDO::PARAM_STR);
+        $ps->execute();
+    }  
 
-    // }
-    
-    
+
 }
+
 ?>
