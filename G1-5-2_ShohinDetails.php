@@ -2,9 +2,9 @@
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
 <?php 
-    if(isset($_GET['shohin_id'])) $shohin_id  =  $_GET['shohin_id'];
-    if(isset($_POST['shohin_id'])) $shohin_id =  $_POST['shohin_id'];
-    $member_id = $_SESSION['member']['member_id'];//会員ID
+    if(isset($_GET['shohin_id']))  $shohin_id = $_GET['shohin_id'];
+    if(isset($_POST['shohin_id'])) $shohin_id = $_POST['shohin_id'];
+    if(isset($_SESSION['member'])) $member_id = $_SESSION['member']['member_id'];//会員ID
 
     require_once "DBManager.php";
     $dbmng = new DBManager();
@@ -19,15 +19,15 @@
         $shohin_explanation = $row['shohin_explanation'];
     }
    
-
+//もしカートやお気に入り処理があたら、実行します。
     if(isset($_POST['cart'])){
-        if($_POST['cart']=="addcart"){
-            $dbmng->insertNewCart($member_id,$shohin_id);
-        }
-    
-        if($_POST['cart']=="delcart"){
-            $dbmng->deleteFromCart($member_id,$shohin_id);
-        }
+        if($_POST['cart']=="addcart") $dbmng->insertNewCart($member_id,$shohin_id);
+        if($_POST['cart']=="delcart") $dbmng->deleteFromCart($member_id,$shohin_id);
+    }
+
+    if(isset($_POST['favorite'])){
+        if($_POST['favorite']=="addfav") $dbmng->insertNewFavorite($member_id,$shohin_id);
+        if($_POST['favorite']=="delfav") $dbmng->deleteFromFavorite($member_id,$shohin_id);
     }
 
 ?>
@@ -69,24 +69,29 @@
                 <?php if($price==0){echo "無料";}else{echo "$price 円";}?>
             </p>
         </div>
-<!-- ♡マーク -->
-        <a class="col-lg-1 mb-2 d-flex align-items-center h2" href="#">
-            <i class="typcn typcn-heart-outline"></i>
-        </a>
-<!-- カートボタン -->
+
+
+<?php if(isset($_SESSION['member'])): ?>
+
+    <!-- ♡マーク -->
+        <div class="col-lg-1 mb-2 d-flex align-items-center h2">
+            <form action="G1-5-2_ShohinDetails.php" method="post">
+                <input type="hidden" name="shohin_id" value="<?php echo $shohin_id?>">
+                <?php if($dbmng->isInFavorite($member_id,$shohin_id)==false): ?>
+                    <input type="hidden" name="favorite" value="addfav">
+                    <button type="submit"><i class="bi bi-heart"></i></button>
+                <?php else: ?>
+                    <input type="hidden" name="favorite" value="delfav">
+                    <button type="submit"><i class="bi bi-heart-fill"></i></button>
+                <?php endif; ?>
+            </form>
+            
+        </div>
+    <!-- カートボタン -->
         <div class="col-lg-3 h3">
             <form action="G1-5-2_ShohinDetails.php" method="post">
                 <input type="hidden" name="shohin_id" value="<?php echo $shohin_id?>">
-                <?php
-                    if(isInCart($member_id,$shohin_id)==true){
-                        echo "入れた";
-                    }else{
-                        echo "入れてない";
-                    }
-                
-                ?>
-
-                <?php if(isInCart($member_id,$shohin_id)==true): ?>
+                <?php if($dbmng->isInCart($member_id,$shohin_id)==false): ?>
                     <input type="hidden" name="cart" value="addcart">
                     <input type="submit" class="btn btn-outline-primary btn-lg rounded-pill" id="addCartBtn" value="カートに入れる">
                 <?php else: ?>
@@ -94,36 +99,13 @@
                     <input type="submit" class="btn btn-outline-primary btn-lg rounded-pill" id="delCartBtn" value="追加済み">
                 <?php endif; ?>
             </form>
-
-
-
-            <!-- <div class="row" class="" id="addCartDiv">
-                <form action="G1-5-2_ShohinDetails.php" method="post">
-                    <input type="hidden" name="cart" value="addcart">
-                    <input type="hidden" name="shohin_id" value="<?php 
-                    // echo $shohin_id
-                    ?>">
-                    <input type="submit" class="btn btn-outline-primary btn-lg rounded-pill" 
-                           id="addCartBtn" value="カートに入れる">
-                </form>
-            </div>
-
-
-            <div class="row" class="d-none" id="delCartDiv">
-                <form action="G1-5-2_ShohinDetails.php" method="post">
-                    <input type="hidden" name="cart" value="delcart">
-                    <input type="hidden" name="shohin_id" value="<?php 
-                    // echo $shohin_id
-                    ?>">
-                    <input type="submit" class="btn btn-outline-primary btn-lg rounded-pill" 
-                           id="delCartBtn" value="カートに入れた">
-                </form>
-            </div> -->
-            
         </div>
+<?php endif; ?>
+
+
+
 <!-- 商品説明 -->
         <div class="mb-4 fs-4">
-            <!-- <p>ヒトの姿に変身する不思議なイカたちによる、アクションシューティングがパワーアップして登場!4対4のチームに分かれて、地面を塗った面積で勝敗を決める基本的なルールはそのままに、新たなブキやスペシャルウェポン、バトルアクションが追加。オンラインでフレンドや見知らぬ人と対戦できることはもちろん、本体を持ち寄って仲間と顔を合わせての対戦も可能。よりダイナミックになったナワバリバトルで、存分にインクを塗りたくれ!</p> -->
             <p><?php echo $shohin_explanation?></p>
         </div>
     </div>
@@ -179,20 +161,5 @@
         <li class="breadcrumb-item h4 fw-bold active" aria-current="page"><?php echo $shohin_name?></li>
     </ol>
 </nav>
-
-<script>
-    let addCartDiv = document.getElementById("addCartDiv");
-    let delCartDiv = document.getElementById("delCartDiv");
-    let addCartBtn = document.getElementById("addCartBtn");
-    let delCartBtn = document.getElementById("delCartBtn");
-    addCartBtn.addEventListener('click', function(){
-        addCartDiv.classList.toggle('d-none');
-        delCartDiv.classList.toggle('d-none');
-    });
-    delCartBtn.addEventListener('click', function(){
-        addCartDiv.classList.toggle('d-none');
-        delCartDiv.classList.toggle('d-none');
-    });
-</script>
 
 <?php include_once 'GameFooter.php'; ?>

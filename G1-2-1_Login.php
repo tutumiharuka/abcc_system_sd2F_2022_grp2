@@ -27,9 +27,9 @@
         <!-- パスワード -->
                 <div class="mb-5">
                     <input type="password" class="form-control" name="pass" placeholder="パスワード">
+                    <div class="text-danger"><?php if(isset($_SESSION['err'])){echo $_SESSION['err'];unset($_SESSION['err']);}?></div>
                 </div>
                  <!-- 次のページから戻る、アカウント存在しないやパスワードが違う場合 -->
-                 <?php if(isset($_SESSION['err'])){echo $_SESSION['err'];unset($_SESSION['err']);}?>
                 <!-- ボタン -->
                 <div class="right-aligned">
                     <button type="submit" class="btn btn-outline-primary btn-lg rounded-pill">ログイン</button>
