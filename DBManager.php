@@ -157,40 +157,69 @@ class DBManager{
     }  
 
 
-//カートに入れている？
-public function isInFavorite($member_id,$shohin_id){
-    $pdo = $this->dbConnect();
-    $sql = "SELECT member_id,shohin_id FROM favorites WHERE member_id = ? AND shohin_id = ?";
-    $ps = $pdo->prepare($sql);
-    $ps->bindValue(1,$member_id,PDO::PARAM_STR);
-    $ps->bindValue(2,$shohin_id,PDO::PARAM_STR);
-    $ps->execute();
-    $results = $ps->fetchAll();
-    if(count($results)!=0){
-        return true;
-    }else{
-        return false;
+    //カートに入れている？
+    public function isInFavorite($member_id,$shohin_id){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT member_id,shohin_id FROM favorites WHERE member_id = ? AND shohin_id = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
+        $ps->bindValue(2,$shohin_id,PDO::PARAM_STR);
+        $ps->execute();
+        $results = $ps->fetchAll();
+        if(count($results)!=0){
+            return true;
+        }else{
+            return false;
+        }
     }
-}
-//カートにゲームを入れる
-public function insertNewFavorite($member_id,$shohin_id){
-    $pdo = $this->dbConnect();
-    $sql = "INSERT INTO favorites(member_id,shohin_id) VALUES (?,?)";
-    $ps = $pdo->prepare($sql);
-    $ps->bindValue(1,$member_id,PDO::PARAM_STR);
-    $ps->bindValue(2,$shohin_id,PDO::PARAM_STR);
-    $ps->execute();
-}  
+    //カートにゲームを入れる
+    public function insertNewFavorite($member_id,$shohin_id){
+        $pdo = $this->dbConnect();
+        $sql = "INSERT INTO favorites(member_id,shohin_id) VALUES (?,?)";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
+        $ps->bindValue(2,$shohin_id,PDO::PARAM_STR);
+        $ps->execute();
+    }  
 
-//カートにゲームを入れる
-public function deleteFromFavorite($member_id,$shohin_id){
-    $pdo = $this->dbConnect();
-    $sql = "DELETE FROM favorites WHERE member_id = ? AND shohin_id = ?";
-    $ps = $pdo->prepare($sql);
-    $ps->bindValue(1,$member_id,PDO::PARAM_STR);
-    $ps->bindValue(2,$shohin_id,PDO::PARAM_STR);
-    $ps->execute();
-}  
+    //カートにゲームを入れる
+    public function deleteFromFavorite($member_id,$shohin_id){
+        $pdo = $this->dbConnect();
+        $sql = "DELETE FROM favorites WHERE member_id = ? AND shohin_id = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
+        $ps->bindValue(2,$shohin_id,PDO::PARAM_STR);
+        $ps->execute();
+    }  
+
+
+    //カートリストを表示する
+    public function getCartList($member_id){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT c.cart_id,c.member_id,c.shohin_id,s.shohin_name,s.price,s.image_small 
+                FROM cart c INNER JOIN shohins s ON c.shohin_id = s.shohin_id 
+                WHERE member_id = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
+        $ps->execute();
+        $results = $ps->fetchAll();
+        return $results;
+    }
+
+
+     //お気に入りリストを表示する
+     public function getFavoriteList($member_id){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT f.favorite_id,f.member_id,c.shohin_id,s.shohin_name,s.price,s.image_small 
+                FROM favorites f INNER JOIN shohins s ON c.shohin_id = s.shohin_id 
+                WHERE member_id = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
+        $ps->execute();
+        $results = $ps->fetchAll();
+        return $results;
+    }
+
 
 
 
