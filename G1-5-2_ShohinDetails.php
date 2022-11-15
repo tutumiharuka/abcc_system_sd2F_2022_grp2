@@ -47,6 +47,9 @@
         height: 70px ;
         width: 80px;
     }
+    .heart-btn{
+        outline: none;
+    }
 </style>
 
 <!-- 画像 -->
@@ -79,10 +82,10 @@
                 <input type="hidden" name="shohin_id" value="<?php echo $shohin_id?>">
                 <?php if($dbmng->isInFavorite($member_id,$shohin_id)==false): ?>
                     <input type="hidden" name="favorite" value="addfav">
-                    <button type="submit"><i class="bi bi-heart"></i></button>
+                    <button type="submit" class="btn btn-outline-light"><h2><i class="bi bi-heart"></i></h2></button>
                 <?php else: ?>
                     <input type="hidden" name="favorite" value="delfav">
-                    <button type="submit"><i class="bi bi-heart-fill"></i></button>
+                    <button type="submit" class="btn btn-outline-light"><h2><i class="bi bi-heart-fill"></i></h2></button>
                 <?php endif; ?>
             </form>
             
