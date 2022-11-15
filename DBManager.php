@@ -156,6 +156,14 @@ class DBManager{
         $ps->execute();
     }  
 
+    public function deleteFromCartById($cartid){
+        $pdo = $this->dbConnect();
+        $sql = "DELETE FROM carts WHERE cart_id = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$cartid,PDO::PARAM_STR);
+        $ps->execute();
+    }  
+
 
     //カートに入れている？
     public function isInFavorite($member_id,$shohin_id){
@@ -197,7 +205,7 @@ class DBManager{
     public function getCartList($member_id){
         $pdo = $this->dbConnect();
         $sql = "SELECT c.cart_id,c.member_id,c.shohin_id,s.shohin_name,s.price,s.image_small 
-                FROM cart c INNER JOIN shohins s ON c.shohin_id = s.shohin_id 
+                FROM carts c INNER JOIN shohins s ON c.shohin_id = s.shohin_id 
                 WHERE member_id = ?";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1,$member_id,PDO::PARAM_STR);
@@ -206,6 +214,31 @@ class DBManager{
         return $results;
     }
 
+
+    //カートの数量を計算する
+    public function getCartCount($member_id){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT COUNT(*) FROM carts WHERE member_id = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
+        $ps->execute();
+        $results = $ps->fetchAll();
+        foreach($results as $row) $count = $row['COUNT(*)'];
+        return $count;
+    }
+
+    public function getCartSum($member_id){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT SUM(s.price) AS sum
+                FROM carts c INNER JOIN shohins s ON c.shohin_id = s.shohin_id 
+                WHERE member_id = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
+        $ps->execute();
+        $results = $ps->fetchAll();
+        foreach($results as $row) $sum = $row['sum'];
+        return $sum;
+    }
 
      //お気に入りリストを表示する
      public function getFavoriteList($member_id){
