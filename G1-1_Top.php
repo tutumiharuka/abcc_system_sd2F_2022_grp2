@@ -92,7 +92,7 @@ foreach($carousels as $id){
                 <?php
                 $results=$dbmng->getFreeList();
                 foreach($results as $row){
-                         if( $row['price'] == 0){$price = '無料';}else{$price=$row['price'].'円';}
+                        if( $row['price'] == 0){$price = '無料';}else{$price=$row['price'].'円';}
                         echo '<div class="card border-0 px-1"><a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'"><img src="'.$row['image_small'].'" class="card-img-top rounded"><div class="card-text">'.$row['shohin_name'].'</div><h5 class="card-title">'.$price.'</h5></a></div>';
                 }
                 ?>
