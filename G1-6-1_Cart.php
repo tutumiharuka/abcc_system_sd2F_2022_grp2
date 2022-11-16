@@ -1,5 +1,10 @@
 <?php session_start(); ?>
 <?php
+// ログインしているか、してないとログイン画面転送
+require_once 'LoginManager.php';
+$loginMng = new LoginManager(); 
+$loginMng->isLogin();
+
 require_once "DBManager.php";
 $dbmng = new DBManager();
 $member_id = $_SESSION['member']['member_id'];

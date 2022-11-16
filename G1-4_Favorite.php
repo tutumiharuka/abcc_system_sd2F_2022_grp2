@@ -1,5 +1,6 @@
 <?php session_start(); ?>
 <?php 
+// ログインしているか、してないとログイン画面転送
     require_once 'LoginManager.php';
     $loginMng = new LoginManager(); 
     $loginMng->isLogin();

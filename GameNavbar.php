@@ -38,21 +38,6 @@
       cursor: pointer;
   }
 
-  /* sidenavのポジション */
-  .side-list{
-      /* position: absolute;
-      top: 180px;
-      left: 30px;
-      width: 250px; */
-  }
-
-  .sub-list{
-      /* position: absolute;
-      top: 40px;
-      left: 40px;
-      width: 250px; */
-  }
-
   /* 隠れられるサイトメニューの設定 */
   .side-nav,.sub-nav{
       position: fixed;
