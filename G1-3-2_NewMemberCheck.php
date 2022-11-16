@@ -11,6 +11,7 @@ require_once "DBManager.php";
 
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
+
 <?php  
     // 前ページの値を取得する
     $name = $_POST['name'];
