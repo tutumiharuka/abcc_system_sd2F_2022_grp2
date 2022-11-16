@@ -13,7 +13,8 @@ $results = $dbmng->insertNewMember($name,$mail,$phone,$birth,$pass);
 //自動的にログインする
 require_once 'LoginManager.php';
 $loginmng = new LoginManager();
-$loginmng->login($mail);
+$loginmng->loginAfterNewMember($mail);
+
 ?>
 
 <?php include_once 'GameHeader.php'; ?>
