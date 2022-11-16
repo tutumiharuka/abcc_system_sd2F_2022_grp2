@@ -39,6 +39,27 @@ class DBManager{
         $ps->execute();
     }
 
+
+
+//  会員情報表示
+    public function getMemberInfo($member_id){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT  * FROM members WHERE member_id = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $member_id, PDO::PARAM_STR);
+        $ps->execute();
+        $results = $ps->fetchAll();
+        return $results;
+    }
+
+
+
+
+
+
+
+    
+
 /*商品リストやゲーム情報を取得する */
 // TOPページのcarouselゲームを表示（固定）
     public function getBigImgById($shohin_id){

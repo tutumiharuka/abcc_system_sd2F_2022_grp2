@@ -1,28 +1,56 @@
 <?php session_start(); ?>
 <?php 
+//ログインしているか
     require_once 'LoginManager.php';
     $loginMng = new LoginManager(); 
     $loginMng->isLogin();
+
+    $member_id = $_SESSION['member']['member_id'];
+
+
+    require_once 'DBManager.php';
+    $dbmng = new DBManager();
+    $results = $dbmng->getMemberInfo($member_id);
+
+
+    foreach($results as $row){
+     $name = $row['name'];
+     $phone= $row['phone_number'];
+    }
+
+    // echo 
+
+    
+
+
+
+
+
 ?>
-<?php 
-    require_once 'LoginManager.php';
-    $loginMng = new LoginManager(); 
-    $loginMng->isLogin();
-?>
+
+
+
+
+
+
+
+
+
+
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
 
 <?php  
-    // 前ページの値を取得する
-    $name = $_POST['name'];
-    $mail = $_POST['mail'];
-    $phone = $_POST['phone'];
-        $year = $_POST['year'];
-        $month = sprintf("%02d",$_POST['month']);
-        $day =  sprintf("%02d",$_POST['day']);
-    //birthは3つのstringの組み合わせ
-    $birth = $year.'-'.$month.'-'.$day;
-    $pass = $_POST['pass'];
+    // // 前ページの値を取得する
+    // $name = $_POST['name'];
+    // $mail = $_POST['mail'];
+    // $phone = $_POST['phone'];
+    //     $year = $_POST['year'];
+    //     $month = sprintf("%02d",$_POST['month']);
+    //     $day =  sprintf("%02d",$_POST['day']);
+    // //birthは3つのstringの組み合わせ
+    // $birth = $year.'-'.$month.'-'.$day;
+    // $pass = $_POST['pass'];
 ?>
 
 <style> 
@@ -53,7 +81,7 @@
             <div class="row h5">
               <div class="col-md-3 offset-md-3 text-start">
                 <i class="bi bi-diamond-fill h6 me-3"></i>名前</div>
-              <div class="col-md-6">ゲームオタク　太郎</div>
+              <div class="col-md-6"><?php echo $name ?></div>
             </div>
           </li>
 
@@ -69,7 +97,7 @@
             <div class="row h5">
               <div class="col-md-3 offset-md-3 text-start">
                 <i class="bi bi-diamond-fill h6 me-3"></i>電話番号</div>
-              <div class="col-md-6">070 - 0000 - 0000</div>
+              <div class="col-md-6"><?php echo $phone ?></div>
             </div>
           </li>
       
