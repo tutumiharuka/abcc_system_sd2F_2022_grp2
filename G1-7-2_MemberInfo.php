@@ -16,6 +16,9 @@
     foreach($results as $row){
      $name = $row['name'];
      $phone= $row['phone_number'];
+     $mail = $row['mail'];
+     $date_of_birth = $row['date_of_birth'];
+     $password = $row['pass'];
     }
 
     // echo 
@@ -89,7 +92,7 @@
             <div class="row h5">
               <div class="col-md-3 offset-md-3 text-start">
                 <i class="bi bi-diamond-fill h6 me-3"></i>メールアドレス</div>
-              <div class="col-md-6">taro@gameotaku.com</div>
+              <div class="col-md-6"><?php echo $mail ?></div>
             </div>
           </li>
 
@@ -105,7 +108,7 @@
             <div class="row h5">
               <div class="col-md-3 offset-md-3 text-start">
                 <i class="bi bi-diamond-fill h6 me-3"></i>生年月日</div>
-              <div class="col-md-6">2022年12月31日</div>
+              <div class="col-md-6"><?php echo $date_of_birth ?></div>
             </div>
           </li>
 
@@ -113,7 +116,7 @@
             <div class="row h5">
               <div class="col-md-3 offset-md-3 text-start">
                 <i class="bi bi-diamond-fill h6 me-3"></i>パスワード</div>
-              <div class="col-md-6">●●●●●●●●●●</div>
+              <div class="col-md-6"><?php echo $password ?></div>
               
             </div>
           </li>
