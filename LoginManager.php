@@ -6,6 +6,16 @@ class LoginManager{
         return $pdo;
     }
 
+    // public function getMemberIdByMail($mail){
+    //     $pdo = $this->dbConnect();
+    //     $sql = "SELECT * FROM members WHERE mail = ?";
+    //     $ps = $pdo->prepare($sql);
+    //     $ps->bindValue(1,$mail,PDO::PARAM_STR);
+    //     $ps->execute();
+    //     $results = $ps->fetchAll();
+    // }
+
+
     /*　ログイン画面でログインする */
     public function login($mail){
         $pdo = $this->dbConnect();
@@ -15,6 +25,12 @@ class LoginManager{
         $ps->execute();
         $results = $ps->fetchAll();
         
+        if(count($results)==0){
+            //存在しない場合
+            $_SESSION['err'] = "IDが存在しないやパスワードが違うのか、ご確認ください";
+            header('Location: G1-2-1_Login.php');
+        }
+
         foreach($results as $row){
             //パスワード認証できたら、member情報をセッションに入れる
             if(password_verify($_POST['pass'],$row['password']) == true){

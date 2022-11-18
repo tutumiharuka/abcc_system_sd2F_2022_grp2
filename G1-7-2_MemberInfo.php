@@ -18,8 +18,7 @@
      $phone= $row['phone_number'];
      $mail = $row['mail'];
      $date_of_birth = $row['date_of_birth'];
-     $password = $row['password'];
-
+    
    
     }
 
@@ -44,19 +43,6 @@
 
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
-
-<?php  
-    // // 前ページの値を取得する
-    // $name = $_POST['name'];
-    // $mail = $_POST['mail'];
-    // $phone = $_POST['phone'];
-    //     $year = $_POST['year'];
-    //     $month = sprintf("%02d",$_POST['month']);
-    //     $day =  sprintf("%02d",$_POST['day']);
-    // //birthは3つのstringの組み合わせ
-    // $birth = $year.'-'.$month.'-'.$day;
-    // $pass = $_POST['pass'];
-?>
 
 <style> 
   .kuhaku-form{
@@ -118,7 +104,7 @@
             <div class="row h5">
               <div class="col-md-3 offset-md-3 text-start">
                 <i class="bi bi-diamond-fill h6 me-3"></i>パスワード</div>
-              <div class="col-md-6"><?php echo $password ?></div>
+              <div class="col-md-6">●●●●●●●●●●</div>
             </div>
           </li>
 
