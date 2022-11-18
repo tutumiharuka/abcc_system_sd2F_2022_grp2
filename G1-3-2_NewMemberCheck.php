@@ -7,6 +7,8 @@ require_once "DBManager.php";
      $_SESSION['err']="入力したメールアドレスが既に申し込まれています";
      header('Location: G1-3-1_NewMember.php');
 
+     require_once 'DBManager.php';
+     $dbmng = new DBManager();
      $results = $dbmng->getMemberInfo($member_id);
  
  
