@@ -61,6 +61,7 @@ class DBManager{
         $results = $ps->fetchAll();
         return $results;
     }
+
     //ゲーム検索機能
     public function getGameListBySearch($keyword){
         $pdo = $this->dbConnect();
@@ -70,18 +71,6 @@ class DBManager{
         $ps->execute();
         $results = $ps->fetchAll();
         return $results;
-    }
-
-    //ゲーム検索数を表示
-    public function getGameCountBySearch($keyword){
-        $pdo = $this->dbConnect();
-        $sql="SELECT COUNT(*) AS count FROM shohins WHERE shohin_name LIKE ?";
-        $ps=$pdo->prepare($sql);
-        $ps->bindValue(1,"%".$keyword."%",PDO::PARAM_STR);
-        $ps->execute();
-        $results = $ps->fetchAll();
-        foreach($results as $row) $count = $row['count'];
-        return $count;
     }
 
     // ジャンルリストゲット
@@ -210,18 +199,6 @@ class DBManager{
         $ps->execute();
     }  
 
-    //カートの数量を取得する
-    public function getCartCount($member_id){
-        $pdo = $this->dbConnect();
-        $sql = "SELECT COUNT(*) FROM carts WHERE member_id = ? AND is_purchased = '0'";
-        $ps = $pdo->prepare($sql);
-        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
-        $ps->execute();
-        $results = $ps->fetchAll();
-        foreach($results as $row) $count = $row['COUNT(*)'];
-        return $count;
-    }
-
     //カートの合計金額
     public function getCartSum($member_id){
         $pdo = $this->dbConnect();
@@ -236,13 +213,61 @@ class DBManager{
         return $sum;
     }
 
-    //購入したフラグを立つ(カートの全てゲームを)
-    public function updateCartAfterBuy($member_id){
+    //購入した動き
+    public function updateCartAndHistory($member_id){
         $pdo = $this->dbConnect();
-        $sql = "UPDATE carts SET is_purchased = '1'
-                WHERE is_purchased = '0'";
+        $sql = "UPDATE carts SET is_purchased = '1' 
+                WHERE member_id = $member_id AND is_purchased = '0'";
         $pdo->query($sql);
     }
+
+    /* * *　* * *　* * *　* * *　購入履歴　操作　* * *　* * *　* * *　* * */
+    
+    //購入履歴にゲームを入れる
+    public function insertNewHistory($member_id,$shohin_id){
+        $pdo = $this->dbConnect();
+        $today = date("Y-m-d");
+        $sql = "INSERT INTO histories(member_id,shohin_id,buying_date) VALUES (?,?, $today)";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
+        $ps->bindValue(2,$shohin_id,PDO::PARAM_STR);
+        $ps->execute();
+    }  
+
+
+// -- 複数レコード一括INSERT
+// INSERT INTO KEY_VALUE
+//   (KEY_NO, STRING_VALUE, NUMBER_VALUE)
+// VALUES 
+//   (1, 'VALUE1', 100),
+//   (2, 'VALUE2', 200),
+//   (3, 'VALUE3', 300),
+//   (4, 'VALUE4', 400),
+//   (5, 'VALUE5', 500),
+//   (6, 'VALUE6', 600),
+//   (7, 'VALUE7', 700),
+//   (8, 'VALUE8', 800),
+//   (9, 'VALUE9', 900),
+//   (10, 'VALUE10', 1000);
+
+
+    //購入履歴リストを表示する
+    public function getBuyHistroyList($member_id){
+        $pdo = $this->dbConnect();
+        // $sql = "SELECT f.favorite_id,f.member_id,c.shohin_id,s.shohin_name,s.price,s.image_small 
+        //         FROM favorites f INNER JOIN shohins s ON c.shohin_id = s.shohin_id 
+        //         WHERE member_id = ?";
+        // $ps = $pdo->prepare($sql);
+        // $ps->bindValue(1,$member_id,PDO::PARAM_STR);
+        // $ps->execute();
+        // $results = $ps->fetchAll();
+        // return $results;
+    }
+
+
+
+
+
 
 
 /* * *　* * *　* * *　* * *　お気に入り　操作　* * *　* * *　* * *　* * */
@@ -296,31 +321,6 @@ class DBManager{
     }  
 
 
-/* * *　* * *　* * *　* * *　購入履歴　操作　* * *　* * *　* * *　* * */
-
-    //購入履歴リストを表示する
-    public function getBuyHistroyList($member_id){
-        $pdo = $this->dbConnect();
-        // $sql = "SELECT f.favorite_id,f.member_id,c.shohin_id,s.shohin_name,s.price,s.image_small 
-        //         FROM favorites f INNER JOIN shohins s ON c.shohin_id = s.shohin_id 
-        //         WHERE member_id = ?";
-        // $ps = $pdo->prepare($sql);
-        // $ps->bindValue(1,$member_id,PDO::PARAM_STR);
-        // $ps->execute();
-        // $results = $ps->fetchAll();
-        // return $results;
-    }
-
-    //購入履歴にゲームを入れる
-    public function insertNewHistory($member_id,$shohin_id){
-        $pdo = $this->dbConnect();
-        $today = date("Y-m-d");
-        $sql = "INSERT INTO histories(member_id,shohin_id,buying_date) VALUES (?,?, $today)";
-        $ps = $pdo->prepare($sql);
-        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
-        $ps->bindValue(2,$shohin_id,PDO::PARAM_STR);
-        $ps->execute();
-    }  
 
 
 
