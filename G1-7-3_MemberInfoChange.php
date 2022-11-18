@@ -3,11 +3,26 @@
     require_once 'LoginManager.php';
     $loginMng = new LoginManager(); 
     $loginMng->isLogin();
+
+    // 情報をとってくる
+    $member_id = $_SESSION['member']['member_id'];
+
+    require_once 'DBManager.php';
+    $dbmng = new DBManager();
+    $results = $dbmng->getMemberInfo($member_id);
+
+    foreach($results as $row){
+     $name = $row['name'];
+     $phone= $row['phone_number'];
+     $mail = $row['mail'];
+     $date_of_birth = $row['date_of_birth'];
+    }
+
 ?>
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
 
-
+    
 
 <style> 
   .kuhaku-form{
@@ -38,7 +53,7 @@
               <div class="col-md-3 offset-md-3 text-start">
                 <i class="bi bi-diamond-fill h6 me-3"></i>名前</div>
               <div class="col-md-5">
-                <input type="text" class="form-control rounded-pill" id="password" value="ゲームオタク　太郎">
+                <input type="text" class="form-control rounded-pill" id="password" value="<?php echo $name ?>">
                 </div>
             </div>
           </li>
@@ -48,7 +63,7 @@
               <div class="col-md-3 offset-md-3 text-start">
                 <i class="bi bi-diamond-fill h6 me-3"></i>メールアドレス</div>
               <div class="col-md-5">
-                <input type="text" class="form-control rounded-pill" id="password" value="taro@gameotaku.com">
+                <input type="text" class="form-control rounded-pill" id="password" value="<?php echo $mail ?>">
                 </div>
             </div>
           </li>
@@ -58,7 +73,7 @@
               <div class="col-md-3 offset-md-3 text-start">
                 <i class="bi bi-diamond-fill h6 me-3"></i>電話番号</div>
               <div class="col-md-5">
-                <input type="text" class="form-control rounded-pill" id="password" value="07000000000">
+                <input type="text" class="form-control rounded-pill" id="password" value="<?php echo $phone ?>">
                 </div>
             </div>
           </li>
@@ -68,7 +83,7 @@
               <div class="col-md-3 offset-md-3 text-start">
                 <i class="bi bi-diamond-fill h6 me-3"></i>生年月日</div>
               <div class="col-md-5">
-                <input type="date" class="form-control rounded-pill" id="password" value="2018-07-22">
+                <input type="date" class="form-control rounded-pill" id="password" value="<?php echo $date_of_birth ?>">
                 </div>
             </div>
           </li>
