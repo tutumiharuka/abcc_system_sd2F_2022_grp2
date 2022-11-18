@@ -37,7 +37,7 @@
         <div class="card-header">
           <h2 class="ms-4 mt-2 fw-bold">プロフィール</h2>
         </div>
-        <form  action="G1-7-5_MemberinfoChangeEnd.php" method="post">
+       
 
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
@@ -85,7 +85,7 @@
             </li>
 
           </ul>
-        </form>
+        
       </div><!-- .card -->
       
     </div>

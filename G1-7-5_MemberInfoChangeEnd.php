@@ -1,30 +1,9 @@
 <?php session_start(); ?>
 <?php 
-    $name = $_POST['name'];
-    $mail = $_POST['mail'];
-    $phone = $_POST['phone'];
-    $birth = $_POST['birth'];
-    $pass = $_POST['pass'];
-    
-    require_once "DBManager.php";
-    $dbmng = new DBManager();
-    $results = $dbmng->updateNewMember($name,$mail,$phone,$birth);
-
     require_once 'LoginManager.php';
     $loginMng = new LoginManager(); 
     $loginMng->isLogin();
 
-    // アップデートする
-    public function updateNewMember($name,$mail,$phone,$birth){
-        $sql = "INSERT INTO members(name,mail,phone_number,date_of_birth) VALUES (?,?,?,?,?)";
-        $ps = $pdo->prepare($sql);
-        $ps->bindValue(1, $name,  PDO::PARAM_STR);
-        $ps->bindValue(2, $mail,  PDO::PARAM_STR);
-        $ps->bindValue(3, $phone, PDO::PARAM_STR);
-        $ps->bindValue(4, $birth, PDO::PARAM_STR);
-        $ps->execute();
-      }
-?>
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
 
