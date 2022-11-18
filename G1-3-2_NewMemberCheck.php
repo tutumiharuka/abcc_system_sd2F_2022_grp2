@@ -1,24 +1,24 @@
 <?php session_start(); ?>
 <?php 
-require_once "DBManager.php";
- $dbmng = new DBManager();
- // 重複データある場合-> 前ページへ、エラーメッセージを送ります。
- if($dbmng->isSameEmail($_POST['mail'])){
-     $_SESSION['err']="入力したメールアドレスが既に申し込まれています";
-     header('Location: G1-3-1_NewMember.php');
-
-     require_once 'DBManager.php';
-     $dbmng = new DBManager();
-     $results = $dbmng->getMemberInfo($member_id);
- 
- 
-     foreach($results as $row){
-      $name = $row['name'];
-      $phone= $row['phone_number'];
-      $mail = $row['mail'];
-      $date_of_birth = $row['date_of_birth'];
-     }
- }
+    require_once "DBManager.php";
+    $dbmng = new DBManager();
+     // 重複データある場合-> 前ページへ、エラーメッセージを送ります。
+    if($dbmng->isSameEmail($_POST['mail'])){
+        $_SESSION['err']="入力したメールアドレスが既に申し込まれています";
+        header('Location: G1-3-1_NewMember.php');
+    }else{
+        // 前ページの値を取得する
+        $name = $_POST['name'];
+        $mail = $_POST['mail'];
+        $phone = $_POST['phone'];
+            $year = $_POST['year'];
+            $month = sprintf("%02d",$_POST['month']);
+            $day =  sprintf("%02d",$_POST['day']);
+        //birthは3つのstringの組み合わせ
+        $birth = $year.'-'.$month.'-'.$day;
+        $pass = $_POST['pass'];
+    }
+   
 ?>
 
 <?php include_once 'GameHeader.php'; ?>

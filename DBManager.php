@@ -219,6 +219,8 @@ class DBManager{
         $sql = "UPDATE carts SET is_purchased = '1' 
                 WHERE member_id = $member_id AND is_purchased = '0'";
         $pdo->query($sql);
+
+
     }
 
     /* * *　* * *　* * *　* * *　購入履歴　操作　* * *　* * *　* * *　* * */
