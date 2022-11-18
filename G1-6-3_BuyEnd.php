@@ -4,10 +4,11 @@
     $loginMng = new LoginManager(); 
     $loginMng->isLogin();
 
-    //注文したゲームをカートから削除する
-
-
-    //注文したゲームを履歴に追加する
+    require_once "DBManager.php";
+    $dbmng = new DBManager();
+    $member_id = $_SESSION['member']['member_id'];
+    //注文したゲームをカートから削除し、履歴に追加する
+    $dbmng->updateCartAndHistory($member_id);
 
 ?>
 <?php include_once 'GameHeader.php'; ?>

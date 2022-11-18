@@ -96,7 +96,11 @@
         <div class="col-lg-3 h3">
             <form action="G1-5-2_ShohinDetails.php" method="post">
                 <input type="hidden" name="shohin_id" value="<?php echo $shohin_id?>">
-                <?php if($dbmng->isInCart($member_id,$shohin_id)==false): ?>
+                <!-- 購入済みかどうか -->
+                <?php if($dbmng->isInBuyHistory($member_id,$shohin_id)==true): ?>
+                    <input class="btn btn-outline-secondary btn-lg rounded-pill" value="購入済み" disabled>
+                <!-- カートに入れたかどうか -->
+                <?php elseif($dbmng->isInCart($member_id,$shohin_id)==false): ?>
                     <input type="hidden" name="cart" value="addcart">
                     <input type="submit" class="btn btn-outline-primary btn-lg rounded-pill" id="addCartBtn" value="カートに入れる">
                 <?php else: ?>

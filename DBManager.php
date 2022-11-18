@@ -216,58 +216,53 @@ class DBManager{
     //購入した動き
     public function updateCartAndHistory($member_id){
         $pdo = $this->dbConnect();
-        $sql = "UPDATE carts SET is_purchased = '1' 
-                WHERE member_id = $member_id AND is_purchased = '0'";
+        $results = $this->getCartList($member_id);
+
+        //カートの更新
+        $sql = "UPDATE carts SET is_purchased = '1' WHERE is_purchased = '0' AND member_id = $member_id ";
         $pdo->query($sql);
-
-
+        
+        // 履歴に入れる
+        $today = date("Y-m-d");
+        $data = [];
+        foreach($results as $row){
+            $shohin_id = $row['shohin_id'];
+            array_push($data,"($member_id,$shohin_id,'$today')"); 
+        }
+        $sql = "INSERT INTO histories(member_id,shohin_id,buying_date) VALUES".implode(',', $data);
+        $pdo->query($sql);
     }
 
-    /* * *　* * *　* * *　* * *　購入履歴　操作　* * *　* * *　* * *　* * */
-    
-    //購入履歴にゲームを入れる
-    public function insertNewHistory($member_id,$shohin_id){
-        $pdo = $this->dbConnect();
-        $today = date("Y-m-d");
-        $sql = "INSERT INTO histories(member_id,shohin_id,buying_date) VALUES (?,?, $today)";
-        $ps = $pdo->prepare($sql);
-        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
-        $ps->bindValue(2,$shohin_id,PDO::PARAM_STR);
-        $ps->execute();
-    }  
-
-
-// -- 複数レコード一括INSERT
-// INSERT INTO KEY_VALUE
-//   (KEY_NO, STRING_VALUE, NUMBER_VALUE)
-// VALUES 
-//   (1, 'VALUE1', 100),
-//   (2, 'VALUE2', 200),
-//   (3, 'VALUE3', 300),
-//   (4, 'VALUE4', 400),
-//   (5, 'VALUE5', 500),
-//   (6, 'VALUE6', 600),
-//   (7, 'VALUE7', 700),
-//   (8, 'VALUE8', 800),
-//   (9, 'VALUE9', 900),
-//   (10, 'VALUE10', 1000);
-
+    /* * *　* * *　* * *　* * *　購入履歴　表示　* * *　* * *　* * *　* * */
 
     //購入履歴リストを表示する
     public function getBuyHistroyList($member_id){
         $pdo = $this->dbConnect();
-        // $sql = "SELECT f.favorite_id,f.member_id,c.shohin_id,s.shohin_name,s.price,s.image_small 
-        //         FROM favorites f INNER JOIN shohins s ON c.shohin_id = s.shohin_id 
-        //         WHERE member_id = ?";
-        // $ps = $pdo->prepare($sql);
-        // $ps->bindValue(1,$member_id,PDO::PARAM_STR);
-        // $ps->execute();
-        // $results = $ps->fetchAll();
-        // return $results;
+        $sql = "SELECT h.member_id,h.buying_date,s.shohin_id,s.shohin_name,s.image_small
+                FROM histories h INNER JOIN shohins s ON h.shohin_id = s.shohin_id 
+                WHERE member_id = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
+        $ps->execute();
+        $results = $ps->fetchAll();
+        return $results;
     }
 
-
-
+    //購入したかどうか
+    public function isInBuyHistory($member_id,$shohin_id){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT member_id,shohin_id FROM histories WHERE member_id = ? AND shohin_id = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
+        $ps->bindValue(2,$shohin_id,PDO::PARAM_STR);
+        $ps->execute();
+        $results = $ps->fetchAll();
+        if(count($results)!=0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
 
 
@@ -277,8 +272,8 @@ class DBManager{
     //お気に入りリストを表示する
      public function getFavoriteList($member_id){
         $pdo = $this->dbConnect();
-        $sql = "SELECT f.favorite_id,f.member_id,c.shohin_id,s.shohin_name,s.price,s.image_small 
-                FROM favorites f INNER JOIN shohins s ON c.shohin_id = s.shohin_id 
+        $sql = "SELECT f.favorite_id,f.member_id,s.shohin_id,s.shohin_name,s.price,s.image_small 
+                FROM favorites f INNER JOIN shohins s ON f.shohin_id = s.shohin_id 
                 WHERE member_id = ?";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1,$member_id,PDO::PARAM_STR);
