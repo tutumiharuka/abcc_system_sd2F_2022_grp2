@@ -7,6 +7,13 @@
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
 
+<?php  
+    // 前ページの値を取得する
+    $name = $_POST['name'];
+    $mail = $_POST['mail'];
+    $phone = $_POST['phone'];
+    $date_of_birth = $row['date_of_birth'];
+  ?>
 
 <style> 
   .kuhaku-form{
@@ -30,48 +37,55 @@
         <div class="card-header">
           <h2 class="ms-4 mt-2 fw-bold">プロフィール</h2>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <div class="row h5">
-              <div class="col-md-3 offset-md-3 text-start">
-                <i class="bi bi-diamond-fill h6 me-3"></i>名前</div>
-              <div class="col-md-6">ゲームオタク　太郎</div>
-            </div>
-          </li>
+        <form  action="G1-7-5_MemberinfoChangeEnd.php" method="post">
 
-          <li class="list-group-item">
-            <div class="row h5">
-              <div class="col-md-3 offset-md-3 text-start">
-                <i class="bi bi-diamond-fill h6 me-3"></i>メールアドレス</div>
-              <div class="col-md-6">taro@gameotaku.com</div>
-            </div>
-          </li>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="row h5">
+                <div class="col-md-3 offset-md-3 text-start">
+                  <i class="bi bi-diamond-fill h6 me-3"></i>名前</div>
+                <div class="col-md-6">"<?php echo $name ?>"</div>
+                <input type="hidden" name="phone" value="<?php echo $name ?>">
+              </div>
+            </li>
 
-          <li class="list-group-item">
-            <div class="row h5">
-              <div class="col-md-3 offset-md-3 text-start">
-                <i class="bi bi-diamond-fill h6 me-3"></i>電話番号</div>
-              <div class="col-md-6">070 - 0000 - 0000</div>
-            </div>
-          </li>
+            <li class="list-group-item">
+              <div class="row h5">
+                <div class="col-md-3 offset-md-3 text-start">
+                  <i class="bi bi-diamond-fill h6 me-3"></i>メールアドレス</div>
+                <div class="col-md-6">"<?php echo $mail ?>"</div>
+                <input type="hidden" name="phone" value="<?php echo $mail ?>">
+              </div>
+            </li>
 
-          <li class="list-group-item">
-            <div class="row h5">
-              <div class="col-md-3 offset-md-3 text-start">
-                <i class="bi bi-diamond-fill h6 me-3"></i>生年月日</div>
-              <div class="col-md-6">2022年12月31日</div>
-            </div>
-          </li>
+            <li class="list-group-item">
+              <div class="row h5">
+                <div class="col-md-3 offset-md-3 text-start">
+                  <i class="bi bi-diamond-fill h6 me-3"></i>電話番号</div>
+                <div class="col-md-6">"<?php echo $phone ?>"</div>
+                <input type="hidden" name="phone" value="<?php echo $phone ?>">
+              </div>
+            </li>
 
-          <li class="list-group-item">
-            <div class="row h5">
-              <div class="col-md-3 offset-md-3 text-start">
-                <i class="bi bi-diamond-fill h6 me-3"></i>パスワード</div>
-              <div class="col-md-6">●●●●●●●●●●</div>
-            </div>
-          </li>
+            <li class="list-group-item">
+              <div class="row h5">
+                <div class="col-md-3 offset-md-3 text-start">
+                  <i class="bi bi-diamond-fill h6 me-3"></i>生年月日</div>
+                <div class="col-md-6">"<?php echo $birth ?>"</div>
+                <input type="hidden" name="phone" value="<?php echo $birth ?>">
+              </div>
+            </li>
 
-        </ul>
+            <li class="list-group-item">
+              <div class="row h5">
+                <div class="col-md-3 offset-md-3 text-start">
+                  <i class="bi bi-diamond-fill h6 me-3"></i>パスワード</div>
+                <div class="col-md-6">●●●●●●●●●●</div>
+              </div>
+            </li>
+
+          </ul>
+        </form>
       </div><!-- .card -->
       
     </div>
