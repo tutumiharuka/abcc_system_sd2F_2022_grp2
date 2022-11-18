@@ -1,4 +1,37 @@
 <?php session_start(); ?>
+<?php 
+require_once "DBManager.php";
+$dbmng = new DBManager();
+
+/*　*　検索　 *　*/
+if(isset($_GET['keyword'])){
+    $title = $_GET['keyword'];
+    $results = $dbmng->getGameListBySearch($_GET['keyword']);
+    $count = count($results);
+}
+
+/*　*　ジャンルとテーマ別　 *　*/
+if(isset($_GET['genre_id'])){
+    if($_GET['genre_id']=="free"){
+        $title = "無料ゲーム";
+        $results = $dbmng->getFreeList();
+        $count = count($results);
+    }else if($_GET['genre_id']=="new"){
+        $title = "最新作";
+        $results = $dbmng->getNewList();
+        $count = count($results);
+    }else if($_GET['genre_id']=="ranking"){
+        $title = "ランキング";
+        $results = $dbmng->getRankingList();
+        $count = count($results);
+    }else{// ジャンルで
+        $genre_id = $_GET['genre_id'];
+        $results = $dbmng->getGameListByGenre($genre_id);
+        $title = $dbmng->getJpnGenreName($genre_id);
+        $count = count($results);
+    }
+}
+?>
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
 <style>
@@ -9,41 +42,6 @@
         width: 75px;
     }
 </style>
-
-<?php 
-require_once "DBManager.php";
-$dbmng = new DBManager();
-// new
-// free
-// recommend
-if(isset($_GET['keyword'])){
-    $title = $_GET['keyword'];
-}
-
-$results=$dbmng->getGameListBySearch($_GET['keyword']);
-$count=$dbmng->getGameCountBySearch($_GET['keyword']);
-
-if(isset($_GET['genre_id'])){
-    
-    if($_GET['genre_id']=="free"){
-        $results=$dbmng->getFreeList();
-        $title = "無料ゲーム";
-    }else if($_GET['genre_id']=="new"){
-        $results=$dbmng->getNewList();
-        $title = "最新作";
-    }else if($_GET['genre_id']=="ranking"){
-        $results=$dbmng->getRankingList();
-        $title = "ランキング";
-    }else{// ジャンルで
-        $genre_id = $_GET['genre_id'];
-        $results=$dbmng->getGameListByGenre($genre_id);
-        $title = $dbmng->getJpnGenreName($genre_id);
-    }
-}
-
-?>
-
-
 <div class="container">
     <!-- breadcrumb リンク機能  -->
     <nav class="mt-5 ms-3 mb-4" aria-label="breadcrumb">
