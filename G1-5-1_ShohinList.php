@@ -18,30 +18,10 @@ $dbmng = new DBManager();
 // recommend
 if(isset($_GET['keyword'])){
     $title = $_GET['keyword'];
-     
-
-    //DBからゲームリストを取り出す
-$pdo = new PDO('mysql:host=localhost;dbname=gamedb;charset=utf8','webuser','abccsd2');
-$sql="SELECT shohin_id,image_small,shohin_name,price FROM shohins WHERE shohin_name LIKE ?";
-$ps=$pdo->prepare($sql);
-$ps->bindValue(1,"%".$_GET['keyword']."%",PDO::PARAM_STR);
-$ps->execute();
-$results=$ps->fetchAll();
-
-// COUNT
-$sql="SELECT COUNT(*) AS count FROM shohins WHERE shohin_name LIKE ?";
-$ps=$pdo->prepare($sql);
-$ps->bindValue(1,"%".$_GET['keyword']."%",PDO::PARAM_STR);
-$ps->execute();
-$results=$ps->fetchAll();
-foreach($results as $row){
-    $count = $row['count'];
-}
-//表示する
-// $results= データベースから受け取ったリストを入れる
-
 }
 
+$results=$dbmng->getGameListBySearch($_GET['keyword']);
+$count=$dbmng->getGameCountBySearch($_GET['keyword']);
 
 if(isset($_GET['genre_id'])){
     

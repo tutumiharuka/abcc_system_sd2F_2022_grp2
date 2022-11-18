@@ -61,6 +61,29 @@ class DBManager{
         $results = $ps->fetchAll();
         return $results;
     }
+    //ゲーム検索機能
+    public function getGameListBySearch($keyword){
+        $pdo = $this->dbConnect();
+        $sql="SELECT shohin_id,image_small,shohin_name,price FROM shohins WHERE shohin_name LIKE ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,"%".$keyword."%",PDO::PARAM_STR);
+        $ps->execute();
+        $results = $ps->fetchAll();
+        return $results;
+    }
+
+    //ゲーム検索数を表示
+    public function getGameCountBySearch($keyword){
+        $pdo = $this->dbConnect();
+        $sql="SELECT COUNT(*) AS count FROM shohins WHERE shohin_name LIKE ?";
+        $ps=$pdo->prepare($sql);
+        $ps->bindValue(1,"%".$keyword."%",PDO::PARAM_STR);
+        $ps->execute();
+        $results = $ps->fetchAll();
+        foreach($results as $row) $count = $row['count'];
+        return $count;
+    }
+
     // ジャンルリストゲット
     public function getGameListByGenre($genre_id){
         $pdo = $this->dbConnect();
@@ -187,7 +210,7 @@ class DBManager{
         $ps->execute();
     }  
 
-    //カートの数量を計算する
+    //カートの数量を取得する
     public function getCartCount($member_id){
         $pdo = $this->dbConnect();
         $sql = "SELECT COUNT(*) FROM carts WHERE member_id = ? AND is_purchased = '0'";
