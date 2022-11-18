@@ -13,7 +13,7 @@ $member_id = $_SESSION['member']['member_id'];
 if(isset($_POST['delcart'])) $dbmng->deleteFromCartById($_POST['delcart']);
 // member_idでカート情報を取り出す
 $results = $dbmng->getCartList($member_id);
-$count = $dbmng->getCartCount($member_id);
+$count = count($results);
 $sum = $dbmng->getCartSum($member_id);
 
 ?>
@@ -45,7 +45,7 @@ $sum = $dbmng->getCartSum($member_id);
 </style>
 
 <!-- カートに商品がない場合 -->
-<?php if($dbmng->getCartCount($member_id)==false): ?>
+<?php if($count == 0): ?>
     <div class="container">
         <div class="kuhaku"></div>
         <div class="row mt-5">

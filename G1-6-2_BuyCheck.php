@@ -8,7 +8,7 @@ require_once "DBManager.php";
 $dbmng = new DBManager();
 $member_id = $_SESSION['member']['member_id'];
 $results = $dbmng->getCartList($member_id);
-$count = $dbmng->getCartCount($member_id);
+$count = count($results);
 $sum = $dbmng->getCartSum($member_id);
 
 ?>
