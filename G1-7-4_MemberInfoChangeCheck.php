@@ -45,7 +45,6 @@
                 <div class="col-md-3 offset-md-3 text-start">
                   <i class="bi bi-diamond-fill h6 me-3"></i>名前</div>
                 <div class="col-md-6">"<?php echo $name ?>"</div>
-                <input type="hidden" name="phone" value="<?php echo $name ?>">
               </div>
             </li>
 
@@ -54,7 +53,6 @@
                 <div class="col-md-3 offset-md-3 text-start">
                   <i class="bi bi-diamond-fill h6 me-3"></i>メールアドレス</div>
                 <div class="col-md-6">"<?php echo $mail ?>"</div>
-                <input type="hidden" name="phone" value="<?php echo $mail ?>">
               </div>
             </li>
 
@@ -63,7 +61,6 @@
                 <div class="col-md-3 offset-md-3 text-start">
                   <i class="bi bi-diamond-fill h6 me-3"></i>電話番号</div>
                 <div class="col-md-6">"<?php echo $phone ?>"</div>
-                <input type="hidden" name="phone" value="<?php echo $phone ?>">
               </div>
             </li>
 
@@ -72,7 +69,6 @@
                 <div class="col-md-3 offset-md-3 text-start">
                   <i class="bi bi-diamond-fill h6 me-3"></i>生年月日</div>
                 <div class="col-md-6">"<?php echo $birth ?>"</div>
-                <input type="hidden" name="phone" value="<?php echo $birth ?>">
               </div>
             </li>
 
