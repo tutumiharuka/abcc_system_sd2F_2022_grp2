@@ -80,6 +80,7 @@
         <div class="col-lg-1 mb-2 d-flex align-items-center h2">
             <form action="G1-5-2_ShohinDetails.php" method="post">
                 <input type="hidden" name="shohin_id" value="<?php echo $shohin_id?>">
+                
                 <?php if($dbmng->isInFavorite($member_id,$shohin_id)==false): ?>
                     <input type="hidden" name="favorite" value="addfav">
                     <button type="submit" class="btn btn-outline-light"><h2><i class="bi bi-heart"></i></h2></button>
@@ -87,6 +88,7 @@
                     <input type="hidden" name="favorite" value="delfav">
                     <button type="submit" class="btn btn-outline-light"><h2><i class="bi bi-heart-fill"></i></h2></button>
                 <?php endif; ?>
+                
             </form>
             
         </div>

@@ -102,30 +102,29 @@
     </div>  
     
     <!-- 会員の表示 -->
-    <?php 
-    if(isset($_SESSION['member'])){
-        echo '<div class="row mt-5">';
-        echo '    <nav class="member-list">';
-        echo '        <ul>';
-        echo '            <li class="fw-bold"><h3>'.$_SESSION['member']['name'].'</h3></li>';
-        echo '            <li class="fw-bold"><a href="#"> 購入履歴</a></li>';
-        echo '            <li class="fw-bold"><a href="#"> お気に入り</a></li>';
-        echo '            <li class="fw-bold"><a href="G1-6-1_Cart.php"> カート</a></li>';
-        echo '            <li class="fw-bold"><a href="#"> 会員情報</a></li>';
-        echo '            <li class="fw-bold"><a href="Logout.php"> ログアウト</a></li>';
-        echo '        </ul>';
-        echo '    </nav>';
-        echo '</div>';
-    }else{
-        echo '<div class="row mt-5 ms-5">';
-        echo '  <div class="col-12">';
-        echo '    <a href="G1-2-1_Login.php">';
-        echo '      <button type="button" class="btn btn-lg login-btn fw-bold">ログイン・新規登録</button>';
-        echo '    </a>';
-        echo '  </div>';
-        echo '</div>';
-    }
-    ?>
+    <?php if(isset($_SESSION['member'])): ?>
+            <div class="row mt-5">
+              <nav class="member-list">
+                <ul>
+                  <li class="fw-bold"><h3><?php echo $_SESSION['member']['name'] ?></h3></li>
+                  <li class="fw-bold"><a href="G1-8_BuyHistory.php">購入履歴</a></li>
+                  <li class="fw-bold"><a href="G1-4_Favorite.php">お気に入り</a></li>
+                  <li class="fw-bold"><a href="G1-6-1_Cart.php">カート</a></li>
+                  <li class="fw-bold"><a href="G1-7-2_MemberInfo.php">会員情報</a></li>
+                  <li class="fw-bold"><a href="Logout.php">ログアウト</a></li>
+                </ul>
+              </nav>
+            </div>
+    <?php else: ?>
+            <div class="row mt-5 ms-5">
+              <div class="col-12">
+                <a href="G1-2-1_Login.php">
+                  <button type="button" class="btn btn-lg login-btn fw-bold">ログイン・新規登録</button>
+                </a>
+              </div>
+            </div>
+    <?php endif; ?>
+    
     <div class="side-list-title mt-3 fw-bold">ゲームを探す</div>
 
     <nav>

@@ -1,17 +1,17 @@
 <?php
 class DBManager{
-    //DBに接続
+
+/* * *　* * *　* * *　* * *　データベース　接続　* * *　* * *　* * *　* * */
     private function dbConnect(){
-        // 本番
+        // localhostでテスト用
         $pdo = new PDO('mysql:host=localhost;dbname=gamedb;charset=utf8','webuser','abccsd2');
         // LolipopのDBを使うabccsd2
         // $pdo = new PDO('mysql:host=mysql209.phy.lolipop.lan;dbname=LAA1418471-gamedb;charset=utf8','LAA1418471','password');
         return $pdo;
     }
 
-
- /*　新規登録 */
-//  重複メールの確認
+/* * *　* * *　* * *　* * *　会員登録　操作　* * *　* * *　* * *　* * */
+    //  重複メールの確認
     public function isSameEmail($mail){
         $pdo = $this->dbConnect();
         $sql = "SELECT mail FROM members WHERE mail = ?";
@@ -26,7 +26,7 @@ class DBManager{
         }
     }
 
-//  新会員のデータを入れる
+    //  新会員のデータを入れる
     public function insertNewMember($name,$mail,$phone,$birth,$password){
         $pdo = $this->dbConnect();
         $sql = "INSERT INTO members(name,mail,phone_number,date_of_birth,password) VALUES (?,?,?,?,?)";
@@ -39,9 +39,7 @@ class DBManager{
         $ps->execute();
     }
 
-
-
-//  会員情報表示
+    //  会員情報表示
     public function getMemberInfo($member_id){
         $pdo = $this->dbConnect();
         $sql = "SELECT  * FROM members WHERE member_id = ?";
@@ -52,16 +50,8 @@ class DBManager{
         return $results;
     }
 
-
-
-
-
-
-
-    
-
-/*商品リストやゲーム情報を取得する */
-// TOPページのcarouselゲームを表示（固定）
+/* * *　* * *　* * *　* * *　ゲームリスト　表示　* * *　* * *　* * *　* * */
+    // TOPページ　表示
     public function getBigImgById($shohin_id){
         $pdo = $this->dbConnect();
         $sql = "SELECT image_big FROM shohins WHERE shohin_id = ?";
@@ -71,8 +61,7 @@ class DBManager{
         $results = $ps->fetchAll();
         return $results;
     }
-
-// ジャンルリストゲット
+    // ジャンルリストゲット
     public function getGameListByGenre($genre_id){
         $pdo = $this->dbConnect();
         $sql = "SELECT shohin_id,shohin_name,price,image_small FROM shohins WHERE genre_id = ?";
@@ -82,28 +71,28 @@ class DBManager{
         $results = $ps->fetchAll();
         return $results;
     }
-// ランキング
+    // ランキング
     public function getRankingList(){
         $pdo = $this->dbConnect();
         $sql = "SELECT r.ranking_id,r.shohin_id,s.shohin_name,s.price,s.image_small FROM ranking r INNER JOIN shohins s ON r.shohin_id = s.shohin_id";
         $results = $pdo->query($sql);
         return $results;
     }
-// 最新作
+    // 最新作
     public function getNewList(){
         $pdo = $this->dbConnect();
         $sql = "SELECT shohin_id,shohin_name,price,image_small FROM shohins ORDER BY haishin_date DESC LIMIT 20";
         $results = $pdo->query($sql);
         return $results;
     }
-// 無料
+    // 無料
     public function getFreeList(){
         $pdo = $this->dbConnect();
         $sql = "SELECT shohin_id,shohin_name,price,image_small FROM shohins WHERE price=0";
         $results = $pdo->query($sql);
         return $results;
     }
-// 詳細ページ必要情報を得る
+    // 詳細ページ必要情報を得る
     public function getGameById($shohin_id){
         $pdo = $this->dbConnect();
         $sql = "SELECT * FROM shohins WHERE shohin_id = ?";
@@ -113,16 +102,14 @@ class DBManager{
         $results = $ps->fetchAll();
         return $results;
     }
-
-// ジャンルリスト
+    // ジャンルリスト
     public function getGenreList(){
         $pdo = $this->dbConnect();
         $sql = "SELECT * FROM genres";
         $list = $pdo->query($sql);
         return $list;
     }
-
-//ジャンル日本語タイトル
+    //ジャンル日本語タイトル
     public function getJpnGenreName($genre_id){
         $genreList = array(
             "ACT"=>"アクション",
@@ -139,13 +126,28 @@ class DBManager{
         return $genreList[$genre_id];
     }
 
+ 
+/* * *　* * *　* * *　* * *　カート　操作　* * *　* * *　* * *　* * */
+// ※　SELECT文に　is_purchased = '0'の意味は、まだ購入していない状態を示す
+// ※　SELECT文に　is_purchased = '1'の意味は、もう購入した状態を示す
 
+    //カートリストを表示する
+    public function getCartList($member_id){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT c.cart_id,c.member_id,c.shohin_id,s.shohin_name,s.price,s.image_small 
+                FROM carts c INNER JOIN shohins s ON c.shohin_id = s.shohin_id 
+                WHERE member_id = ? AND is_purchased = '0'";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
+        $ps->execute();
+        $results = $ps->fetchAll();
+        return $results;
+    }
 
-// カートにかかわる機能
-//カートに入れている？
+    //カートに入れているか判断
     public function isInCart($member_id,$shohin_id){
         $pdo = $this->dbConnect();
-        $sql = "SELECT member_id,shohin_id FROM carts WHERE member_id = ? AND shohin_id = ?";
+        $sql = "SELECT member_id,shohin_id FROM carts WHERE member_id = ? AND shohin_id = ? AND is_purchased = '0'";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1,$member_id,PDO::PARAM_STR);
         $ps->bindValue(2,$shohin_id,PDO::PARAM_STR);
@@ -157,7 +159,7 @@ class DBManager{
             return false;
         }
     }
-//カートにゲームを入れる
+    //カートにゲームを入れる
     public function insertNewCart($member_id,$shohin_id){
         $pdo = $this->dbConnect();
         $sql = "INSERT INTO carts(member_id,shohin_id,is_purchased) VALUES (?,?,'0')";
@@ -167,7 +169,7 @@ class DBManager{
         $ps->execute();
     }  
 
-//カートにゲームを入れる
+    //カートのゲームを削除
     public function deleteFromCart($member_id,$shohin_id){
         $pdo = $this->dbConnect();
         $sql = "DELETE FROM carts WHERE member_id = ? AND shohin_id = ?";
@@ -176,7 +178,7 @@ class DBManager{
         $ps->bindValue(2,$shohin_id,PDO::PARAM_STR);
         $ps->execute();
     }  
-
+    //カートIDでカートのゲームを削除
     public function deleteFromCartById($cartid){
         $pdo = $this->dbConnect();
         $sql = "DELETE FROM carts WHERE cart_id = ?";
@@ -185,8 +187,57 @@ class DBManager{
         $ps->execute();
     }  
 
+    //カートの数量を計算する
+    public function getCartCount($member_id){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT COUNT(*) FROM carts WHERE member_id = ? AND is_purchased = '0'";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
+        $ps->execute();
+        $results = $ps->fetchAll();
+        foreach($results as $row) $count = $row['COUNT(*)'];
+        return $count;
+    }
 
-    //カートに入れている？
+    //カートの合計金額
+    public function getCartSum($member_id){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT SUM(s.price) AS sum
+                FROM carts c INNER JOIN shohins s ON c.shohin_id = s.shohin_id 
+                WHERE member_id = ? AND is_purchased = '0'";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
+        $ps->execute();
+        $results = $ps->fetchAll();
+        foreach($results as $row) $sum = $row['sum'];
+        return $sum;
+    }
+
+    //購入したフラグを立つ(カートの全てゲームを)
+    public function updateCartAfterBuy($member_id){
+        $pdo = $this->dbConnect();
+        $sql = "UPDATE carts SET is_purchased = '1'
+                WHERE is_purchased = '0'";
+        $pdo->query($sql);
+    }
+
+
+/* * *　* * *　* * *　* * *　お気に入り　操作　* * *　* * *　* * *　* * */
+
+    //お気に入りリストを表示する
+     public function getFavoriteList($member_id){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT f.favorite_id,f.member_id,c.shohin_id,s.shohin_name,s.price,s.image_small 
+                FROM favorites f INNER JOIN shohins s ON c.shohin_id = s.shohin_id 
+                WHERE member_id = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
+        $ps->execute();
+        $results = $ps->fetchAll();
+        return $results;
+    }
+    
+  //お気に入りに入れているか確認する
     public function isInFavorite($member_id,$shohin_id){
         $pdo = $this->dbConnect();
         $sql = "SELECT member_id,shohin_id FROM favorites WHERE member_id = ? AND shohin_id = ?";
@@ -201,7 +252,7 @@ class DBManager{
             return false;
         }
     }
-    //カートにゲームを入れる
+    //お気に入りにゲームを入れる
     public function insertNewFavorite($member_id,$shohin_id){
         $pdo = $this->dbConnect();
         $sql = "INSERT INTO favorites(member_id,shohin_id) VALUES (?,?)";
@@ -211,7 +262,7 @@ class DBManager{
         $ps->execute();
     }  
 
-    //カートにゲームを入れる
+    //お気に入りからゲームを削除
     public function deleteFromFavorite($member_id,$shohin_id){
         $pdo = $this->dbConnect();
         $sql = "DELETE FROM favorites WHERE member_id = ? AND shohin_id = ?";
@@ -222,61 +273,34 @@ class DBManager{
     }  
 
 
-    //カートリストを表示する
-    public function getCartList($member_id){
+/* * *　* * *　* * *　* * *　購入履歴　操作　* * *　* * *　* * *　* * */
+
+    //購入履歴リストを表示する
+    public function getBuyHistroyList($member_id){
         $pdo = $this->dbConnect();
-        $sql = "SELECT c.cart_id,c.member_id,c.shohin_id,s.shohin_name,s.price,s.image_small 
-                FROM carts c INNER JOIN shohins s ON c.shohin_id = s.shohin_id 
-                WHERE member_id = ?";
-        $ps = $pdo->prepare($sql);
-        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
-        $ps->execute();
-        $results = $ps->fetchAll();
-        return $results;
+        // $sql = "SELECT f.favorite_id,f.member_id,c.shohin_id,s.shohin_name,s.price,s.image_small 
+        //         FROM favorites f INNER JOIN shohins s ON c.shohin_id = s.shohin_id 
+        //         WHERE member_id = ?";
+        // $ps = $pdo->prepare($sql);
+        // $ps->bindValue(1,$member_id,PDO::PARAM_STR);
+        // $ps->execute();
+        // $results = $ps->fetchAll();
+        // return $results;
     }
 
-
-    //カートの数量を計算する
-    public function getCartCount($member_id){
+    //購入履歴にゲームを入れる
+    public function insertNewHistory($member_id,$shohin_id){
         $pdo = $this->dbConnect();
-        $sql = "SELECT COUNT(*) FROM carts WHERE member_id = ?";
+        $today = date("Y-m-d");
+        $sql = "INSERT INTO histories(member_id,shohin_id,buying_date) VALUES (?,?, $today)";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1,$member_id,PDO::PARAM_STR);
+        $ps->bindValue(2,$shohin_id,PDO::PARAM_STR);
         $ps->execute();
-        $results = $ps->fetchAll();
-        foreach($results as $row) $count = $row['COUNT(*)'];
-        return $count;
-    }
-
-    public function getCartSum($member_id){
-        $pdo = $this->dbConnect();
-        $sql = "SELECT SUM(s.price) AS sum
-                FROM carts c INNER JOIN shohins s ON c.shohin_id = s.shohin_id 
-                WHERE member_id = ?";
-        $ps = $pdo->prepare($sql);
-        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
-        $ps->execute();
-        $results = $ps->fetchAll();
-        foreach($results as $row) $sum = $row['sum'];
-        return $sum;
-    }
-
-     //お気に入りリストを表示する
-     public function getFavoriteList($member_id){
-        $pdo = $this->dbConnect();
-        $sql = "SELECT f.favorite_id,f.member_id,c.shohin_id,s.shohin_name,s.price,s.image_small 
-                FROM favorites f INNER JOIN shohins s ON c.shohin_id = s.shohin_id 
-                WHERE member_id = ?";
-        $ps = $pdo->prepare($sql);
-        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
-        $ps->execute();
-        $results = $ps->fetchAll();
-        return $results;
-    }
+    }  
 
 
 
 
 }
-
 ?>

@@ -19,6 +19,12 @@ $dbmng = new DBManager();
 if(isset($_GET['keyword'])){
     echo $_GET['keyword'];
 //DBからゲームリストを取り出す
+$pdo=new PDO('mysql:host=localhost;dbname=gamedb;')
+$sql="SELECT*FROM shohins WHERE diary_detail LIKE ?";
+$ps=$pdo->prepare($sql);
+$ps->bindValue(1,"%".$_POST['keyword']."%",PDO::PARAM_STR);
+
+$ps->execute();
 //表示する
 // $results= データベースから受け取ったリストを入れる
 

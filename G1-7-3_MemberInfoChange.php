@@ -38,7 +38,7 @@
               <div class="col-md-3 offset-md-3 text-start">
                 <i class="bi bi-diamond-fill h6 me-3"></i>名前</div>
               <div class="col-md-5">
-                <input type="text" class="form-control rounded-pill" id="password" placeholder="ゲームオタク　太郎">
+                <input type="text" class="form-control rounded-pill" id="password" value="ゲームオタク　太郎">
                 </div>
             </div>
           </li>
@@ -48,7 +48,7 @@
               <div class="col-md-3 offset-md-3 text-start">
                 <i class="bi bi-diamond-fill h6 me-3"></i>メールアドレス</div>
               <div class="col-md-5">
-                <input type="text" class="form-control rounded-pill" id="password" placeholder="taro@gameotaku.com">
+                <input type="text" class="form-control rounded-pill" id="password" value="taro@gameotaku.com">
                 </div>
             </div>
           </li>
@@ -58,7 +58,7 @@
               <div class="col-md-3 offset-md-3 text-start">
                 <i class="bi bi-diamond-fill h6 me-3"></i>電話番号</div>
               <div class="col-md-5">
-                <input type="text" class="form-control rounded-pill" id="password" placeholder="070 - 0000 - 0000">
+                <input type="text" class="form-control rounded-pill" id="password" value="07000000000">
                 </div>
             </div>
           </li>
@@ -68,7 +68,7 @@
               <div class="col-md-3 offset-md-3 text-start">
                 <i class="bi bi-diamond-fill h6 me-3"></i>生年月日</div>
               <div class="col-md-5">
-                <input type="text" class="form-control rounded-pill" id="password" placeholder="2022年12月31日">
+                <input type="date" class="form-control rounded-pill" id="password" value="2018-07-22">
                 </div>
             </div>
           </li>
@@ -78,7 +78,7 @@
               <div class="col-md-3 offset-md-3 text-start">
                 <i class="bi bi-diamond-fill h6 me-3"></i>パスワード</div>
               <div class="col-md-5">
-                <input type="text" class="form-control rounded-pill" id="password" placeholder="●●●●●●●●●●">
+                <input type="text" class="form-control rounded-pill" id="password" value="●●●●●●●●●●">
                 </div>
             </div>
           </li>

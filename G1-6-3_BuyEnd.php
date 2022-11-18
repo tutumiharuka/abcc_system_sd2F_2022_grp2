@@ -3,6 +3,12 @@
     require_once 'LoginManager.php';
     $loginMng = new LoginManager(); 
     $loginMng->isLogin();
+
+    //注文したゲームをカートから削除する
+
+
+    //注文したゲームを履歴に追加する
+
 ?>
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>

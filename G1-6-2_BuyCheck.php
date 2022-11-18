@@ -1,20 +1,31 @@
 <?php session_start(); ?>
 <?php 
-    require_once 'LoginManager.php';
-    $loginMng = new LoginManager(); 
-    $loginMng->isLogin();
+require_once 'LoginManager.php';
+$loginMng = new LoginManager(); 
+$loginMng->isLogin();
+
+require_once "DBManager.php";
+$dbmng = new DBManager();
+$member_id = $_SESSION['member']['member_id'];
+$results = $dbmng->getCartList($member_id);
+$count = $dbmng->getCartCount($member_id);
+$sum = $dbmng->getCartSum($member_id);
+
 ?>
+
+
+
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
-
 <style>
-.celo{
-    height: 70px ;
-}
+    .celo{
+        height: 70px ;
+        width: 75px;
+    }
 
-.buy-btn{
-    width: 200px;
-}
+    .buy-btn{
+        width: 200px;
+    }
 </style>
 
 
@@ -27,40 +38,46 @@
 	</div>
     <div class="row">
         <div class="col-md-8">
-            <p>〇点</p>
-            <!-- ↑ここで　何点かを表示（必要がない場合は消しても良い、どっちか分からなかったから一応作ってる） -->
-            <div class="row border-top border-dark">
-                <div class="col-md-5 mt-5">
-                    <img class="img-fluid rounded gameimg" src="img/ACT/ACT_s01.jpg">
-                    <!-- ↑ここで　商品の画像を表示 -->
-                </div>
-                <div class="col-md-7 mt-5">
-                    <h3>スプラトゥーン３</h3>
-                    <!-- ↑ここで　商品名を表示 -->
-                    <h3>〇〇〇〇〇円</h3>
-                    <!-- ↑ここで　金額を表示 -->
-                </div>
-            </div>
-            <img class="rounded mt-3 mb-3 celo" src="img/CELO.jpg">
+            <p><?php echo $count ?>点</p>
+
+            <!-- ゲームデータ -->
+            <?php
+            foreach($results as $row){
+
+                if( $row['price'] == 0){$price= '無料';}else{$price=$row['price'].'円 <span class="h6">税込</span>';}
+                echo '
+                <div class="row border-top border-dark">
+                        <div class="col-md-4 mt-5">
+                            <a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'">
+                                <img class="img-fluid rounded" src="'.$row['image_small'].'">
+                            </a>
+                        </div>
+                        <div class="col-md-8 mt-5">
+                            <a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'">
+                                <h3 class="mt-2 ms-3">'.$row['shohin_name'].'</h3>
+                                <h3 class="mt-5 ms-3 fw-bold">'.$price.'</h3>
+                            </a>
+                        </div>
+                        <img class="celo mt-3 mb-3" src="img/CELO.jpg">
+                </div>';
+
+            }
+            ?>
             <p>本製品をプレイするには、ゲーム内に表示されるサービス利用規約に同意する必要があります。<br>
-                詳しくはhttps://nanimoiminaiyo.co.jp/cs/aso/eula/をご確認ください。</p>
+                        詳しくはhttps://nanimoiminaiyo.co.jp/cs/aso/eula/をご確認ください。</p>
         </div>
-        <div class="col-md-4">
-            <div class="row">
-                <div class="col-md-6">
-                    <h3>合計</h3><p>税込</p>
-                </div>
-                <div class="col-md-6">
-                    <h3>〇〇〇〇〇円</h3>
-                    <!-- ↑ここで　金額を表示 -->
-                </div>
-                <p class="mt-3 border-top border-dark">
-                    
+
+        
+        <div class="col-md-4 mt-5">
+            <div class="row border-bottom border-dark">
+                <div class="col fw-bold"><span class="h2 fw-bold">合計</span>税込</div>
+                <span class="col h3 fw-bold text-end"><?php echo $sum?>円</span>
+            </div>
+
+            <div class="row mt-3">
                     未成年者は保護者の同意を得てから購入してください。<br>
-                    
                     商品、権利の代金又は役務の対価の支払の時期及び権利の移転時期又は役務の提供時期については、「特定商取引法に基づく表示」をご参照ください。<br>
-                    
-                    注文を確定するにあたっては「特定商取引法に基づく表示」や麻生アカウントの利用規約、プライバシーポリシーにご同意のうえ、注文を確定するボタンを押してください</p>
+                    注文を確定するにあたっては「特定商取引法に基づく表示」や麻生アカウントの利用規約、プライバシーポリシーにご同意のうえ、注文を確定するボタンを押してください
             </div>
         </div>
         <p class="border-bottom border-dark"></p>

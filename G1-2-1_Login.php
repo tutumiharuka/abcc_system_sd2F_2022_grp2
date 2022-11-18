@@ -1,5 +1,10 @@
 <?php session_start(); ?>
-
+<?php 
+//もしログインしている、TOPへ
+if(isset($_SESSION['member']) == true){
+    header('Location: G1-1_Top.php');
+}
+?>
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
 
