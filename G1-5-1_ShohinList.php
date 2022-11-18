@@ -17,14 +17,17 @@ $dbmng = new DBManager();
 // free
 // recommend
 if(isset($_GET['keyword'])){
-    echo $_GET['keyword'];
-//DBからゲームリストを取り出す
-$pdo=new PDO('mysql:host=localhost;dbname=gamedb;')
-$sql="SELECT*FROM shohins WHERE diary_detail LIKE ?";
-$ps=$pdo->prepare($sql);
-$ps->bindValue(1,"%".$_POST['keyword']."%",PDO::PARAM_STR);
+    $title = $_GET['keyword'];
+     
 
+    //DBからゲームリストを取り出す
+$pdo = new PDO('mysql:host=localhost;dbname=gamedb;charset=utf8','webuser','abccsd2');
+$sql="SELECT shphin_id,image_small,shohin_name,price FROM shohins WHERE shohin_name LIKE ?";
+$ps=$pdo->prepare($sql);
+$ps->bindValue(1,"%".$_GET['keyword']."%",PDO::PARAM_STR);
 $ps->execute();
+$results=$ps->fetchAll();
+
 //表示する
 // $results= データベースから受け取ったリストを入れる
 
@@ -149,7 +152,7 @@ if(isset($_GET['genre_id'])){
     </div>
 
     
-    <!-- ゲームリストx 20 --> 
+    <!-- ゲームリスト --> 
     <div class="container-fluid">
         <div class="row">
             <?php
