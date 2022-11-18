@@ -37,10 +37,10 @@ class LoginManager{
                 $_SESSION['member']=[
                    'member_id'=>$row['member_id'],
                    'name'=>$row['name'],
-                //    'mail'=>$row['mail'],
-                //    'phone_number'=>$row['phone_number'],
-                //    'date_of_birth'=>$row['date_of_birth'],
-                //    'password'=>$row['pass'] 
+                   'mail'=>$row['mail'],
+                   'phone_number'=>$row['phone_number'],
+                   'date_of_birth'=>$row['date_of_birth'],
+                   'password'=>$row['password'] 
                    //ここで、パスワードがstringで保存される、修正必要かも
                 ];
                // 認証成功
@@ -67,12 +67,12 @@ class LoginManager{
             //パスワード認証できたら、member情報をセッションに入れる
             if(password_verify($_POST['pass'],$row['password']) == true){
                 $_SESSION['member']=[
-                   'member_id'      =>$row['member_id'],
-                   'name'           =>$row['name'],
-                //    'mail'           =>$row['mail'],
-                //    'phone_number'   =>$row['phone_number'],
-                //    'date_of_birth'  =>$row['date_of_birth'],
-                //    'password'=>$_POST['pass'] 
+                   'member_id'=>$row['member_id'],
+                   'name'=>$row['name'],
+                   'mail'=>$row['mail'],
+                   'phone_number'=>$row['phone_number'],
+                   'date_of_birth'=>$row['date_of_birth'],
+                   'password'=>$row['password'] 
                    //ここで、パスワードがstringで保存される、修正必要かも
                 ];
             }

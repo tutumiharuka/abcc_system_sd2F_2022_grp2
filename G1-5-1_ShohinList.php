@@ -17,14 +17,26 @@ $dbmng = new DBManager();
 // free
 // recommend
 if(isset($_GET['keyword'])){
-    echo $_GET['keyword'];
-//DBからゲームリストを取り出す
-$pdo=new PDO('mysql:host=localhost;dbname=gamedb;')
-$sql="SELECT*FROM shohins WHERE diary_detail LIKE ?";
-$ps=$pdo->prepare($sql);
-$ps->bindValue(1,"%".$_POST['keyword']."%",PDO::PARAM_STR);
+    $title = $_GET['keyword'];
+     
 
+    //DBからゲームリストを取り出す
+$pdo = new PDO('mysql:host=localhost;dbname=gamedb;charset=utf8','webuser','abccsd2');
+$sql="SELECT shohin_id,image_small,shohin_name,price FROM shohins WHERE shohin_name LIKE ?";
+$ps=$pdo->prepare($sql);
+$ps->bindValue(1,"%".$_GET['keyword']."%",PDO::PARAM_STR);
 $ps->execute();
+$results=$ps->fetchAll();
+
+// COUNT
+$sql="SELECT COUNT(*) AS count FROM shohins WHERE shohin_name LIKE ?";
+$ps=$pdo->prepare($sql);
+$ps->bindValue(1,"%".$_GET['keyword']."%",PDO::PARAM_STR);
+$ps->execute();
+$results=$ps->fetchAll();
+foreach($results as $row){
+    $count = $row['count'];
+}
 //表示する
 // $results= データベースから受け取ったリストを入れる
 
@@ -123,7 +135,7 @@ if(isset($_GET['genre_id'])){
 
     <div class="row ms-1 mb-4">
         <!-- 検索結果 -->
-        <div class="col-md-3 ">検索結果：100件</div>
+        <div class="col-md-3 ">検索結果：<?php echo $count?>件</div>
         
         <!-- ソート機能 -->
         <div class="col-md-2 offset-md-5 d-flex justify-content-end">
@@ -149,7 +161,7 @@ if(isset($_GET['genre_id'])){
     </div>
 
     
-    <!-- ゲームリストx 20 --> 
+    <!-- ゲームリスト --> 
     <div class="container-fluid">
         <div class="row">
             <?php
