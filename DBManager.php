@@ -3,7 +3,7 @@ class DBManager{
 
 /* * *　* * *　* * *　* * *　データベース　接続　* * *　* * *　* * *　* * */
     private function dbConnect(){
-        // 本番
+        // localhostでテスト用
         $pdo = new PDO('mysql:host=localhost;dbname=gamedb;charset=utf8','webuser','abccsd2');
         // LolipopのDBを使うabccsd2
         // $pdo = new PDO('mysql:host=mysql209.phy.lolipop.lan;dbname=LAA1418471-gamedb;charset=utf8','LAA1418471','password');
@@ -274,12 +274,10 @@ class DBManager{
 
 
 /* * *　* * *　* * *　* * *　購入履歴　操作　* * *　* * *　* * *　* * */
-    //
-
 
     //購入履歴リストを表示する
     public function getBuyHistroyList($member_id){
-        // $pdo = $this->dbConnect();
+        $pdo = $this->dbConnect();
         // $sql = "SELECT f.favorite_id,f.member_id,c.shohin_id,s.shohin_name,s.price,s.image_small 
         //         FROM favorites f INNER JOIN shohins s ON c.shohin_id = s.shohin_id 
         //         WHERE member_id = ?";
@@ -290,7 +288,16 @@ class DBManager{
         // return $results;
     }
 
-
+    //購入履歴にゲームを入れる
+    public function insertNewHistory($member_id,$shohin_id){
+        $pdo = $this->dbConnect();
+        $today = date("Y-m-d");
+        $sql = "INSERT INTO histories(member_id,shohin_id,buying_date) VALUES (?,?, $today)";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
+        $ps->bindValue(2,$shohin_id,PDO::PARAM_STR);
+        $ps->execute();
+    }  
 
 
 
