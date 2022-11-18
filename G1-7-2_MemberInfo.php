@@ -18,7 +18,9 @@
      $phone= $row['phone_number'];
      $mail = $row['mail'];
      $date_of_birth = $row['date_of_birth'];
-     $password = $row['pass'];
+     $password = $row['password'];
+
+   
     }
 
     // echo 
@@ -117,7 +119,6 @@
               <div class="col-md-3 offset-md-3 text-start">
                 <i class="bi bi-diamond-fill h6 me-3"></i>パスワード</div>
               <div class="col-md-6"><?php echo $password ?></div>
-              
             </div>
           </li>
 

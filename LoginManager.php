@@ -24,7 +24,7 @@ class LoginManager{
                    'mail'=>$row['mail'],
                    'phone_number'=>$row['phone_number'],
                    'date_of_birth'=>$row['date_of_birth'],
-                   'password'=>$row['pass'] 
+                   'password'=>$row['password'] 
                    //ここで、パスワードがstringで保存される、修正必要かも
                 ];
                // 認証成功
@@ -56,7 +56,7 @@ class LoginManager{
                    'mail'=>$row['mail'],
                    'phone_number'=>$row['phone_number'],
                    'date_of_birth'=>$row['date_of_birth'],
-                   'password'=>$_POST['pass'] 
+                   'password'=>$row['password'] 
                    //ここで、パスワードがstringで保存される、修正必要かも
                 ];
             }
