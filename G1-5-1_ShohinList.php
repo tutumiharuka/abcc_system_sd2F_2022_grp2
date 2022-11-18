@@ -22,7 +22,7 @@ if(isset($_GET['keyword'])){
 
     //DBからゲームリストを取り出す
 $pdo = new PDO('mysql:host=localhost;dbname=gamedb;charset=utf8','webuser','abccsd2');
-$sql="SELECT shphin_id,image_small,shohin_name,price FROM shohins WHERE shohin_name LIKE ?";
+$sql="SELECT shohin_id,image_small,shohin_name,price FROM shohins WHERE shohin_name LIKE ?";
 $ps=$pdo->prepare($sql);
 $ps->bindValue(1,"%".$_GET['keyword']."%",PDO::PARAM_STR);
 $ps->execute();
