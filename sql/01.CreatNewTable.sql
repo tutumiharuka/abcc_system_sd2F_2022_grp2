@@ -76,6 +76,3 @@ INSERT INTO genres(genre_id,genre_name) VALUES ('RCG','レース');
 INSERT INTO genres(genre_id,genre_name) VALUES ('RPG','ロールプレイング');
 INSERT INTO genres(genre_id,genre_name) VALUES ('SPO','スポーツ');
 INSERT INTO genres(genre_id,genre_name) VALUES ('TBL','テーブルゲーム');
-
-
-DELETE FROM shohins WHERE shohin_id IN(21,15,128,58,30,201,67,185,141,5,183,129,169,203,16,207);
