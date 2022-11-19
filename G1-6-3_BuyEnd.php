@@ -7,9 +7,10 @@
     require_once "DBManager.php";
     $dbmng = new DBManager();
     $member_id = $_SESSION['member']['member_id'];
-    //注文したゲームをカートから削除し、履歴に追加する
-    $dbmng->updateCartAndHistory($member_id);
-
+    //注文したゲームをカートから削除し、履歴に追加し、転送リスト配列を用意
+    $sendlist = $dbmng->updateCartAndHistory($member_id);
+    $sendsess = serialize($sendlist);
+    $_SESSION['send'] = $sendsess;
 ?>
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>

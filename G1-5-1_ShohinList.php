@@ -8,10 +8,8 @@ if(isset($_GET['keyword'])){
     $title = $_GET['keyword'];
     $results = $dbmng->getGameListBySearch($_GET['keyword']);
     $count = count($results);
-}
-
-/*　*　ジャンルとテーマ別　 *　*/
-if(isset($_GET['genre_id'])){
+}else if(isset($_GET['genre_id'])){
+    /*　*　ジャンルとテーマ別　 *　*/
     if($_GET['genre_id']=="free"){
         $title = "無料ゲーム";
         $results = $dbmng->getFreeList();
@@ -30,6 +28,11 @@ if(isset($_GET['genre_id'])){
         $title = $dbmng->getJpnGenreName($genre_id);
         $count = count($results);
     }
+}else{
+   /*　*　パラメタがない→全て表示　 *　*/
+    $title = "全てゲーム";
+    $results = $dbmng->getAllList();
+    $count = 220;
 }
 ?>
 <?php include_once 'GameHeader.php'; ?>
@@ -156,7 +159,6 @@ if(isset($_GET['genre_id'])){
                 }
             ?>
         
-
         </div>
     </div
     

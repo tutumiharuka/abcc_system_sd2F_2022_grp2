@@ -97,7 +97,11 @@ foreach($carousels as $id){
                 }
                 ?>
         </div>
-
+        <div class="row mt-5 mb-5">
+                <a class="btn btn-outline-primary btn-lg rounded-pill" href="G1-5-1_ShohinList.php">
+                全ジャンルのゲームをみる
+                </a>
+        </div>
 
 </div>
 

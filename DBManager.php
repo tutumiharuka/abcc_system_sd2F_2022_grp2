@@ -87,23 +87,40 @@ class DBManager{
     public function getRankingList(){
         $pdo = $this->dbConnect();
         $sql = "SELECT r.ranking_id,r.shohin_id,s.shohin_name,s.price,s.image_small FROM ranking r INNER JOIN shohins s ON r.shohin_id = s.shohin_id";
-        $results = $pdo->query($sql);
+        $ps = $pdo->prepare($sql);
+        $ps->execute();
+        $results = $ps->fetchAll();
         return $results;
     }
     // 最新作
     public function getNewList(){
         $pdo = $this->dbConnect();
         $sql = "SELECT shohin_id,shohin_name,price,image_small FROM shohins ORDER BY haishin_date DESC LIMIT 20";
-        $results = $pdo->query($sql);
+        $ps = $pdo->prepare($sql);
+        $ps->execute();
+        $results = $ps->fetchAll();
         return $results;
     }
     // 無料
     public function getFreeList(){
         $pdo = $this->dbConnect();
-        $sql = "SELECT shohin_id,shohin_name,price,image_small FROM shohins WHERE price=0";
-        $results = $pdo->query($sql);
+        $sql = "SELECT shohin_id,shohin_name,price,image_small FROM shohins WHERE price = 0";
+        $ps = $pdo->prepare($sql);
+        $ps->execute();
+        $results = $ps->fetchAll();
         return $results;
     }
+
+     // 全てゲーム
+     public function getAllList(){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT shohin_id,shohin_name,price,image_small FROM shohins ORDER BY shohin_name";
+        $ps = $pdo->prepare($sql);
+        $ps->execute();
+        $results = $ps->fetchAll();
+        return $results;
+    }
+
     // 詳細ページ必要情報を得る
     public function getGameById($shohin_id){
         $pdo = $this->dbConnect();
@@ -137,6 +154,15 @@ class DBManager{
             "TBL"=>"テーブルゲーム");
         return $genreList[$genre_id];
     }
+    public function getGameInfoById($shohin_id){
+        $pdo = $this->dbConnect();
+        $sql = "SELECT shohin_id, shohin_name ,image_small FROM shohins WHERE shohin_id = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$shohin_id,PDO::PARAM_STR);
+        $ps->execute();
+        $results = $ps->fetchAll();
+        return $results;
+    }    
 
  
 /* * *　* * *　* * *　* * *　カート　操作　* * *　* * *　* * *　* * */
@@ -225,12 +251,17 @@ class DBManager{
         // 履歴に入れる
         $today = date("Y-m-d");
         $data = [];
+        $sendlist = [];
         foreach($results as $row){
             $shohin_id = $row['shohin_id'];
+            array_push($sendlist,$shohin_id);
             array_push($data,"($member_id,$shohin_id,'$today')"); 
         }
         $sql = "INSERT INTO histories(member_id,shohin_id,buying_date) VALUES".implode(',', $data);
         $pdo->query($sql);
+
+        //転送するものを用意
+        return $sendlist;
     }
 
     /* * *　* * *　* * *　* * *　購入履歴　表示　* * *　* * *　* * *　* * */
