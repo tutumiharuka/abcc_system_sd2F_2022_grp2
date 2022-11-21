@@ -174,7 +174,7 @@
           <ul class="navbar-nav ms-auto"> <!-- ms-auto右寄せ -->
               
               <li class="nav-item mt-3 me-3"><!-- 検索 -->
-                <form class="form-inline" role="search" action="G1-5-1_ShohinList.php" method="get" target="_blank">
+                <form class="form-inline" role="search" action="G1-5-1_ShohinList.php" method="get">
                   <div class="input-group">
                     <input type="search" class="form-control search" name="keyword" placeholder="ゲームを探す">
                       <button class="input-group-text search" type="submit"><i class="icon ion-search"></i></button>
