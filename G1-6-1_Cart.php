@@ -20,15 +20,15 @@ $sum = $dbmng->getCartSum($member_id);
 <?php include_once 'GameNavbar.php'; ?>
 <?php include_once 'GameHeader.php'; ?>
 <style>
-    .cart-kara-icon{
+    .kara-icon{
         font-size:7vw;
         color:gray;
     }
-    .cart-kara-text{
+    .kara-text{
         font-size:2vw;
         color:gray;
     }
-    .btn-kara{
+    .kara-btn{
         width:300px;
     }
     .kuhaku{
@@ -41,14 +41,14 @@ $sum = $dbmng->getCartSum($member_id);
     <div class="container">
         <div class="kuhaku"></div>
         <div class="row mt-5">
-            <div class="col-12 text-center h4"><i class="typcn typcn-shopping-cart cart-kara-icon"></i></div>
+            <div class="col-12 text-center h4"><i class="typcn typcn-shopping-cart kara-icon"></i></div>
         </div>
         <div class="row mt-5">
-            <div class="col-12 text-center h4 fw-bold cart-kara-text">カートに商品はありません</div>
+            <div class="col-12 text-center h4 fw-bold kara-text">カートに商品はありません</div>
         </div>
         <div class="row mt-5">
             <div class="col-12 text-center">
-                <a class="btn btn-outline-primary btn-lg rounded-pill btn-kara" href="G1-1_Top.php">お買い物を続ける</a>
+                <a class="btn btn-outline-primary btn-lg rounded-pill kara-btn" href="G1-1_Top.php">お買い物を続ける</a>
             </div>
         </div>
     </div>

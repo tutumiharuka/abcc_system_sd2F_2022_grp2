@@ -20,19 +20,22 @@
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
 <style>
-    .fav-kara-icon{
+    .kara-icon{
         font-size:7vw;
         color:gray;
     }
-    .fav-kara-text{
+    .kara-text{
         font-size:2vw;
         color:gray;
     }
-    .btn-kara{
+    .kara-btn{
         width:300px;
     }
     .kuhaku{
         height:100px;
+    }
+    .cart-btn{
+        width: 200px;
     }
 </style>
 <div class="container">
@@ -44,14 +47,14 @@
         <div class="container">
             <div class="kuhaku"></div>
             <div class="row mt-5">
-                <div class="col-12 text-center h4"><i class="typcn typcn-heart-outline fav-kara-icon"></i></div>
+                <div class="col-12 text-center h4"><i class="typcn typcn-heart-outline kara-icon"></i></div>
             </div>
             <div class="row mt-5">
-                <div class="col-12 text-center h4 fw-bold fav-kara-text">お気に入りに商品はありません</div>
+                <div class="col-12 text-center h4 fw-bold kara-text">お気に入りに商品はありません</div>
             </div>
             <div class="row mt-5">
                 <div class="col-12 text-center">
-                    <a class="btn btn-outline-primary btn-lg rounded-pill btn-kara" href="G1-1_Top.php">お買い物を続ける</a>
+                    <a class="btn btn-outline-primary btn-lg rounded-pill kara-btn" href="G1-1_Top.php">お買い物を続ける</a>
                 </div>
             </div>
         </div>';
@@ -74,27 +77,28 @@
                     </a>
                 </div>
                 <div class="col-md-2">
-                    <form action="G1-4_Favorite.php" method="post">
-                        <input type="hidden" name="delfav" value="'.$row['favorite_id'].'">
-                        <div class="row text-end">
-                            <button type="submit" class="btn btn-outline-light"><h4><i class="bi bi-x-square-fill"></i></h4></button>
-                        </div>
-                    </form>';
-
+                    <div class="row text-end">
+                        <form action="G1-4_Favorite.php" method="post">
+                            <input type="hidden" name="delfav" value="'.$row['favorite_id'].'">
+                            <button type="submit" class="btn"><h4><i class="bi bi-x-square-fill"></i></h4></button>
+                        </form>
+                    </div>
+                    <div class="row text-end">';
             if($dbmng->isInBuyHistory($member_id,$shohin_id) ==true){
-                echo '<input class="btn btn-outline-secondary btn-md rounded-pill" value="購入済み" disabled>';
+                echo '<input class="btn btn-outline-secondary btn-md rounded-pill cart-btn" value="購入済み" disabled>';
             }elseif($dbmng->isInCart($member_id,$shohin_id) ==false){
                 echo '<form action="G1-4_Favorite.php" method="post">
                         <input type="hidden" name="addcart" value="'.$shohin_id.'">
-                        <input type="submit" class="btn btn-outline-secondary btn-md rounded-pill" id="addCartBtn" value="カートに入れる">
+                        <input type="submit" class="btn btn-outline-secondary btn-md rounded-pill cart-btn" id="addCartBtn" value="カートに入れる">
                       </form>';
             }else{
                 echo '<form action="G1-4_Favorite.php" method="post">
                         <input type="hidden" name="delcart" value="'.$shohin_id.'">
-                        <input type="submit" class="btn btn-outline-secondary btn-md rounded-pill" id="delCartBtn" value="カートに追加済み">
+                        <input type="submit" class="btn btn-outline-secondary btn-md rounded-pill cart-btn" id="delCartBtn" value="カートに追加済み">
                       </form>';
             }
                 echo '
+                    </div>
                 </div>
             </div>';
         }
