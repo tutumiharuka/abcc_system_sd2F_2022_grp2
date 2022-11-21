@@ -7,16 +7,18 @@
 		$sendlist = unserialize($_SESSION['send']);
 	}
 ?>
-
 <?php include_once 'GameHeader.php'; ?>
+<style>
+	.sendimg{
+		height: 270px;
+	}
+
+</style>
 <div class="row">
 	<div class="col-md-12 bg-info text-dark text-left">
         <h1 class="p-3 ms-5" id="message">転送が始まります...</h1>
 	</div>
 </div>
-
-
-
 <div class="contianer text-center">	
 
 	<div class="row  d-flex justify-content-center">
@@ -25,7 +27,7 @@
 			foreach($results as $row){ $name = $row['shohin_name'];$img = $row['image_small'];}?>
 
 			<div class="col-md-3">
-				<div class="img-center mt-5 rounded"><img class="rounded" src="<?php echo $img ?>"></div>
+				<div class="img-center mt-5 rounded"><img class="rounded sendimg" src="<?php echo $img ?>"></div>
 				<h2 class="m-4 text-center"><?php echo $name ?></h2>
 			</div>
 			
