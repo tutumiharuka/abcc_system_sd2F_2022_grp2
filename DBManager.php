@@ -50,6 +50,28 @@ class DBManager{
         return $results;
     }
 
+
+
+/* * *　* * *　* * *　* * *　会員情報更新　* * *　* * *　* * *　* * */
+
+    //入力された情報で更新
+    public function updateMember($member_id,$name,$mail,$phone,$birth){
+        $pdo = $this->dbConnect();
+        $sql = "UPDATE members 
+                SET name = '$name' ,
+                    mail= '$mail',
+                    phone_number= '$phone',
+                    date_of_birth= '$birth'
+                WHERE member_id = ? ";
+
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $member_id,  PDO::PARAM_STR);
+        $ps->execute();
+        $results = $ps->fetchAll();
+        return $results;
+    }
+
+
 /* * *　* * *　* * *　* * *　ゲームリスト　表示　* * *　* * *　* * *　* * */
     // TOPページ　表示
     public function getBigImgById($shohin_id){

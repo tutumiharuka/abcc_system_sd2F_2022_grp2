@@ -29,8 +29,8 @@ CREATE TABLE `shohins` (
 );
 
 CREATE TABLE `ranking` (
-  `shohin_id`           INT(8)      NOT NULL     COMMENT '商品ID',
   `ranking_id`          INT(2)      NOT NULL     COMMENT 'ランキング',
+  `shohin_id`           INT(8)      NOT NULL     COMMENT '商品ID',
   PRIMARY KEY (`ranking_id`),
   FOREIGN KEY (`shohin_id`) REFERENCES shohins(`shohin_id`)
 );
