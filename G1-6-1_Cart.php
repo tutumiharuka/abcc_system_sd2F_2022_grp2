@@ -20,14 +20,6 @@ $sum = $dbmng->getCartSum($member_id);
 <?php include_once 'GameNavbar.php'; ?>
 <?php include_once 'GameHeader.php'; ?>
 <style>
-    input[type="checkbox"]{
-    transform: scale(1.5);
-    }
-    .btm-nav{
-    z-index: 3;
-    height: 80px;
-    background-color: #DEF2FF;
-    }
     .cart-kara-icon{
         font-size:7vw;
         color:gray;
@@ -80,7 +72,7 @@ $sum = $dbmng->getCartSum($member_id);
                     <div class="row mt-5">
                         <div class="col-md-4">
                             <a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'">
-                            <img class="img-fluid" src="'.$row['image_small'].'">
+                                <img class="img-fluid" src="'.$row['image_small'].'">
                             </a>
                         </div>
                         <div class="col-md-8">
