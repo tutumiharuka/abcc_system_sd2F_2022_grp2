@@ -1,0 +1,111 @@
+<div class="question_wrapper">
+    <div class="question_sortArea">
+       //このセレクトボックスをbuttonに置き換えたいです。
+       <label>
+          <select v-model="selectCategory" multiple="multiple" options="items"> 
+             <option v-for="(value, key, index) in categories" v-bind:value="key">{{ value }}</option>
+          </select>
+       </label>
+     </div>
+     <div class="question_list_wrapper" v-for="task in filteredAnswer">
+        <div class="question_list">
+           <div class="question_name" v-on:click="toggleList(task)">{{ task.faq_name }}</div>
+              <transition name="fade">
+                  <div class="question_list_container" v-show="task.show">
+                     <p>{{ task.answer }}</p>
+                  </div>
+              </transition>
+           </div>
+        </div>
+     </div>
+  </div>
+
+<script>
+var shop = new Vue({
+  el: '#shop_info',
+  data: function () {
+    var columns = {
+      area: 'area',
+      question_name: 'question_name',
+      question_title: 'question_title',
+      question_telephone: 'question_telephone',
+      question_time: 'question_time',
+    };
+    var sortOrders = {};
+    Object.keys(columns).forEach(function (key) {
+      sortOrders[key] = 1
+    });
+    var selectCategory = {};
+
+    return {
+      columns: columns,
+      tasks: [
+       {
+        "category": 1,
+        "question_name": "question1",
+        "question_title": "question_title1",
+        "question_telephone": "000001",
+        "question_time": "11:00",
+       },
+       {
+        "category": 2,
+        "question_name": "question2",
+        "question_title": "question_title2",
+        "question_telephone": "000002",
+        "question_time": "11:00",
+       },
+       {
+        "category": 3,
+        "question_name": "question3",
+        "question_title": "question_title3",
+        "question_telephone": "000002",
+        "question_time": "11:00",
+       }
+      ],
+      sortKey: '',
+      sortOrders: sortOrders,
+      selectCategory: '',
+      show: false,
+      categories: {
+        0:'all',
+        1:'カテゴリ1',
+        2:'カテゴリ2',
+        3:'カテゴリ3'
+      },
+    }
+  },
+  methods: {
+    sortBy: function(key) {
+      this.sortKey = key;
+      this.sortOrders[key] = this.sortOrders[key] * -1;
+    },
+    toggleList: function () {
+      this.show = !this.show;
+    }
+  },
+  computed: {
+    filteredTasks: function () {
+      var data = this.tasks;
+
+      var filterWord = this.searchWord && this.searchWord.toLowerCase();
+      var filterCategory = this.selectCategory && Number(this.selectCategory);
+
+      if(filterWord || this.selectCategory) {
+        data = data.filter(function (row) {
+
+          if (filterCategory) {
+            if (row['category'] !== filterCategory) {
+              return false;
+            }
+          }
+          return row;
+        })
+      }
+      return data;
+    }
+  }
+});
+
+
+
+</script>

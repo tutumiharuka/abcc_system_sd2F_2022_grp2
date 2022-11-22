@@ -91,6 +91,9 @@
   .side-list-ul{
     padding-left: 0px;
   }
+  .member-list{
+    padding-right:40px ;
+  }
 
 </style>
 
