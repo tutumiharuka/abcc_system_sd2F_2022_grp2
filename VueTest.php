@@ -27,7 +27,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
                 <option value="1">人気順</option>
                 <option value="2">新しい順</option>
                 <option value="3">古い順</option>
-                <option @click="">安い順</option>
+                <option @click="sortByPrice">安い順</option>
                 <option value="5">高い順</option>
             </select>
         </div>
@@ -37,7 +37,6 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 
     <div id="app">
         <div v-for='game in list'>
-            <!-- {{ game }} -->
             <ul>
                 <li>{{game.shohin_id}}</li>
                 <li>{{game.shohin_name}}</li>
@@ -63,12 +62,14 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
             data: {
                 list: list
             },
-            // computed: {
-            // sortByPrice() {
-            //     return this.game.sort((a, b) => {
-            //         return a.price - b.price;
-            //     });
-            // }
+            
+            computed: {
+                sortByPrice(){
+                    return this.game.sort((a, b) => {
+                        return (a.price < b.price) ? -1 : (a.price > b.price) ? 1 : 0;
+                    });
+                }
+            }
         });
     </script>
 </body>

@@ -173,7 +173,7 @@
           <h2 class="wf-nicomoji"><span class="game-logo">ゲーム</span>ECサイト</h2>
         </a>
         
-        <div id="navcol-2" class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse">
           <ul class="navbar-nav ms-auto"> <!-- ms-auto右寄せ -->
               
               <li class="nav-item mt-3 me-3"><!-- 検索 -->
