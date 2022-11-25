@@ -8,32 +8,7 @@
 
 </style>
 
-<?php
-  public function getpass($member_id){
-    $pdo = $this->dbConnect();
-    $sql = "SELECT password FROM members WHERE member_id = ?";
-    $ps = $pdo->prepare($sql);
-    $ps->bindValue(1,$member_id,PDO::PARAM_STR);
-    $ps->execute();
-    $results = $ps->fetchAll();
-    
-    if(count($results)==0){
-        //存在しない場合
-        $_SESSION['err'] = "旧パスワードの入力に誤りがあります。再度入力してください。";
-        header('Location: G1-9-1_PasswordChange.php');
-      }
-    }
 
-    public function passchange($member_id){
-      $pdo = $this->dbConnect();
-      $sql = "UPDATE members SET password = '$pass' , WHERE member_id = ?";
-      $ps = $pdo->prepare($sql);
-      $ps->bindValue(1,$member_id,PDO::PARAM_STR);
-      $ps->execute();
-      $results = $ps->fetchAll();
-    }
-
-?>
 
 <div class="container">
   <div class="row kuhaku-form"></div>
