@@ -4,28 +4,36 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 <style>
+        /* 上の画像carouselに表示 */
         .carousel-card{
         height: auto;
         }
-
         .carousel-img{
-        height: 380px;
+        height: 300px;
         }
-        .card{
-        width: 18rem;
-        height: auto;
-        }
-
-        .all-game{
-        height: 30px;
-        }
-
         .carousel{
         visibility: hidden;
         }
-
         .carousel.slick-initialized{
         visibility: visible;
+        }
+        /* 下のリスト */
+        .scroll {
+        white-space: nowrap;
+        overflow: hidden;
+        overflow-y: hidden;
+        }
+        .item {
+                text-align: center;
+                width: 185px;
+                height: 240px;
+                /* background-color: aqua; */
+                /* border-right: 1px solid; */
+                white-space: nowrap;
+                display: inline-block;
+        }
+        .item-img{
+                height: 180;
         }
 </style>
 
@@ -54,53 +62,73 @@ foreach($carousels as $id){
 <div class="container-fluid">
         <div class="row ms-5">
                 <div class="col-md-2 h4"><a href="G1-5-1_ShohinList.php?genre_id=new">最新作</a></div>
-                <div class="col-md-2 offset-md-8 text-end"><a href="G1-5-1_ShohinList.php?genre_id=new"><img src="img/all_game.png" alt="すべて"></a></div>
+                <div class="col-md-2 offset-md-8 text-end"><a href="G1-5-1_ShohinList.php?genre_id=new"><img width="100px" src="img/all_game.png" alt="すべて"></a></div>
         </div>
-        <div class="row ms-5 mt-2 game_list">
+        <div class="scroll ms-5">
                 <?php
                 $results=$dbmng->getNewList();
                 foreach($results as $row){
                         if( $row['price'] == 0){$price = '無料';}else{$price=$row['price'].'円';}
-                        echo '<div class="card border-0 px-1"><a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'"><img src="'.$row['image_small'].'" class="card-img-top rounded"><div class="card-text">'.$row['shohin_name'].'</div><h5 class="card-title">'.$price.'</h5></a></div>';
+                        echo '
+                        <div class="item">
+                                <a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'">
+                                        <img src="'.$row['image_small'].'" class="rounded item-img">
+                                        <div class="text-start ms-2 text-truncate">'.$row['shohin_name'].'</div>
+                                        <h5 class="text-start ms-2">'.$price.'</h5>
+                                </a>
+                        </div>';
                 }
                 ?>
         </div>
 
         <div class="row ms-5">
-                <div class="col-md-2 h4">
-                        <a href="G1-5-1_ShohinList.php?genre_id=ranking">ランキング</a></div>
-                <div class="col-md-2 offset-md-8 text-end">
-                        <a href="G1-5-1_ShohinList.php?genre_id=ranking"><img src="img/all_game.png" alt="すべて"></a></div>
+                <div class="col-md-2 h4"><a href="G1-5-1_ShohinList.php?genre_id=ranking">ランキング</a></div>
+                <div class="col-md-2 offset-md-8 text-end"><a href="G1-5-1_ShohinList.php?genre_id=ranking"><img width="100px" src="img/all_game.png" alt="すべて"></a></div>
         </div>
-        <div class="row ms-5 mt-2 game_list">
+        <div class="scroll ms-5">
                 <?php
                 $results=$dbmng->getRankingList();
                 foreach($results as $row){
                         if( $row['price'] == 0){$price = '無料';}else{$price=$row['price'].'円';}
-                        echo '<div class="card border-0 px-1"><a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'"><img src="'.$row['image_small'].'" class="card-img-top rounded"><div class="card-text">'.$row['shohin_name'].'</div><h5 class="card-title">'.$price.'</h5></a></div>';
+                        echo '
+                        <div class="item">
+                                <a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'">
+                                        <img src="'.$row['image_small'].'" class="rounded item-img">
+                                        <div class="text-start ms-2 text-truncate">'.$row['shohin_name'].'</div>
+                                        <h5 class="text-start ms-2">'.$price.'</h5>
+                                </a>
+                        </div>';
                 }
                 ?>
         </div>
 
         <div class="row ms-5">
-                <div class="col-md-2 h4">
-                        <a href="G1-5-1_ShohinList.php?genre_id=free">無料</a></div>
-                <div class="col-md-2 offset-md-8 text-end">
-                        <a href="G1-5-1_ShohinList.php?genre_id=free"><img src="img/all_game.png" alt="すべて"></a></div>
+                <div class="col-md-2 h4"><a href="G1-5-1_ShohinList.php?genre_id=new">無料ゲーム</a></div>
+                <div class="col-md-2 offset-md-8 text-end"><a href="G1-5-1_ShohinList.php?genre_id=new"><img width="100px" src="img/all_game.png" alt="すべて"></a></div>
         </div>
-        <div class="row ms-5 mt-2 game_list">
+        <div class="scroll ms-5">
                 <?php
                 $results=$dbmng->getFreeList();
                 foreach($results as $row){
                         if( $row['price'] == 0){$price = '無料';}else{$price=$row['price'].'円';}
-                        echo '<div class="card border-0 px-1"><a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'"><img src="'.$row['image_small'].'" class="card-img-top rounded"><div class="card-text">'.$row['shohin_name'].'</div><h5 class="card-title">'.$price.'</h5></a></div>';
+                        echo '
+                        <div class="item">
+                                <a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'">
+                                        <img src="'.$row['image_small'].'" class="rounded item-img">
+                                        <div class="text-start ms-2 text-truncate">'.$row['shohin_name'].'</div>
+                                        <h5 class="text-start ms-2">'.$price.'</h5>
+                                </a>
+                        </div>';
                 }
                 ?>
         </div>
-        <div class="row mt-5 mb-5">
-                <a class="btn btn-outline-primary btn-lg rounded-pill" href="G1-5-1_ShohinList.php">
-                全ジャンルのゲームをみる
-                </a>
+
+        <div class="row mt-5 mb-5 text-center">
+                <div class="col">
+                        <a class="btn btn-outline-primary btn-lg rounded-pill" href="G1-5-1_ShohinList.php">
+                                全ジャンルのゲームをみる
+                        </a>
+                </div>
         </div>
 
 </div>
@@ -112,28 +140,63 @@ foreach($carousels as $id){
 <!-- <script type="text/javascript" src="js/carousel.js"></script> -->
 <script>
         $(function(){
-        $('.carousel').slick({
-                adaptiveHeight:true,
-                dots: true,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 1,
-                centerMode: true,
-                variableWidth: true
+                $('.carousel').slick({
+                        adaptiveHeight:true,
+                        dots: true,
+                        infinite: true,
+                        speed: 300,
+                        slidesToShow: 1,
+                        centerMode: true,
+                        variableWidth: true
+                });
         });
-        $('.game_list').slick({
-        //   dots: true,
-                // infinite: true,
-                // adaptiveHeight:true,
-                // arrows: true,
-                // speed: 300,
-                rows: 1,
-                slidesPerRow: 20,
-                slidesToShow: 1,
-                // centerMode: false,
-                variableWidth: true
+
+        // スクロールのドラッグ有効化
+        jQuery.prototype.mousedragscrollable = function () {
+        let target;
+        $(this).each(function (i, e) {
+        $(e).mousedown(function (event) {
+        event.preventDefault();
+        target = $(e);
+        $(e).data({
+                down: true,
+                move: false,
+                x: event.clientX,
+                y: event.clientY,
+                scrollleft: $(e).scrollLeft(),
+                scrolltop: $(e).scrollTop(),
+        });
+        return false;
+        });
+        $(e).click(function (event) {
+        if ($(e).data("move")) {
+                return false;
+        }
         });
         });
+        $(document)
+        .mousemove(function (event) {
+        if ($(target).data("down")) {
+                event.preventDefault();
+                let move_x = $(target).data("x") - event.clientX;
+                let move_y = $(target).data("y") - event.clientY;
+                if (move_x !== 0 || move_y !== 0) {
+                $(target).data("move", true);
+                } else {
+                return;
+                }
+                $(target).scrollLeft($(target).data("scrollleft") + move_x);
+                $(target).scrollTop($(target).data("scrolltop") + move_y);
+                return false;
+        }
+        })
+        .mouseup(function (event) {
+        $(target).data("down", false);
+        return false;
+        });
+        };
+        $(".scroll").mousedragscrollable();
 </script>
+
 
 <?php include_once 'GameFooter.php'; ?>
