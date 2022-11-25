@@ -18,19 +18,44 @@
         <div class="card ms-3" style="width: 60rem;">
            <div class="card-header"><h2 class="ms-4 mt-2 fw-bold">プロフィール</h2></div>
               <ul class="list-group list-group-flush">
+
+              <!-- 旧パスワード入力 -->
                 <li class="list-group-item">
                   <div class="row h5">
                     <div class="col-md-3 offset-md-3 text-start">
-                      <i class="bi bi-diamond-fill h6 me-3"></i>パスワード</div>
+                      <i class="bi bi-diamond-fill h6 me-3"></i>旧パスワード</div>
                     <div class="col-md-5">
                       <input type="text" class="form-control rounded-pill" name="password" value="<?php echo $password ?>">
                     </div>
                   </div>
                 </li>
+
+                <!-- 新パスワード入力 -->
+                <li class="list-group-item">
+                  <div class="row h5">
+                    <div class="col-md-3 offset-md-3 text-start">
+                      <i class="bi bi-diamond-fill h6 me-3"></i>新パスワード</div>
+                    <div class="col-md-5">
+                      <input type="text" class="form-control rounded-pill" name="password" value="<?php echo $password ?>">
+                    </div>
+                  </div>
+                </li>
+
+                <!-- 新パスワード再入力 -->
+                <li class="list-group-item">
+                  <div class="row h5">
+                    <div class="col-md-3 offset-md-3 text-start">
+                      <i class="bi bi-diamond-fill h6 me-3"></i>新パスワード再入力</div>
+                    <div class="col-md-5">
+                      <input type="text" class="form-control rounded-pill" name="password" value="<?php echo $password ?>">
+                    </div>
+                  </div>
+                </li>
+                
               </ul>
             </div>
             
-          </div>
+        </div>
   <!-- 変更ボタン -->
           <div class="row mt-4">
             <div class="col d-flex justify-content-center">
