@@ -22,25 +22,7 @@
    
     }
 
-    // echo 
-
-    
-
-
-
-
-
 ?>
-
-
-
-
-
-
-
-
-
-
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
 
@@ -104,7 +86,9 @@
             <div class="row h5">
               <div class="col-md-3 offset-md-3 text-start">
                 <i class="bi bi-diamond-fill h6 me-3"></i>パスワード</div>
-              <div class="col-md-6">●●●●●●●●●●</div>
+              <div class="col-md-6">●●●●●●●●●● 
+                <a class="btn btn-outline-primary ms-3" href="G1-9-1_PasswordChange.php">パスワード変更</a>
+            </div>
             </div>
           </li>
 
