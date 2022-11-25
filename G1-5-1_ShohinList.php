@@ -3,13 +3,13 @@
 require_once "DBManager.php";
 $dbmng = new DBManager();
 
-/*　*　検索　 *　*/
+/**検索 **/
 if(isset($_GET['keyword'])){
     $title = $_GET['keyword'];
     $results = $dbmng->getGameListBySearch($_GET['keyword']);
     $count = count($results);
 }else if(isset($_GET['list'])){
-    /*　*　ジャンルとテーマ別　 *　*/
+    /**ジャンルとテーマ別 **/
     if($_GET['list']=="free"){
         $title = "無料ゲーム";
         $results = $dbmng->getFreeList();
@@ -29,7 +29,7 @@ if(isset($_GET['keyword'])){
         $count = count($results);
     }
 }else{
-   /*　*　パラメタがない→全て表示　 *　*/
+   /**パラメタがない→全て表示 **/
     $title = "全てゲーム";
     $results = $dbmng->getAllList();
     $count = 220;
@@ -102,7 +102,7 @@ if(isset($_GET['keyword'])){
                             <input type="text" class="form-control" name="" id="high-price">
                         </div>
                         
-                        <div class="col-lg-2">
+                        <div class="col-lg-3">
                             <button type="button" class="btn btn-outline-primary siboru-btn">クリア</button>
                             <button type="submit" class="btn btn-primary ms-3 siboru-btn">絞る</button>
                         </div>
@@ -121,7 +121,7 @@ if(isset($_GET['keyword'])){
         <!-- ソート機能 -->
         <div class="col-md-2 offset-md-5 d-flex justify-content-end">
             
-            <select class="form-select" aria-label="Default select example">
+            <select id="sort" class="form-select" aria-label="Default select example">
                 <option selected>並び替え</option>
                 <option value="1">人気順</option>
                 <option value="2">新しい順</option>
@@ -158,10 +158,20 @@ if(isset($_GET['keyword'])){
                           </div>';
                 }
             ?>
-        
         </div>
-    </div
-    
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <script>  
+    $(document).ready(function(){  
+        $('#sort').change(function(){  
+            alert($(this).children('option:selected').val());  
+            var p1=$(this).children('option:selected').val();//这就是selected的值  
+            var p2=$('#param2').val();//获取本页面其他标签的值  
+            window.location.href="G1-5-1_ShohinList.php?param1="+p1+"m2="+p2+"";//页面跳转并传参  
+        });  
+    })  
+    </script>  
 
     <?php include_once 'GameFooter.php'; ?>
     
