@@ -8,7 +8,7 @@
     $dbmng = new DBManager();
 
     $member_id = $_SESSION['member']['member_id'];
-    $results = $dbmng->updateMember($member_id,$_POST['name'],$_POST['mail'],$_POST['phone'],$_POST['birth']);
+    $dbmng->updateMember($member_id,$_POST['name'],$_POST['mail'],$_POST['phone'],$_POST['birth']);
   
 ?>
 <?php include_once 'GameHeader.php'; ?>

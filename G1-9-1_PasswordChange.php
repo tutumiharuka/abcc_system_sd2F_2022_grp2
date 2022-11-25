@@ -1,20 +1,14 @@
 <?php session_start(); ?>
-
+<?php 
+ require_once 'LoginManager.php';
+ $loginMng = new LoginManager(); 
+ $loginMng->isLogin();
+ 
+?>
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
 
-<?php 
-  $member_id = $_SESSION['member']['member_id'];
 
-
-  require_once 'DBManager.php';
-  $dbmng = new DBManager();
-  $results = $dbmng->getMemberInfo($member_id);
-
-  foreach($results as $row){
-    $pass = $row['password'];
-   }
-?>
 <style> 
   .kuhaku-form{
     height:15%;
@@ -39,9 +33,17 @@
                       <div class="col-md-3 offset-md-3 text-start">
                         <i class="bi bi-diamond-fill h6 me-3"></i>旧パスワード</div>
                       <div class="col-md-5">
-                        <input type="text" class="form-control rounded-pill" name="pass" placeholder="半角英数混合8文字以上">
+                        <input type="password" class="form-control rounded-pill" name="pass" placeholder="半角英数混合8文字以上" required>
                       </div>
                     </div>
+                    
+                    <!-- もし、パスワードが間違ったら、次のページからのエラー -->
+                    <?php if(isset($_SESSION['wrong'])==true){
+                      echo '<div class="row">
+                              <div class="col-md-5 offset-md-6 text-danger">'.$_SESSION['wrong'].'</div>
+                            </div>';
+                      unset($_SESSION['wrong']);}
+                    ?>
                   </li>
 
                   <!-- 新パスワード入力 -->
@@ -50,7 +52,7 @@
                       <div class="col-md-3 offset-md-3 text-start">
                         <i class="bi bi-diamond-fill h6 me-3"></i>新パスワード</div>
                       <div class="col-md-5">
-                        <input type="text" class="form-control rounded-pill" name="newpass" id="pass" placeholder="半角英数混合8文字以上">
+                        <input type="text" class="form-control rounded-pill" name="newpass" id="pass" placeholder="半角英数混合8文字以上" required>
                       </div>
                     </div>
                   </li>
@@ -61,9 +63,17 @@
                       <div class="col-md-3 offset-md-3 text-start">
                         <i class="bi bi-diamond-fill h6 me-3"></i>新パスワード再入力</div>
                       <div class="col-md-5">
-                        <input type="text" class="form-control rounded-pill" name="renewpass" id="repass" placeholder="半角英数混合8文字以上">
+                        <input type="text" class="form-control rounded-pill" name="renewpass" id="repass" placeholder="半角英数混合8文字以上" required>
                       </div>
                     </div>
+
+                    <!-- もし、パスワードが間違ったら、次のページからのエラー -->
+                    <?php if(isset($_SESSION['diff'])==true){
+                      echo '<div class="row">
+                              <div class="col-md-5 offset-md-6 text-danger">'.$_SESSION['diff'].'</div>
+                            </div>';
+                      unset($_SESSION['diff']);}
+                    ?>
                   </li>
                 
               </ul>

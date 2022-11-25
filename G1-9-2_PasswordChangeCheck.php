@@ -1,3 +1,32 @@
+<?php session_start(); ?>
+<?php
+  require_once 'LoginManager.php';
+  $loginMng = new LoginManager(); 
+  $loginMng->isLogin();
+  
+  $member_id = $_SESSION['member']['member_id'];
+  
+  require_once 'DBManager.php';
+  $dbmng = new DBManager();
+  $results = $dbmng->getMemberInfo($member_id);
+
+  foreach($results as $row){
+    $hashpass = $row['password'];
+  }
+
+  //まずは、入力したパスワードをハッシュ値のパスワードを比較し、// 合わないなら、エラーを持ってて、前のページに
+  if(password_verify($_POST['pass'],$hashpass) == false){
+    $_SESSION['wrong'] = "パスワードの入力に誤りがあるので、再度確認してください。";
+    header('Location: G1-9-1_PasswordChange.php');
+  }else if($_POST['newpass'] != $_POST['renewpass']){//二回入力パスワードを違うなら
+    $_SESSION['diff'] = "入力したパスワードが違いますので、再入力してください。";
+    header('Location: G1-9-1_PasswordChange.php');
+  }else{// 当てるなら、パスワードの変更を行う
+    echo "ok";
+  }
+?>
+
+
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
 

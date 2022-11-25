@@ -18,8 +18,6 @@
      $phone= $row['phone_number'];
      $mail = $row['mail'];
      $date_of_birth = $row['date_of_birth'];
-    
-   
     }
 
 ?>

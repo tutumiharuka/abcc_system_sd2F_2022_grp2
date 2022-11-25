@@ -6,16 +6,6 @@ class LoginManager{
         return $pdo;
     }
 
-    // public function getMemberIdByMail($mail){
-    //     $pdo = $this->dbConnect();
-    //     $sql = "SELECT * FROM members WHERE mail = ?";
-    //     $ps = $pdo->prepare($sql);
-    //     $ps->bindValue(1,$mail,PDO::PARAM_STR);
-    //     $ps->execute();
-    //     $results = $ps->fetchAll();
-    // }
-
-
     /*　ログイン画面でログインする */
     public function login($mail){
         $pdo = $this->dbConnect();

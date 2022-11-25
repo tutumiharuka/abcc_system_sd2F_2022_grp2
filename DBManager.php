@@ -67,9 +67,26 @@ class DBManager{
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1, $member_id,  PDO::PARAM_STR);
         $ps->execute();
-        $results = $ps->fetchAll();
-        return $results;
+        // $results = $ps->fetchAll();
+        // return $results;
     }
+
+     //パスワード更新
+     public function updatePassword($member_id,$password){
+        $hashpass = password_hash($password,PASSWORD_DEFAULT);
+        $pdo = $this->dbConnect();
+        $sql = "UPDATE members 
+                SET password = '$hashpass'
+                WHERE member_id = ? ";
+
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
+        $ps->execute();
+        // $results = $ps->fetchAll();
+        // return $results;
+    }
+
+   
 
 
 /* * *　* * *　* * *　* * *　ゲームリスト　表示　* * *　* * *　* * *　* * */
