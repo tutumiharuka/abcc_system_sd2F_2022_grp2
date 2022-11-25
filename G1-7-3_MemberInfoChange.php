@@ -5,7 +5,7 @@
     $loginMng->isLogin();
 
     // 情報をとってくる
-    $member_id = $_SESSION['member']['member_id'];
+   
 
     require_once 'DBManager.php';
     $dbmng = new DBManager();
