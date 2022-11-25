@@ -115,7 +115,7 @@
                   <li class="fw-bold"><a href="G1-4_Favorite.php">お気に入り</a></li>
                   <li class="fw-bold"><a href="G1-6-1_Cart.php">カート</a></li>
                   <li class="fw-bold"><a href="G1-7-2_MemberInfo.php">会員情報</a></li>
-                  <li class="fw-bold"><a href="Logout.php">ログアウト</a></li>
+                  <li class="fw-bold text-secondary"><a href="Logout.php">ログアウト</a></li>
                 </ul>
               </nav>
             </div>
