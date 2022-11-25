@@ -33,14 +33,15 @@
 <div class="container mt-5">
     <!-- タイトル -->
         <div class="row h1 ms-5 mt-5">購入履歴</div>
-        <?php if($results == 0): ?>
+    <!-- 購入履歴がない場合 -->
+        <?php if(count($results)==0): ?>
             <div class="container">
                 <div class="kuhaku"></div>
                 <div class="row mt-5">
                     <div class="col-12 text-center h4"><i class="typcn typcn-shopping-cart kara-icon"></i></div>
                 </div>
                 <div class="row mt-5">
-                    <div class="col-12 text-center h4 fw-bold kara-text">購入履歴ははありません</div>
+                    <div class="col-12 text-center h4 fw-bold kara-text">購入履歴はありません</div>
                 </div>
                 <div class="row mt-5">
                     <div class="col-12 text-center">
