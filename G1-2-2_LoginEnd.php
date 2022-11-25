@@ -17,7 +17,7 @@
 <div class="container">
     <div class="row kuhaku-end"></div>
     <div class="row text-center moji"><h1>ログインしました</h1></div>
-    <div class="row text-center moji"><h3>お帰りなさい<br><?php echo $_SESSION['member']['name']?> さま</h3></div>
+    <div class="row text-center moji"><h3>おかえりなさい<br><?php echo $_SESSION['member']['name']?> さま</h3></div>
     <div class="row ">
         <div class="col d-flex justify-content-center">
             <a class="btn btn-outline-primary btn-lg rounded-pill" href="G1-1_Top.php">TOPへ</a>

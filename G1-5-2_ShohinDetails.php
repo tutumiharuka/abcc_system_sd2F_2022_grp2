@@ -133,7 +133,7 @@
             <p>対応ハード:</p>
         </div>
         <div class="col-md-3 h2">
-            <p><strong>Nintendo switch</strong></p>
+            <p><strong>Nantendo switch</strong></p>
         </div>
     </div> 
     <div class="row">
@@ -141,7 +141,7 @@
             <p>メーカー:</p>
         </div>
         <div class="col-md-3 h2">
-            <p><strong>任天堂</strong></p>
+            <p><strong>南天堂</strong></p>
         </div>
     </div> 
     <div class="row">

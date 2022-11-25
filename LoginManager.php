@@ -27,7 +27,7 @@ class LoginManager{
         
         if(count($results)==0){
             //存在しない場合
-            $_SESSION['err'] = "IDが存在しないやパスワードが違うのか、ご確認ください";
+            $_SESSION['err'] = "メールアドレス、パスワードの入力に誤りがあるか登録されていません。再度ログインしてください。";
             header('Location: G1-2-1_Login.php');
         }
 
@@ -49,7 +49,7 @@ class LoginManager{
                 }
             }else{
                 //認証失敗
-                $_SESSION['err'] = "IDが存在しないやパスワードが違うのか、ご確認ください";
+                $_SESSION['err'] = "メールアドレス、パスワードの入力に誤りがあるか登録されていません。再度ログインしてください。";
                 header('Location: G1-2-1_Login.php');
             }
         }

@@ -39,18 +39,20 @@ $sum = $dbmng->getCartSum($member_id);
 <!-- カートに商品がない場合 -->
 <?php if($count == 0): ?>
     <div class="container">
-        <div class="kuhaku"></div>
-        <div class="row mt-5">
-            <div class="col-12 text-center h4"><i class="typcn typcn-shopping-cart kara-icon"></i></div>
-        </div>
-        <div class="row mt-5">
-            <div class="col-12 text-center h4 fw-bold kara-text">カートに商品はありません</div>
-        </div>
-        <div class="row mt-5">
-            <div class="col-12 text-center">
-                <a class="btn btn-outline-primary btn-lg rounded-pill kara-btn" href="G1-1_Top.php">お買い物を続ける</a>
+        <div class="row h1 ms-5 mt-5">カート</div>
+            <div class="kuhaku"></div>
+            <div class="row mt-5">
+                <div class="col-12 text-center h4"><i class="typcn typcn-shopping-cart kara-icon"></i></div>
             </div>
-        </div>
+            <div class="row mt-5">
+                <div class="col-12 text-center h4 fw-bold kara-text">カートに商品はありません</div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <a class="btn btn-outline-primary btn-lg rounded-pill kara-btn" href="G1-1_Top.php">お買い物を続ける</a>
+                </div>
+            </div>
+        <div>
     </div>
 
 <!-- カートに商品がある場合 -->
@@ -94,7 +96,7 @@ $sum = $dbmng->getCartSum($member_id);
             <!-- 合計 -->
             <div class="col-md-4 mt-5">
                 <div class="row">
-                    <div class="col fw-bold"><span class="h2 fw-bold">合計</span>税込</div>
+                    <div class="col fw-bold"><span class="h2 fw-bold">合計</span>(税込)</div>
                     <span class="col h3 fw-bold text-end"><?php echo $sum?>円</span>
                 </div>
                 <hr class="mb-5">
