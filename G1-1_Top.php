@@ -61,8 +61,8 @@ foreach($carousels as $id){
 
 <div class="container-fluid">
         <div class="row ms-5">
-                <div class="col-md-2 h4"><a href="G1-5-1_ShohinList.php?genre_id=new">最新作</a></div>
-                <div class="col-md-2 offset-md-8 text-end"><a href="G1-5-1_ShohinList.php?genre_id=new"><img width="100px" src="img/all_game.png" alt="すべて"></a></div>
+                <div class="col-md-2 h4"><a href="G1-5-1_ShohinList.php?list=new">最新作</a></div>
+                <div class="col-md-2 offset-md-8 text-end"><a href="G1-5-1_ShohinList.php?list=new"><img width="100px" src="img/all_game.png" alt="すべて"></a></div>
         </div>
         <div class="scroll ms-5">
                 <?php
@@ -82,8 +82,8 @@ foreach($carousels as $id){
         </div>
 
         <div class="row ms-5">
-                <div class="col-md-2 h4"><a href="G1-5-1_ShohinList.php?genre_id=ranking">ランキング</a></div>
-                <div class="col-md-2 offset-md-8 text-end"><a href="G1-5-1_ShohinList.php?genre_id=ranking"><img width="100px" src="img/all_game.png" alt="すべて"></a></div>
+                <div class="col-md-2 h4"><a href="G1-5-1_ShohinList.php?list=ranking">ランキング</a></div>
+                <div class="col-md-2 offset-md-8 text-end"><a href="G1-5-1_ShohinList.php?list=ranking"><img width="100px" src="img/all_game.png" alt="すべて"></a></div>
         </div>
         <div class="scroll ms-5">
                 <?php
@@ -103,8 +103,8 @@ foreach($carousels as $id){
         </div>
 
         <div class="row ms-5">
-                <div class="col-md-2 h4"><a href="G1-5-1_ShohinList.php?genre_id=free">無料ゲーム</a></div>
-                <div class="col-md-2 offset-md-8 text-end"><a href="G1-5-1_ShohinList.php?genre_id=free"><img width="100px" src="img/all_game.png" alt="すべて"></a></div>
+                <div class="col-md-2 h4"><a href="G1-5-1_ShohinList.php?list=free">無料ゲーム</a></div>
+                <div class="col-md-2 offset-md-8 text-end"><a href="G1-5-1_ShohinList.php?list=free"><img width="100px" src="img/all_game.png" alt="すべて"></a></div>
         </div>
         <div class="scroll ms-5">
                 <?php

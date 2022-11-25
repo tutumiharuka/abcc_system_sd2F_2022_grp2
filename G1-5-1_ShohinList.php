@@ -8,22 +8,22 @@ if(isset($_GET['keyword'])){
     $title = $_GET['keyword'];
     $results = $dbmng->getGameListBySearch($_GET['keyword']);
     $count = count($results);
-}else if(isset($_GET['genre_id'])){
+}else if(isset($_GET['list'])){
     /*　*　ジャンルとテーマ別　 *　*/
-    if($_GET['genre_id']=="free"){
+    if($_GET['list']=="free"){
         $title = "無料ゲーム";
         $results = $dbmng->getFreeList();
         $count = count($results);
-    }else if($_GET['genre_id']=="new"){
+    }else if($_GET['list']=="new"){
         $title = "最新作";
         $results = $dbmng->getNewList();
         $count = count($results);
-    }else if($_GET['genre_id']=="ranking"){
+    }else if($_GET['list']=="ranking"){
         $title = "ランキング";
         $results = $dbmng->getRankingList();
         $count = count($results);
     }else{// ジャンルで
-        $genre_id = $_GET['genre_id'];
+        $genre_id = $_GET['list'];
         $results = $dbmng->getGameListByGenre($genre_id);
         $title = $dbmng->getJpnGenreName($genre_id);
         $count = count($results);
