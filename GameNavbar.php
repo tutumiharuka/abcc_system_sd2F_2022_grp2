@@ -5,6 +5,7 @@
   @import url("https://cdnjs.cloudflare.com/ajax/libs/typicons/2.1.2/typicons.min.css");
   @import url("https://fonts.googleapis.com/earlyaccess/nicomoji.css");
   @import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c");
+  
   /* フォント設定 */
   body { font-family: "M PLUS Rounded 1c"; }
   .wf-nicomoji { font-family: "Nico Moji"; }
@@ -96,7 +97,7 @@
   }
 
 </style>
-
+  
 <!-- 左のサイドバー -->
 <div class="menu">
   <div class="side-nav">
@@ -201,6 +202,7 @@
         function showMenu(){
             document.querySelector('.hamburger').classList.toggle('open')
             document.querySelector('.side-nav').classList.toggle('active')
+
         }
 
         function showSubMenu(){

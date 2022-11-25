@@ -369,10 +369,15 @@ class DBManager{
         $ps->execute();
     }  
 
-
-
-
-
+    //お気に入りからゲームを削除
+    public function deleteFromFavorite($member_id,$shohin_id){
+        $pdo = $this->dbConnect();
+        $sql = "DELETE FROM favorites WHERE member_id = ? AND shohin_id = ?";
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
+        $ps->bindValue(2,$shohin_id,PDO::PARAM_STR);
+        $ps->execute();
+    } 
 
 }
 ?>
