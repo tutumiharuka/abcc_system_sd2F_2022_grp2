@@ -19,7 +19,7 @@
 
   /* Navbar背景の設定 */
   .navbar-bg {
-    background-color: #DEF2FF;
+    background-color: #97daf0;
     height:50px;
   }
 
@@ -43,10 +43,10 @@
   .side-nav,.sub-nav{
       position: fixed;
       z-index: 10;
-      left: -500px;
-      width: 350px;
+      left: -300px;
+      width: 300px;
       height: 100%;
-      background-color: #ccc;
+      background-color: #DEF2FF;
       transition: .5s;
   }
   /* ボタン押す瞬間に、↑の-500から0に戻す */
@@ -60,16 +60,16 @@
       text-align: center;
       text-transform: uppercase;
       list-style-type: none;
-      font-size: 1.2em;
-      padding: 10px 10px;
+      font-size: 1em;
+      padding: 7px 5px;
   }
 
   /* ゲームを探すのDIV設定 */
   .side-list-title{
     color:white;
     background-color: #70A7C5;
-    font-size: 1.2em;
-    height: 50px;
+    font-size: 1em;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -115,7 +115,7 @@
                   <li class="fw-bold"><a href="G1-4_Favorite.php">お気に入り</a></li>
                   <li class="fw-bold"><a href="G1-6-1_Cart.php">カート</a></li>
                   <li class="fw-bold"><a href="G1-7-2_MemberInfo.php">会員情報</a></li>
-                  <li class="fw-bold"><a href="Logout.php">ログアウト</a></li>
+                  <li class="fw-bold text-secondary"><a href="Logout.php">ログアウト</a></li>
                 </ul>
               </nav>
             </div>
@@ -133,10 +133,10 @@
 
     <nav>
         <ul class="side-list-ul">
-          <li class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=new"> 最新作ソフト</a></li>
-          <li class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=ranking"> ランキング</a></li>
-          <li class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=free"> 無料ソフト</a></li>
-          <!-- <li class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=recommend"> おすすめソフト</a></li> -->
+          <li class="fw-bold"><a href="G1-5-1_ShohinList.php?list=new"> 最新作ソフト</a></li>
+          <li class="fw-bold"><a href="G1-5-1_ShohinList.php?list=ranking"> ランキング</a></li>
+          <li class="fw-bold"><a href="G1-5-1_ShohinList.php?list=free"> 無料ソフト</a></li>
+          <!-- <li class="fw-bold"><a href="G1-5-1_ShohinList.php?list=recommend"> おすすめソフト</a></li> -->
           <li class="fw-bold sub-btn" onclick="showSubMenu()"><a>カテゴリ一覧</a></li>
         </ul>
     </nav>
@@ -154,7 +154,7 @@
             $dbmng = new DBManager(); 
             $list = $dbmng->getGenreList();
             foreach($list as $row){
-              echo '<li class="fw-bold"><a href="G1-5-1_ShohinList.php?genre_id='.$row['genre_id'].'">'.$row['genre_name'].'</a></li>';
+              echo '<li class="fw-bold"><a href="G1-5-1_ShohinList.php?list='.$row['genre_id'].'">'.$row['genre_name'].'</a></li>';
             }
           ?>
         </ul>

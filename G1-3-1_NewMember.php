@@ -87,7 +87,7 @@
                 
                 <div class="row">
                     <div class="col-md-2 offset-md-2"></div>
-                    <div id="err" class="col-md-7 d-none text-danger">入力したパスワードが間違っていますので、確認してください。</div>
+                    <div id="err" class="col-md-7 d-none text-danger">入力したパスワードが間違っています。再入力してください。</div>
                 </div>
 
                 <div class="row mt-3">
