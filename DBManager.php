@@ -51,24 +51,25 @@ class DBManager{
     }
 
 
-
 /* * *　* * *　* * *　* * *　会員情報更新　* * *　* * *　* * *　* * */
 
     //入力された情報で更新
     public function updateMember($member_id,$name,$mail,$phone,$birth){
         $pdo = $this->dbConnect();
         $sql = "UPDATE members 
-                SET name = '$name' ,
-                    mail= '$mail',
-                    phone_number= '$phone',
-                    date_of_birth= '$birth'
+                SET name = ? ,
+                    mail = ?,
+                    phone_number = ?,
+                    date_of_birth = ?'
                 WHERE member_id = ? ";
 
         $ps = $pdo->prepare($sql);
-        $ps->bindValue(1, $member_id,  PDO::PARAM_STR);
+        $ps->bindValue(1, $name,  PDO::PARAM_STR);
+        $ps->bindValue(2, $mail,  PDO::PARAM_STR);
+        $ps->bindValue(3, $phone,  PDO::PARAM_STR);
+        $ps->bindValue(4, $birth,  PDO::PARAM_STR);
+        $ps->bindValue(5, $member_id,  PDO::PARAM_STR);
         $ps->execute();
-        // $results = $ps->fetchAll();
-        // return $results;
     }
 
      //パスワード更新
@@ -76,17 +77,13 @@ class DBManager{
         $hashpass = password_hash($password,PASSWORD_DEFAULT);
         $pdo = $this->dbConnect();
         $sql = "UPDATE members 
-                SET password = '$hashpass'
+                SET password = ?
                 WHERE member_id = ? ";
-
         $ps = $pdo->prepare($sql);
-        $ps->bindValue(1,$member_id,PDO::PARAM_STR);
+        $ps->bindValue(1,$hashpass,PDO::PARAM_STR);
+        $ps->bindValue(2,$member_id,PDO::PARAM_STR);
         $ps->execute();
-        // $results = $ps->fetchAll();
-        // return $results;
     }
-
-   
 
 
 /* * *　* * *　* * *　* * *　ゲームリスト　表示　* * *　* * *　* * *　* * */

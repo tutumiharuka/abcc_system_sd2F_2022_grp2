@@ -3,7 +3,7 @@
  require_once 'LoginManager.php';
  $loginMng = new LoginManager(); 
  $loginMng->isLogin();
- 
+
 ?>
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
@@ -20,7 +20,7 @@
   <div class="row kuhaku-form"></div>
   <!-- タイトル -->
   <div class="row text-center pb-5"><h2>パスワード変更<h2></div>
-    <form action="G1-9-2_PasswordChangeCheck.php" method="post">
+    <form action="G1-9-2_PasswordChangeEnd.php" method="post">
       <div class="d-flex justify-content-center mt-2 mb-5">
   <!-- カード -->
         <div class="card ms-3" style="width: 60rem;">
