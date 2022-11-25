@@ -19,7 +19,7 @@
 
   /* Navbar背景の設定 */
   .navbar-bg {
-    background-color: #DEF2FF;
+    background-color: #97daf0;
     height:50px;
   }
 
@@ -43,10 +43,10 @@
   .side-nav,.sub-nav{
       position: fixed;
       z-index: 10;
-      left: -500px;
-      width: 350px;
+      left: -300px;
+      width: 300px;
       height: 100%;
-      background-color: #ccc;
+      background-color: #DEF2FF;
       transition: .5s;
   }
   /* ボタン押す瞬間に、↑の-500から0に戻す */
@@ -60,16 +60,16 @@
       text-align: center;
       text-transform: uppercase;
       list-style-type: none;
-      font-size: 1.2em;
-      padding: 10px 10px;
+      font-size: 1em;
+      padding: 7px 5px;
   }
 
   /* ゲームを探すのDIV設定 */
   .side-list-title{
     color:white;
     background-color: #70A7C5;
-    font-size: 1.2em;
-    height: 50px;
+    font-size: 1em;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
