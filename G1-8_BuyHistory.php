@@ -16,7 +16,7 @@
 
 <div class="container mt-5">
     <!-- タイトル -->
-    <div class="row h3">購入履歴</div>
+    <div class="row h1 ms-5 mt-5">購入履歴</div>
     <!-- リストの一行 -->
     <div class="row">
         <?php
