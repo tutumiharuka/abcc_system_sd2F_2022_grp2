@@ -38,7 +38,7 @@
             <div class="container">
                 <div class="kuhaku"></div>
                 <div class="row mt-5">
-                    <div class="col-12 text-center h4"><i class="typcn typcn-shopping-cart kara-icon"></i></div>
+                    <div class="col-12 text-center h4"><i class="bi bi-cart-check-fill kara-icon"></i></div>
                 </div>
                 <div class="row mt-5">
                     <div class="col-12 text-center h4 fw-bold kara-text">購入履歴はありません</div>
