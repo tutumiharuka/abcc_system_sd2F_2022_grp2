@@ -129,14 +129,14 @@ if(isset($_GET['sort'])){
         
         <!-- ソート機能 -->
         <div class="col-md-2 offset-md-5 d-flex justify-content-end">
-            
-            <select id="sort" class="form-select" aria-label="Default select example">
-                <option selected>並び替え</option>
-                <option value="newsort">新しい順</option>
-                <option value="oldsort">古い順</option>
-                <option value="lowprice">安い順</option>
-                <option value="highprice">高い順</option>
-            </select>
+
+        <select id="sort" class="form-select" aria-label="Default select example">
+            <option selected>並び替え</option>
+            <option value="newsort"  <?php if(isset($_GET['sort'])){if($sort=='newsort')  echo 'selected';} ?>>新しい順</option>
+            <option value="oldsort"  <?php if(isset($_GET['sort'])){if($sort=='oldsort')  echo 'selected';} ?>>古い順</option>
+            <option value="lowprice" <?php if(isset($_GET['sort'])){if($sort=='lowprice') echo 'selected';} ?>>安い順</option>
+            <option value="highprice"<?php if(isset($_GET['sort'])){if($sort=='highprice')echo 'selected';} ?>>高い順</option>
+        </select>
             
         </div>
 
@@ -174,12 +174,13 @@ if(isset($_GET['sort'])){
     <script>  
      $(document).ready(function(){  
         $('#sort').change(function(){  
-            // alert($(this).children('option:selected').val());  
             let sort=$(this).children('option:selected').val();
             <?php if(isset($_GET['keyword'])): ?>
                 window.location.href = "G1-5-1_ShohinList.php?keyword=<?php echo$_GET['keyword']?>"+"&sort="+sort;
-            <?php else: ?>
+            <?php elseif(isset($_GET['list'])): ?>
                 window.location.href = "G1-5-1_ShohinList.php?list=<?php echo$_GET['list']?>"+"&sort="+sort;
+            <?php else: ?>
+                window.location.href = "G1-5-1_ShohinList.php?sort="+sort;
             <?php endif; ?>
         });  
     })
