@@ -34,6 +34,15 @@ if(isset($_GET['keyword'])){
     $results = $dbmng->getAllList();
     $count = 220;
 }
+
+/** ソート **/
+if(isset($_GET['sort'])){
+    $sort = $_GET['sort'];
+    if($sort =="newsort")   usort($results,function($a, $b){return ($a['haishin_date'] > $b['haishin_date']) ? -1 : 1;});
+    if($sort =="oldsort")   usort($results,function($a, $b){return ($a['haishin_date'] < $b['haishin_date']) ? -1 : 1;});
+    if($sort =="lowprice")  usort($results,function($a, $b){return ($a['price'] < $b['price']) ? -1 : 1;});
+    if($sort =="highprice") usort($results,function($a, $b){return ($a['price'] > $b['price']) ? -1 : 1;});
+}
 ?>
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
@@ -123,11 +132,10 @@ if(isset($_GET['keyword'])){
             
             <select id="sort" class="form-select" aria-label="Default select example">
                 <option selected>並び替え</option>
-                <option value="1">人気順</option>
-                <option value="2">新しい順</option>
-                <option value="3">古い順</option>
-                <option value="4">安い順</option>
-                <option value="5">高い順</option>
+                <option value="newsort">新しい順</option>
+                <option value="oldsort">古い順</option>
+                <option value="lowprice">安い順</option>
+                <option value="highprice">高い順</option>
             </select>
             
         </div>
@@ -149,8 +157,9 @@ if(isset($_GET['keyword'])){
                 foreach($results as $row){
                     // 無料の時
                     if( $row['price'] == 0){$price = '無料';}else{$price=$row['price'].'円';}
-                    echo '<div class="col-md-3">
-                            <a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'">
+                    echo '<div class="col-md-3">'
+                            .$row['haishin_date']
+                            .'<a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'">
                                 <img class="img-thumbnail" src="'.$row['image_small'].'">
                                 <div class="card-text">'.$row['shohin_name'].'</div>
                                 <h5 class="card-title">'.$price.'</h5>
@@ -163,14 +172,17 @@ if(isset($_GET['keyword'])){
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
     <script>  
-    $(document).ready(function(){  
+     $(document).ready(function(){  
         $('#sort').change(function(){  
-            alert($(this).children('option:selected').val());  
-            var p1=$(this).children('option:selected').val();//这就是selected的值  
-            var p2=$('#param2').val();//获取本页面其他标签的值  
-            window.location.href="G1-5-1_ShohinList.php?param1="+p1+"m2="+p2+"";//页面跳转并传参  
+            // alert($(this).children('option:selected').val());  
+            let sort=$(this).children('option:selected').val();
+            <?php if(isset($_GET['keyword'])): ?>
+                window.location.href = "G1-5-1_ShohinList.php?keyword=<?php echo$_GET['keyword']?>"+"&sort="+sort;
+            <?php else: ?>
+                window.location.href = "G1-5-1_ShohinList.php?list=<?php echo$_GET['list']?>"+"&sort="+sort;
+            <?php endif; ?>
         });  
-    })  
+    })
     </script>  
 
     <?php include_once 'GameFooter.php'; ?>

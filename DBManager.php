@@ -101,7 +101,7 @@ class DBManager{
     //ゲーム検索機能
     public function getGameListBySearch($keyword){
         $pdo = $this->dbConnect();
-        $sql="SELECT shohin_id,image_small,shohin_name,price FROM shohins WHERE shohin_name LIKE ?";
+        $sql="SELECT shohin_id,shohin_name,price,image_small,haishin_date FROM shohins WHERE shohin_name LIKE ?";
         $ps=$pdo->prepare($sql);
         $ps->bindValue(1,"%".$keyword."%",PDO::PARAM_STR);
         $ps->execute();
@@ -112,7 +112,7 @@ class DBManager{
     // ジャンルリストゲット
     public function getGameListByGenre($genre_id){
         $pdo = $this->dbConnect();
-        $sql = "SELECT shohin_id,shohin_name,price,image_small FROM shohins WHERE genre_id = ?";
+        $sql = "SELECT shohin_id,shohin_name,price,image_small,haishin_date FROM shohins WHERE genre_id = ?";
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1,$genre_id,PDO::PARAM_STR);
         $ps->execute();
@@ -122,7 +122,7 @@ class DBManager{
     // ランキング
     public function getRankingList(){
         $pdo = $this->dbConnect();
-        $sql = "SELECT r.ranking_id,r.shohin_id,s.shohin_name,s.price,s.image_small FROM ranking r INNER JOIN shohins s ON r.shohin_id = s.shohin_id";
+        $sql = "SELECT r.shohin_id,s.shohin_name,s.price,s.image_small,s.haishin_date,r.ranking_id FROM ranking r INNER JOIN shohins s ON r.shohin_id = s.shohin_id";
         $ps = $pdo->prepare($sql);
         $ps->execute();
         $results = $ps->fetchAll();
@@ -131,7 +131,7 @@ class DBManager{
     // 最新作
     public function getNewList(){
         $pdo = $this->dbConnect();
-        $sql = "SELECT shohin_id,shohin_name,price,image_small FROM shohins ORDER BY haishin_date DESC LIMIT 20";
+        $sql = "SELECT shohin_id,shohin_name,price,image_small,haishin_date FROM shohins ORDER BY haishin_date DESC LIMIT 20";
         $ps = $pdo->prepare($sql);
         $ps->execute();
         $results = $ps->fetchAll();
@@ -140,7 +140,7 @@ class DBManager{
     // 無料
     public function getFreeList(){
         $pdo = $this->dbConnect();
-        $sql = "SELECT shohin_id,shohin_name,price,image_small FROM shohins WHERE price = 0";
+        $sql = "SELECT shohin_id,shohin_name,price,image_small,haishin_date FROM shohins WHERE price = 0";
         $ps = $pdo->prepare($sql);
         $ps->execute();
         $results = $ps->fetchAll();
@@ -150,7 +150,7 @@ class DBManager{
      // 全てゲーム
      public function getAllList(){
         $pdo = $this->dbConnect();
-        $sql = "SELECT shohin_id,shohin_name,price,image_small FROM shohins ORDER BY shohin_name";
+        $sql = "SELECT shohin_id,shohin_name,price,image_small,haishin_date FROM shohins ORDER BY shohin_name";
         $ps = $pdo->prepare($sql);
         $ps->execute();
         $results = $ps->fetchAll();
@@ -198,7 +198,10 @@ class DBManager{
         $ps->execute();
         $results = $ps->fetchAll();
         return $results;
-    }    
+    }
+/* * *　* * *　* * *　* * *　絞り込み　* * *　* * *　* * *　* * */
+
+
 
  
 /* * *　* * *　* * *　* * *　カート　操作　* * *　* * *　* * *　* * */
@@ -392,6 +395,9 @@ class DBManager{
         $ps->bindValue(2,$shohin_id,PDO::PARAM_STR);
         $ps->execute();
     } 
+
+
+
 
 }
 ?>
