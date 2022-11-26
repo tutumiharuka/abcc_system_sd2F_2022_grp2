@@ -32,7 +32,6 @@ if(isset($_GET['keyword'])){
 }
 
 /** 絞り込み **/
-
 if(isset($_GET['lowlimit'])&&$_GET['lowlimit']!=''){
     $results = array_filter($results,function($row){return $row['price'] >= $_GET['lowlimit'];});
 }
@@ -41,12 +40,11 @@ if(isset($_GET['highlimit'])&&$_GET['highlimit']!=''){
 }
 
 /** ゲームリスト の数量 **/
-
 $count = count($results);
 
 
 /** ソート **/
-if(isset($_GET['sort'])){
+if(isset($_GET['sort'])&&$_GET['sort']!=''){
     $sort = $_GET['sort'];
     if($sort =="newsort")  usort($results,function($a, $b){return ($a['haishin_date'] > $b['haishin_date']) ? -1 : 1;});
     if($sort =="oldsort")  usort($results,function($a, $b){return ($a['haishin_date'] < $b['haishin_date']) ? -1 : 1;});
@@ -54,6 +52,7 @@ if(isset($_GET['sort'])){
     if($sort =="highsort") usort($results,function($a, $b){return ($a['price'] > $b['price']) ? -1 : 1;});
 }
 ?>
+
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
 <style>
@@ -68,7 +67,11 @@ if(isset($_GET['sort'])){
     <!-- breadcrumb リンク機能  -->
     <nav class="mt-5 ms-3 mb-4" aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item h3 fw-bold"><a href="G1-1_Top.php">トップ</a></li>
+            <?php if(isset($_GET['keyword'])): ?>
+                <li class="breadcrumb-item h3 fw-bold">検索キーワード</a></li>
+            <?php else: ?>
+                <li class="breadcrumb-item h3 fw-bold"><a href="G1-1_Top.php">トップ</a></li>
+            <?php endif; ?>
             <li class="breadcrumb-item h3 fw-bold active" aria-current="page"><?php echo $title ?></li>
         </ol>
     </nav>
