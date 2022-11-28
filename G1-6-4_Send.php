@@ -22,24 +22,29 @@
 <div class="contianer text-center">	
 
 	<div class="row  d-flex justify-content-center">
-		<?php if(isset($_GET['send_game'])): ?>
+		<?php if(isset($_GET['send_game'])){
 			$results = $dbmng->getGameInfoById($_GET['send_game']);
-			
-			
-			
-		
-			<?php else: ?>
-
-			<?php for ($i=0; $i <count($sendlist); $i++){  
+			foreach($results as $row){
+				$name = $row['shohin_name'];
+				$img = $row['image_small'];
+			}
+			echo '<div class="col-md-3">
+			<div class="img-center mt-5 rounded"><img class="rounded sendimg" src="'.$img.'"></div>
+			<h2 class="m-4 text-center">'.$name.'</h2>
+			</div>';
+		}else{
+			for ($i=0; $i <count($sendlist); $i++){  
 				$results = $dbmng->getGameInfoById($sendlist[$i]);
-				foreach($results as $row){ $name = $row['shohin_name'];$img = $row['image_small'];}?>
-				<div class="col-md-3">
-					<div class="img-center mt-5 rounded"><img class="rounded sendimg" src="<?php echo $img ?>"></div>
-					<h2 class="m-4 text-center"><?php echo $name ?></h2>
-				</div>
-			<?php }?>
-
-		<?php endif; ?>
+				foreach($results as $row){
+					$name = $row['shohin_name'];
+					$img = $row['image_small'];
+				}
+				echo '<div class="col-md-3">
+					<div class="img-center mt-5 rounded"><img class="rounded sendimg" src="'.$img.'"></div>
+					<h2 class="m-4 text-center">'.$name.'</h2>
+				</div>';
+			}
+		}?>
 	</div>
 		
 		

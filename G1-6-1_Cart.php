@@ -112,7 +112,11 @@ $sum = $dbmng->getCartSum($member_id);
 
 
 <?php endif; ?>
-
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 
