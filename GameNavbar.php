@@ -183,16 +183,16 @@
                 <form class="form-inline" role="search" action="G1-5-1_ShohinList.php" method="get">
                   <div class="input-group">
                     <input type="search" class="form-control search" name="keyword" placeholder="ゲームを探す">
-                      <button class="input-group-text search" type="submit"><i class="icon ion-search"></i></button>
+                    <button class="input-group-text search" type="submit"><i class="icon ion-search"></i></button>
                   </div>
               </form>
               </li>
               <li class="nav-item d-flex justify-content-center align-items-center"><!-- ハートマークicon -->
-                  <a class="nav-link mt-1" href="G1-4_Favorite.php"><i class="typcn typcn-heart-outline h2"></i></a>
+                  <a class="nav-link mt-1" href="G1-4_Favorite.php"><i class="typcn typcn-heart-outline h3"></i></a>
               </li>
 
               <li class="nav-item  d-flex justify-content-center align-items-center"><!-- カートicon -->
-                <a class="nav-link mt-1" href="G1-6-1_Cart.php"><i class="typcn typcn-shopping-cart h2"></i></a>
+                <a class="nav-link mt-1" href="G1-6-1_Cart.php"><i class="typcn typcn-shopping-cart h3"></i></a>
               </li>
             </ul>
         </div>
