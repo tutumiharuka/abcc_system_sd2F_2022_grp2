@@ -88,7 +88,12 @@
     </div>
     <div class="row mt-4">
       <div class="col d-flex justify-content-center ">
-        <a class="btn btn-outline-primary btn-lg mt-2 me-5 mb-3" href="G1-7-3_MemberInfoChange.php">修正する</a>
+        <div class="row">
+          <div class="col">
+            <a class="btn btn-outline-primary btn-lg mt-2 me-5 mb-3" href="G1-7-3_MemberInfoChange.php">修正する</a>
+          </div>
+        </div>
+        
         <form action="G1-7-5_MemberInfoChangeEnd.php" method="post">
             <input type="hidden" name="name" value="<?php echo $name ?>">
             <input type="hidden" name="mail" value="<?php echo $mail ?>">
