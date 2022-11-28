@@ -60,9 +60,8 @@ class DBManager{
                 SET name = ? ,
                     mail = ?,
                     phone_number = ?,
-                    date_of_birth = ?'
+                    date_of_birth = ?
                 WHERE member_id = ? ";
-
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1, $name,  PDO::PARAM_STR);
         $ps->bindValue(2, $mail,  PDO::PARAM_STR);

@@ -52,7 +52,7 @@
                       <div class="col-md-3 offset-md-3 text-start">
                         <i class="bi bi-diamond-fill h6 me-3"></i>新パスワード</div>
                       <div class="col-md-5">
-                        <input type="text" class="form-control rounded-pill" name="newpass" id="pass" placeholder="半角英数混合8文字以上" required>
+                        <input type="password" class="form-control rounded-pill" name="newpass" id="pass" placeholder="半角英数混合8文字以上" required>
                       </div>
                     </div>
                   </li>
@@ -63,7 +63,7 @@
                       <div class="col-md-3 offset-md-3 text-start">
                         <i class="bi bi-diamond-fill h6 me-3"></i>新パスワード再入力</div>
                       <div class="col-md-5">
-                        <input type="text" class="form-control rounded-pill" name="renewpass" id="repass" placeholder="半角英数混合8文字以上" required>
+                        <input type="password" class="form-control rounded-pill" name="renewpass" id="repass" placeholder="半角英数混合8文字以上" required>
                       </div>
                     </div>
 
