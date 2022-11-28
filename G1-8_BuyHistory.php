@@ -65,7 +65,11 @@
                                     <a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'">
                                     <div class="row h4 mt-5 text-start">'.$row['shohin_name'].'</div>
                                     <div class="row h5 ms-5 mt-5">購入日:'.$row['buying_date'].'</div></a>
-                                    <div class="row text-center me-5 mt-5"><i class="bi bi-box-arrow-in-right h2"></i></div>
+                                    <div class="row text-center me-5 mt-5">
+                                    <a href="G1-6-4_Send.php?send_game='.$row['shohin_id'].'">
+                                    <i class="bi bi-box-arrow-in-right h2"></i>
+                                    </a>
+                                    </div>
                                 </div>';
                     }
                 ?>
