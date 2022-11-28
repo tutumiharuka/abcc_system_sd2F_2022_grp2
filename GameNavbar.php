@@ -77,7 +77,9 @@
 
   /* ログインしてない状況で出すボタン */
   .login-btn{
-    margin-left:9px;
+    /* margin-left:9px; */
+    /* margin-right:9px; */
+
     height: 70px;
     color:white;
     background-color:#156E96;
@@ -120,8 +122,8 @@
               </nav>
             </div>
     <?php else: ?>
-            <div class="row mt-5 ms-5">
-              <div class="col-12">
+            <div class="row mt-5 ms-1">
+              <div class="col-12 d-flex justify-content-center">
                 <a href="G1-2-1_Login.php">
                   <button type="button" class="btn btn-lg login-btn fw-bold">ログイン・新規登録</button>
                 </a>
