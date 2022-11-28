@@ -7,12 +7,19 @@ if(isset($_SESSION['member']) == true){
 ?>
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
-
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 <style>
     .right-aligned{
         margin-right: 0;
         margin-left: auto;
         width: 30%;
+    }
+    
+    .input-group-append > button{
+        /* margin-left:10px; */
+        margin-top:3px;
+        border-radius: 1rem;
+        border: none;
     }
 </style>
 
@@ -27,11 +34,11 @@ if(isset($_SESSION['member']) == true){
             <form action="LoginCheck.php" method="post">
         <!-- メールアドレス -->
                 <div class="mb-5">
-                    <input type="email" class="form-control" name="mail" placeholder="メールアドレス">
+                    <input type="email" class="form-control mail" name="mail" placeholder="メールアドレス">
                 </div>
         <!-- パスワード -->
                 <div class="mb-5">
-                    <input type="password" class="form-control" name="pass" placeholder="パスワード">
+                    <input type="password" data-toggle="password" class="form-control pass" name="pass" placeholder="パスワード">
                     <div class="text-danger"><?php if(isset($_SESSION['err'])){echo $_SESSION['err'];unset($_SESSION['err']);}?></div>
                 </div>
                  <!-- 次のページから戻る、アカウント存在しないやパスワードが違う場合 -->
@@ -52,4 +59,7 @@ if(isset($_SESSION['member']) == true){
     <p class="mb-3 h4">アカウントをお持ちでない方<p>
     <a type="submit" class="btn btn-outline-primary btn-lg rounded-pill" href="G1-3-1_NewMember.php">新規登録</a>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
 <?php include_once 'GameFooter.php'; ?>
