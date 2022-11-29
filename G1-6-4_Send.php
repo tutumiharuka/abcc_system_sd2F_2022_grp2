@@ -13,6 +13,10 @@
 		height: 270px;
 	}
 
+	.modoru{
+		width: 40%;	
+	}
+
 </style>
 <div class="row">
 	<div class="col-md-12 bg-info text-dark text-left">
@@ -22,7 +26,9 @@
 <div class="contianer text-center">	
 
 	<div class="row  d-flex justify-content-center">
+		<!-- 一つゲームとき -->
 		<?php if(isset($_GET['send_game'])){
+			// 
 			$results = $dbmng->getGameInfoById($_GET['send_game']);
 			foreach($results as $row){
 				$name = $row['shohin_name'];
@@ -33,6 +39,7 @@
 			<h2 class="m-4 text-center">'.$name.'</h2>
 			</div>';
 		}else{
+			 
 			for ($i=0; $i <count($sendlist); $i++){  
 				$results = $dbmng->getGameInfoById($sendlist[$i]);
 				foreach($results as $row){
@@ -61,15 +68,20 @@
 		</div>
 
 
-	
-	
-	
-	
-	
-	
-	
-	
-	<a class="btn btn-primary btn-lg mt-5 mb-4 rounded text-dark rounded-pill" href="G1-1_Top.php">TOPに戻る</a>
+	<div class="d-flex justify-content-center">
+		<div class="row modoru">
+			<!-- もし、購入履歴からだけ、表示します -->
+		<?php if(isset($_GET['send_game'])): ?>
+			<div class="col">
+				<a class="btn btn-outline-primary btn-lg mt-5 mb-4 rounded text-dark rounded-pill" href="G1-8_BuyHistory.php">購入履歴に戻る</a>
+			</div>
+		<?php endif; ?>	
+			<div class="col">
+				<a class="btn btn-primary btn-lg mt-5 mb-4 rounded text-dark rounded-pill" href="G1-1_Top.php">TOPに戻る</a>
+			</div>
+		</div>
+	</div>
+		
 </div>
 
 
