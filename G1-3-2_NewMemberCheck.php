@@ -39,7 +39,8 @@
 <!-- 新規登録のフォーム（ hidden = 見えないフォームを用意し、次のページに与える ） -->
     <div class="card bg-light mt-3 mb-3">
         <div class="card-body">
-            <form  action="G1-3-3_NewMemberEnd.php" method="post">
+            <form  action="?" method="post">
+            <!-- <form  action="G1-3-3_NewMemberEnd.php" method="post"> -->
     <!-- 名前 -->
                 <div class="row mt-5">
                     <div class="col-md-2 offset-md-2">◆名前</div>
@@ -79,10 +80,11 @@
 
                 <div class="row mt-5">
                     <div class="col d-flex justify-content-end">
-                        <a class="btn btn-outline-primary btn-lg"  href="javascript:history.back()">修正する</a>
+                        <!-- <a class="btn btn-outline-primary btn-lg"  href="javascript:history.back()">修正する</a> -->
+                        <button type="submit" formaction="G1-3-1_NewMember.php" class="btn btn-outline-primary btn-lg">修正する</button>
                     </div>
                     <div class="col d-flex justify-content-start">
-                        <button type="submit" class="btn btn-outline-primary btn-lg">登録する</button>
+                        <button type="submit" formaction="G1-3-3_NewMemberEnd.php" class="btn btn-outline-primary btn-lg">登録する</button>
                     </div>
                 </div>
 

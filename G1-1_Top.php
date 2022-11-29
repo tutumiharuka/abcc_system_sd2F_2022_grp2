@@ -37,6 +37,15 @@
         .item-img{
                 height: 180;
         }
+
+
+        @media only screen and (max-width: 500px) {
+        .carousel-card img{
+                height: 210px;
+        }
+   
+
+        }
 </style>
 
 <?php

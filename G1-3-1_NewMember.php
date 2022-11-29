@@ -19,12 +19,12 @@
     <!-- 名前 -->
                 <div class="row mt-3">
                     <div class="col-md-2 offset-md-2">◆名前</div>
-                    <div class="col-md-7"><input type="text" name="name" class="form-control rounded-pill" placeholder="10文字以内" required></div>
+                    <div class="col-md-7"><input type="text" name="name" class="form-control rounded-pill" value="<?php if(isset($_POST['name'])) echo $_POST['name'] ?>" placeholder="10文字以内" required></div>
                 </div>
     <!-- メールアドレス -->
                 <div class="row mt-3">
                     <div class="col-md-2 offset-md-2">◆メールアドレス</div>
-                    <div class="col-md-7"><input type="mail" name="mail" class="form-control rounded-pill" placeholder="メールを入力してください" required></div>
+                    <div class="col-md-7"><input type="mail" name="mail" class="form-control rounded-pill" value="<?php if(isset($_POST['mail'])) echo $_POST['mail'] ?>" placeholder="メールを入力してください" required></div>
                 </div>
                 <div class="row">
                     <div class="col-md-2 offset-md-2"></div>
@@ -37,7 +37,7 @@
     <!-- 電話番号 -->
                 <div class="row mt-3">
                     <div class="col-md-2 offset-md-2">◆電話番号</div>
-                    <div class="col-md-7"><input type="tel" name="phone" class="form-control rounded-pill" placeholder="携帯電話を11桁で入力してください" pattern="[0-9]{11}" required></div>
+                    <div class="col-md-7"><input type="tel" name="phone" class="form-control rounded-pill"  value="<?php if(isset($_POST['phone'])) echo $_POST['phone'] ?>" placeholder="携帯電話を11桁で入力してください" pattern="[0-9]{11}" required></div>
                 </div>
     <!-- 生年月日 -->
     
