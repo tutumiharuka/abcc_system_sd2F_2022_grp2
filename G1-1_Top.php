@@ -5,17 +5,19 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 <style>
         /* 上の画像carouselに表示 */
-        .carousel-card{
-        height: auto;
-        }
-        .carousel-img{
-        height: 300px;
-        }
         .carousel{
         visibility: hidden;
         }
+        .carousel-card{
+        height: auto;
+        }
+        .carousel-card img{
+        height: 300px;
+        }
+ 
         .carousel.slick-initialized{
         visibility: visible;
+        overflow: hidden;
         }
         /* 下のリスト */
         .scroll {
@@ -51,7 +53,7 @@ foreach($carousels as $id){
         foreach($results as $row){
                 echo '<div class="px-1 carousel-card">
                 <a href="G1-5-2_ShohinDetails.php?shohin_id='.$id.'">
-                <img src="'.$row['image_big'].'"class="carousel-img rounded">
+                <img src="'.$row['image_big'].'"class="rounded">
                 </a>
                 </div>';
         }
