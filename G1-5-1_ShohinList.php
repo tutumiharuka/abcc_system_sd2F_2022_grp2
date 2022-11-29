@@ -3,10 +3,15 @@
 require_once "DBManager.php";
 $dbmng = new DBManager();
 
+
+
+
+
 /**検索 **/
 if(isset($_GET['keyword'])){
     $title = $_GET['keyword'];
     $results = $dbmng->getGameListBySearch($_GET['keyword']);
+
 }else if(isset($_GET['list'])){
     /**ジャンルとテーマ別 **/
     if($_GET['list']=="free"){
@@ -34,9 +39,11 @@ if(isset($_GET['keyword'])){
 /** 絞り込み **/
 if(isset($_GET['lowlimit'])&&$_GET['lowlimit']!=''){
     $results = array_filter($results,function($row){return $row['price'] >= $_GET['lowlimit'];});
+    echo "lowlimit:".$_GET['lowlimit'];
 }
 if(isset($_GET['highlimit'])&&$_GET['highlimit']!=''){
     $results = array_filter($results,function($row){return $row['price'] <= $_GET['highlimit'];});
+    echo "highlimit:".$_GET['highlimit'];
 }
 
 /** ゲームリスト の数量 **/
@@ -50,6 +57,7 @@ if(isset($_GET['sort'])&&$_GET['sort']!=''){
     if($sort =="oldsort")  usort($results,function($a, $b){return ($a['haishin_date'] < $b['haishin_date']) ? -1 : 1;});
     if($sort =="lowsort")  usort($results,function($a, $b){return ($a['price'] < $b['price']) ? -1 : 1;});
     if($sort =="highsort") usort($results,function($a, $b){return ($a['price'] > $b['price']) ? -1 : 1;});
+    echo "sort:".$_GET['sort'];
 }
 ?>
 
@@ -106,16 +114,6 @@ if(isset($_GET['sort'])&&$_GET['sort']!=''){
                                 <option value="TBL">テーブルゲーム</option>
                             </select>
                         </div>
-
-                        <!-- <label for="game-type" class="col-auto col-form-label">タイプ</label>
-                        <div class="col-lg-2">
-                            <select class="form-select" id="game-type" name="type">
-                                <option value="" selected>指定なし</option>
-                                <option value="newtype">最新作</option>
-                                <option value="freetype">無料</option>
-                                <option value="ranktype">ランキング</option>
-                            </select>
-                        </div> -->
                         
                         <label for="low-price" class="col-auto col-form-label">下限</label>
                         <div class="col">
@@ -188,24 +186,14 @@ if(isset($_GET['sort'])&&$_GET['sort']!=''){
 
     <script>  
     $(document).ready(function(){  
-        $('#sort').change(function(){  
-            
+        $('#sort').change(function(){
             let sort=$(this).children('option:selected').val();
-
             <?php if(isset($_GET['keyword'])): ?>
-                window.location.href = "G1-5-1_ShohinList.php?keyword="+<?php echo$_GET['keyword']?>
-                                        "&lowlimit="+<?php if(isset($_GET['lowlimit'])) echo $_GET['lowlimit'];?>
-                                        "&highlimit="+<?php if(isset($_GET['highlimit'])) echo$_GET['highlimit']?>
-                                        "&sort="+sort;
+                window.location.href = "G1-5-1_ShohinList.php?keyword=<?php echo $_GET['keyword']?>&lowlimit=<?php if(isset($_GET['lowlimit'])) echo $_GET['lowlimit'];?>&highlimit=<?php if(isset($_GET['highlimit'])) echo $_GET['highlimit']?>&sort="+sort;
             <?php elseif(isset($_GET['list'])): ?>
-                window.location.href = "G1-5-1_ShohinList.php?list="+<?php echo$_GET['list']?>
-                                        "&lowlimit="+<?php if(isset($_GET['lowlimit'])) echo$_GET['lowlimit']?>
-                                        "&highlimit="+<?php if(isset($_GET['highlimit'])) echo$_GET['highlimit']?>
-                                        "&sort="+sort;
+                window.location.href = "G1-5-1_ShohinList.php?list=<?php echo $_GET['list']?>&lowlimit=<?php if(isset($_GET['lowlimit'])) echo $_GET['lowlimit']?>&highlimit=<?php if(isset($_GET['highlimit'])) echo $_GET['highlimit']?>&sort="+sort;
             <?php else: ?>
-                window.location.href = "G1-5-1_ShohinList.php?lowlimit="+<?php if(isset($_GET['lowlimit'])) echo$_GET['lowlimit']?>
-                                        "&highlimit="+<?php if(isset($_GET['highlimit'])) echo$_GET['highlimit']?>
-                                        "&sort="+sort;
+                window.location.href = "G1-5-1_ShohinList.php?lowlimit=<?php if(isset($_GET['lowlimit'])) echo $_GET['lowlimit']?>&highlimit=<?php if(isset($_GET['highlimit'])) echo $_GET['highlimit']?>&sort="+sort;
             <?php endif; ?>
         });  
     })
