@@ -40,38 +40,12 @@
                     <div class="col-md-7"><input type="tel" name="phone" class="form-control rounded-pill"  value="<?php if(isset($_POST['phone'])) echo $_POST['phone'] ?>" placeholder="携帯電話を11桁で入力してください" pattern="[0-9]{11}" required></div>
                 </div>
     <!-- 生年月日 -->
-    
-    
                 <div class="row mt-3">
                     <div class="col-md-2 offset-md-2">◆生年月日</div>
-                    
-        <!-- 年 $y -->
-                    <div class="col-md-2">
-                        <select class="form-select rounded-pill text-center" name="year" required>
-                        <!-- <option selected>選択する</option> -->
-                        <?php for ($y = 1950; $y <= date("Y"); $y++) echo '<option value="'.$y.'">'.$y.'</option>';?></select>
+                    <div class="col-md-7">
+                        <input type="date" class="form-control rounded-pill" name="birth" value="<?php if(isset($_POST['birth'])) echo $_POST['birth'] ?>" required>
                     </div>
-                    <div class="col-md-1 d-flex justify-content-start align-items-center">
-                        年
-                    </div>
-        <!-- 月 $m -->
-                    <div class="col-md-1">
-                        <select class="form-select rounded-pill text-center" name="month" required>
-                        <!-- <option selected>選択する</option> -->
-                        <?php for ($m = 1; $m <= 12; $m++) echo '<option value="'.$m.'">'.$m.'</option>';?></select>
-                    </div>
-                    <div class="col-md-1 d-flex justify-content-start align-items-center">
-                        月
-                    </div>
-        <!-- 日 $d -->
-                    <div class="col-md-1">
-                        <select class="form-select rounded-pill text-center" name="day" required>
-                        <!-- <option selected>選択する</option> -->
-                        <?php for ($d = 1; $d <= 31; $d++) echo '<option value="'.$d.'">'.$d.'</option>';?></select>
-                    </div>
-                    <div class="col-md-1 d-flex justify-content-start align-items-center">
-                        日
-                    </div>
+
                 </div>
 <!-- 月と日が転送されないよう、メモする -->
     <!-- パスワード -->

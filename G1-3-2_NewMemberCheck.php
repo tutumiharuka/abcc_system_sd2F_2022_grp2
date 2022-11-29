@@ -11,11 +11,7 @@
         $name = $_POST['name'];
         $mail = $_POST['mail'];
         $phone = $_POST['phone'];
-            $year = $_POST['year'];
-            $month = sprintf("%02d",$_POST['month']);
-            $day =  sprintf("%02d",$_POST['day']);
-        //birthは3つのstringの組み合わせ
-        $birth = $year.'-'.$month.'-'.$day;
+        $birth = $_POST['birth'];
         $pass = $_POST['pass'];
     }
    
