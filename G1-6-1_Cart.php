@@ -69,7 +69,7 @@ $sum = $dbmng->getCartSum($member_id);
             <div class="col-md-8">
                 <?php 
                 foreach($results as $row){
-                    if( $row['price'] == 0){$price= '無料';}else{$price=$row['price'].'円 税込';}
+                    if( $row['price'] == 0){$price= '無料';}else{$price=number_format($row['price']).'円 税込';}
                     echo '
                     <div class="row mt-5">
                         <div class="col-md-4">
@@ -97,7 +97,7 @@ $sum = $dbmng->getCartSum($member_id);
             <div class="col-md-4 mt-5">
                 <div class="row">
                     <div class="col fw-bold"><span class="h2 fw-bold">合計</span>(税込)</div>
-                    <span class="col h3 fw-bold text-end"><?php echo $sum?>円</span>
+                    <span class="col h3 fw-bold text-end"><?php echo number_format($sum)?>円</span>
                 </div>
                 <hr class="mb-5">
                 <div class="row m-3 gx-1">

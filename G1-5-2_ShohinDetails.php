@@ -67,7 +67,7 @@
 <!-- 価格 -->
         <div class="col-lg-2 h3 mt-2">
             <p> <!-- ０円なら、無料を表示 -->
-                <?php if($price==0){echo "無料";}else{echo "$price 円";}?>
+                <?php if($price==0){echo "無料";}else{echo number_format($price)."円";}?>
             </p>
         </div>
 

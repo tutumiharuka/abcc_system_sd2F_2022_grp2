@@ -161,8 +161,7 @@ if(isset($_GET['sort'])&&$_GET['sort']!=''){
         <div class="row">
             <?php
                 foreach($results as $row){
-                    // 無料の時
-                    if( $row['price'] == 0){$price = '無料';}else{$price=$row['price'].'円';}
+                    if( $row['price'] == 0){$price = '無料';}else{$price=number_format($row['price']).'円';}
                     echo '<div class="col-md-3">'
                             .$row['haishin_date']
                             .'<a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'">

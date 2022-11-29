@@ -63,7 +63,7 @@
         // 商品リスト
         foreach($results as $row){
             $shohin_id = $row['shohin_id'];
-            if( $row['price'] == 0){$price= '無料';}else{$price=$row['price'].'円 税込';}
+            if( $row['price'] == 0){$price= '無料';}else{$price=number_format($row['price']).'円 税込';}
             echo '
             <div class="row d-flex justify-content-center mt-5">
                 <div class="col-md-3">

@@ -70,7 +70,7 @@ foreach($carousels as $id){
                 <?php
                 $results=$dbmng->getNewList();
                 foreach($results as $row){
-                        if( $row['price'] == 0){$price = '無料';}else{$price=$row['price'].'円';}
+                        if( $row['price'] == 0){$price = '無料';}else{$price=number_format($row['price']).'円';}
                         echo '
                         <div class="item">
                                 <a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'">
@@ -91,7 +91,7 @@ foreach($carousels as $id){
                 <?php
                 $results=$dbmng->getRankingList();
                 foreach($results as $row){
-                        if( $row['price'] == 0){$price = '無料';}else{$price=$row['price'].'円';}
+                        if( $row['price'] == 0){$price = '無料';}else{$price=number_format($row['price']).'円';}
                         echo '
                         <div class="item">
                                 <a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'">
@@ -112,7 +112,7 @@ foreach($carousels as $id){
                 <?php
                 $results=$dbmng->getFreeList();
                 foreach($results as $row){
-                        if( $row['price'] == 0){$price = '無料';}else{$price=$row['price'].'円';}
+                        if( $row['price'] == 0){$price = '無料';}else{$price=number_format($row['price']).'円';}
                         echo '
                         <div class="item">
                                 <a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'">
