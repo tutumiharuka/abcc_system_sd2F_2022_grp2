@@ -60,38 +60,35 @@
 
 
 <!-- 商品名 -->
-    <div class="row mt-3">
-        <div class="col-lg-6">
+    <div class="row mt-4">
+        <div class="col-lg-6 d-flex align-items-center">
             <h2><strong><?php echo $shohin_name?></strong></h2>
         </div>
 <!-- 価格 -->
-        <div class="col-lg-2 h3 mt-2">
-            <p> <!-- ０円なら、無料を表示 -->
-                <?php if($price==0){echo "無料";}else{echo number_format($price)."円";}?>
-            </p>
+        <div class="col h3 mt-2 d-flex align-items-center justify-content-center">
+            <?php if($price==0){echo "無料";}else{echo number_format($price)."円";}?>
         </div>
 
 
 <?php if(isset($_SESSION['member'])): ?>
-
     <!-- ♡マーク -->
-        <div class="col-lg-1 mb-2 d-flex align-items-center h2">
+        <div class="col-lg-1 mt-4 h2">
             <form action="G1-5-2_ShohinDetails.php" method="post">
                 <input type="hidden" name="shohin_id" value="<?php echo $shohin_id?>">
                 
                 <?php if($dbmng->isInFavorite($member_id,$shohin_id)==false): ?>
                     <input type="hidden" name="favorite" value="addfav">
-                    <button type="submit" class="btn"><h2><i class="bi bi-heart"></i></h2></button>
+                    <button type="submit" class="btn"><h2 class="d-flex align-items-center"><i class="bi bi-heart"></i></h2></button>
                 <?php else: ?>
                     <input type="hidden" name="favorite" value="delfav">
-                    <button type="submit" class="btn"><h2><i class="bi bi-heart-fill"></i></h2></button>
+                    <button type="submit" class="btn"><h2 class="d-flex align-items-center"><i class="bi bi-heart-fill"></i></h2></button>
                 <?php endif; ?>
                 
             </form>
             
         </div>
     <!-- カートボタン -->
-        <div class="col-lg-3 h3">
+        <div class="col-lg-3 h3 d-flex align-items-center">
             <form action="G1-5-2_ShohinDetails.php" method="post">
                 <input type="hidden" name="shohin_id" value="<?php echo $shohin_id?>">
                 <!-- 購入済みかどうか -->
@@ -112,7 +109,7 @@
 
 
 <!-- 商品説明 -->
-        <div class="mb-4 fs-4">
+        <div class="mb-4 fs-4 mt-4">
             <p><?php echo $shohin_explanation?></p>
         </div>
     </div>

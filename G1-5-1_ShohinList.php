@@ -162,9 +162,9 @@ if(isset($_GET['sort'])&&$_GET['sort']!=''){
             <?php
                 foreach($results as $row){
                     if( $row['price'] == 0){$price = '無料';}else{$price=number_format($row['price']).'円';}
-                    echo '<div class="col-md-3">'
-                            .$row['haishin_date']
-                            .'<a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'">
+                    echo '<div class="col-md-3">
+                            <div class="text-end text-secondary">'.$row['haishin_date'].'</div>
+                            <a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'">
                                 <img class="img-thumbnail" src="'.$row['image_small'].'">
                                 <div class="card-text">'.$row['shohin_name'].'</div>
                                 <h5 class="card-title">'.$price.'</h5>
