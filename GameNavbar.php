@@ -60,7 +60,7 @@
       text-align: center;
       text-transform: uppercase;
       list-style-type: none;
-      font-size: 1em;
+      font-size: 1.1em;
       padding: 7px 5px;
   }
 
@@ -68,7 +68,7 @@
   .side-list-title{
     color:white;
     background-color: #70A7C5;
-    font-size: 1em;
+    font-size: 1.1em;
     height: 30px;
     display: flex;
     align-items: center;
@@ -78,9 +78,12 @@
   /* ログインしてない状況で出すボタン */
   .login-btn{
     /* margin-left:9px; */
-    /* margin-right:9px; */
+    
+    margin-top:15px;
+    margin-bottom:15px;
+    margin-right:9px;
 
-    height: 70px;
+    height: 60px;
     color:white;
     background-color:#156E96;
   }
@@ -131,7 +134,7 @@
             </div>
     <?php endif; ?>
     
-    <div class="side-list-title mt-3 fw-bold">ゲームを探す</div>
+    <div class="side-list-title mt-3 mb-3 fw-bold">ゲームを探す</div>
 
     <nav>
         <ul class="side-list-ul">
