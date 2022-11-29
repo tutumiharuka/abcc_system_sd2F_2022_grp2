@@ -3,10 +3,6 @@
 require_once "DBManager.php";
 $dbmng = new DBManager();
 
-
-
-
-
 /**検索 **/
 if(isset($_GET['keyword'])){
     $title = $_GET['keyword'];
@@ -39,11 +35,9 @@ if(isset($_GET['keyword'])){
 /** 絞り込み **/
 if(isset($_GET['lowlimit'])&&$_GET['lowlimit']!=''){
     $results = array_filter($results,function($row){return $row['price'] >= $_GET['lowlimit'];});
-    echo "lowlimit:".$_GET['lowlimit'];
 }
 if(isset($_GET['highlimit'])&&$_GET['highlimit']!=''){
     $results = array_filter($results,function($row){return $row['price'] <= $_GET['highlimit'];});
-    echo "highlimit:".$_GET['highlimit'];
 }
 
 /** ゲームリスト の数量 **/
@@ -57,7 +51,6 @@ if(isset($_GET['sort'])&&$_GET['sort']!=''){
     if($sort =="oldsort")  usort($results,function($a, $b){return ($a['haishin_date'] < $b['haishin_date']) ? -1 : 1;});
     if($sort =="lowsort")  usort($results,function($a, $b){return ($a['price'] < $b['price']) ? -1 : 1;});
     if($sort =="highsort") usort($results,function($a, $b){return ($a['price'] > $b['price']) ? -1 : 1;});
-    echo "sort:".$_GET['sort'];
 }
 ?>
 
