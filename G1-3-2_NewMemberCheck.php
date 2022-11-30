@@ -14,6 +14,10 @@
         $birth = $_POST['birth'];
         $pass = $_POST['pass'];
     }
+
+
+   
+    
    
 ?>
 
@@ -36,7 +40,6 @@
     <div class="card bg-light mt-3 mb-3">
         <div class="card-body">
             <form  action="?" method="post">
-            <!-- <form  action="G1-3-3_NewMemberEnd.php" method="post"> -->
     <!-- 名前 -->
                 <div class="row mt-5">
                     <div class="col-md-2 offset-md-2">◆名前</div>

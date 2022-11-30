@@ -25,7 +25,12 @@
   <div class="row kuhaku-form"></div>
   <!-- タイトル -->
   <div class="row text-center pb-5"><h2>パスワード変更<h2></div>
-    <form action="G1-9-2_PasswordChangeEnd.php" method="post">
+
+
+
+    <form id="form" action="#" onsubmit="return on_submit()">
+
+    <!-- <form action="G1-9-2_PasswordChangeEnd.php" method="post"> -->
       <div class="d-flex justify-content-center mt-2 mb-5">
   <!-- カード -->
         <div class="card ms-3" style="width: 60rem;">
@@ -72,12 +77,17 @@
                       </div>
                     </div>
 
+                    <div class="row">
+                      <div id="err" class="col-md-5 offset-md-6 text-danger d-none">入力したパスワードが間違っています。英数8文字以上で入力してください。</div>
+                    </div>
                     <!-- もし、パスワードが間違ったら、次のページからのエラー -->
-                    <?php if(isset($_SESSION['diff'])==true){
-                      echo '<div class="row">
-                              <div class="col-md-5 offset-md-6 text-danger">'.$_SESSION['diff'].'</div>
-                            </div>';
-                      unset($_SESSION['diff']);}
+                    <?php 
+                    // if(isset($_SESSION['diff'])==true){
+                    //   echo '<div class="row">
+                    //           <div class="col-md-5 offset-md-6 text-danger">'.$_SESSION['diff'].'</div>
+                    //         </div>';
+                    //   unset($_SESSION['diff']);
+                    // }
                     ?>
                   </li>
                 
@@ -95,4 +105,33 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
+<script>
+
+  function check(str){
+      let reg = new RegExp(/^(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d]{8,}$/);
+      let response = reg.test(str);
+      console.log(response);
+      return response;
+  }
+  function on_submit(){
+      let form = document.getElementById("form");
+  let pass = document.getElementById("pass");
+  let repass = document.getElementById("repass");
+  let err = document.getElementById("err");
+
+    if(pass.value!=repass.value || check(repass.value)!=true){
+          console.log(repass.value);
+          err.classList.remove("d-none");
+    return false;
+      }else if(pass.value==repass.value){
+          form.action="G1-9-2_PasswordChangeEnd.php";
+          form.method="post";
+          frm.encoding="application/x-www-form-urlencoded";
+          err.classList.add("d-none");
+          return true;
+      }  
+  }
+</script>
+
+
 <?php include_once 'GameFooter.php'; ?>
