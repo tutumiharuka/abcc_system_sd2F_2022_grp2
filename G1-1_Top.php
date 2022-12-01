@@ -26,13 +26,16 @@
 	margin: auto;
 	width: 30px;
 	height: 50px;
-	background-color: rgba(23,166,180,0.6);
+	background-color: rgba(23,166,180,0.8);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: 7px auto;
 	z-index: 1;
+        opacity: 0.6;
         }
-
+        .prev-arrow:hover,.next-arrow:hover{
+        opacity: 0.8;
+        }
         .prev-arrow{
 	left: 0;
 	background-image: url(img/prev.png);
@@ -41,7 +44,6 @@
 	right: 0;
 	background-image: url(img/next.png);
         }
-
         /* 下のリスト */
         .scroll {
         white-space: nowrap;
