@@ -46,6 +46,7 @@
         }
         /* 下のリスト */
         .scroll {
+        height: 260px;
         white-space: nowrap;
         overflow: hidden;
         overflow-y: hidden;
