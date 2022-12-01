@@ -54,14 +54,14 @@
         .item {
                 text-align: center;
                 width: 185px;
-                height: 240px;
+                /* height: 240px; */
                 /* background-color: aqua; */
                 /* border-right: 1px solid; */
                 white-space: nowrap;
                 display: inline-block;
         }
         .item-img{
-                height: 180;
+                height: 180px;
         }
 
 
@@ -69,8 +69,16 @@
         .carousel-card img{
                 height: 210px;
         }
-   
+        .scroll {
+        height: 150px;
+        }
+        .item {
+                width: 110px;
+                font-size:small;
 
+        }
+        .item-img{
+                height: 100px;
         }
 </style>
 
