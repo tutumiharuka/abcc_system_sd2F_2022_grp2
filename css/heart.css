@@ -1,29 +1,6 @@
-body {
-  min-height: 100vh;
-  margin: 0;
-  overflow: hidden;
-}
-
-.card {
-  width: 75vw;
-  height: 80vh;
-  background: #F4F4F4;
-  border-bottom-left-radius: 8vh;
-  position: absolute;
-  right: 0;
-}
-.card .bar {
-  background: #FFF;
-  height: 25vh;
-  width: 100%;
-  border-bottom-left-radius: 8vh;
-  position: absolute;
-  bottom: 0;
-}
-
 .action {
-  height: 18vh;
-  width: 18vh;
+  height: 5vh;
+  width: 5vh;
   margin: auto;
   position: absolute;
   top: 0;
@@ -31,21 +8,12 @@ body {
 }
 
 .love {
-  left: 5vw;
-}
-
-.send {
-  background: url("https://cbwconline.com/IMG/Codepen/Send-Grey.svg") center/contain no-repeat;
-  left: 40vw;
-}
-
-.more {
-  background: url("https://cbwconline.com/IMG/Codepen/More-Grey.svg") center/contain no-repeat;
-  left: 65vw;
+  left: 10vw;
+  top: 16vw;
 }
 
 .line {
-  margin: 9vh;
+  margin: 2.5vh;
 }
 .line:nth-of-type(1) {
   transform: rotate(0deg);
@@ -73,12 +41,12 @@ body {
 }
 .line.active:before {
   content: "";
-  height: 9vh;
-  width: 0.4vh;
+  height: 2.5vh;
+  width: 0.1111111111vh;
   background: red;
   position: absolute;
-  top: -4.5vh;
-  left: -0.18vh;
+  top: -1.25vh;
+  left: -0.05vh;
   will-change: top, height;
   -webkit-animation: line1 0.3s ease-out 1;
           animation: line1 0.3s ease-out 1;
@@ -86,11 +54,11 @@ body {
 
 .heart {
   background-color: #D5D4D4;
-  width: 9vh;
-  height: 9vh;
+  width: 2.5vh;
+  height: 2.5vh;
   margin: auto;
   position: absolute;
-  top: 2.25vh;
+  top: 0.625vh;
   bottom: 0;
   left: 0;
   right: 0;
@@ -98,19 +66,19 @@ body {
 }
 .heart:before, .heart:after {
   content: "";
-  width: 9vh;
-  height: 9vh;
+  width: 2.5vh;
+  height: 2.5vh;
   border-radius: 50%;
   background-color: #D5D4D4;
   position: absolute;
 }
 .heart:before {
-  top: -4.5vh;
+  top: -1.25vh;
   left: 0;
 }
 .heart:after {
   top: 0;
-  left: 4.5vh;
+  left: 1.25vh;
 }
 .heart.love {
   background: #F80808;
@@ -128,14 +96,14 @@ body {
     opacity: 1;
   }
   25% {
-    top: -4.5vh;
+    top: -1.25vh;
   }
   65% {
-    height: 9vh;
+    height: 2.5vh;
   }
   100% {
-    height: 0.36vh;
-    top: -18vh;
+    height: 0.1vh;
+    top: -5vh;
   }
 }
 
@@ -144,14 +112,14 @@ body {
     opacity: 1;
   }
   25% {
-    top: -4.5vh;
+    top: -1.25vh;
   }
   65% {
-    height: 9vh;
+    height: 2.5vh;
   }
   100% {
-    height: 0.36vh;
-    top: -18vh;
+    height: 0.1vh;
+    top: -5vh;
   }
 }
 @-webkit-keyframes grow-shrink {

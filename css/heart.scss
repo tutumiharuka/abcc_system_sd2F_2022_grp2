@@ -1,28 +1,28 @@
-$size: 18vh;
+$size: 5vh;
 
-body {
-  // background: #08F7E9;
-  min-height: 100vh;
-  margin: 0;
-  overflow: hidden;
-}
+// body {
+//   // background: #08F7E9;
+//   min-height: 100vh;
+//   margin: 0;
+//   overflow: hidden;
+// }
 
-.card {
-  width: 75vw;
-  height: 80vh;
-  background: #F4F4F4;
-  border-bottom-left-radius: 8vh;
-  position: absolute;
-  right: 0;
-  .bar {
-    background: #FFF;
-    height: 25vh;
-    width: 100%;
-    border-bottom-left-radius: 8vh;
-    position: absolute;
-    bottom: 0;
-  }
-}
+// .card {
+//   width: 75vw;
+//   height: 80vh;
+//   background: #F4F4F4;
+//   border-bottom-left-radius: 8vh;
+//   position: absolute;
+//   right: 0;
+//   .bar {
+//     background: #FFF;
+//     height: 25vh;
+//     width: 100%;
+//     border-bottom-left-radius: 8vh;
+//     position: absolute;
+//     bottom: 0;
+//   }
+// }
 
 .action {
   height: $size;
@@ -33,17 +33,11 @@ body {
   bottom: 0;
 }
 
-.love { left: 15vw; }
-
-.send {
-  background: url('https://cbwconline.com/IMG/Codepen/Send-Grey.svg') center/contain no-repeat;
-  left: 40vw;
+.love { 
+  left:10vw; 
+  top:16vw;
 }
 
-.more {
-  background: url('https://cbwconline.com/IMG/Codepen/More-Grey.svg') center/contain no-repeat;
-  left: 65vw;
-}
 
 .line {
   @for $i from 1 through 8 {
