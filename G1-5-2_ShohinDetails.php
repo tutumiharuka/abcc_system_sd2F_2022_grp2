@@ -159,7 +159,7 @@
 <nav class="mt-3 navbg" aria-label="breadcrumb">
     <ol class="breadcrumb ms-5 mt-4">
         <li class="breadcrumb-item h5 fw-bold"><a href="G1-1_Top.php">Top</a></li>
-        <li class="breadcrumb-item h5 fw-bold"><a href="G1-5-1_ShohinList.php?genre_id=<?php echo $genre_id?>"><?php echo $dbmng->getJpnGenreName($genre_id);?></a></li>
+        <li class="breadcrumb-item h5 fw-bold"><a href="G1-5-1_ShohinList.php?list=<?php echo $genre_id?>"><?php echo $dbmng->getJpnGenreName($genre_id);?></a></li>
         <li class="breadcrumb-item h5 fw-bold active" aria-current="page"><?php echo $shohin_name?></li>
     </ol>
 </nav>
