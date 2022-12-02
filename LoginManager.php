@@ -3,6 +3,7 @@ class LoginManager{
     //DBに接続
     private function dbConnect(){
         $pdo = new PDO('mysql:host=localhost;dbname=gamedb;charset=utf8','webuser','abccsd2');
+        // $pdo = new PDO('mysql:host=mysql209.phy.lolipop.lan;dbname=LAA1418471-gamedb;charset=utf8','LAA1418471','password');
         return $pdo;
     }
 
