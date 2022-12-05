@@ -9,6 +9,13 @@
 ?>
 <?php include_once 'GameHeader.php'; ?>
 <style>
+	  @font-face {
+    font-family: 'PixelMplus';
+    src: url('font/PixelMplus12-Bold.ttf') format('TrueType');
+    }
+  .game-text{
+      font-family: 'PixelMplus';
+  }
 	.sendimg{
 		height: 270px;
 	}
@@ -20,7 +27,7 @@
 </style>
 <div class="row">
 	<div class="col-md-12 bg-info text-dark text-left">
-        <h1 class="p-3 ms-5" id="message">転送が始まります...</h1>
+        <h1 class="p-3 ms-5 game-text" id="message">転送が始まります...</h1>
 	</div>
 </div>
 <div class="contianer text-center">	

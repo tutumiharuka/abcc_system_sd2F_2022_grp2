@@ -15,6 +15,13 @@
 <?php include_once 'GameNavbar.php'; ?>
 
 <style>
+      @font-face {
+    font-family: 'PixelMplus';
+    src: url('font/PixelMplus12-Bold.ttf') format('TrueType');
+    }
+    .game-text{
+        font-family: 'PixelMplus';
+    }
     .kuhaku-end{
         height: 20%;
     }
@@ -26,7 +33,7 @@
 <!-- ここで　PHP　と　BootStarp　を直接書きます -->
 <div class="container">
     <div class="row kuhaku-end"></div>
-    <div class="row text-center moji"><h1>情報変更完了しました</h1></div>
+    <div class="row text-center moji game-text"><h1>情報変更完了しました</h1></div>
     <div class="row">
         <div class="col d-flex justify-content-center">
             <a class="btn btn-outline-primary btn-lg rounded-pill" href="G1-1_Top.php">TOPへ</a>

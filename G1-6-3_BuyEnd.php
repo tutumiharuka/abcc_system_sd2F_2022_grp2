@@ -16,11 +16,13 @@
 <?php include_once 'GameNavbar.php'; ?>
 
 <style>
-    @import url("https://fonts.googleapis.com/earlyaccess/nicomoji.css");
-    @import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c");
-    /* フォント設定 */
-    body { font-family: "M PLUS Rounded 1c"; }
-    .wf-nicomoji { font-family: "Nico Moji"; }
+  @font-face {
+    font-family: 'PixelMplus';
+    src: url('font/PixelMplus12-Bold.ttf') format('TrueType');
+    }
+  .game-text{
+      font-family: 'PixelMplus';
+  }
     .kuhaku-end{
         height: 20%;
     }
@@ -36,7 +38,7 @@
 <div class="container">
     <div class="row kuhaku-end"></div>
     <!-- <div class="row text-center moji"><h1>情報変更完了しました</h1></div> -->
-    <div class="row text-center moji"><h2>続けて手続きを行います</h2></div>
+    <div class="row text-center moji game-text"><h2>続けて手続きを行います</h2></div>
     <div class="row text-center moji"><h4>お買い上げ内容が書かれたメールを、アソウアカウントのメールアドレスにお送りします。<br>子どもアカウントの場合は保護者（ファミリーの管理者）のメールアドレスにお送りします。</h4></div>
     <div class="row ">
         <div class="col d-flex justify-content-center">
