@@ -22,6 +22,9 @@ $loginmng->loginAfterNewMember($mail);
 
 
 <style>
+    .game-text{
+        font-family: 'PixelMplus';
+    }
     .kuhaku-form{
         height: 15%;
     }
@@ -32,8 +35,8 @@ $loginmng->loginAfterNewMember($mail);
 <!-- ここで　PHP　と　BootStarp　を直接書きます -->
 <div class="container">
     <div class="row kuhaku-form"></div>
-    <div class="row text-center moji"><h1>会員登録成功しました</h1></div>
-    <div class="row text-center moji"><h3>ようこそ、ゲームECサイトへ</h3></div>
+    <div class="row text-center moji game-text"><h1>会員登録成功しました</h1></div>
+    <div class="row text-center moji game-text"><h3>ようこそ、ゲームECサイトへ</h3></div>
     <div class="row ">
         <div class="col d-flex justify-content-center">
             <a class="btn btn-primary btn-lg rounded-pill text-light" href="G1-1_Top.php">　　TOPへ　　</a>

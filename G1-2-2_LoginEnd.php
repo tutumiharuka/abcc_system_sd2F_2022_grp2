@@ -2,10 +2,6 @@
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
 <style>
-    @font-face {
-    font-family: 'PixelMplus';
-    src: url('font/PixelMplus12-Bold.ttf') format('TrueType');
-    }
     .kuhaku-end{
         height: 20%;
     }

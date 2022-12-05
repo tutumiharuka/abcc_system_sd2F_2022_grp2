@@ -15,10 +15,7 @@
 <?php include_once 'GameNavbar.php'; ?>
 
 <style>
-      @font-face {
-    font-family: 'PixelMplus';
-    src: url('font/PixelMplus12-Bold.ttf') format('TrueType');
-    }
+
     .game-text{
         font-family: 'PixelMplus';
     }

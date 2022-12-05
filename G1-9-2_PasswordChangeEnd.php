@@ -33,6 +33,9 @@
 <?php include_once 'GameNavbar.php'; ?>
 
 <style>
+    .game-text{
+        font-family: 'PixelMplus';
+    }
     .kuhaku-form{
         height: 15%;
     }
@@ -43,7 +46,7 @@
 
 <div class="container">
     <div class="row kuhaku-form"></div>
-    <div class="row text-center moji"><h1>パスワード変更、成功しました</h1></div>
+    <div class="row text-center moji game-text"><h1>パスワード変更、成功しました</h1></div>
     <div class="row ">
         <div class="col d-flex justify-content-center">
             <a class="btn btn-primary btn-lg rounded-pill text-light" href="G1-7-2_MemberInfo.php">会員情報へ</a>

@@ -9,10 +9,6 @@
 ?>
 <?php include_once 'GameHeader.php'; ?>
 <style>
-	  @font-face {
-    font-family: 'PixelMplus';
-    src: url('font/PixelMplus12-Bold.ttf') format('TrueType');
-    }
   .game-text{
       font-family: 'PixelMplus';
   }

@@ -6,6 +6,13 @@
   @import url("https://fonts.googleapis.com/earlyaccess/nicomoji.css");
   @import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c");
   /* フォント設定 */
+  @font-face {
+    font-family: 'PixelMplus';
+    src: url('font/PixelMplus12-Bold.ttf') format('TrueType');
+    }
+    .game-text{
+        font-family: 'PixelMplus';
+    }
   body { font-family: "M PLUS Rounded 1c"; }
   .wf-nicomoji { font-family: "Nico Moji"; }
   
@@ -115,7 +122,7 @@
             <div class="row mt-5">
               <nav class="member-list">
                 <ul>
-                  <li class="fw-bold"><h3><?php echo $_SESSION['member']['name'] ?></h3></li>
+                  <li class="fw-bold"><h3 class="game-text"><?php echo $_SESSION['member']['name'] ?></h3></li>
                   <li class="fw-bold"><a href="G1-8_BuyHistory.php">購入履歴</a></li>
                   <li class="fw-bold"><a href="G1-4_Favorite.php">お気に入り</a></li>
                   <li class="fw-bold"><a href="G1-6-1_Cart.php">カート</a></li>
