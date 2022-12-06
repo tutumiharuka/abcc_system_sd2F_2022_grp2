@@ -108,6 +108,31 @@
     padding-right:40px ;
   }
 
+   @media only screen and (max-width: 770px) {
+    *, ::after, ::before {
+      box-sizing: content-box;
+    }
+    nav.navbar {
+      background: #156E96;
+    }
+    .wf-nicomoji{
+      color:#FFF;
+    }
+    .game-logo{
+      color:#DEF2FF;
+    }
+    .conbg{
+      z-index: 5;
+      border-radius: 20px;
+      background: #156E96;
+    }
+    .nav-link,.typcn{
+      color:white;
+    }
+
+
+  }
+
 </style>
   
 <!-- 左のサイドバー -->
@@ -175,8 +200,8 @@
 </div>
 
 <!-- 上のNAVBAR -->
-<nav class="navbar navbar-light navbar-expand-md py-3 navbar-bg">
-      <div class="container">
+<nav class="navbar navbar-light navbar-expand-md navbar-bg">
+      <div class="container conbg">
         <!-- 三 メニューボタン -->
           <span class="d-flex justify-content-center align-items-center me-3 mt-2">
             <div class="hamburger btn" onclick="showMenu()"><h4><i class="typcn typcn-th-menu"></i></h4></div>
@@ -185,8 +210,14 @@
         <a class="navbar-brand d-flex align-items-center mt-2" href="G1-1_Top.php">
           <h2 class="wf-nicomoji"><span class="game-logo">ゲーム</span>ECサイト</h2>
         </a>
+
+        <button class="navbar-toggler" type="button" 
+            data-bs-toggle="collapse" data-bs-target="#navDropdown" aria-controls="navDropdown" 
+            aria-expanded="false" aria-label="Toggle navigation">
+          <!-- <span class="navbar-toggler-icon"></span> --><i class="typcn typcn-th-large"></i>
+        </button>
         
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse" id="navDropdown">
           <ul class="navbar-nav ms-auto"> <!-- ms-auto右寄せ -->
               
               <li class="nav-item mt-3 me-3"><!-- 検索 -->
@@ -198,18 +229,24 @@
               </form>
               </li>
               <li class="nav-item d-flex justify-content-center align-items-center"><!-- ハートマークicon -->
-                  <a class="nav-link mt-1" href="G1-4_Favorite.php"><i class="typcn typcn-heart-outline h3"></i></a>
+                <a class="nav-link" href="G1-4_Favorite.php">
+                  <i class="typcn typcn-heart-outline h3"></i>
+                  <span class="fw-bold d-md-none h6 text-white">お気に入り</span>
+                </a>
               </li>
 
               <li class="nav-item  d-flex justify-content-center align-items-center"><!-- カートicon -->
-                <a class="nav-link mt-1" href="G1-6-1_Cart.php"><i class="typcn typcn-shopping-cart h3"></i></a>
+                <a class="nav-link" href="G1-6-1_Cart.php">
+                  <i class="typcn typcn-shopping-cart h3"></i>
+                  <span class="fw-bold d-md-none h6 text-white">カート</span>
+                </a>
               </li>
             </ul>
         </div>
       </div>
     </nav>
 
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script>
         function showMenu(){
             document.querySelector('.hamburger').classList.toggle('open')
@@ -224,4 +261,3 @@
 
 
     </script>
-<?php include_once 'GameFooter.php'; ?>

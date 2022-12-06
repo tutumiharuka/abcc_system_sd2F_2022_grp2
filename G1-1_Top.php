@@ -65,20 +65,16 @@
         }
 
 
-        @media only screen and (max-width: 500px) {
+        @media only screen and (max-width: 770px) {
         .carousel-card img{
-                height: 210px;
+                max-width: 100vw;
+                height:auto;
         }
-        .scroll {
-        height: 150px;
+        .slide-arrow{
+	width: 10px;
+	height: 40px;
         }
-        .item {
-                width: 110px;
-                font-size:small;
 
-        }
-        .item-img{
-                height: 100px;
         }
 </style>
 
@@ -242,5 +238,3 @@ foreach($carousels as $id){
         $(".scroll").mousedragscrollable();
 </script>
 
-
-<?php include_once 'GameFooter.php'; ?>
