@@ -44,5 +44,3 @@ $loginmng->loginAfterNewMember($mail);
     </div>
 </div>
 
-
-<?php include_once 'GameFooter.php'; ?>

@@ -62,4 +62,3 @@ if(isset($_SESSION['member']) == true){
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
-<?php include_once 'GameFooter.php'; ?>

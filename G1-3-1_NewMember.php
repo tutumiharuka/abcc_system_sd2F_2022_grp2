@@ -110,4 +110,4 @@
         }  
 	}
 </script>
-<?php include_once 'GameFooter.php'; ?>
+

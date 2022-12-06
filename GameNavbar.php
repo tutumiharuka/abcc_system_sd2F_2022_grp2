@@ -138,6 +138,8 @@
 <!-- 左のサイドバー -->
 <div class="menu">
   <div class="side-nav">
+    <!-- X -->
+    
     <div class="row">
       <div class="col-12"><i class="bi bi-x h1 position-absolute end-0 me-3 mt-2" onclick="showMenu()"></i></div>
     </div>  
@@ -181,9 +183,11 @@
 
   <div class="sub-nav">
     <div class="row">
-      <i class="bi bi-arrow-left h2 ms-3 mt-2" onclick="showSubMenu()"></i>
+      <!-- ← -->
+      <div class="col-12"><i class="bi bi-x h1 position-absolute end-0 me-3 mt-2" onclick="showSubMenu()"></i></div>
+     
     </div>  
-    <nav class="sub-list">
+    <nav class="sub-list mt-5">
         <ul>
           <!-- ジャンルリストを全部取り出す -->
           <?php
@@ -248,15 +252,20 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script>
+      // let isMenuOpen = false;
+
         function showMenu(){
             document.querySelector('.hamburger').classList.toggle('open')
             document.querySelector('.side-nav').classList.toggle('active')
-
+            // isMenuOpen = !isMenuOpen;
+            // console.log(isMenuOpen);
         }
 
         function showSubMenu(){
+          // if(isMenuOpen == false){
             document.querySelector('.sub-btn').classList.toggle('open')
             document.querySelector('.sub-nav').classList.toggle('active')
+          // }
         }
 
 

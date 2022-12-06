@@ -80,5 +80,3 @@
 <br>
 <br>
 <br>
-<?php include_once 'GameFooter.php'; ?>
-

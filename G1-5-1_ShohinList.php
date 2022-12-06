@@ -191,5 +191,3 @@ if(isset($_GET['sort'])&&$_GET['sort']!=''){
     })
 
     </script>  
-
-    <?php include_once 'GameFooter.php'; ?>

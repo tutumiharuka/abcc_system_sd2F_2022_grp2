@@ -37,5 +37,3 @@
         </div>
     </div>
 </div>
-
-<?php include_once 'GameFooter.php'; ?>

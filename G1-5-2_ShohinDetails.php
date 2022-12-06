@@ -163,5 +163,3 @@
         <li class="breadcrumb-item h5 fw-bold active" aria-current="page"><?php echo $shohin_name?></li>
     </ol>
 </nav>
-
-<?php include_once 'GameFooter.php'; ?>

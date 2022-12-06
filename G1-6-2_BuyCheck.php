@@ -88,5 +88,3 @@ $sum = $dbmng->getCartSum($member_id);
     </div>
 </div>
 <!-- カート -->
-
-<?php include_once 'GameFooter.php'; ?>
