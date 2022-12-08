@@ -131,7 +131,6 @@
       color:white;
     }
 
-
     /* 携帯版の右の空白を解決 */
     *, ::after, ::before {
         box-sizing: border-box;
