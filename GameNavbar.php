@@ -27,7 +27,7 @@
   /* Navbar背景の設定 */
   .navbar-bg {
     background-color: #97daf0;
-    height:50px;
+    height:60px;
   }
 
   /* icon（文字）の色 */
@@ -114,6 +114,7 @@
     }
     nav.navbar {
       background: #156E96;
+      height: 70px;
     }
     .wf-nicomoji{
       color:#FFF;
@@ -131,6 +132,10 @@
     }
 
 
+    /* 携帯版の右の空白を解決 */
+    *, ::after, ::before {
+        box-sizing: border-box;
+    }
   }
 
 </style>

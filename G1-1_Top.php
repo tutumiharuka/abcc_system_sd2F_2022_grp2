@@ -86,10 +86,6 @@
                         width: 10px;
                         height: 40px;
                 }
-                *, ::after, ::before {
-                    box-sizing: border-box;
-                }
-
         }
 </style>
 
