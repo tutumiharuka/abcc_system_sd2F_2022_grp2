@@ -74,7 +74,7 @@
 
 <?php if(isset($_SESSION['member'])): ?>
     <!-- ♡マーク -->
-        <div class="col-4 col-md-2 h2  text-center mt-4">
+        <div class="col-2 col-md-2 h2  text-center mt-4">
             <form action="G1-5-2_ShohinDetails.php" method="post">
                 <input type="hidden" name="shohin_id" value="<?php echo $shohin_id?>">
                 
@@ -90,7 +90,7 @@
             
         </div>
     <!-- カートボタン -->
-        <div class="col-4 col-md-2 h3 d-flex align-items-center mt-3">
+        <div class="col-6 col-md-2 h3 d-flex justify-content-end mt-3">
             <form action="G1-5-2_ShohinDetails.php" method="post">
                 <input type="hidden" name="shohin_id" value="<?php echo $shohin_id?>">
                 <!-- 購入済みかどうか -->
