@@ -9,17 +9,21 @@ if(isset($_SESSION['member']) == true){
 <?php include_once 'GameNavbar.php'; ?>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 <style>
-    .right-aligned{
+    /* .right-aligned{
         margin-right: 0;
         margin-left: auto;
         width: 30%;
-    }
+    } */
     
     .input-group-append > button{
         /* margin-left:10px; */
         margin-top:3px;
         border-radius: 1rem;
         border: none;
+    }
+    .login-btn{
+        height: 50px;
+        width: 100%;
     }
 </style>
 
@@ -30,21 +34,27 @@ if(isset($_SESSION['member']) == true){
     </div>
 
     <div class="row justify-content-center">
-        <div class="col-6">
+        <div class="col-8 col-md-6">
             <form action="LoginCheck.php" method="post">
         <!-- メールアドレス -->
-                <div class="mb-5">
+                <div class="row mb-5">
+                    <div class="col-12">
                     <input type="email" class="form-control mail" name="mail" placeholder="メールアドレス">
+                    </div>
                 </div>
         <!-- パスワード -->
-                <div class="mb-5">
+                <div class="row mb-5">
+                    <div class="col-12">
                     <input type="password" data-toggle="password" class="form-control pass" name="pass" placeholder="パスワード">
                     <div class="text-danger"><?php if(isset($_SESSION['err'])){echo $_SESSION['err'];unset($_SESSION['err']);}?></div>
+                    </div>
                 </div>
                  <!-- 次のページから戻る、アカウント存在しないやパスワードが違う場合 -->
                 <!-- ボタン -->
-                <div class="right-aligned">
-                    <button type="submit" class="btn btn-outline-primary btn-lg rounded-pill">ログイン</button>
+                <div class="row justify-content-end">
+                    <div class="col-12 col-md-5">
+                        <button type="submit" class="btn btn-outline-primary btn-lg rounded-pill login-btn">ログイン</button>
+                    </div>
                 </div>
             </form>
         </div>
