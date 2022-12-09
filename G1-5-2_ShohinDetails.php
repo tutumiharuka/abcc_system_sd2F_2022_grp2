@@ -55,26 +55,26 @@
 <!-- 画像 -->
 <div class="container">
     <div class="row">
-        <img class="col-md-8 mt-3 mx-auto" src="<?php echo $image_big?>">
+        <div class="col-12 col-md-8 mt-3 mx-auto">
+        <img class="img-fluid   " src="<?php echo $image_big?>">
+        </div>
     </div>
 
 
     <div class="row mt-4">
-        
-        
         <!-- 商品名 -->
-        <div class="col-lg-6 d-flex align-items-center h1">
+        <div class="col-12 col-md-6 d-flex align-items-center h1">
             <strong><?php echo $shohin_name?></strong>
         </div>
-<!-- 価格 -->
-        <div class="col h3 mt-2 d-flex align-items-center justify-content-center">
+        <!-- 価格 -->
+        <div class="col-4 col-md-2 h3 mt-2 d-flex align-items-center justify-content-center">
             <?php if($price==0){echo "無料";}else{echo number_format($price)."円";}?>
         </div>
 
 
 <?php if(isset($_SESSION['member'])): ?>
     <!-- ♡マーク -->
-        <div class="col-lg-1 h2  mt-4">
+        <div class="col-4 col-md-2 h2  text-center mt-4">
             <form action="G1-5-2_ShohinDetails.php" method="post">
                 <input type="hidden" name="shohin_id" value="<?php echo $shohin_id?>">
                 
@@ -90,7 +90,7 @@
             
         </div>
     <!-- カートボタン -->
-        <div class="col-lg-3 h3 d-flex align-items-center mt-3">
+        <div class="col-4 col-md-2 h3 d-flex align-items-center mt-3">
             <form action="G1-5-2_ShohinDetails.php" method="post">
                 <input type="hidden" name="shohin_id" value="<?php echo $shohin_id?>">
                 <!-- 購入済みかどうか -->
@@ -112,39 +112,39 @@
 
 <!-- 商品説明 -->
         <div class="mb-4 fs-4 mt-2">
-            <p><?php echo $shohin_explanation?></p>
+            <p>　<?php echo $shohin_explanation?></p>
         </div>
     </div>
 <!-- 下の項目たち -->
     <div class="row">
-        <div class="col-md-2 m-7 h4">
+        <div class="col-5 col-md-3 m-7 h4">
             <p>必要な容量:</p>
         </div>
-        <div class="col-md-3 h4">
+        <div class="col-7 col-md-9 h4">
             <p><strong><?php echo $capacity?></strong></p>
         </div>
     </div>  
     <div class="row">
-        <div class="col-md-2 h4">
+        <div class="col-5 col-md-3  h4">
             <p>対応ハード:</p>
         </div>
-        <div class="col-md-3 h4">
+        <div class="col-7 col-md-9 h4">
             <p><strong>Nantendo switch</strong></p>
         </div>
     </div> 
     <div class="row">
-        <div class="col-md-2 h4">
+        <div class="col-5 col-md-3  h4">
             <p>メーカー:</p>
         </div>
-        <div class="col-md-3 h4">
+        <div class="col-7 col-md-9 h4">
             <p><strong>南天堂</strong></p>
         </div>
     </div> 
     <div class="row">
-        <div class="col-md-2 h4">
+        <div class="col-5 col-md-3  h4">
             <p>配信日:</p>
         </div>
-        <div class="col-md-3 h4">
+        <div class="col-7 col-md-9 h4">
             <p><strong><?php echo $haishin_date?></strong></p>
         </div>
     </div>  
