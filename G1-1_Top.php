@@ -54,11 +54,12 @@
 
         /* 下のリスト */
         .scroll {
+                width: 98vw;
                 white-space: nowrap;
                 overflow: hidden;
                 overflow-y: hidden;
                 height: 260px;
-                overflow-x: auto;
+                overflow-x: hidden;
         }
 
         .item {
@@ -86,6 +87,10 @@
                         width: 10px;
                         height: 40px;
                 }
+                .scroll{
+                        overflow-x: auto;
+                }
+
         }
 </style>
 
