@@ -108,7 +108,13 @@
     padding-right:40px ;
   }
 
+  .kuhaku-from{
+        height: 10%;
+    }
    @media only screen and (max-width: 770px) {
+    .kuhaku-from{
+                    height: 5%;
+    }
     *, ::after, ::before {
       box-sizing: content-box;
     }

@@ -36,16 +36,25 @@
     .game-text{
         font-family: 'PixelMplus';
     }
-    .kuhaku-form{
-        height: 15%;
-    }
     .moji{
         height: 150px;
+    }
+
+    .kuhaku-end{
+        height: 15%;
+    }
+    @media only screen and (max-width: 770px) {       
+        .kuhaku-end{
+            height: 10%;
+        }
+        .card-body{
+            text-align:center;
+        }
     }
 </style>
 
 <div class="container">
-    <div class="row kuhaku-form"></div>
+    <div class="row kuhaku-end"></div>
     <div class="row text-center moji game-text"><h1>パスワード変更、成功しました</h1></div>
     <div class="row ">
         <div class="col d-flex justify-content-center">

@@ -2,9 +2,6 @@
 <?php include_once 'GameHeader.php'; ?>
 <?php include_once 'GameNavbar.php'; ?>
 <style>
-    .kuhaku-end{
-        height: 20%;
-    }
     .moji{
         height: 150px;
     }
@@ -14,6 +11,18 @@
     }
     .game-text{
         font-family: 'PixelMplus';
+    }
+
+    .kuhaku-end{
+        height: 15%;
+    }
+    @media only screen and (max-width: 770px) {       
+        .kuhaku-end{
+            height: 10%;
+        }
+        .card-body{
+            text-align:center;
+        }
     }
 
 </style>

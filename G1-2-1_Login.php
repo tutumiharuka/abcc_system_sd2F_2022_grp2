@@ -52,7 +52,7 @@ if(isset($_SESSION['member']) == true){
                  <!-- 次のページから戻る、アカウント存在しないやパスワードが違う場合 -->
                 <!-- ボタン -->
                 <div class="row justify-content-end">
-                    <div class="col-12 col-md-5">
+                    <div class="col-12 col-md-5 col-lg-4">
                         <button type="submit" class="btn btn-outline-primary btn-lg rounded-pill login-btn">ログイン</button>
                     </div>
                 </div>

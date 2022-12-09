@@ -3,11 +3,19 @@
 <?php include_once 'GameNavbar.php'; ?>
 
 <style>
-    .kuhaku-from{
-        height: 15%;
-    }
     .card{
         max-width: 900px;
+    }
+    input[type="date"] {
+        text-align: center;
+    }
+    .kuhaku-form{
+        height: 10%;
+    }
+    @media only screen and (max-width: 770px) {       
+        .kuhaku-from{
+            height: 5%;
+        }
     }
 </style>
 <div class="container">
@@ -46,7 +54,7 @@
         <!-- 生年月日 -->
                     <div class="row mt-3">
                         <div class="col-md-3 offset-md-1">◆生年月日</div>
-                        <div class="col-md-7">
+                        <div class="col-md-7 text-center">
                             <input type="date" class="form-control rounded-pill" name="birth" value="<?php if(isset($_POST['birth'])) echo $_POST['birth'] ?>" required>
                         </div>
 

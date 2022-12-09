@@ -14,10 +14,6 @@
         $birth = $_POST['birth'];
         $pass = $_POST['pass'];
     }
-
-
-   
-    
    
 ?>
 
@@ -25,57 +21,73 @@
 <?php include_once 'GameNavbar.php'; ?>
 
 <style>
+    .card{
+        max-width: 700px;
+    }
     .kuhaku-form{
-        height: 15%;
+        height: 10%;
+    }
+    @media only screen and (max-width: 770px) {       
+        .kuhaku-from{
+            height: 5%;
+        }
+        .card-body{
+            text-align:center;
+        }
     }
 </style>
 
 <div class="container">
 
     <div class="row kuhaku-form"></div>
-    <div class="row text-center mt-3">
+    <div class="row text-center">
         <h2>アカウントの作成</h2>
     </div>
 <!-- 新規登録のフォーム（ hidden = 見えないフォームを用意し、次のページに与える ） -->
+    <div class="row d-flex justify-content-center">
     <div class="card bg-light mt-3 mb-3">
         <div class="card-body">
             <form  action="?" method="post">
     <!-- 名前 -->
                 <div class="row mt-5">
-                    <div class="col-md-2 offset-md-2">◆名前</div>
-                    <div class="col-md-6"><?php echo $name?></div>
+                    <div class="col-md-3 offset-md-1">◆名前</div>
+                    <div class="col-md-7"><?php echo $name?></div>
                     <input type="hidden" name="name" value="<?php echo $name ?>">
                 </div>
     <!-- メールアドレス -->
                 <div class="row mt-5">
-                    <div class="col-md-2 offset-md-2">◆メールアドレス</div>
-                    <div class="col-md-6"><?php echo $mail?></div>
+                    <div class="col-md-3 offset-md-1">◆メールアドレス</div>
+                    <div class="col-md-7"><?php echo $mail?></div>
                     <input type="hidden" name="mail" value="<?php echo $mail ?>">
                 </div>
     <!-- 電話番号 -->
                 <div class="row mt-5">
-                    <div class="col-md-2 offset-md-2">◆電話番号</div>
-                    <div class="col-md-6"><?php echo $phone?></div>
+                    <div class="col-md-3 offset-md-1">◆電話番号</div>
+                    <div class="col-md-7"><?php echo $phone?></div>
                     <input type="hidden" name="phone" value="<?php echo $phone ?>">
                 </div>
     <!-- 生年月日 -->
     
                 <div class="row mt-5">
-                    <div class="col-md-2 offset-md-2">◆生年月日</div>
-                    <div class="col-md-6"><?php echo $birth?></div>
+                    <div class="col-md-3 offset-md-1">◆生年月日</div>
+                    <div class="col-md-7"><?php echo $birth?></div>
                     <input type="hidden" name="birth" value="<?php echo $birth ?>">
                 </div>
 
     <!-- パスワード -->
                 <div class="row mt-5">
-                    <div class="col-md-2 offset-md-2">◆パスワード</div>
-                    <div class="col-md-3" id="nopass">●●●●●●●●●●</div>
-                    <div class="col-md-3 d-none" id="seepass"><?php echo $pass?></div>
-                    <div class="col-md-1 justify-content-start">
+                    <div class="col-12 col-md-3 offset-md-1">◆パスワード</div>
+                    
+                    <div class="col col-md-4 offset-3 offset-md-0 " id="nopass">●●●●●●●●●</div>
+                    <div class="col col-md-4 offset-3 offset-md-0 d-none" id="seepass"><?php echo $pass?></div>
+                    
+                    <div class="col col-md-1">
                         <a id="eyebtn"><i class="bi bi-eye-fill"></i></a>
                     </div>
                     <input type="hidden" name="pass" value="<?php echo $pass ?>">
                 </div>
+
+
 
                 <div class="row mt-5">
                     <div class="col d-flex justify-content-end">
@@ -91,6 +103,7 @@
             </form>
         </div><!-- card-body -->
     </div><!-- card -->
+</div>
 </div>
 
 <script>
