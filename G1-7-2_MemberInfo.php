@@ -94,7 +94,7 @@
               <div class="col-12 col-md-5 text-start"><i class="bi bi-diamond-fill h6 me-3"></i>パスワード</div>
               <div class="col-12 col-md-6 value-text h6">●●●●●●●●●
                 <a class="btn btn-outline-primary ms-3" href="G1-9-1_PasswordChange.php">
-                  <span class="d-none d-lg-block">パスワード</span>変更
+                  パスワード変更
                 </a>
             </div>
             </div>
