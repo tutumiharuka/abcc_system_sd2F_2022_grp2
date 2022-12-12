@@ -31,7 +31,7 @@
         <!-- 名前 -->
                     <div class="row mt-3">
                         <div class="col-md-3 offset-md-1">◆名前</div>
-                        <div class="col-md-7"><input type="text" name="name" class="form-control rounded-pill" value="<?php if(isset($_POST['name'])) echo $_POST['name'] ?>" placeholder="10文字以内" required></div>
+                        <div class="col-md-7"><input type="text" name="name" class="form-control rounded-pill" value="<?php if(isset($_POST['name'])) echo $_POST['name'] ?>" placeholder="名前を入力してください" required></div>
                     </div>
         <!-- メールアドレス -->
                     <div class="row mt-3">

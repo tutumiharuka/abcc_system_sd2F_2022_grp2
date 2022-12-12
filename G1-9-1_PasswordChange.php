@@ -9,10 +9,14 @@
 <?php include_once 'GameNavbar.php'; ?>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 <style> 
-  .kuhaku-form{
-    height:15%;
-  }
-
+    .kuhaku-form{
+        height: 10%;
+    }
+    @media only screen and (max-width: 770px) {       
+        .kuhaku-from{
+            height: 5%;
+        }
+    }
   .input-group-append > button{
     margin-top:3px;
     border-radius: 1rem;
@@ -29,8 +33,6 @@
 
 
     <form id="form" action="#" onsubmit="return on_submit()">
-
-    <!-- <form action="G1-9-2_PasswordChangeEnd.php" method="post"> -->
       <div class="d-flex justify-content-center mt-2 mb-5">
   <!-- カード -->
         <div class="card ms-3" style="width: 60rem;">

@@ -24,9 +24,14 @@
     
 
 <style> 
-  .kuhaku-form{
-    height:15%;
-  }
+    .kuhaku-form{
+        height: 10%;
+    }
+    @media only screen and (max-width: 770px) {       
+        .kuhaku-from{
+            height: 5%;
+        }
+    }
   
 </style>
 <div class="container">

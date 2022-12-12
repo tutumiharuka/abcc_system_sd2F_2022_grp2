@@ -62,7 +62,7 @@
 		
 		<!-- 転送進度を示すProgress bar -->
 		<div class="row d-flex justify-content-center">
-			<div class="col-md-6 m-4">
+			<div class="col-6 m-4">
 				<div class="progress">
 					<div class="progress-bar progress-bar-striped progress-bar-animated" style="min-width: 20px;" aria-valuemin="0" aria-valuemax="100">
 					</div>
@@ -72,14 +72,14 @@
 
 
 	<div class="d-flex justify-content-center">
-		<div class="row modoru">
+		<div class="row">
 			<!-- もし、購入履歴からだけ、表示します -->
 		<?php if(isset($_GET['send_game'])): ?>
-			<div class="col">
-				<a class="btn btn-outline-primary btn-lg mt-5 mb-4 rounded text-dark rounded-pill" href="G1-8_BuyHistory.php">購入履歴に戻る</a>
+			<div class="col-12 col-md-6">
+				<a class="btn btn-outline-primary btn-lg mt-5 mb-4 rounded text-dark rounded-pill text-nowrap" href="G1-8_BuyHistory.php">購入履歴に戻る</a>
 			</div>
 		<?php endif; ?>	
-			<div class="col">
+			<div class="col-12 col-md-6">
 				<a class="btn btn-primary btn-lg mt-5 mb-4 rounded text-dark rounded-pill" href="G1-1_Top.php">TOPに戻る</a>
 			</div>
 		</div>
