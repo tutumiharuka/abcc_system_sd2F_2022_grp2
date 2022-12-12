@@ -50,7 +50,7 @@
         }
         .x-btn {
             position: relative;
-            top: -90px;
+            top: -70px;
             right:0px
         }
         .cart-btn{
@@ -98,10 +98,10 @@
                         <img class="img-fluid" src="'.$row['image_small'].'"></a>
                 </div>
 
-                <div class="col-md-4 ms-5 ms-md-0">
+                <div class="col-md-4 ms-md-0">
                     <a href="G1-5-2_ShohinDetails.php?shohin_id='.$shohin_id.'">
-                        <div class="row mt-5 h5">'.$row['shohin_name'].'</div>
-                        <div class="row text-sm-start mt-4 h6">'.$price.'</div>
+                        <div class="row ms-2 ms-md-0 mt-5 h5">'.$row['shohin_name'].'</div>
+                        <div class="row ms-2 ms-md-0 mt-4 h6">'.$price.'</div>
                     </a>
                 </div>
 
@@ -115,7 +115,6 @@
 
                     <div class="row text-end cart-btn">';
             if($dbmng->isInBuyHistory($member_id,$shohin_id) ==true){
-                // echo '<input class="btn btn-outline-secondary btn-md rounded-pill" value="購入済み" disabled>';
                 echo '<h4 class="text-secondary">購入済み</h4>';
             }elseif($dbmng->isInCart($member_id,$shohin_id) ==false){
                 echo '<form action="G1-4_Favorite.php" method="post">

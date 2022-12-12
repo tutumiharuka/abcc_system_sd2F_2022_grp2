@@ -34,6 +34,9 @@ $sum = $dbmng->getCartSum($member_id);
     .kuhaku{
         height:100px;
     }
+    .x-btn {
+        text-align:right;
+    }
     
     @media only screen and (max-width: 767px) {
         .kara-icon{
@@ -49,8 +52,9 @@ $sum = $dbmng->getCartSum($member_id);
         }
         .x-btn {
             position: relative;
-            top: 20%;
-            right: -10%;
+            top: 10%;
+            text-align:right;
+            /* right: -10%; */
         }
     }
 </style>
@@ -98,7 +102,7 @@ $sum = $dbmng->getCartSum($member_id);
                         </div>
                         
                         <div class="col-md-7">
-                            <div class="row text-end me-3 x-btn">
+                            <div class="row me-3 x-btn">
                                 <form action="G1-6-1_Cart.php" method="post">
                                     <input type="hidden" name="delcart" value="'.$row['cart_id'].'">
                                     <button type="submit" class="btn"><h4>

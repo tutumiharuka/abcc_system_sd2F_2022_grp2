@@ -28,6 +28,9 @@
     .kuhaku{
         height:100px;
     }
+    .send-btn{
+        text-align:center;
+    }
 
     @media only screen and (max-width: 767px) {
         .kara-icon{
@@ -44,7 +47,8 @@
         .send-btn{
             position: relative;
             top: -30px;
-            right:-40%;
+            right:0;
+            text-align:right;
         }
     }
 </style>
@@ -85,7 +89,7 @@
                                     <a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'">
                                     <div class="row h5 mt-4 mt-md-4 ms-2 ms-md-0 ">'.$row['shohin_name'].'</div>
                                     <div class="row h6 mt-2 mt-md-2 ms-2 ms-md-0 text-secondary">購入日:'.$row['buying_date'].'</div></a>
-                                    <div class="row mt-2 mt-md-4 text-center send-btn">
+                                    <div class="row mt-2 mt-md-4 send-btn">
                                     <a href="G1-6-4_Send.php?send_game='.$row['shohin_id'].'">
                                     再転送 <i class="bi bi-box-arrow-in-right h2"></i>
                                     </a>
