@@ -115,7 +115,8 @@
 
                     <div class="row text-end cart-btn">';
             if($dbmng->isInBuyHistory($member_id,$shohin_id) ==true){
-                echo '<input class="btn btn-outline-secondary btn-md rounded-pill" value="購入済み" disabled>';
+                // echo '<input class="btn btn-outline-secondary btn-md rounded-pill" value="購入済み" disabled>';
+                echo '<h4 class="text-secondary">購入済み</h4>';
             }elseif($dbmng->isInCart($member_id,$shohin_id) ==false){
                 echo '<form action="G1-4_Favorite.php" method="post">
                         <input type="hidden" name="addcart" value="'.$shohin_id.'">

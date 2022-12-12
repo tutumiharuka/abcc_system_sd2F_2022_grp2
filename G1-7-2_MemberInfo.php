@@ -93,7 +93,7 @@
             <div class="row h5 d-flex align-items-center">
               <div class="col-12 col-md-5 text-start"><i class="bi bi-diamond-fill h6 me-3"></i>パスワード</div>
               <div class="col-12 col-md-6 value-text h6">●●●●●●●●●
-                <a class="btn btn-outline-primary ms-3" href="G1-9-1_PasswordChange.php">
+                <a class="btn btn-outline-primary rounded-pill ms-3" href="G1-9-1_PasswordChange.php">
                   パスワード変更
                 </a>
             </div>
@@ -106,7 +106,7 @@
     </div>
     <div class="row mt-4">
       <div class="col d-flex justify-content-center">
-        <a class="btn btn-outline-primary btn-lg mb-3" href="G1-7-3_MemberInfoChange.php">変更する</a>
+        <a class="btn btn-outline-primary btn-lg rounded-pill mb-3" href="G1-7-3_MemberInfoChange.php">変更する</a>
       </div>
     </div>
 </div>

@@ -39,7 +39,8 @@
     }
     .navbg{
         background-color:#ccc;
-        height: 50px;
+        /* height: 50px; */
+        /* height: 50px; */
         display: flex;
         align-items: center;
     }
@@ -157,7 +158,7 @@
 
 <!-- ナビバーの設定 -->
 <nav class="mt-3 navbg" aria-label="breadcrumb">
-    <ol class="breadcrumb ms-5 mt-4">
+    <ol class="breadcrumb ms-2 ms-md-5 mt-2 mt-md-3">
         <li class="breadcrumb-item h5 fw-bold"><a href="G1-1_Top.php">Top</a></li>
         <li class="breadcrumb-item h5 fw-bold"><a href="G1-5-1_ShohinList.php?list=<?php echo $genre_id?>"><?php echo $dbmng->getJpnGenreName($genre_id);?></a></li>
         <li class="breadcrumb-item h5 fw-bold active" aria-current="page"><?php echo $shohin_name?></li>

@@ -42,9 +42,9 @@
                 <!-- 旧パスワード入力 -->
                   <li class="list-group-item">
                     <div class="row h5">
-                      <div class="col-md-3 offset-md-3 text-start">
-                        <i class="bi bi-diamond-fill h6 me-3"></i>旧パスワード</div>
-                      <div class="col-md-5">
+                      <div class="col-md-4 offset-md-1 text-start">
+                        <i class="bi bi-diamond-fill h6"></i>旧パスワード</div>
+                      <div class="col-md-6">
                         <input type="password" data-toggle="password" class="form-control rounded-pill" name="pass" placeholder="半角英数混合8文字以上" required>
                       </div>
                     </div>
@@ -61,9 +61,9 @@
                   <!-- 新パスワード入力 -->
                   <li class="list-group-item">
                     <div class="row h5">
-                      <div class="col-md-3 offset-md-3 text-start">
-                        <i class="bi bi-diamond-fill h6 me-3"></i>新パスワード</div>
-                      <div class="col-md-5">
+                      <div class="col-md-4 offset-md-1 text-start">
+                        <i class="bi bi-diamond-fill h6"></i>新パスワード</div>
+                      <div class="col-md-6">
                         <input type="password" data-toggle="password" class="form-control rounded-pill" name="newpass" id="pass" placeholder="半角英数混合8文字以上" required>
                       </div>
                     </div>
@@ -72,9 +72,9 @@
                   <!-- 新パスワード再入力 -->
                   <li class="list-group-item">
                     <div class="row h5">
-                      <div class="col-md-3 offset-md-3 text-start">
-                        <i class="bi bi-diamond-fill h6 me-3"></i>新パスワード再入力</div>
-                      <div class="col-md-5">
+                      <div class="col-md-4 offset-md-1 text-start">
+                        <i class="bi bi-diamond-fill h6"></i>新パスワード再入力</div>
+                      <div class="col-md-6">
                         <input type="password" data-toggle="password" class="form-control rounded-pill" name="renewpass" id="repass" placeholder="半角英数混合8文字以上" required>
                       </div>
                     </div>
@@ -100,7 +100,7 @@
   <!-- 変更ボタン -->
           <div class="row mt-4">
             <div class="col d-flex justify-content-center">
-              <button type="submit" class="btn btn-outline-primary btn-lg mb-3">変更する</button>
+              <button type="submit" class="btn btn-outline-primary btn-lg rounded-pill mb-3">変更する</button>
             </div>
           </div>
   </form>       
