@@ -90,12 +90,13 @@
             
         </div>
     <!-- カートボタン -->
-        <div class="col-6 col-md-2 h3 d-flex justify-content-end mt-3">
+        <div class="col-6 col-md-2 h3 d-flex justify-content-center align-items-center mt-3">
             <form action="G1-5-2_ShohinDetails.php" method="post">
                 <input type="hidden" name="shohin_id" value="<?php echo $shohin_id?>">
                 <!-- 購入済みかどうか -->
                 <?php if($dbmng->isInBuyHistory($member_id,$shohin_id)==true): ?>
-                    <input class="btn btn-outline-secondary btn-lg rounded-pill" value="購入済み" disabled>
+      
+                        <h3 class="text-secondary">購入済み</h3>
                 <!-- カートに入れたかどうか -->
                 <?php elseif($dbmng->isInCart($member_id,$shohin_id)==false): ?>
                     <input type="hidden" name="cart" value="addcart">
