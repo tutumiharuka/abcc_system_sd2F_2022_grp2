@@ -28,7 +28,7 @@ $loginmng->loginAfterNewMember($mail);
     .kuhaku-end{
         height: 15%;
     }
-    @media only screen and (max-width: 770px) {       
+    @media only screen and (max-width: 767px) {       
         .kuhaku-end{
             height: 10%;
         }

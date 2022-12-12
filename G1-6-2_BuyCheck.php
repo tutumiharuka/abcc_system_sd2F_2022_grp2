@@ -69,9 +69,9 @@ $sum = $dbmng->getCartSum($member_id);
 
         
         <div class="col-md-4 mt-5">
-            <div class="row border-bottom border-dark">
-                <div class="col fw-bold"><span class="h2 fw-bold">合計</span>税込</div>
-                <span class="col h3 fw-bold text-end"><?php echo number_format($sum)?>円</span>
+            <div class="row border-bottom border-dark text-nowrap">
+                <div class="col-6 fw-bold"><span class="h2 fw-bold">合計</span>税込</div>
+                <span class="col-6 h3 fw-bold text-end"><?php echo number_format($sum)?>円</span>
             </div>
 
             <div class="row mt-3">

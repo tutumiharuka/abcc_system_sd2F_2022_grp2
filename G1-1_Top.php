@@ -77,7 +77,7 @@
         }
 
 
-        @media only screen and (max-width: 770px) {
+        @media only screen and (max-width: 767px) {
                 .carousel-card img {
                         max-width: 100vw;
                         height: auto;

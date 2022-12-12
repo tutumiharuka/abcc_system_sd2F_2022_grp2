@@ -111,7 +111,7 @@
   .kuhaku-from{
         height: 10%;
     }
-   @media only screen and (max-width: 770px) {
+   @media only screen and (max-width: 767px) {
     .kuhaku-from{
                     height: 5%;
     }

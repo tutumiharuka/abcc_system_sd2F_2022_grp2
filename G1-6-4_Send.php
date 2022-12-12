@@ -9,6 +9,10 @@
 ?>
 <?php include_once 'GameHeader.php'; ?>
 <style>
+	 @font-face {
+    font-family: 'PixelMplus';
+    src: url('font/PixelMplus12-Bold.ttf') format('TrueType');
+    }
   .game-text{
       font-family: 'PixelMplus';
   }
@@ -80,7 +84,7 @@
 			</div>
 		<?php endif; ?>	
 			<div class="col-12 col-md-6">
-				<a class="btn btn-primary btn-lg mt-5 mb-4 rounded text-dark rounded-pill" href="G1-1_Top.php">TOPに戻る</a>
+				<a class="btn btn-primary btn-lg mt-5 mb-4 rounded text-dark rounded-pill text-nowrap" href="G1-1_Top.php">TOPに戻る</a>
 			</div>
 		</div>
 	</div>

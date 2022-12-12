@@ -95,8 +95,7 @@
                 <input type="hidden" name="shohin_id" value="<?php echo $shohin_id?>">
                 <!-- 購入済みかどうか -->
                 <?php if($dbmng->isInBuyHistory($member_id,$shohin_id)==true): ?>
-      
-                        <h3 class="text-secondary">購入済み</h3>
+                        <h4 class="text-secondary">購入済み</h4>
                 <!-- カートに入れたかどうか -->
                 <?php elseif($dbmng->isInCart($member_id,$shohin_id)==false): ?>
                     <input type="hidden" name="cart" value="addcart">

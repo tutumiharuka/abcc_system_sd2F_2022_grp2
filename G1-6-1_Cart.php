@@ -29,17 +29,36 @@ $sum = $dbmng->getCartSum($member_id);
         color:gray;
     }
     .kara-btn{
-        width:300px;
+        width:280px;
     }
     .kuhaku{
         height:100px;
+    }
+    
+    @media only screen and (max-width: 767px) {
+        .kara-icon{
+            font-size:14vw;
+            color:gray;
+        }
+        .kara-text{
+            font-size:4vw;
+            color:gray;
+        }
+        .kuhaku{
+            height:50px;
+        }
+        .x-btn {
+            position: relative;
+            top: 20%;
+            right: -10%;
+        }
     }
 </style>
 
 <!-- カートに商品がない場合 -->
 <?php if($count == 0): ?>
-    <div class="container">
-        <div class="row h1 ms-5 mt-5">カート</div>
+    <div class="container mt-5">
+        <div class="row h1 ms-5">カート</div>
             <div class="kuhaku"></div>
             <div class="row mt-5">
                 <div class="col-12 text-center h4"><i class="typcn typcn-shopping-cart kara-icon"></i></div>
@@ -72,21 +91,24 @@ $sum = $dbmng->getCartSum($member_id);
                     if( $row['price'] == 0){$price= '無料';}else{$price=number_format($row['price']).'円 税込';}
                     echo '
                     <div class="row mt-5">
-                        <div class="col-md-4">
+                        <div class="col-md-5 d-flex justify-content-center">
                             <a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'">
                                 <img class="img-fluid" src="'.$row['image_small'].'">
                             </a>
                         </div>
-                        <div class="col-md-8">
-                            <div class="row text-end me-3">
+                        
+                        <div class="col-md-7">
+                            <div class="row text-end me-3 x-btn">
                                 <form action="G1-6-1_Cart.php" method="post">
                                     <input type="hidden" name="delcart" value="'.$row['cart_id'].'">
-                                    <button type="submit" class="btn btn-outline-light"><h4><i class="bi bi-x-square-fill"></i></h4></button>
+                                    <button type="submit" class="btn"><h4>
+                                        <i class="bi bi-x-square-fill"></i>
+                                        </h4></button>
                                 </form>
                             </div>
                             <a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'">
-                            <div class="row ms-1 h4">'.$row['shohin_name'].'</div>
-                            <div class="row text-sm-start mt-5 ms-1 h5">'.$price.'</div>
+                            <div class="row ms-4 ms-md-0 h4">'.$row['shohin_name'].'</div>
+                            <div class="row ms-4 ms-md-0 mt-3 mt-md-5 h5">'.$price.'</div>
                             </a>
                         </div>
                     </div>';
@@ -94,17 +116,18 @@ $sum = $dbmng->getCartSum($member_id);
                 ?>
             </div>
             <!-- 合計 -->
-            <div class="col-md-4 mt-5">
+            <div class="col-md-4 mt-5  text-nowrap">
                 <div class="row">
-                    <div class="col fw-bold"><span class="h2 fw-bold">合計</span>(税込)</div>
-                    <span class="col h3 fw-bold text-end"><?php echo number_format($sum)?>円</span>
+                    <div class="col-6 fw-bold"><span class="h2 fw-bold">合計</span>(税込)</div>
+                    <span class="col-6 h3 fw-bold text-end"><?php echo number_format($sum)?>円</span>
                 </div>
+
                 <hr class="mb-5">
                 <div class="row m-3 gx-1">
                     <a class="btn btn-primary btn-lg rounded-pill" href="G1-6-2_BuyCheck.php">レジに進む</a>
                 </div>
                 <div class="row m-3 gx-1">
-                    <a class="btn btn-outline-primary btn-lg rounded-pill" href="G1-1_Top.php">お買い物を続ける</a>
+                    <a class="btn btn-outline-primary btn-lg rounded-pill text-nowrap" href="G1-1_Top.php">お買い物を続ける</a>
                 </div>
             </div>
         </div>

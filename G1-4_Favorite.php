@@ -29,17 +29,44 @@
         color:gray;
     }
     .kara-btn{
-        width:300px;
+        width:280px;
     }
     .kuhaku{
         height:100px;
     }
-    .cart-btn{
-        width: 200px;
+
+    
+    @media only screen and (max-width: 767px) {
+        .kara-icon{
+            font-size:14vw;
+            color:gray;
+        }
+        .kara-text{
+            font-size:4vw;
+            color:gray;
+        }
+        .kuhaku{
+            height:50px;
+        }
+        .x-btn {
+            position: relative;
+            top: -90px;
+            right:0px
+        }
+        .cart-btn{
+            position: relative;
+            top: -90px;
+            right:10px
+        }
+        .col-kuhaku{
+            height:30px
+        }
     }
+
 </style>
 <div class="container">
-    <div class="row h1 ms-5 mt-5">お気に入り</div>
+    <div class="row h1 mt-5 ms-md-5 d-none d-md-block">お気に入り</div>
+    <div class="row h1 mt-5 text-center d-block d-md-none">お気に入り</div>
 
     <!-- お気に入りに商品がない場合 -->
     <?php if($count == 0){
@@ -66,35 +93,38 @@
             if( $row['price'] == 0){$price= '無料';}else{$price=number_format($row['price']).'円 税込';}
             echo '
             <div class="row d-flex justify-content-center mt-5">
-                <div class="col-md-3">
+                <div class="col-md-3 d-flex justify-content-center">
                     <a href="G1-5-2_ShohinDetails.php?shohin_id='.$shohin_id.'">    
                         <img class="img-fluid" src="'.$row['image_small'].'"></a>
                 </div>
-                <div class="col-md-4">
+
+                <div class="col-md-4 ms-5 ms-md-0">
                     <a href="G1-5-2_ShohinDetails.php?shohin_id='.$shohin_id.'">
-                        <div class="row mt-5 h4">'.$row['shohin_name'].'</div>
-                        <div class="row text-sm-start mt-4 h5">'.$price.'</div>
+                        <div class="row mt-5 h5">'.$row['shohin_name'].'</div>
+                        <div class="row text-sm-start mt-4 h6">'.$price.'</div>
                     </a>
                 </div>
-                <div class="col-md-2">
-                    <div class="row text-end">
+
+                <div class="col-md-2 col-kuhaku">
+                    <div class="row text-end x-btn">
                         <form action="G1-4_Favorite.php" method="post">
                             <input type="hidden" name="delfav" value="'.$row['favorite_id'].'">
                             <button type="submit" class="btn"><h4><i class="bi bi-x-square-fill"></i></h4></button>
                         </form>
                     </div>
-                    <div class="row text-end">';
+
+                    <div class="row text-end cart-btn">';
             if($dbmng->isInBuyHistory($member_id,$shohin_id) ==true){
-                echo '<input class="btn btn-outline-secondary btn-md rounded-pill cart-btn" value="購入済み" disabled>';
+                echo '<input class="btn btn-outline-secondary btn-md rounded-pill" value="購入済み" disabled>';
             }elseif($dbmng->isInCart($member_id,$shohin_id) ==false){
                 echo '<form action="G1-4_Favorite.php" method="post">
                         <input type="hidden" name="addcart" value="'.$shohin_id.'">
-                        <input type="submit" class="btn btn-outline-secondary btn-md rounded-pill cart-btn" id="addCartBtn" value="カートに入れる">
+                        <input type="submit" class="btn btn-outline-secondary btn-md rounded-pill" id="addCartBtn" value="カートに入れる">
                       </form>';
             }else{
                 echo '<form action="G1-4_Favorite.php" method="post">
                         <input type="hidden" name="delcart" value="'.$shohin_id.'">
-                        <input type="submit" class="btn btn-outline-secondary btn-md rounded-pill cart-btn" id="delCartBtn" value="カートに追加済み">
+                        <input type="submit" class="btn btn-outline-secondary btn-md rounded-pill" id="delCartBtn" value="カートに追加済み">
                       </form>';
             }
                 echo '
