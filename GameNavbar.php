@@ -83,7 +83,7 @@
   }
 
   /* ログインしてない状況で出すボタン */
-  .login-btn{
+  .nav-login-btn{
     /* margin-left:9px; */
     
     margin-top:15px;
@@ -172,7 +172,7 @@
             <div class="row mt-5 ms-1">
               <div class="col-12 d-flex justify-content-center">
                 <a href="G1-2-1_Login.php">
-                  <button type="button" class="btn btn-lg login-btn fw-bold">ログイン・新規登録</button>
+                  <button type="button" class="btn btn-lg nav-login-btn fw-bold">ログイン・新規登録</button>
                 </a>
               </div>
             </div>

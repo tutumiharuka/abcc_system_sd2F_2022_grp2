@@ -85,14 +85,14 @@ if(isset($_GET['sort'])&&$_GET['sort']!=''){
                 <form action="G1-5-1_ShohinList.php" id="sibori" method="get">
                     <div class="row ms-0 ms-md-2">
 
-                        <label for="game-genre" class="col-4 col-md-3 col-lg-1 text-center col-form-label">ジャンル</label>
+                        <label for="game-genre" class="col-4 col-md-3 col-lg-1 text-center col-form-label text-nowrap">ジャンル</label>
                         <div class="col-8 col-md-9 col-lg-2">
                         
                             <select class="form-select" id="game-genre" name="list">
                                 <option value="all">指定なし</option>
                                 <option value="new">最新作</option>
                                 <option value="free">無料</option>
-                                <option value="rank">ランキング</option>
+                                <option value="ranking">ランキング</option>
                                 <option value="all">--------------</option>
                                 <option value="ACT">アクション</option>
                                 <option value="BOK">アドベンチャー</option>
@@ -119,10 +119,10 @@ if(isset($_GET['sort'])&&$_GET['sort']!=''){
                         
                         <div class="col-12 col-lg-3 mt-lg-0 mt-2">
                             <div class="row justify-content-center">
-                                <div class="col-4">
-                                    <button type="reset"  class="btn btn-outline-primary siboru-btn">クリア</button>
+                                <div class="col-5">
+                                    <button type="reset"  class="btn btn-outline-primary text-nowrap siboru-btn">クリア</button>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-5">
                                     <button type="submit" class="btn btn-primary ms-3 siboru-btn">絞る</button>
                                 </div>
                             </div>    
