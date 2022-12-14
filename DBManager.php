@@ -177,7 +177,7 @@ class DBManager{
     public function getJpnGenreName($genre_id){
         $genreList = array(
             "ACT"=>"アクション",
-            "ADV"=>"アドベンチャー",
+            "BOK"=>"アドベンチャー",
             "FIG"=>"格闘",
             "FPS"=>"シューティング",
             "MUS"=>"音楽ゲーム",
