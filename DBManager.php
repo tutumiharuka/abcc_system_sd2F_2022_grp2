@@ -121,7 +121,7 @@ class DBManager{
     // ランキング
     public function getRankingList(){
         $pdo = $this->dbConnect();
-        $sql = "SELECT r.shohin_id,s.shohin_name,s.price,s.image_small,s.haishin_date,r.ranking_id FROM ranking r INNER JOIN shohins s ON r.shohin_id = s.shohin_id";
+        $sql = "SELECT r.shohin_id,s.shohin_name,s.price,s.image_small,s.haishin_date,r.ranking_id FROM ranking r INNER JOIN shohins s ON r.shohin_id = s.shohin_id ORDER BY r.ranking_id";
         $ps = $pdo->prepare($sql);
         $ps->execute();
         $results = $ps->fetchAll();
