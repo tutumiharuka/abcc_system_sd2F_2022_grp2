@@ -56,6 +56,9 @@ $sum = $dbmng->getCartSum($member_id);
             text-align:right;
             /* right: -10%; */
         }
+        .img-thumbnail{
+            max-width: 360px;
+        }
     }
 </style>
 
@@ -97,7 +100,7 @@ $sum = $dbmng->getCartSum($member_id);
                     <div class="row mt-5">
                         <div class="col-md-5 d-flex justify-content-center">
                             <a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'">
-                                <img class="img-fluid" src="'.$row['image_small'].'">
+                                <img class="img-thumbnail img-fluid" src="'.$row['image_small'].'">
                             </a>
                         </div>
                         

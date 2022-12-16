@@ -61,6 +61,16 @@ if(isset($_GET['sort'])&&$_GET['sort']!=''){
     .form-select,.sibori-btn,.siboru-btn{
         width:100%;
     }
+    @media only screen and (max-width: 767px) {
+        .game-list{
+            display: flex;
+            justify-content: center;
+        }
+        .img-thumbnail{
+            max-width: 360px;
+        }
+        
+    }
 </style>
 <div class="container">
     <!-- breadcrumb リンク機能  -->
@@ -164,7 +174,7 @@ if(isset($_GET['sort'])&&$_GET['sort']!=''){
     
     <!-- ゲームリスト --> 
     <div class="container-fluid">
-        <div class="row justify-content-center">
+        <div class="row game-list">
             <?php
                 foreach($results as $row){
                     if( $row['price'] == 0){$price = '無料';}else{$price=number_format($row['price']).'円';}

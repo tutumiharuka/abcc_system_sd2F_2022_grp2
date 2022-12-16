@@ -50,6 +50,9 @@
             right:0;
             text-align:right;
         }
+        .img-thumbnail{
+            max-width: 360px;
+        }
     }
 </style>
 
@@ -83,7 +86,7 @@
                     foreach($results as $row){
                         echo '  <div class="col-md-3 mt-3 mt-md-5  d-flex justify-content-center">
                                     <a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'">
-                                    <img class="img-fluid" src="'.$row['image_small'].'"></a>
+                                    <img class="img-thumbnail img-fluid" src="'.$row['image_small'].'"></a>
                                 </div>
                                 <div class="col-md-3 mt-md-3">
                                     <a href="G1-5-2_ShohinDetails.php?shohin_id='.$row['shohin_id'].'">

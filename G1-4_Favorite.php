@@ -61,6 +61,10 @@
         .col-kuhaku{
             height:30px
         }
+
+        .img-thumbnail{
+            max-width: 360px;
+        }
     }
 
 </style>
@@ -95,7 +99,7 @@
             <div class="row d-flex justify-content-center mt-5">
                 <div class="col-md-3 d-flex justify-content-center">
                     <a href="G1-5-2_ShohinDetails.php?shohin_id='.$shohin_id.'">    
-                        <img class="img-fluid" src="'.$row['image_small'].'"></a>
+                        <img class="img-thumbnail img-fluid" src="'.$row['image_small'].'"></a>
                 </div>
 
                 <div class="col-md-4 ms-md-0">
