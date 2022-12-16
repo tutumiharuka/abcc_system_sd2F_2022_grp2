@@ -66,7 +66,7 @@ CREATE TABLE `histories` (
 );
 
 INSERT INTO genres(genre_id,genre_name) VALUES ('ACT','アクション');
-INSERT INTO genres(genre_id,genre_name) VALUES ('ADV','アドベンチャー');
+INSERT INTO genres(genre_id,genre_name) VALUES ('BOK','アドベンチャー');
 INSERT INTO genres(genre_id,genre_name) VALUES ('FIG','格闘');
 INSERT INTO genres(genre_id,genre_name) VALUES ('FPS','シューティング');
 INSERT INTO genres(genre_id,genre_name) VALUES ('MUS','音楽ゲーム');

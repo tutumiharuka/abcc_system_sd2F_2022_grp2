@@ -252,7 +252,7 @@
               <li class="nav-item  d-flex justify-content-center align-items-center"><!-- カートicon -->
                 <a class="nav-link" href="G1-6-1_Cart.php">
                   <i class="typcn typcn-shopping-cart h3"></i>
-                  <span class="fw-bold d-md-none h6 text-white">カート</span>
+                  <span class="fw-bold d-md-none h6 text-white">　カート　</span>
                 </a>
               </li>
             </ul>
