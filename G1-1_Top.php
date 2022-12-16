@@ -102,7 +102,7 @@ $dbmng = new DBManager();
 <div class="carousel mt-3">
         <?php
 // carouselに表示させる商品番号
-$carousels = [1, 3, 17, 101, 201, 41, 81];
+$carousels = [221,223,1, 3, 17, 101,222];
 foreach ($carousels as $id) {
         $results = $dbmng->getBigImgById($id);
         foreach ($results as $row) {
