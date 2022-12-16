@@ -76,6 +76,9 @@
                 height: 180px;
         }
 
+        .scroll {
+                max-width: 96%;
+        }
 
         @media only screen and (max-width: 767px) {
                 .carousel-card img {
@@ -88,6 +91,7 @@
                         height: 40px;
                 }
                 .scroll{
+                        max-width: 100%;
                         overflow-x: auto;
                 }
 
