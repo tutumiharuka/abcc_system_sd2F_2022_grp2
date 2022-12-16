@@ -122,7 +122,7 @@ foreach ($carousels as $id) {
 <!-- .d-none.d-md-{display} -->
 <div class="container-fluid">
         <div class="row ms-md-5 ms-0">
-                <div class="col-md-2 h4"><a href="G1-5-1_ShohinList.php?list=new">最新作</a></div>
+                <div class="col-md-2 h4  text-nowarp"><a href="G1-5-1_ShohinList.php?list=new">最新作</a></div>
                 <div class="col-md-2 offset-md-8 text-end d-none d-md-block"><a href="G1-5-1_ShohinList.php?list=new"><img width="100px"
                                         src="img/all_game.png" alt="すべて"></a></div>
         </div>
@@ -148,7 +148,7 @@ foreach ($carousels as $id) {
         </div>
 
         <div class="row ms-md-5 ms-0">
-                <div class="col-md-2 col-auto h4"><a href="G1-5-1_ShohinList.php?list=ranking">ランキング</a></div>
+                <div class="col-md-2 col-auto h4 text-nowarp"><a href="G1-5-1_ShohinList.php?list=ranking">ランキング</a></div>
                 <div class="col-md-2 offset-md-8 text-end d-none d-md-block"><a href="G1-5-1_ShohinList.php?list=ranking"><img
                                         width="100px" src="img/all_game.png" alt="すべて"></a></div>
         </div>
@@ -174,7 +174,7 @@ foreach ($carousels as $id) {
         </div>
 
         <div class="row ms-md-5 ms-0">
-                <div class="col-md-2 h4"><a href="G1-5-1_ShohinList.php?list=free">無料ゲーム</a></div>
+                <div class="col-md-2 h4 text-nowarp"><a href="G1-5-1_ShohinList.php?list=free">無料ゲーム</a></div>
                 <div class="col-md-2 offset-md-8 text-end d-none d-md-block"><a href="G1-5-1_ShohinList.php?list=free"><img width="100px"
                                         src="img/all_game.png" alt="すべて"></a></div>
         </div>
